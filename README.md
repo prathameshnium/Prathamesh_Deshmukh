@@ -2,9 +2,11 @@ Academic Portfolio Website of Prathamesh K. Deshmukh
 
 This repository contains the source code for my personal academic portfolio website, built as a clean, single-page application to showcase my research, publications, and professional background in Physics.
 
-Live Site: https://prathameshnium.github.io/Prathamesh_Deshmukh/index.html
-About The Project
+Live Site: 
+https://www.prathameshdeshmukh.site
+https://prathameshnium.github.io/Prathamesh_Deshmukh/index.html
 
+About The Project
 This portfolio is designed to be a central hub for my academic and professional identity online. It provides a comprehensive overview of my work as a PhD Scholar, highlighting my research in multiferroic composites, my publication record, technical skills, and academic journey.
 
 The website is fully responsive and designed with a modern, dark theme for a professional and accessible viewing experience across all devices.
