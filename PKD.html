@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prathamesh K. Deshmukh | Physics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              'accent-orange': '#f6ad55', 
+              'dark-bg': '#1a202c',       
+              'card-bg': '#2d3748',       
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #1a202c;
+            color: #e2e8f0;
+        }
+        .section-title {
+            color: #ffffff;
+        }
+        .card {
+            background-color: #2d3748;
+            border: 1px solid #4a5568; 
+            transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .card:hover {
+            border-color: #f6ad55;
+            box-shadow: 0 0 15px rgba(246, 173, 85, 0.1);
+        }
+        .nav-link {
+            transition: color 0.3s, border-bottom-color 0.3s;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 4px;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #f6ad55;
+            border-bottom-color: #f6ad55;
+        }
+        .tag {
+            background-color: #4a5568;
+            color: #e2e8f0;
+        }
+        .social-link {
+            transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+        }
+        .social-link:hover {
+            transform: translateY(-3px);
+            color: #f6ad55;
+        }
+        .publication-link {
+            color: #f6ad55;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .publication-link:hover {
+            color: #fbd38d;
+        }
+        /* Timeline Styles */
+        .timeline {
+            position: relative;
+            padding-left: 1.5rem; /* Space for the line */
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.25rem;
+            bottom: 0.25rem;
+            width: 2px;
+            background-color: #4a5568;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -2.0625rem; /* Adjust to center on the line */
+            top: 0.25rem;
+            height: 1rem;
+            width: 1rem;
+            background-color: #f6ad55;
+            border-radius: 50%;
+            border: 2px solid #2d3748;
+        }
+    </style>
+</head>
+<body class="antialiased font-sans">
+
+    <!-- Header & Navigation -->
+    <header class="bg-dark-bg/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-700">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-white">Prathamesh Deshmukh</h1>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#research" class="nav-link">Research</a>
+                <a href="#journey" class="nav-link">Journey</a>
+                <a href="#publications" class="nav-link">Publications</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#conferences" class="nav-link">Conferences</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#about" class="block py-2 nav-link">About</a>
+            <a href="#research" class="block py-2 nav-link">Research</a>
+            <a href="#journey" class="block py-2 nav-link">Journey</a>
+            <a href="#publications" class="block py-2 nav-link">Publications</a>
+            <a href="#skills" class="block py-2 nav-link">Skills</a>
+            <a href="#conferences" class="block py-2 nav-link">Conferences</a>
+            <a href="#contact" class="block py-2 nav-link">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <!-- About Section -->
+        <section id="about" class="min-h-screen flex items-center">
+            <div class="w-full">
+                <h2 class="text-5xl font-bold section-title mb-4">Prathamesh Keshao Deshmukh</h2>
+                <h3 class="text-2xl text-accent-orange mb-6">PhD Scholar | Physics</h3>
+                <p class="text-lg max-w-3xl mb-8 text-gray-300">
+                    A PhD researcher at the UGC-DAE Consortium for Scientific Research, specializing in the synthesis and characterization of multiferroic composites. My work focuses on exploring magnetoelectric coupling, utilizing advanced techniques like neutron diffraction and dielectric spectroscopy to uncover novel material properties.
+                </p>
+                <div class="flex flex-wrap gap-8 items-center mb-8">
+                    <div class="text-center">
+                        <p class="text-3xl font-bold text-accent-orange">3+</p>
+                        <p class="text-gray-400">Publications</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-3xl font-bold text-accent-orange">1</p>
+                        <p class="text-gray-400">Citations</p>
+                    </div>
+                     <div class="text-center">
+                        <p class="text-3xl font-bold text-accent-orange">1</p>
+                        <p class="text-gray-400">H-Index</p>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-6">
+                    <a href="mailto:prathameshnium@duck.com" class="social-link text-3xl" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://scholar.google.com/citations?user=DJgzI30AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" class="social-link text-3xl" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="https://www.linkedin.com/in/prathamesh-k-deshmukh" target="_blank" rel="noopener noreferrer" class="social-link text-3xl" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.researchgate.net/profile/Prathamesh-Deshmukh-6" target="_blank" rel="noopener noreferrer" class="social-link text-3xl" aria-label="ResearchGate"><i class="fab fa-researchgate"></i></a>
+                    <a href="https://github.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-link text-3xl" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://orcid.org/0009-0008-3278-0837" target="_blank" rel="noopener noreferrer" class="social-link text-3xl" aria-label="ORCID"><i class="fab fa-orcid"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research" class="py-20">
+            <h2 class="text-4xl font-bold section-title mb-8 text-center">Research Profile</h2>
+            <div class="card p-8 rounded-lg">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-accent-orange mb-4">Core Research Theme</h3>
+                        <p class="text-lg italic text-white mb-4">Multiferroic Composites</p>
+                        <p class="text-gray-300">My research is centered on fabricating and understanding materials where magnetic and electric properties are intrinsically linked. By synthesizing novel composites and exploring their behavior under various conditions, the goal is to contribute to the development of next-generation sensors, memory devices, and energy-efficient electronics.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold text-accent-orange mb-4">Key Activities</h3>
+                        <ul class="list-disc list-inside space-y-3 text-gray-300">
+                            <li>Novel material synthesis (e.g., BaFe₁₀Sc₂O₁₉:KNbO₃).</li>
+                            <li>Design of custom probes for cryogenic measurements.</li>
+                            <li>Structural analysis using Neutron & X-Ray Diffraction.</li>
+                            <li>Characterization of magnetic and electric properties.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Academic Journey Section -->
+        <section id="journey" class="py-20">
+            <h2 class="text-4xl font-bold section-title mb-12 text-center">Academic & Research Journey</h2>
+            <div class="max-w-3xl mx-auto timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <p class="text-sm text-gray-400 mb-1">May 2022 - Present</p>
+                    <h4 class="font-bold text-lg text-accent-orange">PhD Scholar in Physics</h4>
+                    <p class="font-semibold text-gray-300">UGC-DAE Consortium for Scientific Research, Mumbai</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <p class="text-sm text-gray-400 mb-1">2019 - 2021</p>
+                    <h4 class="font-bold text-lg text-accent-orange">M.Sc in Physics</h4>
+                    <p class="font-semibold text-gray-300">Fergusson College, Savitribai Phule Pune University</p>
+                    <p class="text-gray-400 text-sm mt-1">Project: "Review on Earth abundant electrocatalytic bifunctional materials..."</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <p class="text-sm text-gray-400 mb-1">2016 - 2019</p>
+                    <h4 class="font-bold text-lg text-accent-orange">B.Sc in Physics, Math, & Comp. App.</h4>
+                    <p class="font-semibold text-gray-300">Shri Shivaji Science College, Sant Gadge Baba Amravati University</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <p class="text-sm text-gray-400 mb-1">2014 - 2016</p>
+                    <h4 class="font-bold text-lg text-accent-orange">Higher Secondary (HSC) - Science</h4>
+                    <p class="font-semibold text-gray-300">Independent Junior College Rural Institute, Amravati</p>
+                </div>
+                 <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <p class="text-sm text-gray-400 mb-1">2014</p>
+                    <h4 class="font-bold text-lg text-accent-orange">Secondary School (SSC)</h4>
+                    <p class="font-semibold text-gray-300">Manibai Gujrati High School, Amravati</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="py-20">
+            <h2 class="text-4xl font-bold section-title mb-8 text-center">Selected Publications</h2>
+            <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="card p-6 rounded-lg">
+                    <p class="mb-2 text-gray-300">Deshmukh, P., et al. (2025). "Exploration of near room temperature magnetoelectric coupling in BaFe₁₀Sc₂O₁₉:KNbO₃ composite."</p>
+                    <p class="italic text-gray-400 mb-3">Journal of Physics and Chemistry of Solids, 196, 112309.</p>
+                    <a href="https://doi.org/10.1016/j.jpcs.2024.112309" target="_blank" rel="noopener noreferrer" class="publication-link font-medium">
+                        View Article <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                    </a>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <p class="mb-2 text-gray-300">Mukherjee, S., et al. (2025). "Negative capacitance and magnetodielectric effect in Cu₂O-CuO ceramics."</p>
+                    <p class="italic text-gray-400 mb-3">Ceramics International, 51(20), 30716-30722.</p>
+                     <a href="https://doi.org/10.1016/j.ceramint.2025.04.264" target="_blank" rel="noopener noreferrer" class="publication-link font-medium">
+                        View Article <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                    </a>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <p class="mb-2 text-gray-300">Deshmukh, P., et al. (2025). "Exploring the role of Cu¹⁺ in quasi-1D Cu₁₋ₓLiₓO (x = 0.025)."</p>
+                    <p class="italic text-gray-400 mb-3">Journal of Alloys and Compounds, 1036, 181833.</p>
+                     <a href="https://doi.org/10.1016/j.jallcom.2025.181833" target="_blank" rel="noopener noreferrer" class="publication-link font-medium">
+                        View Article <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Programming & Technical Skills Section -->
+        <section id="skills" class="py-20">
+            <h2 class="text-4xl font-bold section-title mb-8 text-center">Programming & Technical Skills</h2>
+            <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Experimental Techniques -->
+                <div class="card p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-accent-orange mb-4">Experimental Techniques</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag px-3 py-1 rounded-full">Neutron Diffraction</span>
+                        <span class="tag px-3 py-1 rounded-full">X-Ray Diffraction</span>
+                        <span class="tag px-3 py-1 rounded-full">Dielectric Spectroscopy</span>
+                        <span class="tag px-3 py-1 rounded-full">Magnetometry (VSM)</span>
+                        <span class="tag px-3 py-1 rounded-full">UV-Vis Spectroscopy</span>
+                        <span class="tag px-3 py-1 rounded-full">Sol-Gel Synthesis</span>
+                    </div>
+                </div>
+                <!-- Programming & Automation -->
+                <div class="card p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-accent-orange mb-4">Programming & Automation</h3>
+                    <p class="text-gray-400 mb-4">Developing custom Python scripts (PyVISA) to interface with and automate laboratory instruments for precise data acquisition.</p>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center"><i class="fas fa-bolt text-accent-orange mr-3 w-4 text-center"></i><span><strong>Keithley:</strong> 2400, 2182A, 6221, 6517B</span></li>
+                        <li class="flex items-center"><i class="fas fa-wave-square text-accent-orange mr-3 w-4 text-center"></i><span><strong>Keysight:</strong> E4980A LCR Meter</span></li>
+                        <li class="flex items-center"><i class="fas fa-thermometer-half text-accent-orange mr-3 w-4 text-center"></i><span><strong>Lakeshore:</strong> 340, 350 Controllers</span></li>
+                    </ul>
+                </div>
+                <!-- Analysis & Simulation -->
+                <div class="card p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-accent-orange mb-4">Analysis & Simulation</h3>
+                     <div class="flex flex-wrap gap-2">
+                        <span class="tag px-3 py-1 rounded-full">Python (NumPy, SciPy)</span>
+                        <span class="tag px-3 py-1 rounded-full">MATLAB</span>
+                        <span class="tag px-3 py-1 rounded-full">COMSOL</span>
+                        <span class="tag px-3 py-1 rounded-full">DFT</span>
+                        <span class="tag px-3 py-1 rounded-full">Origin</span>
+                        <span class="tag px-3 py-1 rounded-full">FullProf Suite</span>
+                        <span class="tag px-3 py-1 rounded-full">Git</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conferences Section -->
+        <section id="conferences" class="py-20">
+            <h2 class="text-4xl font-bold section-title mb-8 text-center">Conferences & Workshops</h2>
+            <div class="max-w-4xl mx-auto space-y-4">
+                <div class="card p-4 rounded-lg">
+                    <p><i class="fas fa-chalkboard-teacher text-accent-orange mr-2"></i><strong>Attended:</strong> XIX School on Neutron as Probe of Condensed Matter, UGC-DAE CSR, Mumbai (Sep 2022)</p>
+                </div>
+                <div class="card p-4 rounded-lg">
+                    <p><i class="fas fa-file-alt text-accent-orange mr-2"></i><strong>Poster Presentation:</strong> 66th DAE Solid State Physics Symposium, BIT Mesra, Ranchi (Dec 2022)</p>
+                </div>
+                 <div class="card p-4 rounded-lg">
+                    <p><i class="fas fa-chalkboard-teacher text-accent-orange mr-2"></i><strong>Attended:</strong> 6th National Workshop on Materials Chemistry, Mumbai (Oct 2023)</p>
+                </div>
+                <div class="card p-4 rounded-lg">
+                    <p><i class="fas fa-chalkboard-teacher text-accent-orange mr-2"></i><strong>Attended:</strong> 7-Days Online FDP/Workshop on DFT Modelling of Materials (Dec 2023)</p>
+                </div>
+                <div class="card p-4 rounded-lg">
+                    <p><i class="fas fa-file-alt text-accent-orange mr-2"></i><strong>Poster Presentation:</strong> 67th DAE Solid State Physics Symposium, GITAM, Visakhapatnam (Dec 2023)</p>
+                </div>
+                <div class="card p-4 rounded-lg">
+                    <p><i class="fas fa-chalkboard-teacher text-accent-orange mr-2"></i><strong>Attended:</strong> XXth Neutron School (NPCM-2024), BARC, Mumbai (Feb 2024)</p>
+                </div>
+                <div class="card p-4 rounded-lg">
+                    <p><i class="fas fa-chalkboard-teacher text-accent-orange mr-2"></i><strong>Attended:</strong> 13th AONSA Neutron School, BARC, Mumbai (Nov 2024)</p>
+                </div>
+                <div class="card p-4 rounded-lg">
+                    <p><i class="fas fa-file-alt text-accent-orange mr-2"></i><strong>Poster Presentation:</strong> Emerging Trends in Advanced Materials, CSIR-CGCRI, Kolkata (Feb 2025)</p>
+                </div>
+                 <div class="card p-4 rounded-lg">
+                    <p><i class="fas fa-chalkboard-teacher text-accent-orange mr-2"></i><strong>Attended:</strong> HERCULES EUROPEAN SCHOOL 2025 (Online, Mar-Apr 2025)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards & Recognition Section -->
+        <section id="awards" class="py-20">
+            <h2 class="text-4xl font-bold section-title mb-8 text-center">Awards & Recognition</h2>
+            <div class="max-w-3xl mx-auto">
+                 <div class="card p-8 rounded-lg">
+                    <ul class="list-none space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-award text-accent-orange mt-1 mr-4"></i>
+                            <span>Associated with the SERB-CRG Project Grant from the Anusandhan National Research Foundation (ANRF), DST, Govt. of India.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-award text-accent-orange mt-1 mr-4"></i>
+                            <span>Ranked 3rd in Class during M.Sc 2nd Year Physics at Fergusson College, Pune.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-award text-accent-orange mt-1 mr-4"></i>
+                            <span>Awarded 2nd Rank in a seminar competition at Technotsav-2019.</span>
+                        </li>
+                        <li class="flex items-start">
+                           <i class="fas fa-award text-accent-orange mt-1 mr-4"></i>
+                            <span>Qualified the Savitribai Phule Pune University Ph.D. Entrance Examination.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="py-20">
+            <h2 class="text-4xl font-bold section-title mb-8 text-center">Certifications</h2>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="card p-6 rounded-lg">
+                     <p class="font-semibold text-white">Master COMSOL Multiphysics® Simulation Software</p>
+                     <p class="text-gray-400">Udemy</p>
+                </div>
+                 <div class="card p-6 rounded-lg">
+                     <p class="font-semibold text-white">NUCLEAR01x: Understanding Nuclear Energy</p>
+                     <p class="text-gray-400">Delft University of Technology (edX)</p>
+                </div>
+                 <div class="card p-6 rounded-lg">
+                     <p class="font-semibold text-white">Workshop on DFT Modelling of Materials</p>
+                     <p class="text-gray-400">Centre for Advanced Computational Research (CACR), New Delhi</p>
+                </div>
+                <div class="card p-6 rounded-lg">
+                     <p class="font-semibold text-white">Multiple Courses on Academic Research & Writing</p>
+                     <p class="text-gray-400">Elsevier</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Memberships Section -->
+        <section id="memberships" class="py-20">
+            <h2 class="text-4xl font-bold section-title mb-8 text-center">Professional Memberships</h2>
+            <div class="max-w-3xl mx-auto">
+                 <div class="card p-8 rounded-lg">
+                     <div class="flex items-center">
+                        <i class="fas fa-user-friends text-accent-orange text-2xl mr-4"></i>
+                        <div>
+                            <h3 class="text-xl font-semibold text-white">Life Member</h3>
+                            <p class="text-gray-300">Neutron Scattering Society of India (NSSI)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20">
+            <h2 class="text-4xl font-bold section-title mb-8 text-center">Get In Touch</h2>
+            <div class="max-w-3xl mx-auto card p-8 rounded-lg text-center">
+                <p class="text-lg text-gray-300 mb-6">
+                    I'm open to discussing research, collaborations, or opportunities. Feel free to reach out.
+                </p>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-8">
+                    <div class="flex items-center">
+                        <i class="fas fa-envelope text-accent-orange text-2xl mr-4"></i>
+                        <a href="mailto:prathameshnium@duck.com" class="text-lg text-white hover:text-accent-orange transition-colors">prathameshnium@duck.com</a>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-map-marker-alt text-accent-orange text-2xl mr-4"></i>
+                        <p class="text-lg text-white">Mumbai, Maharashtra, India</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- Footer -->
+    <footer class="border-t border-gray-700">
+        <div class="container mx-auto px-6 py-6 text-center text-gray-500">
+             <p>&copy; 2025 Prathamesh Keshao Deshmukh. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Active nav link scrolling
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a, #mobile-menu a');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 70) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
+
