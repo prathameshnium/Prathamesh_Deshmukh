@@ -1,0 +1,6 @@
+# Allow all web crawlers to access all content
+User-agent: *
+Allow: /
+
+# Provide the location of the sitemap
+Sitemap: https://prathameshdeshmukh.site/sitemap.xml
