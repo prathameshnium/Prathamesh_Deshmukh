@@ -1,16 +1,11 @@
 {
-  "name": "prathamesh_deshmukh",
+  "name": "prathamesh-deshmukh-portfolio",
   "version": "1.0.0",
   "description": "Academic Portfolio Website of Prathamesh K. Deshmukh",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1","build": "tailwindcss -i ./input.css -o ./_assets/style.css --minify"
-
+    "build": "npx tailwindcss -i ./input.css -o ./_assets/style.css --minify"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "tailwindcss": "^4.1.13"
+    "tailwindcss": "^3.4.0"
   }
 }
