@@ -4,6 +4,8 @@ This repository contains the source code for my personal academic portfolio webs
 
 Live Site: 
 https://www.prathameshdeshmukh.site
+
+Pages Link: 
 https://prathameshnium.github.io/Prathamesh_Deshmukh/index.html
 
 About The Project
