@@ -159,28 +159,7 @@
   "worksFor": {
     "@type": "Organization",
     "name": "UGC-DAE Consortium for Scientific Research, Mumbai"
-  },
-  "alumniOf": [
-    {
-      "@type": "CollegeOrUniversity",
-      "name": "Fergusson College, Savitribai Phule Pune University"
-    },
-    {
-      "@type": "CollegeOrUniversity",
-      "name": "Shri Shivaji Science College, Sant Gadge Baba Amravati University"
-    }
-  ],
-  "knowsAbout": [
-    "Multiferroic Composites",
-    "Neutron Diffraction", 
-    "X-Ray Diffraction", 
-    "Dielectric Spectroscopy",
-    "Scientific Programming", 
-    "Python", 
-    "Data Analysis",
-    "COMSOL",
-    "DFT"
-  ]
+  }
 }
 </script>
     
@@ -191,13 +170,23 @@
     <header class="bg-dark-bg/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-700">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold text-white font-serif">Prathamesh Deshmukh</a>
-            <nav class="hidden md:flex space-x-6">
+            <nav class="hidden md:flex items-center space-x-6">
                 <a href="#about" class="nav-link">About</a>
-                <a href="pages/research.html" class="nav-link">Research</a>
-                <a href="pages/presentations.html" class="nav-link">Presentations</a>
-                <a href="pages/cv.html" class="nav-link">CV</a>
+                <div class="relative group">
+                    <button class="nav-link flex items-center">
+                        Portfolio <i class="fas fa-chevron-down text-xs ml-2"></i>
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-card-bg rounded-md shadow-lg py-2 w-48 top-full mt-2 z-50">
+                        <a href="pages/research.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Research</a>
+                        <a href="pages/computational-works.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Computational</a>
+                        <a href="pages/presentations.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Presentations</a>
+                        <a href="pages/gallery.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Gallery</a>
+                        <a href="pages/blog.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Blog</a>
+                        <a href="pages/resources.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Resources</a>
+                    </div>
+                </div>
+                 <a href="pages/cv.html" class="nav-link">CV</a>
                 <a href="#journey" class="nav-link">Journey</a>
-                <a href="pages/computational-works.html" class="nav-link font-semibold">Computational Works</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
             <button id="mobile-menu-button" class="md:hidden text-white text-2xl">
@@ -208,10 +197,13 @@
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
             <a href="#about" class="block py-2 nav-link">About</a>
             <a href="pages/research.html" class="block py-2 nav-link">Research</a>
+            <a href="pages/computational-works.html" class="block py-2 nav-link">Computational</a>
             <a href="pages/presentations.html" class="block py-2 nav-link">Presentations</a>
             <a href="pages/cv.html" class="block py-2 nav-link">CV</a>
+            <a href="pages/gallery.html" class="block py-2 nav-link">Gallery</a>
+            <a href="pages/blog.html" class="block py-2 nav-link">Blog</a>
+            <a href="pages/resources.html" class="block py-2 nav-link">Resources</a>
             <a href="#journey" class="block py-2 nav-link">Journey</a>
-            <a href="pages/computational-works.html" class="block py-2 nav-link">Computational Works</a>
             <a href="#contact" class="block py-2 nav-link">Contact</a>
         </div>
     </header>
@@ -222,7 +214,7 @@
         <section id="about" class="min-h-screen flex items-center">
             <div class="w-full">
                 <h2 class="text-5xl font-bold section-title mb-4">Prathamesh Keshao Deshmukh</h2>
-                <h3 class="text-2xl text-accent-orange mb-6">PhD Scholar | Physics</h3>
+                <h3 class="text-2xl text-accent-orange mb-6">PhD Scholar | Condensed Matter Physics</h3>
                 <p class="text-lg max-w-3xl mb-8 text-light-slate">
                     A PhD researcher at the UGC-DAE Consortium for Scientific Research, specializing in the synthesis and characterization of multiferroic composites. My work focuses on exploring magnetoelectric coupling, utilizing advanced techniques like neutron diffraction and dielectric spectroscopy to uncover novel material properties.
                 </p>
@@ -232,7 +224,7 @@
                         <p class="text-slate">Publications</p>
                     </div>
                     <div class="text-center">
-                        <p class="text-3xl font-bold text-white">1</p>
+                        <p class="text-3xl font-bold text-white">1+</p>
                         <p class="text-slate">Citations</p>
                     </div>
                      <div class="text-center">
@@ -241,7 +233,7 @@
                     </div>
                 </div>
                  <!-- Social Links for About Section -->
-                <div class="flex flex-wrap gap-6 mb-10">
+                <div class="flex flex-wrap gap-6">
                     <a href="mailto:prathameshnium@duck.com" class="social-icon text-3xl" aria-label="Email"><i class="fas fa-envelope"></i></a>
                     <a href="https://scholar.google.com/citations?user=DJgzI30AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
                     <a href="https://www.linkedin.com/in/prathamesh-k-deshmukh" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -251,13 +243,6 @@
                     <a href="https://orcid.org/0009-0008-3278-0837" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl" aria-label="ORCID"><i class="fab fa-orcid"></i></a>
                     <a href="https://www.scopus.com/authid/detail.uri?authorId=59544780300" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl" aria-label="Scopus"><i class="fas fa-file-alt"></i></a>
                     <a href="https://www.webofscience.com/wos/author/record/OFN-9289-2025" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl" aria-label="Web of Science"><i class="fas fa-flask"></i></a>
-                </div>
-
-                <div>
-                    <a href="pages/computational-works.html" 
-                       class="cta-button inline-block bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-3 px-6 rounded-lg">
-                       View Computational Works
-                    </a>
                 </div>
             </div>
         </section>
@@ -309,25 +294,12 @@
                     <p class="text-sm text-slate mb-1">2019 - 2021</p>
                     <h4 class="font-bold text-lg text-accent-orange">M.Sc in Physics</h4>
                     <p class="font-semibold text-light-slate">Fergusson College, Savitribai Phule Pune University</p>
-                    <p class="text-slate text-sm mt-1">Project: "Review on Earth abundant electrocatalytic bifunctional materials..."</p>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <p class="text-sm text-slate mb-1">2016 - 2019</p>
                     <h4 class="font-bold text-lg text-accent-orange">B.Sc in Physics, Math, & Comp. App.</h4>
-                    <p class="font-semibold text-light-slate">Shri Shivaji Science College, Sant Gadge Baba Amravati University</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <p class="text-sm text-slate mb-1">2014 - 2016</p>
-                    <h4 class="font-bold text-lg text-accent-orange">Higher Secondary (HSC) - Science</h4>
-                    <p class="font-semibold text-light-slate">Independent Junior College Rural Institute, Amravati</p>
-                </div>
-                 <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <p class="text-sm text-slate mb-1">2014</p>
-                    <h4 class="font-bold text-lg text-accent-orange">Secondary School (SSC)</h4>
-                    <p class="font-semibold text-light-slate">Manibai Gujrati High School, Amravati</p>
+                    <p class="font-semibold text-light-slate">Shri Shivaji Science College, SGB Amravati University</p>
                 </div>
             </div>
         </section>
@@ -382,14 +354,17 @@
                     </div>
                 </div>
                 <!-- Programming & Automation -->
-                <div class="card p-6 rounded-lg">
+                <div class="card p-6 rounded-lg flex flex-col">
                     <h3 class="text-xl font-semibold text-accent-orange mb-4">Programming & Automation</h3>
-                    <p class="text-slate mb-4">Developing custom Python scripts (PyVISA) to interface with and automate laboratory instruments for precise data acquisition.</p>
-                    <ul class="space-y-2 text-slate">
-                        <li class="flex items-center"><i class="fas fa-bolt text-accent-orange mr-3 w-4 text-center"></i><span><strong>Keithley:</strong> 2400, 2182A, 6221, 6517B</span></li>
-                        <li class="flex items-center"><i class="fas fa-wave-square text-accent-orange mr-3 w-4 text-center"></i><span><strong>Keysight:</strong> E4980A LCR Meter</span></li>
-                        <li class="flex items-center"><i class="fas fa-thermometer-half text-accent-orange mr-3 w-4 text-center"></i><span><strong>Lakeshore:</strong> 340, 350 Controllers</span></li>
-                    </ul>
+                    <p class="text-slate mb-4 flex-grow">Developing custom Python scripts (PyVISA) to interface with and automate laboratory instruments for precise data acquisition.</p>
+                    <div class="mt-auto flex flex-wrap gap-4">
+                        <a href="pages/computational-works.html" class="cta-button text-sm flex-grow text-center bg-accent-orange/10 border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-4 rounded-lg">
+                            View All Projects
+                        </a>
+                        <a href="pages/project-pica.html" class="cta-button text-sm flex-grow text-center bg-accent-orange/10 border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-4 rounded-lg">
+                            PICA Project
+                        </a>
+                    </div>
                 </div>
                 <!-- Analysis & Simulation -->
                 <div class="card p-6 rounded-lg">
@@ -420,12 +395,6 @@
                  <div class="card p-4 rounded-lg">
                     <p class="text-light-slate"><i class="fas fa-chalkboard-teacher text-accent-orange mr-3"></i><strong>Attended:</strong> 6th National Workshop on Materials Chemistry, Mumbai (Oct 2023)</p>
                 </div>
-                <div class="card p-4 rounded-lg">
-                    <p class="text-light-slate"><i class="fas fa-chalkboard-teacher text-accent-orange mr-3"></i><strong>Attended:</strong> 7-Days Online FDP/Workshop on DFT Modelling of Materials (Dec 2023)</p>
-                </div>
-                <div class="card p-4 rounded-lg">
-                    <p class="text-light-slate"><i class="fas fa-file-alt text-accent-orange mr-3"></i><strong>Poster Presentation:</strong> 67th DAE Solid State Physics Symposium, GITAM, Visakhapatnam (Dec 2023)</p>
-                </div>
             </div>
              <div class="text-center mt-10">
                 <a href="pages/presentations.html" class="cta-button inline-block bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-3 px-6 rounded-lg">
@@ -434,71 +403,6 @@
             </div>
         </section>
 
-        <!-- Awards & Recognition Section -->
-        <section id="awards" class="py-20">
-            <h2 class="text-4xl font-bold section-title mb-8 text-center">Awards & Recognition</h2>
-            <div class="max-w-3xl mx-auto">
-                 <div class="card p-8 rounded-lg">
-                    <ul class="list-none space-y-4 text-light-slate">
-                        <li class="flex items-start">
-                            <i class="fas fa-award text-accent-orange mt-1 mr-4"></i>
-                            <span>Associated with the SERB-CRG Project Grant from the Anusandhan National Research Foundation (ANRF), DST, Govt. of India.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-award text-accent-orange mt-1 mr-4"></i>
-                            <span>Ranked 3rd in Class during M.Sc 2nd Year Physics at Fergusson College, Pune.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-award text-accent-orange mt-1 mr-4"></i>
-                            <span>Awarded 2nd Rank in a seminar competition at Technotsav-2019.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-award text-accent-orange mt-1 mr-4"></i>
-                            <span>Qualified the Savitribai Phule Pune University Ph.D. Entrance Examination.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Certifications Section -->
-        <section id="certifications" class="py-20">
-            <h2 class="text-4xl font-bold section-title mb-8 text-center">Certifications</h2>
-            <div class="max-w-3xl mx-auto space-y-4">
-                <div class="card p-6 rounded-lg">
-                     <p class="font-semibold text-white">Master COMSOL Multiphysics® Simulation Software</p>
-                     <p class="text-slate">Udemy</p>
-                </div>
-                 <div class="card p-6 rounded-lg">
-                     <p class="font-semibold text-white">NUCLEAR01x: Understanding Nuclear Energy</p>
-                     <p class="text-slate">Delft University of Technology (edX)</p>
-                </div>
-                 <div class="card p-6 rounded-lg">
-                     <p class="font-semibold text-white">Workshop on DFT Modelling of Materials</p>
-                     <p class="text-slate">Centre for Advanced Computational Research (CACR), New Delhi</p>
-                </div>
-                <div class="card p-6 rounded-lg">
-                     <p class="font-semibold text-white">Multiple Courses on Academic Research & Writing</p>
-                     <p class="text-slate">Elsevier</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Professional Memberships Section -->
-        <section id="memberships" class="py-20">
-            <h2 class="text-4xl font-bold section-title mb-8 text-center">Professional Memberships</h2>
-            <div class="max-w-3xl mx-auto">
-                 <div class="card p-8 rounded-lg">
-                     <div class="flex items-center">
-                         <i class="fas fa-user-friends text-accent-orange text-2xl mr-4"></i>
-                         <div>
-                             <h3 class="text-xl font-semibold text-white">Life Member</h3>
-                             <p class="text-slate">Neutron Scattering Society of India (NSSI)</p>
-                         </div>
-                     </div>
-                </div>
-            </div>
-        </section>
         
         <!-- Contact Section -->
         <section id="contact" class="py-20">
