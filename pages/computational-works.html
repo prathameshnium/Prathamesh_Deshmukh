@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta name="google-site-verification" content="BBD2ruTt1Learp2AGfIsuEvhs6mGe6PIA7RiXAQidzw" />
+    <meta name="msvalidate.01" content="40A91FE285DFAD89833CADC24238ECF9" />
+    <meta name="yandex-verification" content="7bb03b897fbfc0c1" />
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prathamesh Deshmukh | Computational Works</title>
+    <meta name="description" content="Computational portfolio for Prathamesh Deshmukh, showcasing projects in scientific programming, instrument control, data analysis, and simulation using Python.">
+
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.prathameshdeshmukh.site/computational.html">
+    <meta property="og:title" content="Prathamesh Deshmukh | Computational Works">
+    <meta property="og:image" content="https://www.prathameshdeshmukh.site/_assets/banner.png">
+    
+    <link rel="canonical" href="https://prathameshdeshmukh.site/computational.html">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Serif+Pro:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Source Serif Pro', 'serif'],
+            },
+            colors: {
+              'accent-orange': '#f6ad55', 
+              'dark-bg': '#1a202c',       
+              'card-bg': '#2d3748',
+              'light-slate': '#a8b2d1',
+              'slate': '#8892b0'
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        body {
+            background-color: #1a202c;
+            color: #e2e8f0;
+        }
+        .section-title {
+            font-family: 'Source Serif Pro', serif;
+            color: #ffffff;
+        }
+        .card {
+            background-color: #2d3748;
+            border: 1px solid #4a5568; 
+            transition: all 0.3s ease-in-out;
+        }
+        .card:hover {
+            border-color: #f6ad55;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .nav-link {
+            transition: color 0.3s;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #f6ad55;
+        }
+        .tag {
+            background-color: #4a5568;
+            color: #e2e8f0;
+        }
+        .social-link {
+            transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+            color: #a8b2d1;
+        }
+        .social-link:hover {
+            transform: translateY(-3px);
+            color: #f6ad55;
+        }
+        /* Scroll fade-in animation */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased font-sans">
+
+    <header class="bg-dark-bg/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-700">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold text-white font-serif">Prathamesh Deshmukh</a>
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="#about" class="nav-link text-sm">About</a>
+                <a href="#toolkit" class="nav-link text-sm">Toolkit</a>
+                <a href="#projects" class="nav-link text-sm">Projects</a>
+                <a href="#keywords" class="nav-link text-sm">Keywords</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#about" class="block py-2 nav-link">About</a>
+            <a href="#toolkit" class="block py-2 nav-link">Toolkit</a>
+            <a href="#projects" class="block py-2 nav-link">Projects</a>
+            <a href="#keywords" class="block py-2 nav-link">Keywords</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <section id="about" class="min-h-[80vh] flex items-center">
+            <div class="w-full grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-xl text-accent-orange mb-2">Prathamesh Deshmukh</h2>
+                    <h1 class="text-4xl md:text-5xl font-bold section-title mb-4">
+                        Computational Physics & Scientific Programming
+                    </h1>
+                    <p class="text-lg max-w-xl mt-6 mb-8 text-light-slate">
+                        A portfolio of projects focused on building robust computational solutions for scientific measurement, data analysis, and simulation, primarily within the field of experimental condensed matter physics.
+                    </p>
+                    <div class="flex items-center space-x-5">
+                        <a href="https://github.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-link text-2xl" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://gitlab.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-link text-2xl" aria-label="GitLab"><i class="fab fa-gitlab"></i></a>
+                        <a href="https://scholar.google.com/citations?user=DJgzI30AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" class="social-link text-2xl" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="mailto:prathameshnium@duck.com" class="social-link text-2xl" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="hidden md:flex justify-center items-center">
+                    <div class="w-80 h-80 bg-card-bg rounded-full flex justify-center items-center border-4 border-accent-orange/20 shadow-lg">
+                        <i class="fas fa-code text-9xl text-accent-orange"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="toolkit" class="py-20 fade-in-section">
+            <h2 class="text-4xl font-bold section-title mb-10 text-center">Technical Toolkit</h2>
+            <div class="card p-8 rounded-lg max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                    <div>
+                        <h3 class="text-xl font-semibold text-accent-orange mb-4">Core Programming</h3>
+                        <div class="flex justify-center md:justify-start items-center flex-wrap gap-4">
+                            <i class="fab fa-python text-4xl text-slate" title="Python"></i>
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/numpy/numpy-original.svg" alt="numpy" class="h-10" title="NumPy"/>
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/pandas/pandas-original.svg" alt="pandas" class="h-10" title="Pandas"/>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/SCIPY_2.svg" alt="scipy" class="h-8" title="SciPy"/>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Matplotlib_icon.svg/2048px-Matplotlib_icon.svg.png" alt="matplotlib" class="h-10" title="Matplotlib"/>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-accent-orange mb-4">Instrument Control</h3>
+                         <div class="flex justify-center md:justify-start items-center flex-wrap gap-4 h-full">
+                            <span class="tag px-3 py-1.5 rounded text-base">PyVISA</span>
+                         </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-accent-orange mb-4">Development & Docs</h3>
+                        <div class="flex justify-center md:justify-start items-center flex-wrap gap-4">
+                             <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/jupyter/jupyter-original-wordmark.svg" alt="jupyter" class="h-10" title="Jupyter"/>
+                            <i class="fab fa-git-alt text-4xl text-slate" title="Git"></i>
+                            <i class="fab fa-github text-4xl text-slate" title="GitHub"></i>
+                             <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/latex/latex-original.svg" alt="latex" class="h-10" title="LaTeX"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-20 fade-in-section">
+            <h2 class="text-4xl font-bold section-title mb-10 text-center">Featured Projects</h2>
+            <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-6">
+                
+                <div class="card p-6 rounded-lg flex flex-col">
+                    <div class="flex justify-between items-center mb-4">
+                        <i class="fas fa-cogs text-3xl text-accent-orange"></i>
+                        <span class="text-sm text-slate">Private Repository</span>
+                    </div>
+                    <h4 class="font-bold text-xl text-white mb-2">PICA: Python Instrument Control & Automation</h4>
+                    <p class="text-slate mb-4 flex-grow">A suite of scripts using `PyVISA` to automate lab instruments like Keithley, Lakeshore, and Keysight devices. Contact me for details.</p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="tag text-xs px-2 py-1 rounded">Python</span><span class="tag text-xs px-2 py-1 rounded">PyVISA</span><span class="tag text-xs px-2 py-1 rounded">NumPy</span><span class="tag text-xs px-2 py-1 rounded">Pandas</span>
+                    </div>
+                </div>
+
+                <div class="card p-6 rounded-lg flex flex-col">
+                    <div class="flex justify-between items-center mb-4">
+                        <i class="fas fa-project-diagram text-3xl text-accent-orange"></i>
+                        <a href="https://github.com/prathameshnium/Physics-Simulation-Toolkit" target="_blank" rel="noopener noreferrer" class="social-link text-2xl"><i class="fab fa-github"></i></a>
+                    </div>
+                    <h4 class="font-bold text-xl text-white mb-2">Physics Simulation Toolkit</h4>
+                    <p class="text-slate mb-4 flex-grow">Python scripts for simulating and visualizing phenomena in condensed matter physics, such as the Ising model for magnetic ordering.</p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="tag text-xs px-2 py-1 rounded">Python</span><span class="tag text-xs px-2 py-1 rounded">Jupyter</span><span class="tag text-xs px-2 py-1 rounded">NumPy</span><span class="tag text-xs px-2 py-1 rounded">SciPy</span>
+                    </div>
+                </div>
+
+                <div class="card p-6 rounded-lg flex flex-col">
+                    <div class="flex justify-between items-center mb-4">
+                        <i class="fas fa-calculator text-3xl text-accent-orange"></i>
+                        <a href="https://github.com/prathameshnium/Solid-State-Physics-Calculators" target="_blank" rel="noopener noreferrer" class="social-link text-2xl"><i class="fab fa-github"></i></a>
+                    </div>
+                    <h4 class="font-bold text-xl text-white mb-2">Solid-State Physics Calculators</h4>
+                    <p class="text-slate mb-4 flex-grow">Analysis scripts for experimental data, calculating properties like activation energy (Arrhenius) and charge transport (Mott-VRH).</p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="tag text-xs px-2 py-1 rounded">Python</span><span class="tag text-xs px-2 py-1 rounded">Pandas</span><span class="tag text-xs px-2 py-1 rounded">Matplotlib</span>
+                    </div>
+                </div>
+
+                <div class="card p-6 rounded-lg flex flex-col">
+                    <div class="flex justify-between items-center mb-4">
+                        <i class="fas fa-chart-line text-3xl text-accent-orange"></i>
+                        <a href="https://github.com/prathameshnium/Python-for-OriginPro" target="_blank" rel="noopener noreferrer" class="social-link text-2xl"><i class="fab fa-github"></i></a>
+                    </div>
+                    <h4 class="font-bold text-xl text-white mb-2">Python for OriginPro</h4>
+                    <p class="text-slate mb-4 flex-grow">Automation scripts using the `originpro` library to programmatically plot, fit, and generate reports in OriginLab software.</p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="tag text-xs px-2 py-1 rounded">Python</span><span class="tag text-xs px-2 py-1 rounded">originpro</span><span class="tag text-xs px-2 py-1 rounded">Pandas</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="keywords" class="py-20 fade-in-section">
+            <h2 class="text-4xl font-bold section-title mb-10 text-center">Areas of Expertise</h2>
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="flex flex-wrap justify-center gap-3">
+                    <span class="tag px-3 py-1 rounded-full">Scientific Computing</span>
+                    <span class="tag px-3 py-1 rounded-full">Experimental Physics</span>
+                    <span class="tag px-3 py-1 rounded-full">Data Analysis</span>
+                    <span class="tag px-3 py-1 rounded-full">Python</span>
+                    <span class="tag px-3 py-1 rounded-full">PyVISA</span>
+                    <span class="tag px-3 py-1 rounded-full">Instrument Control</span>
+                    <span class="tag px-3 py-1 rounded-full">Lab Automation</span>
+                    <span class="tag px-3 py-1 rounded-full">Materials Science</span>
+                    <span class="tag px-3 py-1 rounded-full">Condensed Matter Physics</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="border-t border-gray-800">
+        <div class="container mx-auto px-6 py-6 text-center text-slate">
+             <p>&copy; 2025 Prathamesh Keshao Deshmukh. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Mobile menu toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- Active nav link on scroll (Scrollspy) ---
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a, #mobile-menu a');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 70) { // 70 is header height offset
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // --- Fade-in sections on scroll ---
+        const faders = document.querySelectorAll('.fade-in-section');
+        const appearOptions = {
+            threshold: 0.2, // Trigger when 20% of the element is in view
+            rootMargin: "0px 0px -50px 0px" // Start animating a bit before it's fully in view
+        };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('is-visible');
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+    </script>
+
+</body>
+</html>
+
+
