@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentations | Prathamesh Deshmukh</title>
+    <meta name="description" content="A collection of academic and technical presentations by Prathamesh Keshao Deshmukh.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Serif+Pro:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Source Serif Pro', 'serif'],
+            },
+            colors: {
+              'accent-orange': '#f6ad55', 
+              'dark-bg': '#1a202c',       
+              'card-bg': '#2d3748',
+              'light-slate': '#a8b2d1',
+              'slate': '#8892b0'
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        body {
+            background-color: #1a202c;
+            color: #e2e8f0;
+        }
+        .section-title {
+            font-family: 'Source Serif Pro', serif;
+            color: #ffffff;
+        }
+         .card {
+            background-color: #2d3748;
+            border: 1px solid #4a5568; 
+            transition: all 0.3s ease-in-out;
+        }
+        .card:hover {
+            border-color: #f6ad55;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .nav-link {
+            transition: color 0.3s, border-bottom-color 0.3s;
+        }
+        .nav-link:hover {
+            color: #f6ad55;
+        }
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #f6ad55;
+            color: #1a202c;
+        }
+    </style>
+</head>
+<body class="antialiased font-sans">
+
+    <!-- Header & Navigation -->
+    <header class="bg-dark-bg/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-700">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-white font-serif">Presentations</h1>
+            <nav>
+                <a href="../index.html" class="nav-link">Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section id="presentations-list" class="py-10 max-w-4xl mx-auto">
+             <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold section-title mb-2">Talks & Seminars</h2>
+                <p class="text-lg text-slate">A collection of academic and technical presentations.</p>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Presentation 1 -->
+                <div class="card p-8 rounded-lg">
+                    <p class="text-sm text-slate mb-2">April 25, 2025 | Academic Seminar III</p>
+                    <h3 class="text-2xl font-semibold text-accent-orange mb-4">Multiferroics: A Comprehensive Overview</h3>
+                    <p class="text-light-slate mb-6">An in-depth presentation on multiferroic materials, covering the magnetoelectric effect, single-phase vs. composite systems, and recent examples from research, including work on BaFe₁₂O₁₉ and Li-doped CuO.</p>
+                    <a href="../assets/Multiferroics_Year3_PPT_V2_Prathamesh_Deshmukh.pdf" target="_blank" class="cta-button inline-block bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-5 rounded-lg">
+                        <i class="fas fa-file-pdf mr-2"></i> View Presentation
+                    </a>
+                </div>
+
+                <!-- Presentation 2 -->
+                <div class="card p-8 rounded-lg">
+                    <p class="text-sm text-slate mb-2">January 23, 2025 | Technical Talk</p>
+                    <h3 class="text-2xl font-semibold text-accent-orange mb-4">Ising Model in Python</h3>
+                    <p class="text-light-slate mb-6">A technical presentation on solving the 2D Ising model using Python. This talk covers the theoretical background, the Metropolis algorithm, and practical implementation with NumPy for simulating magnetic systems and phase transitions.</p>
+                    <a href="../assets/Python_Ising_Final.pdf" target="_blank" class="cta-button inline-block bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-5 rounded-lg">
+                        <i class="fas fa-file-pdf mr-2"></i> View Presentation
+                    </a>
+                </div>
+
+                <!-- Presentation 3 -->
+                <div class="card p-8 rounded-lg">
+                    <p class="text-sm text-slate mb-2">Academic Presentation</p>
+                    <h3 class="text-2xl font-semibold text-accent-orange mb-4">Fundamentals of Dielectrics</h3>
+                    <p class="text-light-slate mb-6">An overview of dielectric materials, covering the effects of electric fields, microscopic polarization mechanisms, frequency dependence, and special properties like ferroelectricity and piezoelectricity.</p>
+                    <a href="../assets/Dielectric_PPT.pdf" target="_blank" class="cta-button inline-block bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-5 rounded-lg">
+                        <i class="fas fa-file-pdf mr-2"></i> View Presentation
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 bg-dark-bg py-8 mt-12">
+        <div class="container mx-auto px-6 text-center text-slate">
+             <p>&copy; 2025 Prathamesh Keshao Deshmukh. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
