@@ -41,6 +41,12 @@
         .card {
             background-color: #2d3748;
             border: 1px solid #4a5568; 
+            transition: all 0.3s ease-in-out;
+        }
+        .card:hover {
+            border-color: #f6ad55;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
         .nav-link {
             transition: color 0.3s, border-bottom-color 0.3s;
@@ -57,6 +63,12 @@
         .cta-button:hover {
             background-color: #f6ad55;
             color: #1a202c;
+        }
+        code {
+            background-color: #4a5568;
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+            font-family: monospace;
         }
     </style>
 </head>
@@ -75,79 +87,91 @@
 
     <main class="container mx-auto px-6 py-12">
         <section id="pica-details" class="py-10">
-            <div class="max-w-4xl mx-auto">
+            <div class="max-w-5xl mx-auto">
+
                 <div class="text-center mb-12">
-                    <h2 class="text-4xl font-bold section-title mb-2">PICA: Python Instrument Control & Automation</h2>
-                    <p class="text-lg text-accent-orange">A suite of scripts for materials science and physics research.</p>
+                    <h2 class="text-4xl md:text-5xl font-bold section-title mb-2">PICA: Python Instrument Control & Automation</h2>
+                    <p class="text-lg text-slate">A suite of Python scripts using PyVISA to control and automate laboratory instruments for materials science and physics research.</p>
                 </div>
 
-                <div class="card p-8 rounded-lg mb-8">
-                    <h3 class="text-2xl font-semibold text-white mb-4">About This Project</h3>
-                    <p class="text-light-slate">
-                        This collection provides practical, ready-to-use Python scripts for automating common electrical and thermal characterization experiments. Each folder is dedicated to a specific instrument or measurement setup, containing the necessary control logic and GUI. A collection of official instrument manuals is available in the `_assets/Manuals` directory for reference.
-                    </p>
-                </div>
-
-                <div class="grid md:grid-cols-3 gap-8 mb-8">
-                    <div class="card p-6 rounded-lg col-span-1">
-                        <h3 class="text-xl font-semibold text-white mb-4">Core Dependencies</h3>
-                        <ul class="space-y-2 text-light-slate">
-                            <li><i class="fas fa-check-circle text-accent-orange/80 mr-2"></i>PyVISA</li>
-                            <li><i class="fas fa-check-circle text-accent-orange/80 mr-2"></i>PyMeasure</li>
-                            <li><i class="fas fa-check-circle text-accent-orange/80 mr-2"></i>NumPy</li>
-                            <li><i class="fas fa-check-circle text-accent-orange/80 mr-2"></i>Pandas</li>
+                <div class="grid lg:grid-cols-3 gap-8 mb-8">
+                    <!-- About Card -->
+                    <div class="card p-8 rounded-lg lg:col-span-2">
+                        <h3 class="text-2xl font-semibold text-white mb-4">About This Project</h3>
+                        <div class="space-y-4 text-light-slate">
+                            <p>This collection provides practical, ready-to-use Python scripts for automating common electrical and thermal characterization experiments. Each folder is dedicated to a specific instrument or measurement setup, containing the necessary control logic and GUI.</p>
+                            <p>A collection of official instrument manuals is available in the <code>_assets/Manuals</code> directory for reference.</p>
+                        </div>
+                    </div>
+                    <!-- Dependencies Card -->
+                    <div class="card p-8 rounded-lg">
+                        <h3 class="text-2xl font-semibold text-white mb-4">Core Dependencies</h3>
+                        <ul class="space-y-3 text-light-slate">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-accent-orange/80 mr-3"></i>PyVISA</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-accent-orange/80 mr-3"></i>PyMeasure</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-accent-orange/80 mr-3"></i>NumPy</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-accent-orange/80 mr-3"></i>Pandas</li>
                         </ul>
                     </div>
-                     <div class="card p-6 rounded-lg col-span-1 md:col-span-2">
-                        <h3 class="text-xl font-semibold text-white mb-4">Author & Acknowledgment</h3>
-                        <p class="text-light-slate">Developed by <strong>Prathamesh Deshmukh</strong></p>
-                        <p class="text-slate">Vision & Guidance by <strong>Dr. Sudip Mukherjee</strong></p>
-                        <p class="italic text-slate mt-2">UGC-DAE Consortium for Scientific Research, Mumbai Centre</p>
-                    </div>
                 </div>
 
+                <!-- Featured Systems -->
                 <div>
-                    <h3 class="text-3xl font-bold section-title mb-6 text-center">Featured Measurement Systems</h3>
+                    <h2 class="text-3xl font-semibold section-title mb-6 text-center">Featured Measurement Systems</h2>
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <div class="card p-6 rounded-lg">
-                            <h4 class="font-bold text-lg text-accent-orange">Low Resistance (Delta Mode)</h4>
+                            <h4 class="font-bold text-xl text-accent-orange">Low Resistance (Delta Mode)</h4>
                             <p class="text-sm text-slate mb-2">Keithley 6221/2182A</p>
                             <p class="text-light-slate"><strong>Measurements:</strong> I-V, Resistance vs. Temp.</p>
                         </div>
                         <div class="card p-6 rounded-lg">
-                            <h4 class="font-bold text-lg text-accent-orange">Mid Resistance (Four-Probe)</h4>
+                            <h4 class="font-bold text-xl text-accent-orange">Mid Resistance (Four-Probe)</h4>
                             <p class="text-sm text-slate mb-2">Keithley 2400, Keithley 2182</p>
                             <p class="text-light-slate"><strong>Measurements:</strong> I-V, Resistance vs. Temp.</p>
                         </div>
                         <div class="card p-6 rounded-lg">
-                            <h4 class="font-bold text-lg text-accent-orange">High Resistance</h4>
+                            <h4 class="font-bold text-xl text-accent-orange">High Resistance</h4>
                             <p class="text-sm text-slate mb-2">Keithley 6517B Electrometer</p>
                             <p class="text-light-slate"><strong>Measurements:</strong> I-V, Resistivity vs. Temp.</p>
                         </div>
                         <div class="card p-6 rounded-lg">
-                            <h4 class="font-bold text-lg text-accent-orange">LCR Measurements</h4>
+                            <h4 class="font-bold text-xl text-accent-orange">LCR Measurements</h4>
                             <p class="text-sm text-slate mb-2">Keysight E4980A LCR Meter</p>
                             <p class="text-light-slate"><strong>Measurement:</strong> Capacitance vs. Voltage</p>
                         </div>
                         <div class="card p-6 rounded-lg">
-                            <h4 class="font-bold text-lg text-accent-orange">Pyroelectric Measurements</h4>
+                            <h4 class="font-bold text-xl text-accent-orange">Pyroelectric Measurements</h4>
                             <p class="text-sm text-slate mb-2">Keithley 6517B, Lakeshore</p>
                             <p class="text-light-slate"><strong>Measurement:</strong> Pyroelectric Current vs. Temp.</p>
                         </div>
-                         <div class="card p-6 rounded-lg">
-                            <h4 class="font-bold text-lg text-accent-orange">AC Transport</h4>
+                        <div class="card p-6 rounded-lg">
+                            <h4 class="font-bold text-xl text-accent-orange">AC Transport</h4>
                             <p class="text-sm text-slate mb-2">Lock-in Amplifier (e.g., SR830)</p>
                             <p class="text-light-slate"><strong>Measurement:</strong> AC Resistance</p>
                         </div>
-                        <div class="card p-6 rounded-lg col-span-1 lg:col-span-3">
-                             <h4 class="font-bold text-lg text-accent-orange">Temperature Control</h4>
+                        <div class="card p-6 rounded-lg lg:col-span-3">
+                             <h4 class="font-bold text-xl text-accent-orange">Temperature Control</h4>
                             <p class="text-sm text-slate mb-2">Lakeshore 340/350</p>
                             <p class="text-light-slate"><strong>Function:</strong> Environmental control and temperature ramping.</p>
                         </div>
                     </div>
                 </div>
 
-                 <div class="text-center mt-12">
+                <!-- Author & License -->
+                <div class="grid md:grid-cols-2 gap-8 mt-8">
+                    <div class="card p-8 rounded-lg">
+                        <h3 class="text-2xl font-semibold text-white mb-4">Author & Acknowledgment</h3>
+                        <p class="text-light-slate mb-2">Developed by <strong>Prathamesh Deshmukh</strong></p>
+                        <p class="text-slate">Vision & Guidance by <strong>Dr. Sudip Mukherjee</strong></p>
+                        <p class="italic text-slate mt-2">UGC-DAE Consortium for Scientific Research, Mumbai Centre</p>
+                    </div>
+                     <div class="card p-8 rounded-lg">
+                        <h3 class="text-2xl font-semibold text-white mb-4">License</h3>
+                        <p class="text-light-slate">This project is licensed under the MIT License. See the <code>LICENSE</code> file for details.</p>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12">
                     <a href="https://github.com/prathameshnium/PICA-Python-Instrument-Control-and-Automation" target="_blank" rel="noopener noreferrer" class="cta-button inline-block bg-accent-orange border-2 border-accent-orange text-dark-bg font-semibold py-3 px-8 rounded-lg">
                         <i class="fab fa-github mr-2"></i> View on GitHub
                     </a>
@@ -165,3 +189,4 @@
 
 </body>
 </html>
+
