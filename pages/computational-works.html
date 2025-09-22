@@ -1,36 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta name="google-site-verification" content="BBD2ruTt1Learp2AGfIsuEvhs6mGe6PIA7RiXAQidzw" />
-    <meta name="msvalidate.01" content="40A91FE285DFAD89833CADC24238ECF9" />
-    <meta name="yandex-verification" content="7bb03b897fbfc0c1" />
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prathamesh Deshmukh | Computational Works</title>
     <meta name="description" content="Computational portfolio for Prathamesh Deshmukh, showcasing projects in scientific programming, instrument control, data analysis, and simulation using Python.">
-
-    <meta name="robots" content="index, follow">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.prathameshdeshmukh.site/computational.html">
-    <meta property="og:title" content="Prathamesh Deshmukh | Computational Works">
-    <meta property="og:image" content="https://www.prathameshdeshmukh.site/_assets/banner.png">
-    
-    <link rel="canonical" href="https://prathameshdeshmukh.site/computational.html">
-
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-
-    <link rel="manifest" href="/site.webmanifest">
-    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Serif+Pro:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <script>
       tailwind.config = {
         theme: {
@@ -70,51 +49,55 @@
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
         .nav-link {
-            transition: color 0.3s;
+            transition: color 0.3s, border-bottom-color 0.3s;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 4px;
         }
         .nav-link:hover, .nav-link.active {
             color: #f6ad55;
+            border-bottom-color: #f6ad55;
         }
         .tag {
             background-color: #4a5568;
             color: #e2e8f0;
         }
-        .social-link {
+        .social-icon {
             transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
-            color: #a8b2d1;
         }
-        .social-link:hover {
-            transform: translateY(-3px);
+        .social-icon:hover {
+            transform: translateY(-3px) scale(1.1);
             color: #f6ad55;
         }
-        /* Scroll fade-in animation */
-        .fade-in-section {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        .cta-button {
+            transition: all 0.3s ease;
         }
-        .fade-in-section.is-visible {
-            opacity: 1;
-            transform: translateY(0);
+        .cta-button:hover {
+            background-color: #f6ad55;
+            color: #1a202c;
         }
     </style>
+    
 </head>
 <body class="antialiased font-sans">
 
+    <!-- Header & Navigation -->
     <header class="bg-dark-bg/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-700">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-xl font-bold text-white font-serif">Prathamesh Deshmukh</a>
-            <nav class="hidden md:flex items-center space-x-6">
-                <a href="#about" class="nav-link text-sm">About</a>
-                <a href="#toolkit" class="nav-link text-sm">Toolkit</a>
-                <a href="#projects" class="nav-link text-sm">Projects</a>
-                <a href="#keywords" class="nav-link text-sm">Keywords</a>
+            <h1 class="text-2xl font-bold text-white font-serif">Computational Works</h1>
+            <nav class="hidden md:flex space-x-8">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#toolkit" class="nav-link">Toolkit</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#keywords" class="nav-link">Keywords</a>
             </nav>
             <button id="mobile-menu-button" class="md:hidden text-white text-2xl">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="../index.html" class="block py-2 nav-link">Home</a>
             <a href="#about" class="block py-2 nav-link">About</a>
             <a href="#toolkit" class="block py-2 nav-link">Toolkit</a>
             <a href="#projects" class="block py-2 nav-link">Projects</a>
@@ -124,121 +107,117 @@
 
     <main class="container mx-auto px-6 py-12">
 
-        <section id="about" class="min-h-[80vh] flex items-center">
-            <div class="w-full grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-xl text-accent-orange mb-2">Prathamesh Deshmukh</h2>
-                    <h1 class="text-4xl md:text-5xl font-bold section-title mb-4">
-                        Computational Physics & Scientific Programming
-                    </h1>
-                    <p class="text-lg max-w-xl mt-6 mb-8 text-light-slate">
-                        A portfolio of projects focused on building robust computational solutions for scientific measurement, data analysis, and simulation, primarily within the field of experimental condensed matter physics.
-                    </p>
-                    <div class="flex items-center space-x-5">
-                        <a href="https://github.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-link text-2xl" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://gitlab.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-link text-2xl" aria-label="GitLab"><i class="fab fa-gitlab"></i></a>
-                        <a href="https://scholar.google.com/citations?user=DJgzI30AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" class="social-link text-2xl" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-                        <a href="mailto:prathameshnium@duck.com" class="social-link text-2xl" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-                <div class="hidden md:flex justify-center items-center">
-                    <div class="w-80 h-80 bg-card-bg rounded-full flex justify-center items-center border-4 border-accent-orange/20 shadow-lg">
-                        <i class="fas fa-code text-9xl text-accent-orange"></i>
-                    </div>
+        <!-- About Section -->
+        <section id="about" class="py-20 text-center">
+            <div class="w-full max-w-4xl mx-auto">
+                <i class="fas fa-code text-5xl text-accent-orange mb-4"></i>
+                <h2 class="text-5xl font-bold section-title mb-4">Computational Physics & Scientific Programming</h2>
+                <p class="text-lg max-w-3xl mx-auto mb-8 text-light-slate">
+                    This portfolio showcases a collection of my projects focused on instrument control, data analysis, and simulation. Below, you will find highlights of my key projects, the technical tools I use, and links to my work.
+                </p>
+                <div class="flex justify-center flex-wrap gap-4">
+                    <a href="https://github.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl text-slate" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://gitlab.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl text-slate" aria-label="GitLab"><i class="fab fa-gitlab"></i></a>
+                    <a href="https://scholar.google.com/citations?user=DJgzI30AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl text-slate" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="mailto:prathameshnium@duck.com" class="social-icon text-3xl text-slate" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
         </section>
 
-        <section id="toolkit" class="py-20 fade-in-section">
+        <!-- Toolkit Section -->
+        <section id="toolkit" class="py-20">
             <h2 class="text-4xl font-bold section-title mb-10 text-center">Technical Toolkit</h2>
-            <div class="card p-8 rounded-lg max-w-5xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-                    <div>
-                        <h3 class="text-xl font-semibold text-accent-orange mb-4">Core Programming</h3>
-                        <div class="flex justify-center md:justify-start items-center flex-wrap gap-4">
-                            <i class="fab fa-python text-4xl text-slate" title="Python"></i>
-                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/numpy/numpy-original.svg" alt="numpy" class="h-10" title="NumPy"/>
-                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/pandas/pandas-original.svg" alt="pandas" class="h-10" title="Pandas"/>
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/SCIPY_2.svg" alt="scipy" class="h-8" title="SciPy"/>
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Matplotlib_icon.svg/2048px-Matplotlib_icon.svg.png" alt="matplotlib" class="h-10" title="Matplotlib"/>
-                        </div>
+            <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8">
+                <div class="card p-6 rounded-lg text-center">
+                    <h3 class="text-xl font-semibold text-accent-orange mb-4">Core Programming</h3>
+                    <div class="flex justify-center items-center flex-wrap gap-4">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40" title="Python"/>
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/numpy/numpy-original.svg" alt="numpy" width="40" height="40" title="NumPy"/>
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/pandas/pandas-original.svg" alt="pandas" width="40" height="40" title="Pandas"/>
+                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Matplotlib_icon.svg/2048px-Matplotlib_icon.svg.png" alt="matplotlib" width="40" height="40" title="Matplotlib"/>
                     </div>
-                    <div>
-                        <h3 class="text-xl font-semibold text-accent-orange mb-4">Instrument Control</h3>
-                         <div class="flex justify-center md:justify-start items-center flex-wrap gap-4 h-full">
-                            <span class="tag px-3 py-1.5 rounded text-base">PyVISA</span>
-                         </div>
+                </div>
+                <div class="card p-6 rounded-lg text-center">
+                    <h3 class="text-xl font-semibold text-accent-orange mb-4">Instrument Control</h3>
+                     <div class="flex justify-center items-center flex-wrap gap-4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/SCIPY_2.svg" alt="scipy" width="40" height="40" title="SciPy"/>
+                        <span class="text-2xl font-bold text-white" title="PyVISA">PyVISA</span>
                     </div>
-                    <div>
-                        <h3 class="text-xl font-semibold text-accent-orange mb-4">Development & Docs</h3>
-                        <div class="flex justify-center md:justify-start items-center flex-wrap gap-4">
-                             <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/jupyter/jupyter-original-wordmark.svg" alt="jupyter" class="h-10" title="Jupyter"/>
-                            <i class="fab fa-git-alt text-4xl text-slate" title="Git"></i>
-                            <i class="fab fa-github text-4xl text-slate" title="GitHub"></i>
-                             <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/latex/latex-original.svg" alt="latex" class="h-10" title="LaTeX"/>
-                        </div>
+                </div>
+                <div class="card p-6 rounded-lg text-center">
+                    <h3 class="text-xl font-semibold text-accent-orange mb-4">Development & Docs</h3>
+                    <div class="flex justify-center items-center flex-wrap gap-4">
+                        <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40" title="Git"/>
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/jupyter/jupyter-original-wordmark.svg" alt="jupyter" width="40" height="40" title="Jupyter"/>
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/latex/latex-original.svg" alt="latex" width="40" height="40" title="LaTeX"/>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="py-20 fade-in-section">
-            <h2 class="text-4xl font-bold section-title mb-10 text-center">Featured Projects</h2>
+        <!-- Projects Section -->
+        <section id="projects" class="py-20">
+            <h2 class="text-4xl font-bold section-title mb-10 text-center">Highlighted Projects</h2>
             <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-6">
                 
                 <div class="card p-6 rounded-lg flex flex-col">
-                    <div class="flex justify-between items-center mb-4">
-                        <i class="fas fa-cogs text-3xl text-accent-orange"></i>
-                        <span class="text-sm text-slate">Private Repository</span>
+                    <h4 class="font-bold text-xl text-accent-orange mb-2">PICA: Python Instrument Control & Automation</h4>
+                    <p class="text-slate mb-4 flex-grow">A comprehensive suite of Python scripts using PyVISA to control and automate laboratory instruments for materials science and physics research.</p>
+                    <div class="flex flex-wrap gap-2 mt-auto mb-6">
+                        <span class="tag px-3 py-1 rounded-full">Python</span><span class="tag px-3 py-1 rounded-full">PyVISA</span><span class="tag px-3 py-1 rounded-full">PyMeasure</span><span class="tag px-3 py-1 rounded-full">GUI</span>
                     </div>
-                    <h4 class="font-bold text-xl text-white mb-2">PICA: Python Instrument Control & Automation</h4>
-                    <p class="text-slate mb-4 flex-grow">A suite of scripts using `PyVISA` to automate lab instruments like Keithley, Lakeshore, and Keysight devices. Contact me for details.</p>
+                     <a href="project-pica.html" class="cta-button text-center bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-4 rounded-lg">
+                        Learn More <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <div class="card p-6 rounded-lg flex flex-col">
+                    <h4 class="font-bold text-xl text-accent-orange mb-2"><a href="https://github.com/prathameshnium/Physics-Simulation-Toolkit" target="_blank" rel="noopener noreferrer" class="hover:underline">Physics-Simulation-Toolkit</a></h4>
+                    <p class="text-slate mb-4 flex-grow">A collection of scripts for simulating and visualizing phenomena in condensed matter physics, including the Ising model and dielectric models.</p>
                     <div class="flex flex-wrap gap-2 mt-auto">
-                        <span class="tag text-xs px-2 py-1 rounded">Python</span><span class="tag text-xs px-2 py-1 rounded">PyVISA</span><span class="tag text-xs px-2 py-1 rounded">NumPy</span><span class="tag text-xs px-2 py-1 rounded">Pandas</span>
+                        <span class="tag px-3 py-1 rounded-full">Python</span><span class="tag px-3 py-1 rounded-full">Jupyter</span><span class="tag px-3 py-1 rounded-full">NumPy</span><span class="tag px-3 py-1 rounded-full">SciPy</span>
                     </div>
                 </div>
 
                 <div class="card p-6 rounded-lg flex flex-col">
-                    <div class="flex justify-between items-center mb-4">
-                        <i class="fas fa-project-diagram text-3xl text-accent-orange"></i>
-                        <a href="https://github.com/prathameshnium/Physics-Simulation-Toolkit" target="_blank" rel="noopener noreferrer" class="social-link text-2xl"><i class="fab fa-github"></i></a>
-                    </div>
-                    <h4 class="font-bold text-xl text-white mb-2">Physics Simulation Toolkit</h4>
-                    <p class="text-slate mb-4 flex-grow">Python scripts for simulating and visualizing phenomena in condensed matter physics, such as the Ising model for magnetic ordering.</p>
+                    <h4 class="font-bold text-xl text-accent-orange mb-2"><a href="https://github.com/prathameshnium/Solid-State-Physics-Calculators" target="_blank" rel="noopener noreferrer" class="hover:underline">Solid-State-Physics-Calculators</a></h4>
+                    <p class="text-slate mb-4 flex-grow">Scripts for analyzing experimental data, including calculations for activation energy (Arrhenius) and charge transport (Mott-VRH models).</p>
                     <div class="flex flex-wrap gap-2 mt-auto">
-                        <span class="tag text-xs px-2 py-1 rounded">Python</span><span class="tag text-xs px-2 py-1 rounded">Jupyter</span><span class="tag text-xs px-2 py-1 rounded">NumPy</span><span class="tag text-xs px-2 py-1 rounded">SciPy</span>
+                        <span class="tag px-3 py-1 rounded-full">Python</span><span class="tag px-3 py-1 rounded-full">Pandas</span><span class="tag px-3 py-1 rounded-full">Matplotlib</span>
                     </div>
                 </div>
 
                 <div class="card p-6 rounded-lg flex flex-col">
-                    <div class="flex justify-between items-center mb-4">
-                        <i class="fas fa-calculator text-3xl text-accent-orange"></i>
-                        <a href="https://github.com/prathameshnium/Solid-State-Physics-Calculators" target="_blank" rel="noopener noreferrer" class="social-link text-2xl"><i class="fab fa-github"></i></a>
-                    </div>
-                    <h4 class="font-bold text-xl text-white mb-2">Solid-State Physics Calculators</h4>
-                    <p class="text-slate mb-4 flex-grow">Analysis scripts for experimental data, calculating properties like activation energy (Arrhenius) and charge transport (Mott-VRH).</p>
+                    <h4 class="font-bold text-xl text-accent-orange mb-2"><a href="https://github.com/prathameshnium/Python-for-OriginPro" target="_blank" rel="noopener noreferrer" class="hover:underline">Python-for-OriginPro</a></h4>
+                    <p class="text-slate mb-4 flex-grow">Scripts using the `originpro` library to automate plotting, data fitting, and report generation directly within OriginLab's software.</p>
                     <div class="flex flex-wrap gap-2 mt-auto">
-                        <span class="tag text-xs px-2 py-1 rounded">Python</span><span class="tag text-xs px-2 py-1 rounded">Pandas</span><span class="tag text-xs px-2 py-1 rounded">Matplotlib</span>
+                        <span class="tag px-3 py-1 rounded-full">Python</span><span class="tag px-3 py-1 rounded-full">originpro</span><span class="tag px-3 py-1 rounded-full">Pandas</span>
+                    </div>
+                </div>
+                
+                <div class="card p-6 rounded-lg flex flex-col">
+                    <h4 class="font-bold text-xl text-accent-orange mb-2"><a href="https://github.com/prathameshnium/Ketron" target="_blank" rel="noopener noreferrer" class="hover:underline">Ketron</a></h4>
+                    <p class="text-slate mb-4 flex-grow">An open-source knowledge base and archive of code snippets, experimental scripts, and small projects developed during my research.</p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="tag px-3 py-1 rounded-full">Python</span><span class="tag px-3 py-1 rounded-full">Jupyter</span><span class="tag px-3 py-1 rounded-full">LaTeX</span><span class="tag px-3 py-1 rounded-full">MATLAB</span>
                     </div>
                 </div>
 
                 <div class="card p-6 rounded-lg flex flex-col">
-                    <div class="flex justify-between items-center mb-4">
-                        <i class="fas fa-chart-line text-3xl text-accent-orange"></i>
-                        <a href="https://github.com/prathameshnium/Python-for-OriginPro" target="_blank" rel="noopener noreferrer" class="social-link text-2xl"><i class="fab fa-github"></i></a>
-                    </div>
-                    <h4 class="font-bold text-xl text-white mb-2">Python for OriginPro</h4>
-                    <p class="text-slate mb-4 flex-grow">Automation scripts using the `originpro` library to programmatically plot, fit, and generate reports in OriginLab software.</p>
+                    <h4 class="font-bold text-xl text-accent-orange mb-2"><a href="https://github.com/prathameshnium/Scientific-Python-Snippets" target="_blank" rel="noopener noreferrer" class="hover:underline">Scientific-Python-Snippets</a></h4>
+                    <p class="text-slate mb-4 flex-grow">A curated collection of small, reusable Python scripts for common data handling, file manipulation, and automation tasks.</p>
                     <div class="flex flex-wrap gap-2 mt-auto">
-                        <span class="tag text-xs px-2 py-1 rounded">Python</span><span class="tag text-xs px-2 py-1 rounded">originpro</span><span class="tag text-xs px-2 py-1 rounded">Pandas</span>
+                        <span class="tag px-3 py-1 rounded-full">Python</span><span class="tag px-3 py-1 rounded-full">Tkinter</span><span class="tag px-3 py-1 rounded-full">Pandas</span>
                     </div>
                 </div>
+
             </div>
         </section>
 
-        <section id="keywords" class="py-20 fade-in-section">
-            <h2 class="text-4xl font-bold section-title mb-10 text-center">Areas of Expertise</h2>
-            <div class="max-w-4xl mx-auto text-center">
+        <!-- Keywords Section -->
+        <section id="keywords" class="py-20">
+            <h2 class="text-4xl font-bold section-title mb-8 text-center">Keywords & Expertise</h2>
+            <div class="card p-8 rounded-lg max-w-4xl mx-auto">
                 <div class="flex flex-wrap justify-center gap-3">
                     <span class="tag px-3 py-1 rounded-full">Scientific Computing</span>
                     <span class="tag px-3 py-1 rounded-full">Experimental Physics</span>
@@ -246,15 +225,22 @@
                     <span class="tag px-3 py-1 rounded-full">Python</span>
                     <span class="tag px-3 py-1 rounded-full">PyVISA</span>
                     <span class="tag px-3 py-1 rounded-full">Instrument Control</span>
-                    <span class="tag px-3 py-1 rounded-full">Lab Automation</span>
                     <span class="tag px-3 py-1 rounded-full">Materials Science</span>
+                    <span class="tag px-3 py-1 rounded-full">Multiferroics</span>
                     <span class="tag px-3 py-1 rounded-full">Condensed Matter Physics</span>
+                    <span class="tag px-3 py-1 rounded-full">COMSOL Multiphysics</span>
+                    <span class="tag px-3 py-1 rounded-full">Data Visualization</span>
+                    <span class="tag px-3 py-1 rounded-full">Lab Automation</span>
+                    <span class="tag px-3 py-1 rounded-full">NumPy</span>
+                    <span class="tag px-3 py-1 rounded-full">Pandas</span>
+                    <span class="tag px-3 py-1 rounded-full">SciPy</span>
                 </div>
             </div>
         </section>
 
     </main>
     
+    <!-- Footer -->
     <footer class="border-t border-gray-800">
         <div class="container mx-auto px-6 py-6 text-center text-slate">
              <p>&copy; 2025 Prathamesh Keshao Deshmukh. All Rights Reserved.</p>
@@ -262,22 +248,22 @@
     </footer>
 
     <script>
-        // --- Mobile menu toggle ---
+        // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // --- Active nav link on scroll (Scrollspy) ---
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('nav a, #mobile-menu a');
+        // Active nav link scrolling
+        const sections = document.querySelectorAll('main section');
+        const navLinks = document.querySelectorAll('nav a');
         
         window.addEventListener('scroll', () => {
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 70) { // 70 is header height offset
+                if (pageYOffset >= sectionTop - 100) {
                     current = section.getAttribute('id');
                 }
             });
@@ -289,31 +275,8 @@
                 }
             });
         });
-
-        // --- Fade-in sections on scroll ---
-        const faders = document.querySelectorAll('.fade-in-section');
-        const appearOptions = {
-            threshold: 0.2, // Trigger when 20% of the element is in view
-            rootMargin: "0px 0px -50px 0px" // Start animating a bit before it's fully in view
-        };
-
-        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) {
-                    return;
-                } else {
-                    entry.target.classList.add('is-visible');
-                    appearOnScroll.unobserve(entry.target);
-                }
-            });
-        }, appearOptions);
-
-        faders.forEach(fader => {
-            appearOnScroll.observe(fader);
-        });
     </script>
 
 </body>
 </html>
-
 
