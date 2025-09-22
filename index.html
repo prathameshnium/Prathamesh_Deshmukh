@@ -33,6 +33,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Serif+Pro:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C4JV6510PN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-C4JV6510PN');
+    </script>
+
     <script>
       tailwind.config = {
         theme: {
@@ -172,21 +182,23 @@
             <a href="index.html" class="text-2xl font-bold text-white font-serif">Prathamesh Deshmukh</a>
             <nav class="hidden md:flex items-center space-x-6">
                 <a href="#about" class="nav-link">About</a>
+                <a href="#research" class="nav-link">Research</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#journey" class="nav-link">Journey</a>
                 <div class="relative group">
                     <button class="nav-link flex items-center">
                         Portfolio <i class="fas fa-chevron-down text-xs ml-2"></i>
                     </button>
-                    <div class="absolute hidden group-hover:block bg-card-bg rounded-md shadow-lg py-2 w-48 top-full mt-2 z-50">
+                    <div class="absolute hidden group-hover:block bg-card-bg rounded-md shadow-lg py-2 w-48 top-full right-0 mt-2 z-50">
                         <a href="pages/research.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Research</a>
                         <a href="pages/computational-works.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Computational</a>
                         <a href="pages/presentations.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Presentations</a>
                         <a href="pages/gallery.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Gallery</a>
                         <a href="pages/blog.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Blog</a>
                         <a href="pages/resources.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Resources</a>
+                         <a href="pages/cv.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">CV</a>
                     </div>
                 </div>
-                 <a href="pages/cv.html" class="nav-link">CV</a>
-                <a href="#journey" class="nav-link">Journey</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
             <button id="mobile-menu-button" class="md:hidden text-white text-2xl">
@@ -195,16 +207,14 @@
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-            <a href="#about" class="block py-2 nav-link">About</a>
-            <a href="pages/research.html" class="block py-2 nav-link">Research</a>
-            <a href="pages/computational-works.html" class="block py-2 nav-link">Computational</a>
-            <a href="pages/presentations.html" class="block py-2 nav-link">Presentations</a>
-            <a href="pages/cv.html" class="block py-2 nav-link">CV</a>
-            <a href="pages/gallery.html" class="block py-2 nav-link">Gallery</a>
-            <a href="pages/blog.html" class="block py-2 nav-link">Blog</a>
-            <a href="pages/resources.html" class="block py-2 nav-link">Resources</a>
-            <a href="#journey" class="block py-2 nav-link">Journey</a>
-            <a href="#contact" class="block py-2 nav-link">Contact</a>
+             <a href="#about" class="block py-2 nav-link">About</a>
+             <a href="#research" class="block py-2 nav-link">Research</a>
+             <a href="#skills" class="block py-2 nav-link">Skills</a>
+             <a href="#journey" class="block py-2 nav-link">Journey</a>
+             <a href="#contact" class="block py-2 nav-link">Contact</a>
+             <a href="pages/research.html" class="block pt-4 mt-2 border-t border-gray-700 nav-link">Research Page</a>
+             <a href="pages/computational-works.html" class="block py-2 nav-link">Computational Page</a>
+             <a href="pages/presentations.html" class="block py-2 nav-link">Presentations Page</a>
         </div>
     </header>
 
