@@ -467,18 +467,22 @@
             });
         });
 
-        // *** NEW SCRIPT FOR CLICKABLE DROPDOWN ***
+        // *** ROBUST SCRIPT FOR CLICKABLE DROPDOWN ***
         const portfolioButton = document.getElementById('portfolio-button');
         const portfolioMenu = document.getElementById('portfolio-menu');
 
+        // Toggle menu when button is clicked
         portfolioButton.addEventListener('click', (event) => {
-            // Stop the click from bubbling up to the window
-            event.stopPropagation();
-            // Toggle the 'hidden' class on the menu
+            event.stopPropagation(); // Prevents the window click event from firing
             portfolioMenu.classList.toggle('hidden');
         });
 
-        // Close the dropdown if the user clicks anywhere else on the page
+        // Prevent the menu from closing when you click inside it
+        portfolioMenu.addEventListener('click', (event) => {
+            event.stopPropagation(); // Clicks inside the menu won't close it
+        });
+
+        // Close the menu if a click happens anywhere else on the page
         window.addEventListener('click', () => {
             if (!portfolioMenu.classList.contains('hidden')) {
                 portfolioMenu.classList.add('hidden');
