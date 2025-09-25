@@ -33,7 +33,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Serif+Pro:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C4JV6510PN"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -176,7 +175,6 @@
 </head>
 <body class="antialiased font-sans">
 
-    <!-- Header & Navigation -->
     <header class="bg-dark-bg/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-700">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold text-white font-serif">Prathamesh Deshmukh</a>
@@ -185,11 +183,11 @@
                 <a href="#research" class="nav-link">Research</a>
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#journey" class="nav-link">Journey</a>
-                <div class="relative group">
-                    <button class="nav-link flex items-center">
+                <div class="relative">
+                    <button id="portfolio-button" class="nav-link flex items-center">
                         Portfolio <i class="fas fa-chevron-down text-xs ml-2"></i>
                     </button>
-                    <div class="absolute hidden group-hover:block bg-card-bg rounded-md shadow-lg py-2 w-48 top-full right-0 mt-2 z-50">
+                    <div id="portfolio-menu" class="absolute hidden bg-card-bg rounded-md shadow-lg py-2 w-48 top-full right-0 mt-2 z-50">
                         <a href="pages/research.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Research</a>
                         <a href="pages/computational-works.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Computational</a>
                         <a href="pages/presentations.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Presentations</a>
@@ -205,7 +203,6 @@
                 <i class="fas fa-bars"></i>
             </button>
         </div>
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
              <a href="#about" class="block py-2 nav-link">About</a>
              <a href="#research" class="block py-2 nav-link">Research</a>
@@ -220,7 +217,6 @@
 
     <main class="container mx-auto px-6 py-12">
 
-        <!-- About Section -->
         <section id="about" class="min-h-screen flex items-center">
             <div class="w-full">
                 <h2 class="text-5xl font-bold section-title mb-4">Prathamesh Keshao Deshmukh</h2>
@@ -242,8 +238,7 @@
                         <p class="text-slate">H-Index</p>
                     </div>
                 </div>
-                 <!-- Social Links for About Section -->
-                <div class="flex flex-wrap gap-6">
+                  <div class="flex flex-wrap gap-6">
                     <a href="mailto:prathameshnium@duck.com" class="social-icon text-3xl" aria-label="Email"><i class="fas fa-envelope"></i></a>
                     <a href="https://scholar.google.com/citations?user=DJgzI30AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
                     <a href="https://www.linkedin.com/in/prathamesh-k-deshmukh" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -257,11 +252,9 @@
             </div>
         </section>
 
-        <!-- Research Section -->
         <section id="research" class="py-20">
             <h2 class="text-4xl font-bold section-title mb-10 text-center">Research Profile</h2>
             <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-stretch">
-                <!-- Core Research Theme Card -->
                 <div class="card p-8 rounded-lg flex flex-col">
                     <div class="flex items-center mb-4">
                         <i class="fas fa-atom text-3xl text-accent-orange mr-4"></i>
@@ -273,14 +266,13 @@
                         Explore My Research <i class="fas fa-arrow-right ml-2 text-xs"></i>
                     </a>
                 </div>
-                <!-- Key Activities Card -->
                 <div class="card p-8 rounded-lg">
                      <div class="flex items-center mb-4">
                         <i class="fas fa-flask text-3xl text-accent-orange mr-4"></i>
                         <h3 class="text-2xl font-semibold text-white">Key Activities</h3>
                     </div>
                     <ul class="space-y-4 text-slate">
-                        <li class="flex items-start"><i class="fas fa-check-circle text-accent-orange/80 mt-1 mr-3"></i><span>Novel material synthesis (e.g., BaFe₁₀Sc₂O₁₉:KNbO₃).</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-accent-orange/80 mt-1 mr-3"></i><span>Novel material synthesis (e.g., $BaFe_{10}Sc_2O_{19}:KNbO_3$).</span></li>
                         <li class="flex items-start"><i class="fas fa-check-circle text-accent-orange/80 mt-1 mr-3"></i><span>Design of custom probes for cryogenic measurements.</span></li>
                         <li class="flex items-start"><i class="fas fa-check-circle text-accent-orange/80 mt-1 mr-3"></i><span>Structural analysis using Neutron & X-Ray Diffraction.</span></li>
                         <li class="flex items-start"><i class="fas fa-check-circle text-accent-orange/80 mt-1 mr-3"></i><span>Characterization of magnetic and electric properties.</span></li>
@@ -289,7 +281,6 @@
             </div>
         </section>
         
-        <!-- Academic Journey Section -->
         <section id="journey" class="py-20">
             <h2 class="text-4xl font-bold section-title mb-12 text-center">Academic & Research Journey</h2>
             <div class="max-w-3xl mx-auto timeline">
@@ -314,44 +305,41 @@
             </div>
         </section>
 
-        <!-- Publications Section -->
         <section id="publications" class="py-20">
             <h2 class="text-4xl font-bold section-title mb-8 text-center">Selected Publications</h2>
             <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-6">
                 <div class="card p-6 rounded-lg">
-                    <p class="mb-2 text-light-slate">Deshmukh, P., et al. (2025). "Exploration of near room temperature magnetoelectric coupling in BaFe₁₀Sc₂O₁₉:KNbO₃ composite."</p>
+                    <p class="mb-2 text-light-slate">Deshmukh, P., et al. (2025). "Exploration of near room temperature magnetoelectric coupling in $BaFe_{10}Sc_2O_{19}:KNbO_3$ composite."</p>
                     <p class="italic text-slate mb-3">Journal of Physics and Chemistry of Solids, 196, 112309.</p>
                     <a href="https://doi.org/10.1016/j.jpcs.2024.112309" target="_blank" rel="noopener noreferrer" class="publication-link font-medium">
                         View Article <i class="fas fa-external-link-alt ml-1 text-xs"></i>
                     </a>
                 </div>
                 <div class="card p-6 rounded-lg">
-                    <p class="mb-2 text-light-slate">Mukherjee, S., et al. (2025). "Negative capacitance and magnetodielectric effect in Cu₂O-CuO ceramics."</p>
+                    <p class="mb-2 text-light-slate">Mukherjee, S., et al. (2025). "Negative capacitance and magnetodielectric effect in $Cu_2O-CuO$ ceramics."</p>
                     <p class="italic text-slate mb-3">Ceramics International, 51(20), 30716-30722.</p>
-                     <a href="https://doi.org/10.1016/j.ceramint.2025.04.264" target="_blank" rel="noopener noreferrer" class="publication-link font-medium">
+                      <a href="https://doi.org/10.1016/j.ceramint.2025.04.264" target="_blank" rel="noopener noreferrer" class="publication-link font-medium">
                         View Article <i class="fas fa-external-link-alt ml-1 text-xs"></i>
                     </a>
                 </div>
                 <div class="card p-6 rounded-lg">
-                    <p class="mb-2 text-light-slate">Deshmukh, P., et al. (2025). "Exploring the role of Cu¹⁺ in quasi-1D Cu₁₋ₓLiₓO (x = 0.025)."</p>
+                    <p class="mb-2 text-light-slate">Deshmukh, P., et al. (2025). "Exploring the role of $Cu^{1+}$ in quasi-1D $Cu_{1-x}Li_xO$ (x = 0.025)."</p>
                     <p class="italic text-slate mb-3">Journal of Alloys and Compounds, 1036, 181833.</p>
-                     <a href="https://doi.org/10.1016/j.jallcom.2025.181833" target="_blank" rel="noopener noreferrer" class="publication-link font-medium">
+                      <a href="https://doi.org/10.1016/j.jallcom.2025.181833" target="_blank" rel="noopener noreferrer" class="publication-link font-medium">
                         View Article <i class="fas fa-external-link-alt ml-1 text-xs"></i>
                     </a>
                 </div>
             </div>
-             <div class="text-center mt-10">
+               <div class="text-center mt-10">
                 <a href="pages/research.html" class="cta-button inline-block bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-3 px-6 rounded-lg">
                     View All Publications
                 </a>
             </div>
         </section>
 
-        <!-- Programming & Technical Skills Section -->
         <section id="skills" class="py-20">
             <h2 class="text-4xl font-bold section-title mb-8 text-center">Programming & Technical Skills</h2>
             <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
-                <!-- Experimental Techniques -->
                 <div class="card p-6 rounded-lg">
                     <h3 class="text-xl font-semibold text-accent-orange mb-4">Experimental Techniques</h3>
                     <div class="flex flex-wrap gap-2">
@@ -363,7 +351,6 @@
                         <span class="tag px-3 py-1 rounded-full">Sol-Gel Synthesis</span>
                     </div>
                 </div>
-                <!-- Programming & Automation -->
                 <div class="card p-6 rounded-lg flex flex-col">
                     <h3 class="text-xl font-semibold text-accent-orange mb-4">Programming & Automation</h3>
                     <p class="text-slate mb-4 flex-grow">Developing custom Python scripts (PyVISA) to interface with and automate laboratory instruments for precise data acquisition.</p>
@@ -376,10 +363,9 @@
                         </a>
                     </div>
                 </div>
-                <!-- Analysis & Simulation -->
                 <div class="card p-6 rounded-lg">
                     <h3 class="text-xl font-semibold text-accent-orange mb-4">Analysis & Simulation</h3>
-                     <div class="flex flex-wrap gap-2">
+                      <div class="flex flex-wrap gap-2">
                         <span class="tag px-3 py-1 rounded-full">Python (NumPy, SciPy)</span>
                         <span class="tag px-3 py-1 rounded-full">MATLAB</span>
                         <span class="tag px-3 py-1 rounded-full">COMSOL</span>
@@ -392,7 +378,6 @@
             </div>
         </section>
 
-        <!-- Conferences Section -->
         <section id="conferences" class="py-20">
             <h2 class="text-4xl font-bold section-title mb-8 text-center">Conferences & Workshops</h2>
             <div class="max-w-4xl mx-auto space-y-4">
@@ -406,7 +391,7 @@
                     <p class="text-light-slate"><i class="fas fa-chalkboard-teacher text-accent-orange mr-3"></i><strong>Attended:</strong> 6th National Workshop on Materials Chemistry, Mumbai (Oct 2023)</p>
                 </div>
             </div>
-             <div class="text-center mt-10">
+               <div class="text-center mt-10">
                 <a href="pages/presentations.html" class="cta-button inline-block bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-3 px-6 rounded-lg">
                     View All Presentations
                 </a>
@@ -414,7 +399,6 @@
         </section>
 
         
-        <!-- Contact Section -->
         <section id="contact" class="py-20">
             <h2 class="text-4xl font-bold section-title mb-8 text-center">Get In Touch</h2>
             <div class="max-w-3xl mx-auto card p-8 rounded-lg text-center">
@@ -436,7 +420,6 @@
         
     </main>
     
-    <!-- Footer -->
     <footer class="border-t border-gray-800 bg-dark-bg py-8">
         <div class="container mx-auto px-6 text-center text-slate">
             <div class="flex justify-center flex-wrap gap-6 mb-6">
@@ -450,7 +433,7 @@
                 <a href="https://www.scopus.com/authid/detail.uri?authorId=59544780300" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="Scopus"><i class="fas fa-file-alt"></i></a>
                 <a href="https://www.webofscience.com/wos/author/record/OFN-9289-2025" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="Web of Science"><i class="fas fa-flask"></i></a>
             </div>
-             <p>&copy; 2025 Prathamesh Keshao Deshmukh. All Rights Reserved.</p>
+               <p>&copy; 2025 Prathamesh Keshao Deshmukh. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -483,8 +466,26 @@
                 }
             });
         });
+
+        // *** NEW SCRIPT FOR CLICKABLE DROPDOWN ***
+        const portfolioButton = document.getElementById('portfolio-button');
+        const portfolioMenu = document.getElementById('portfolio-menu');
+
+        portfolioButton.addEventListener('click', (event) => {
+            // Stop the click from bubbling up to the window
+            event.stopPropagation();
+            // Toggle the 'hidden' class on the menu
+            portfolioMenu.classList.toggle('hidden');
+        });
+
+        // Close the dropdown if the user clicks anywhere else on the page
+        window.addEventListener('click', () => {
+            if (!portfolioMenu.classList.contains('hidden')) {
+                portfolioMenu.classList.add('hidden');
+            }
+        });
+
     </script>
 
 </body>
 </html>
-
