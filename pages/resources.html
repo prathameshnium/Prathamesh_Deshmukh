@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources | Prathamesh Deshmukh</title>
+    <meta name="description" content="A curated list of essential tools, databases, and resources for students and researchers in Physics and Scientific Programming.">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="canonical" href="https://prathameshdeshmukh.site/pages/resources.html">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Serif+Pro:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Source Serif Pro', 'serif'],
+            },
+            colors: {
+              'accent-orange': '#f6ad55', 
+              'dark-bg': '#1a202c',       
+              'card-bg': '#2d3748',
+              'light-slate': '#a8b2d1',
+              'slate': '#8892b0'
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        body { background-color: #1a202c; color: #e2e8f0; }
+        .section-title { font-family: 'Source Serif Pro', serif; color: #ffffff; }
+        .nav-link { transition: color 0.3s; }
+        .nav-link:hover { color: #f6ad55; }
+        .card {
+            background-color: #2d3748;
+            border: 1px solid #4a5568; 
+            transition: all 0.3s ease-in-out;
+        }
+        .card:hover {
+            border-color: #f6ad55;
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="antialiased font-sans">
+
+    <header class="bg-dark-bg/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-700">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-white font-serif">Resources</h1>
+            <nav>
+                <a href="../index.html" class="nav-link">Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold section-title mb-2">Tools & Resources</h2>
+            <p class="text-lg text-slate max-w-3xl mx-auto">A curated list of software, databases, and online tools that I find essential for research in physics and scientific programming.</p>
+        </div>
+
+        <div class="max-w-5xl mx-auto space-y-12">
+
+            <section>
+                <h3 class="text-2xl font-semibold text-accent-orange border-b border-gray-700 pb-2 mb-6">Writing & Publication Tools</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="card p-6 rounded-lg">
+                        <h4 class="text-xl font-semibold text-light-slate mb-2"><a href="https://www.overleaf.com/" target="_blank" rel="noopener noreferrer" class="hover:text-accent-orange">Overleaf <i class="fas fa-external-link-alt ml-1 text-xs"></i></a></h4>
+                        <p class="text-slate">The standard for collaborative LaTeX writing. Essential for preparing manuscripts, reports, and theses without software installation.</p>
+                    </div>
+                    <div class="card p-6 rounded-lg">
+                        <h4 class="text-xl font-semibold text-light-slate mb-2"><a href="https://www.zotero.org/" target="_blank" rel="noopener noreferrer" class="hover:text-accent-orange">Zotero <i class="fas fa-external-link-alt ml-1 text-xs"></i></a></h4>
+                        <p class="text-slate">An indispensable open-source tool for managing references and bibliographies. The browser extension makes collecting sources effortless.</p>
+                    </div>
+                    <div class="card p-6 rounded-lg">
+                        <h4 class="text-xl font-semibold text-light-slate mb-2"><a href="https://shodhganga.inflibnet.ac.in/" target="_blank" rel="noopener noreferrer" class="hover:text-accent-orange">Shodhganga <i class="fas fa-external-link-alt ml-1 text-xs"></i></a></h4>
+                        <p class="text-slate">A reservoir of Indian theses and dissertations. An excellent resource for literature review and understanding the scope of research in India.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="text-2xl font-semibold text-accent-orange border-b border-gray-700 pb-2 mb-6">Programming & Version Control</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="card p-6 rounded-lg">
+                        <h4 class="text-xl font-semibold text-light-slate mb-2"><a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="hover:text-accent-orange">GitHub <i class="fas fa-external-link-alt ml-1 text-xs"></i></a></h4>
+                        <p class="text-slate">The primary platform for version control and collaboration. Crucial for managing code, sharing projects, and tracking changes.</p>
+                    </div>
+                    <div class="card p-6 rounded-lg">
+                        <h4 class="text-xl font-semibold text-light-slate mb-2"><a href="https://numpy.org/" target="_blank" rel="noopener noreferrer" class="hover:text-accent-orange">NumPy & SciPy <i class="fas fa-external-link-alt ml-1 text-xs"></i></a></h4>
+                        <p class="text-slate">The foundational libraries for numerical and scientific computing in Python. Essential for any form of data analysis or simulation.</p>
+                    </div>
+                    <div class="card p-6 rounded-lg">
+                        <h4 class="text-xl font-semibold text-light-slate mb-2"><a href="https://matplotlib.org/" target="_blank" rel="noopener noreferrer" class="hover:text-accent-orange">Matplotlib <i class="fas fa-external-link-alt ml-1 text-xs"></i></a></h4>
+                        <p class="text-slate">The standard for creating high-quality, publication-ready plots and figures directly from Python scripts.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="text-2xl font-semibold text-accent-orange border-b border-gray-700 pb-2 mb-6">Physics Databases & Visualization</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="card p-6 rounded-lg">
+                        <h4 class="text-xl font-semibold text-light-slate mb-2"><a href="https://materialsproject.org/" target="_blank" rel="noopener noreferrer" class="hover:text-accent-orange">Materials Project <i class="fas fa-external-link-alt ml-1 text-xs"></i></a></h4>
+                        <p class="text-slate">An open-access database of material properties computed with DFT. Invaluable for preliminary research and materials discovery.</p>
+                    </div>
+                    <div class="card p-6 rounded-lg">
+                        <h4 class="text-xl font-semibold text-light-slate mb-2"><a href="http://www.crystallography.net/cod/" target="_blank" rel="noopener noreferrer" class="hover:text-accent-orange">Crystallography Open DB <i class="fas fa-external-link-alt ml-1 text-xs"></i></a></h4>
+                        <p class="text-slate">A vast open-access collection of crystal structures, perfect for finding reference structures for XRD and neutron diffraction analysis.</p>
+                    </div>
+                    <div class="card p-6 rounded-lg">
+                        <h4 class="text-xl font-semibold text-light-slate mb-2"><a href="https://jp-minerals.org/vesta/en/" target="_blank" rel="noopener noreferrer" class="hover:text-accent-orange">VESTA <i class="fas fa-external-link-alt ml-1 text-xs"></i></a></h4>
+                        <p class="text-slate">The standard software for visualizing crystal structures and volumetric data. I use it to create nearly all crystallographic figures.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="text-2xl font-semibold text-accent-orange border-b border-gray-700 pb-2 mb-6">Online Tools & Calculators</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="card p-6 rounded-lg">
+                        <h4 class="text-xl font-semibold text-light-slate mb-2"><a href="https://www.desmos.com/calculator" target="_blank" rel="noopener noreferrer" class="hover:text-accent-orange">Desmos <i class="fas fa-external-link-alt ml-1 text-xs"></i></a></h4>
+                        <p class="text-slate">An incredibly intuitive and powerful online graphing calculator. Perfect for quickly visualizing functions and exploring mathematical concepts.</p>
+                    </div>
+                     <div class="card p-6 rounded-lg">
+                        <h4 class="text-xl font-semibold text-light-slate mb-2"><a href="https://physics.nist.gov/cuu/Constants/index.html" target="_blank" rel="noopener noreferrer" class="hover:text-accent-orange">NIST Constants <i class="fas fa-external-link-alt ml-1 text-xs"></i></a></h4>
+                        <p class="text-slate">The authoritative source for fundamental physical constants. A reliable and quick reference for any calculation.</p>
+                    </div>
+                </div>
+            </section>
+            
+        </div>
+    </main>
+
+    <footer class="border-t border-gray-800 bg-dark-bg py-8 mt-16">
+        <div class="container mx-auto px-6 text-center text-slate">
+            <p>&copy; 2025 Prathamesh Keshao Deshmukh. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
