@@ -340,9 +340,10 @@
         <section id="skills" class="py-20">
             <h2 class="text-4xl font-bold section-title mb-8 text-center">Programming & Technical Skills</h2>
             <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
-                <div class="card p-6 rounded-lg">
+                
+                <div class="card p-6 rounded-lg flex flex-col">
                     <h3 class="text-xl font-semibold text-accent-orange mb-4">Experimental Techniques</h3>
-                    <div class="flex flex-wrap gap-2">
+                    <div class="flex flex-wrap gap-2 flex-grow">
                         <span class="tag px-3 py-1 rounded-full">Neutron Diffraction</span>
                         <span class="tag px-3 py-1 rounded-full">X-Ray Diffraction</span>
                         <span class="tag px-3 py-1 rounded-full">Dielectric Spectroscopy</span>
@@ -350,7 +351,16 @@
                         <span class="tag px-3 py-1 rounded-full">UV-Vis Spectroscopy</span>
                         <span class="tag px-3 py-1 rounded-full">Sol-Gel Synthesis</span>
                     </div>
+                    <div class="mt-auto flex flex-wrap gap-4 pt-4">
+                        <a href="https://www.researchgate.net/lab/Sudip-Mukherjee-Materials-Physics-Lab-Sudip-Mukherjee" target="_blank" rel="noopener noreferrer" class="cta-button text-sm flex-grow text-center bg-accent-orange/10 border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-4 rounded-lg">
+                            Lab Facilities
+                        </a>
+                        <a href="https://www.csruserportal.com/Intro/csrMumbaiFacilities" target="_blank" rel="noopener noreferrer" class="cta-button text-sm flex-grow text-center bg-accent-orange/10 border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-4 rounded-lg">
+                            CSR User Portal
+                        </a>
+                    </div>
                 </div>
+
                 <div class="card p-6 rounded-lg flex flex-col">
                     <h3 class="text-xl font-semibold text-accent-orange mb-4">Programming & Automation</h3>
                     <p class="text-slate mb-4 flex-grow">Developing custom Python scripts (PyVISA) to interface with and automate laboratory instruments for precise data acquisition.</p>
@@ -467,28 +477,24 @@
             });
         });
 
-        // *** ROBUST SCRIPT FOR CLICKABLE DROPDOWN ***
+        // Robust script for clickable dropdown
         const portfolioButton = document.getElementById('portfolio-button');
         const portfolioMenu = document.getElementById('portfolio-menu');
 
-        // Toggle menu when button is clicked
         portfolioButton.addEventListener('click', (event) => {
-            event.stopPropagation(); // Prevents the window click event from firing
+            event.stopPropagation();
             portfolioMenu.classList.toggle('hidden');
         });
 
-        // Prevent the menu from closing when you click inside it
         portfolioMenu.addEventListener('click', (event) => {
-            event.stopPropagation(); // Clicks inside the menu won't close it
+            event.stopPropagation();
         });
 
-        // Close the menu if a click happens anywhere else on the page
         window.addEventListener('click', () => {
             if (!portfolioMenu.classList.contains('hidden')) {
                 portfolioMenu.classList.add('hidden');
             }
         });
-
     </script>
 
 </body>
