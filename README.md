@@ -15,6 +15,12 @@
     <a href="https://in.linkedin.com/in/prathamesh-k-deshmukh" target="_blank">
       <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
     </a>
+    <a href="https://prathameshdeshmukh.site/pages/blog.html" target="_blank">
+      <img src="https://img.shields.io/badge/Blog-20232A?style=for-the-badge&logo=blogger&logoColor=white" alt="Blog"/>
+    </a>
+    <a href="https://prathameshdeshmukh.site/pages/cv.html" target="_blank">
+      <img src="https://img.shields.io/badge/CV-F6AD55?style=for-the-badge&logo=read-the-docs&logoColor=white" alt="CV"/>
+    </a>
   </p>
   <p>
     <a href="https://scholar.google.com/citations?user=DJgzI30AAAAJ&hl=en&oi=ao" target="_blank">
