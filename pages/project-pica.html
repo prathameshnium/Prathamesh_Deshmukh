@@ -3,13 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PICA Project | Prathamesh Deshmukh</title>
-    <meta name="description" content="Detailed information on the PICA project: Python Instrument Control & Automation for materials science research.">
+    
+    <!-- SEO: Primary Meta Tags -->
+    <title>PICA: Python Instrument Control & Automation for Physics Research</title>
+    <meta name="description" content="Discover PICA, a Python-based software suite for instrument control and automation in materials science and physics research. Automate experiments, streamline data acquisition, and accelerate your work.">
+    <meta name="keywords" content="PICA, Python, Instrument Control, Automation, PyVISA, Materials Science, Physics Research, Laboratory Automation, Keithley, Lakeshore, Prathamesh Deshmukh">
+    <meta name="author" content="Prathamesh Deshmukh">
+
+    <!-- SEO: Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="PICA: Python Instrument Control & Automation">
+    <meta property="og:description" content="A modular software suite for automating laboratory measurements in physics research.">
+    <meta property="og:image" content="_assets/screenshots/PICA_Launcher_Screenshot.png">
+
+    <!-- SEO: Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="PICA: Python Instrument Control & Automation">
+    <meta property="twitter:description" content="A modular software suite for automating laboratory measurements in physics research.">
+    <meta property="twitter:image" content="_assets/screenshots/PICA_Launcher_Screenshot.png">
+
+    <!-- Styles and Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Serif+Pro:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <script>
       tailwind.config = {
         theme: {
@@ -29,6 +48,33 @@
         }
       }
     </script>
+
+    <!-- SEO: JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "PICA: Python-based Instrument Control and Automation",
+      "description": "A modular software suite for automating laboratory measurements in physics research, featuring a central GUI launcher and isolated process execution for stability.",
+      "applicationCategory": "ScientificApplication",
+      "operatingSystem": "Windows, macOS, Linux",
+      "author": {
+        "@type": "Person",
+        "name": "Prathamesh Deshmukh"
+      },
+      "maintainer": {
+        "@type": "Person",
+        "name": "Prathamesh Deshmukh"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "UGC-DAE Consortium for Scientific Research, Mumbai Centre"
+      },
+      "license": "https://opensource.org/licenses/MIT",
+      "codeRepository": "https://github.com/prathameshnium/PICA-Python-Instrument-Control-and-Automation"
+    }
+    </script>
+
     <style>
         body {
             background-color: #1a202c;
@@ -52,6 +98,7 @@
             transition: color 0.3s, border-bottom-color 0.3s;
             border-bottom: 2px solid transparent;
             padding-bottom: 4px;
+            margin-left: 1rem;
         }
         .nav-link:hover, .nav-link.active {
             color: #f6ad55;
@@ -64,11 +111,36 @@
             background-color: #f6ad55;
             color: #1a202c;
         }
-        code {
+        pre, code {
+            font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background-color: #111827;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            overflow-x: auto;
+            border: 1px solid #4a5568;
+        }
+        .markdown-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .markdown-table th, .markdown-table td {
+            border: 1px solid #4a5568;
+            padding: 0.75rem 1rem;
+            text-align: left;
+        }
+        .markdown-table th {
             background-color: #4a5568;
-            padding: 0.2rem 0.4rem;
-            border-radius: 0.25rem;
-            font-family: monospace;
+            color: #ffffff;
+            font-weight: 600;
+        }
+        .markdown-table tbody tr:nth-child(odd) {
+            background-color: #2d3748;
+        }
+         .markdown-table tbody tr:nth-child(even) {
+            background-color: #384256;
         }
     </style>
 </head>
@@ -79,101 +151,153 @@
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold text-white font-serif">PICA Project</h1>
             <nav>
-                <a href="../index.html" class="nav-link">Home</a>
-                <a href="computational-works.html" class="nav-link">Back to Projects</a>
+                <a href="#home" class="nav-link hidden md:inline" aria-label="Go to Home section">Home</a>
+                <a href="#modules" class="nav-link hidden md:inline" aria-label="Go to Modules section">Modules</a>
+                <a href="#getting-started" class="nav-link hidden md:inline" aria-label="Go to Getting Started section">Get Started</a>
             </nav>
         </div>
     </header>
 
     <main class="container mx-auto px-6 py-12">
-        <section id="pica-details" class="py-10">
+        <section id="home" class="py-10">
             <div class="max-w-5xl mx-auto">
 
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl md:text-5xl font-bold section-title mb-2">PICA: Python Instrument Control & Automation</h2>
-                    <p class="text-lg text-slate">A suite of Python scripts using PyVISA to control and automate laboratory instruments for materials science and physics research.</p>
+                <!-- Hero Section -->
+                <div class="text-center mb-16">
+                    <img src="_assets/LOGO/PICA_Logo.png" 
+                         onerror="this.onerror=null;this.src='https://placehold.co/150x150/2d3748/f6ad55?text=PICA'" 
+                         alt="PICA Logo for Python Instrument Control and Automation Project" 
+                         class="w-32 h-32 mx-auto mb-6 rounded-full border-4 border-slate/50">
+                    <h1 class="text-4xl md:text-5xl font-bold section-title mb-4">PICA: Python-based Instrument Control and Automation</h1>
+                    <p class="text-lg text-slate max-w-3xl mx-auto">A modular software suite for automating laboratory measurements in physics research.</p>
+                    <div class="flex justify-center space-x-2 mt-4">
+                        <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT">
+                        <img src="https://img.shields.io/badge/Python-3.9+-brightgreen.svg" alt="Python 3.9+ supported">
+                        <img src="https://img.shields.io/badge/Status-Active-success.svg" alt="Project Status: Active">
+                    </div>
                 </div>
-
-                <div class="grid lg:grid-cols-3 gap-8 mb-8">
-                    <!-- About Card -->
-                    <div class="card p-8 rounded-lg lg:col-span-2">
-                        <h3 class="text-2xl font-semibold text-white mb-4">About This Project</h3>
-                        <div class="space-y-4 text-light-slate">
-                            <p>This collection provides practical, ready-to-use Python scripts for automating common electrical and thermal characterization experiments. Each folder is dedicated to a specific instrument or measurement setup, containing the necessary control logic and GUI.</p>
-                            <p>A collection of official instrument manuals is available in the <code>_assets/Manuals</code> directory for reference.</p>
+                
+                <!-- Overview & Launcher Screenshot -->
+                <div class="card p-8 rounded-lg mb-12">
+                     <h2 class="text-3xl font-semibold section-title mb-6 text-center">Project Overview</h2>
+                    <div class="grid md:grid-cols-5 gap-8 items-center">
+                        <div class="md:col-span-2 text-light-slate space-y-4">
+                            <p><strong>PICA</strong> is a software suite designed to provide a robust framework for automating laboratory instruments in materials science and condensed matter physics research.</p>
+                            <p>The suite features a central GUI, the <strong>PICA Launcher</strong>, which serves as a dashboard for managing and executing a variety of characterization experiments.</p>
+                            <p>A key architectural feature is the use of isolated process execution for each measurement module via Python's `multiprocessing` library, ensuring high stability and preventing inter-script conflicts.</p>
+                        </div>
+                        <div class="md:col-span-3">
+                           <img src="_assets/screenshots/PICA_Launcher_Screenshot.png" 
+                                onerror="this.onerror=null;this.src='https://placehold.co/800x500/1a202c/e2e8f0?text=PICA+Launcher+UI'"
+                                alt="Screenshot of the PICA Launcher GUI showing measurement modules for laboratory automation." class="rounded-lg shadow-2xl border-2 border-slate/30">
                         </div>
                     </div>
-                    <!-- Dependencies Card -->
-                    <div class="card p-8 rounded-lg">
-                        <h3 class="text-2xl font-semibold text-white mb-4">Core Dependencies</h3>
-                        <ul class="space-y-3 text-light-slate">
-                            <li class="flex items-center"><i class="fas fa-check-circle text-accent-orange/80 mr-3"></i>PyVISA</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-accent-orange/80 mr-3"></i>PyMeasure</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-accent-orange/80 mr-3"></i>NumPy</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-accent-orange/80 mr-3"></i>Pandas</li>
-                        </ul>
-                    </div>
                 </div>
 
-                <!-- Featured Systems -->
-                <div>
-                    <h2 class="text-3xl font-semibold section-title mb-6 text-center">Featured Measurement Systems</h2>
+                <!-- Core Features -->
+                <section class="mb-12" aria-labelledby="core-features-title">
+                    <h2 id="core-features-title" class="text-3xl font-semibold section-title mb-8 text-center">Core Features</h2>
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div class="card p-6 rounded-lg">
-                            <h4 class="font-bold text-xl text-accent-orange">Low Resistance (Delta Mode)</h4>
-                            <p class="text-sm text-slate mb-2">Keithley 6221/2182A</p>
-                            <p class="text-light-slate"><strong>Measurements:</strong> I-V, Resistance vs. Temp.</p>
+                        <div class="card p-6 rounded-lg text-center"><i class="fas fa-desktop text-accent-orange text-3xl mb-3"></i><h3 class="font-bold text-xl text-white">Centralized Dashboard</h3><p class="text-light-slate">A comprehensive GUI for launching all modules.</p></div>
+                        <div class="card p-6 rounded-lg text-center"><i class="fas fa-cogs text-accent-orange text-3xl mb-3"></i><h3 class="font-bold text-xl text-white">Isolated Processes</h3><p class="text-light-slate">Ensures stability and prevents resource conflicts.</p></div>
+                        <div class="card p-6 rounded-lg text-center"><i class="fas fa-search text-accent-orange text-3xl mb-3"></i><h3 class="font-bold text-xl text-white">VISA Instrument Scanner</h3><p class="text-light-slate">Discover, identify, and troubleshoot connections.</p></div>
+                        <div class="card p-6 rounded-lg text-center"><i class="fas fa-puzzle-piece text-accent-orange text-3xl mb-3"></i><h3 class="font-bold text-xl text-white">Modular Architecture</h3><p class="text-light-slate">Self-contained modules for each experiment.</p></div>
+                        <div class="card p-6 rounded-lg text-center"><i class="fas fa-book-open text-accent-orange text-3xl mb-3"></i><h3 class="font-bold text-xl text-white">Embedded Docs</h3><p class="text-light-slate">In-app viewer for README and license files.</p></div>
+                        <div class="card p-6 rounded-lg text-center"><i class="fas fa-terminal text-accent-orange text-3xl mb-3"></i><h3 class="font-bold text-xl text-white">System Console Log</h3><p class="text-light-slate">Real-time status updates and diagnostics.</p></div>
+                    </div>
+                </section>
+
+                <!-- Available Measurement Modules -->
+                <section id="modules" class="mb-12" aria-labelledby="modules-title">
+                    <h2 id="modules-title" class="text-3xl font-semibold section-title mb-8 text-center">Available Measurement Modules</h2>
+                    <div class="overflow-x-auto card rounded-lg p-2">
+                        <table class="markdown-table">
+                            <thead>
+                                <tr>
+                                    <th>Instrument Combination</th>
+                                    <th>Measurement Type</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>Keithley 6221 / 2182A</strong></td><td>I-V Characterization (AC Delta)</td><td>High-precision I-V sweeps for low-resistance samples.</td></tr>
+                                <tr><td></td><td>Resistance vs. Temperature (R-T)</td><td>Automated R-T data acquisition with active or passive temperature profiles.</td></tr>
+                                <tr><td><strong>Keithley 2400 SourceMeter</strong></td><td>Four-Probe I-V Characterization</td><td>Standard I-V sweeps for materials like semiconductors.</td></tr>
+                                <tr><td></td><td>Four-Probe R-T Characterization</td><td>Temperature-dependent resistance measurements.</td></tr>
+                                <tr><td><strong>Keithley 2400 / 2182A</strong></td><td>High-Precision I-V</td><td>Enhanced voltage resolution using a nanovoltmeter.</td></tr>
+                                <tr><td></td><td>High-Precision R-T</td><td>Temperature-dependent measurements with enhanced voltage precision.</td></tr>
+                                <tr><td><strong>Keithley 6517B Electrometer</strong></td><td>High-Resistance I-V Characterization</td><td>For insulating materials, dielectrics, and high-impedance devices.</td></tr>
+                                <tr><td></td><td>Resistivity vs. Temperature</td><td>High-resistance measurements with active or passive temperature control.</td></tr>
+                                <tr><td></td><td>Pyroelectric Current vs. Temperature</td><td>Quantifies pyroelectric current during a controlled temperature ramp.</td></tr>
+                                <tr><td><strong>Keysight E4980A LCR Meter</strong></td><td>Capacitance-Voltage (C-V) Sweeps</td><td>Automated C-V measurements for semiconductor and dielectric analysis.</td></tr>
+                                <tr><td><strong>Lock-in Amplifier (Generic)</strong></td><td>AC Resistance Measurement</td><td>For measuring AC transport properties and contact impedance.</td></tr>
+                                <tr><td><strong>Lakeshore 340/350 Controller</strong></td><td>Temperature Control Utility</td><td>A standalone module for defining and executing temperature profiles.</td></tr>
+                                <tr><td></td><td>Temperature Monitoring Utility</td><td>A passive data logger for monitoring environmental temperature.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                
+                <!-- Getting Started -->
+                <section id="getting-started" class="card p-8 rounded-lg mb-12" aria-labelledby="getting-started-title">
+                    <h2 id="getting-started-title" class="text-3xl font-semibold section-title mb-8 text-center">Getting Started</h2>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-white mb-4">1. Prerequisites</h3>
+                            <ul class="list-disc list-inside space-y-2 text-light-slate">
+                                <li>Python 3.9 or newer.</li>
+                                <li>NI-VISA Driver for your operating system.</li>
+                            </ul>
                         </div>
-                        <div class="card p-6 rounded-lg">
-                            <h4 class="font-bold text-xl text-accent-orange">Mid Resistance (Four-Probe)</h4>
-                            <p class="text-sm text-slate mb-2">Keithley 2400, Keithley 2182</p>
-                            <p class="text-light-slate"><strong>Measurements:</strong> I-V, Resistance vs. Temp.</p>
-                        </div>
-                        <div class="card p-6 rounded-lg">
-                            <h4 class="font-bold text-xl text-accent-orange">High Resistance</h4>
-                            <p class="text-sm text-slate mb-2">Keithley 6517B Electrometer</p>
-                            <p class="text-light-slate"><strong>Measurements:</strong> I-V, Resistivity vs. Temp.</p>
-                        </div>
-                        <div class="card p-6 rounded-lg">
-                            <h4 class="font-bold text-xl text-accent-orange">LCR Measurements</h4>
-                            <p class="text-sm text-slate mb-2">Keysight E4980A LCR Meter</p>
-                            <p class="text-light-slate"><strong>Measurement:</strong> Capacitance vs. Voltage</p>
-                        </div>
-                        <div class="card p-6 rounded-lg">
-                            <h4 class="font-bold text-xl text-accent-orange">Pyroelectric Measurements</h4>
-                            <p class="text-sm text-slate mb-2">Keithley 6517B, Lakeshore</p>
-                            <p class="text-light-slate"><strong>Measurement:</strong> Pyroelectric Current vs. Temp.</p>
-                        </div>
-                        <div class="card p-6 rounded-lg">
-                            <h4 class="font-bold text-xl text-accent-orange">AC Transport</h4>
-                            <p class="text-sm text-slate mb-2">Lock-in Amplifier (e.g., SR830)</p>
-                            <p class="text-light-slate"><strong>Measurement:</strong> AC Resistance</p>
-                        </div>
-                        <div class="card p-6 rounded-lg lg:col-span-3">
-                             <h4 class="font-bold text-xl text-accent-orange">Temperature Control</h4>
-                            <p class="text-sm text-slate mb-2">Lakeshore 340/350</p>
-                            <p class="text-light-slate"><strong>Function:</strong> Environmental control and temperature ramping.</p>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-white mb-4">2. Installation</h3>
+                            <div class="space-y-4 text-light-slate">
+                                <p>Clone the repository:</p>
+                                <pre><code>git clone https://github.com/prathameshnium/PICA-Python-Instrument-Control-and-Automation.git
+cd PICA-Python-Instrument-Control-and-Automation</code></pre>
+                                <p>Install dependencies:</p>
+                                <pre><code>pip install -r requirements.txt</code></pre>
+                                <p>Launch the application:</p>
+                                <pre><code>python PICA_Launcher.py</code></pre>
+                            </div>
                         </div>
                     </div>
+                </section>
+
+                <!-- Resources & Contributing -->
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <div class="card p-8 rounded-lg">
+                        <h3 class="text-2xl font-semibold text-white mb-4">Resources & Documentation</h3>
+                        <p class="text-light-slate">A collection of official instrument manuals and a detailed technical guide on hardware setup and instrument configuration are available within the repository's `_assets/Manuals/` directory.</p>
+                    </div>
+                    <div class="card p-8 rounded-lg">
+                        <h3 class="text-2xl font-semibold text-white mb-4">Contributing</h3>
+                        <p class="text-light-slate">Contributions are welcome! Please fork the repository, create a feature branch, and open a pull request. We recommend opening an issue first to discuss any major changes.</p>
+                    </div>
                 </div>
+
 
                 <!-- Author & License -->
                 <div class="grid md:grid-cols-2 gap-8 mt-8">
                     <div class="card p-8 rounded-lg">
-                        <h3 class="text-2xl font-semibold text-white mb-4">Author & Acknowledgment</h3>
-                        <p class="text-light-slate mb-2">Developed by <strong>Prathamesh Deshmukh</strong></p>
-                        <p class="text-slate">Vision & Guidance by <strong>Dr. Sudip Mukherjee</strong></p>
-                        <p class="italic text-slate mt-2">UGC-DAE Consortium for Scientific Research, Mumbai Centre</p>
+                        <h3 class="text-2xl font-semibold text-white mb-4">Authors & Acknowledgments</h3>
+                         <img src="_assets/LOGO/UGC_DAE_CSR.jpeg" 
+                              onerror="this.onerror=null;this.src='https://placehold.co/150x50/2d3748/f6ad55?text=UGC+DAE+CSR'"
+                              alt="UGC DAE CSR Logo" class="w-24 mb-4 rounded">
+                        <p class="text-light-slate mb-1"><strong>Lead Developer:</strong> Prathamesh Deshmukh</p>
+                        <p class="text-light-slate mb-2"><strong>Principal Investigator:</strong> Dr. Sudip Mukherjee</p>
+                        <p class="italic text-slate">UGC-DAE Consortium for Scientific Research, Mumbai Centre</p>
+                        <p class="text-sm text-slate mt-4"><strong>Funding:</strong> Financial support was provided under SERB-CRG project grant No. CRG/2022/005676 from the Anusandhan National Research Foundation (ANRF).</p>
                     </div>
                      <div class="card p-8 rounded-lg">
                         <h3 class="text-2xl font-semibold text-white mb-4">License</h3>
-                        <p class="text-light-slate">This project is licensed under the MIT License. See the <code>LICENSE</code> file for details.</p>
+                        <p class="text-light-slate">This project is licensed under the terms of the MIT License. See the <code>LICENSE</code> file in the repository for full details.</p>
                     </div>
                 </div>
 
-                <div class="text-center mt-12">
-                    <a href="https://github.com/prathameshnium/PICA-Python-Instrument-Control-and-Automation" target="_blank" rel="noopener noreferrer" class="cta-button inline-block bg-accent-orange border-2 border-accent-orange text-dark-bg font-semibold py-3 px-8 rounded-lg">
-                        <i class="fab fa-github mr-2"></i> View on GitHub
+                <div class="text-center mt-16">
+                    <a href="https://github.com/prathameshnium/PICA-Python-Instrument-Control-and-Automation" target="_blank" rel="noopener noreferrer" class="cta-button inline-block bg-accent-orange border-2 border-accent-orange text-dark-bg font-semibold py-3 px-8 rounded-lg text-lg">
+                        <i class="fab fa-github mr-2"></i> View Project on GitHub
                     </a>
                 </div>
             </div>
