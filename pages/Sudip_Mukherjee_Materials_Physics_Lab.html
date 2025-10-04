@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudip Mukherjee | Materials Physics Lab</title>
+    <meta name="description" content="The Sudip Mukherjee Laboratory is a research group focused on materials science and condensed matter physics, operating within the UGC-DAE CSR.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Serif+Pro:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Source Serif Pro', 'serif'],
+            },
+            colors: {
+              'accent-orange': '#f6ad55', 
+              'dark-bg': '#1a202c',       
+              'card-bg': '#2d3748',
+              'light-slate': '#a8b2d1',
+              'slate': '#8892b0'
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        body {
+            background-color: #1a202c;
+            color: #e2e8f0;
+        }
+        .section-title {
+            font-family: 'Source Serif Pro', serif;
+            color: #ffffff;
+        }
+        .card {
+            background-color: #2d3748;
+            border: 1px solid #4a5568; 
+            transition: all 0.3s ease-in-out;
+        }
+        .card:hover {
+            border-color: #f6ad55;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .nav-link {
+            transition: color 0.3s, border-bottom-color 0.3s;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 4px;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #f6ad55;
+            border-bottom-color: #f6ad55;
+        }
+        .tag {
+            background-color: #4a5568;
+            color: #e2e8f0;
+        }
+        .social-icon {
+            transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+        }
+        .social-icon:hover {
+            transform: translateY(-3px) scale(1.1);
+            color: #f6ad55;
+        }
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #f6ad55;
+            color: #1a202c;
+        }
+    </style>
+    
+</head>
+<body class="antialiased font-sans">
+
+    <header class="bg-dark-bg/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-700">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-white font-serif">Materials Physics Lab</h1>
+            <nav class="hidden md:flex space-x-8">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#equipment" class="nav-link">Equipment</a>
+                <a href="#research" class="nav-link">Research</a>
+                <a href="#people" class="nav-link">People</a>
+                <a href="#collaborate" class="nav-link">Collaborate</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="../index.html" class="block py-2 nav-link">Home</a>
+            <a href="#about" class="block py-2 nav-link">About</a>
+            <a href="#equipment" class="block py-2 nav-link">Equipment</a>
+            <a href="#research" class="block py-2 nav-link">Research</a>
+            <a href="#people" class="block py-2 nav-link">People</a>
+            <a href="#collaborate" class="block py-2 nav-link">Collaborate</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <section id="about" class="py-20 text-center">
+            <div class="w-full max-w-4xl mx-auto">
+                <i class="fas fa-atom text-5xl text-accent-orange mb-4"></i>
+                <h2 class="text-5xl font-bold section-title mb-4">Sudip Mukherjee Materials Physics Lab</h2>
+                <p class="text-lg max-w-3xl mx-auto mb-8 text-light-slate">
+                    We are a research group focused on materials science and condensed matter physics, operating within the UGC-DAE CSR. Our lab is dedicated to the advanced characterization of electronic and optical properties of novel materials. All our systems are fully automated with custom LabVIEW and Python programs for precise and efficient data acquisition.
+                </p>
+            </div>
+        </section>
+
+        <section id="equipment" class="py-20">
+            <h2 class="text-4xl font-bold section-title mb-10 text-center">Our Equipment</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <div class="card p-6 rounded-lg">
+                    <h4 class="font-semibold text-xl text-accent-orange mb-2">Keysight E4980A LCR meter</h4>
+                    <p class="text-slate">For magnetodielectric studies and C-V sweeps.</p>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <h4 class="font-semibold text-xl text-accent-orange mb-2">Ferroelectric Testers</h4>
+                    <p class="text-slate">Radiant RT 6000 & aixACCT systems.</p>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <h4 class="font-semibold text-xl text-accent-orange mb-2">I-V & Resistivity Suite</h4>
+                    <p class="text-slate">Automated via our <b>PICA</b> software, this suite combines a Keithley 2400, 6221, and 2182A for high-precision I-V, four-probe R-T, and AC Delta measurements.</p>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <h4 class="font-semibold text-xl text-accent-orange mb-2">AC & Dielectric Spectroscopy</h4>
+                    <p class="text-slate">SR830 Lock-In Amplifier and Broadband Dielectric Spectrometer.</p>
+                </div>
+                 <div class="card p-6 rounded-lg">
+                    <h4 class="font-semibold text-xl text-accent-orange mb-2">UV-Vis Spectroscopy</h4>
+                    <p class="text-slate">MS UV Plus Spectrometer for optical absorption measurements.</p>
+                </div>
+                 <div class="card p-6 rounded-lg">
+                    <h4 class="font-semibold text-xl text-accent-orange mb-2">Environment Control</h4>
+                    <p class="text-slate">Pfeiffer HiCube Vacuum Station & LakeShore 350/340 Controllers for temperature control (5-370K).</p>
+                </div>
+                 <div class="card p-6 rounded-lg">
+                    <h4 class="font-semibold text-xl text-accent-orange mb-2">High-Field Studies</h4>
+                    <p class="text-slate">Access to Physical Property Measurement System (PPMS) for studies up to 14T.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="research" class="py-20">
+            <h2 class="text-4xl font-bold section-title mb-10 text-center">Featured Research</h2>
+            <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-6">
+                
+                <div class="card p-6 rounded-lg flex flex-col">
+                    <p class="text-sm text-slate mb-2">Article &middot; Jul 2025</p>
+                    <h4 class="font-semibold text-xl text-accent-orange mb-4 flex-grow">Exploring the role of Cu<sup>1+</sup> in quasi-1D Cu<sub>1&minus;x</sub>Li<sub>x</sub>O (x = 0.025)</h4>
+                    <a href="#" class="cta-button text-center bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-4 rounded-lg mt-auto">
+                        View Article <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <div class="card p-6 rounded-lg flex flex-col">
+                    <p class="text-sm text-slate mb-2">Article &middot; May 2025</p>
+                    <h4 class="font-semibold text-xl text-accent-orange mb-4 flex-grow">Negative capacitance and magnetodielectric effect in Cu<sub>2</sub>O-CuO ceramics</h4>
+                    <a href="#" class="cta-button text-center bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-4 rounded-lg mt-auto">
+                        View Article <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <div class="card p-6 rounded-lg flex flex-col">
+                    <p class="text-sm text-slate mb-2">Article &middot; Sep 2024</p>
+                    <h4 class="font-semibold text-xl text-accent-orange mb-4 flex-grow">Exploration of near room temperature magnetoelectric coupling in BaFe<sub>10</sub>Sc<sub>2</sub>O<sub>19</sub> : KNbO<sub>3</sub> composite</h4>
+                    <a href="#" class="cta-button text-center bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-4 rounded-lg mt-auto">
+                        View Article <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+        
+        <section id="people" class="py-20">
+            <h2 class="text-4xl font-bold section-title mb-10 text-center">Our Team</h2>
+            <div class="max-w-4xl mx-auto">
+                <h3 class="text-2xl font-semibold text-accent-orange mb-6 text-center">Lab Head</h3>
+                <div class="card p-6 rounded-lg mb-10 max-w-md mx-auto text-center">
+                    <h4 class="text-xl font-bold text-white">Sudip Mukherjee</h4>
+                    <a href="https://www.csr.res.in/Faculty/profile/889/893/Dr.SudipMukherjee" target="_blank" rel="noopener noreferrer" class="text-accent-orange/80 hover:text-accent-orange text-sm mt-2 inline-block">
+                        Official Profile <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                    </a>
+                </div>
+
+                <h3 class="text-2xl font-semibold text-accent-orange mb-6 text-center">Members</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="card p-6 rounded-lg text-center">
+                        <h4 class="text-xl font-bold text-white">Prathamesh Deshmukh</h4>
+                        <p class="text-slate text-sm">UGC-DAE Consortium for Scientific Research</p>
+                    </div>
+                    <div class="card p-6 rounded-lg text-center">
+                        <h4 class="text-xl font-bold text-white">Swastika Mukherjee</h4>
+                        <p class="text-slate text-sm">UGC-DAE Consortium for Scientific Research</p>
+                    </div>
+                    <div class="card p-6 rounded-lg text-center">
+                        <h4 class="text-xl font-bold text-white">Srishti Kashyap</h4>
+                        <p class="text-slate text-sm">UGC-DAE Consortium for Scientific Research</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="collaborate" class="py-20">
+             <div class="text-center max-w-3xl mx-auto">
+                 <h2 class="text-4xl font-bold section-title mb-6">Join Us or Collaborate</h2>
+                 <p class="text-light-slate mb-8 text-lg">
+                    We actively welcome collaborations. External researchers interested in utilizing our facilities can submit a proposal. We are also looking for talented individuals to join our team.
+                 </p>
+                 <a href="https://www.csruserportal.com/Intro/csrMumbaiFacilities" target="_blank" rel="noopener noreferrer" class="cta-button inline-block bg-accent-orange text-dark-bg font-bold py-3 px-8 rounded-lg text-lg">
+                    Find Out More
+                 </a>
+             </div>
+        </section>
+
+    </main>
+    
+    <footer class="border-t border-gray-800">
+        <div class="container mx-auto px-6 py-6 text-center text-slate">
+             <p>&copy; 2025 Sudip Mukherjee Laboratory. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Active nav link scrolling
+        const sections = document.querySelectorAll('main section');
+        const navLinks = document.querySelectorAll('nav a.nav-link'); 
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
