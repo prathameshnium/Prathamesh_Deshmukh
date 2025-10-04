@@ -121,12 +121,20 @@
                     <button id="portfolio-button" class="nav-link flex items-center">
                         Portfolio <i class="fas fa-chevron-down text-xs ml-2"></i>
                     </button>
-                    <div id="portfolio-menu" class="absolute hidden bg-card-bg rounded-md shadow-lg py-2 w-48 top-full right-0 mt-2 z-50">
-                        <a href="pages/research.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Research & Pubs</a>
-                        <a href="pages/computational-works.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Computational Works</a>
-                        <a href="pages/presentations.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Presentations</a>
-                        <a href="pages/cv.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">CV</a>
-                        <div class="border-t border-gray-700 my-1"></div>
+                    <div id="portfolio-menu" class="absolute hidden bg-card-bg rounded-md shadow-lg py-2 w-56 top-full right-0 mt-2 z-50">
+                        <!-- Submenu Item -->
+                        <div id="core-portfolio-item" class="relative">
+                            <a href="#" class="w-full text-left px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange flex justify-between items-center">
+                                Core Portfolio <i class="fas fa-chevron-right text-xs"></i>
+                            </a>
+                            <div id="core-portfolio-submenu" class="absolute hidden bg-card-bg rounded-md shadow-lg py-2 w-48 top-0 -left-full mt-0 z-50">
+                                <a href="pages/research.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Research & Pubs</a>
+                                <a href="pages/computational-works.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Computational Works</a>
+                                <a href="pages/presentations.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Presentations</a>
+                                <a href="pages/cv.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">CV</a>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-600 my-1"></div>
                         <a href="pages/blog.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Blog</a>
                         <a href="pages/gallery.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Gallery</a>
                         <a href="pages/resources.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Resources</a>
@@ -291,8 +299,11 @@
                         <span class="tag px-3 py-1 rounded-full">UV-Vis Spectroscopy</span>
                         <span class="tag px-3 py-1 rounded-full">Sol-Gel Synthesis</span>
                     </div>
-                    <div class="mt-auto flex flex-wrap gap-4 pt-4">
-                        <a href="https://www.researchgate.net/lab/Sudip-Mukherjee-Materials-Physics-Lab-Sudip-Mukherjee" target="_blank" rel="noopener noreferrer" class="cta-button text-sm flex-grow text-center bg-accent-orange/10 border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-4 rounded-lg">
+                    <div class="mt-auto grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <a href="pages/Sudip_Mukherjee_Materials_Physics_Lab.html" class="cta-button text-sm text-center bg-accent-orange/10 border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-4 rounded-lg">
+                            Materials Physics Lab
+                        </a>
+                        <a href="https://www.researchgate.net/lab/Sudip-Mukherjee-Materials-Physics-Lab-Sudip-Mukherjee" target="_blank" rel="noopener noreferrer" class="cta-button text-sm text-center bg-accent-orange/10 border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-4 rounded-lg">
                             Lab Facilities
                         </a>
                         <a href="https://www.csruserportal.com/Intro/csrMumbaiFacilities" target="_blank" rel="noopener noreferrer" class="cta-button text-sm flex-grow text-center bg-accent-orange/10 border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-4 rounded-lg">
@@ -303,12 +314,12 @@
 
                 <div class="card p-6 rounded-lg flex flex-col">
                     <h3 class="text-xl font-semibold text-accent-orange mb-4">Programming & Automation</h3>
-                    <p class="text-slate mb-4 flex-grow">Developing custom Python scripts (PyVISA) to interface with and automate laboratory instruments for precise data acquisition.</p>
-                    <div class="mt-auto flex flex-wrap gap-4">
+                    <p class="text-slate mb-4 flex-grow">Developing custom Python scripts (PyVISA) to interface with and automate laboratory instruments for precise data acquisition. My flagship project, PICA, provides a full suite for this purpose.</p>
+                    <div class="mt-auto grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                         <a href="pages/computational-works.html" class="cta-button text-sm flex-grow text-center bg-accent-orange/10 border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-4 rounded-lg">
                             View All Projects
                         </a>
-                        <a href="pages/project-pica.html" class="cta-button text-sm flex-grow text-center bg-accent-orange/10 border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-4 rounded-lg">
+                        <a href="pages/project-pica.html" class="cta-button text-sm flex-grow text-center bg-accent-orange/10 border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-4 rounded-lg col-span-full">
                             PICA Project
                         </a>
                     </div>
@@ -437,6 +448,30 @@
             if (!portfolioMenu.classList.contains('hidden')) {
                 portfolioMenu.classList.add('hidden');
             }
+        });
+
+        // Improved submenu logic
+        const corePortfolioItem = document.getElementById('core-portfolio-item');
+        const corePortfolioSubmenu = document.getElementById('core-portfolio-submenu');
+        let submenuTimeout;
+
+        corePortfolioItem.addEventListener('mouseenter', () => {
+            clearTimeout(submenuTimeout);
+            corePortfolioSubmenu.classList.remove('hidden');
+        });
+
+        corePortfolioItem.addEventListener('mouseleave', () => {
+            submenuTimeout = setTimeout(() => {
+                corePortfolioSubmenu.classList.add('hidden');
+            }, 300); // 300ms delay before hiding
+        });
+
+        corePortfolioSubmenu.addEventListener('mouseenter', () => {
+            clearTimeout(submenuTimeout);
+        });
+
+        corePortfolioSubmenu.addEventListener('mouseleave', () => {
+            corePortfolioSubmenu.classList.add('hidden');
         });
     </script>
 
