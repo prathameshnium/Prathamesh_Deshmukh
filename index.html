@@ -30,13 +30,7 @@
 
     <link rel="manifest" href="site.webmanifest">
     
-    <script src="https://cdn.tailwindcss.com" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Serif+Pro:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Serif+Pro:wght@600;700&display=swap"></noscript>
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C4JV6510PN"></script>
     <script>
@@ -66,6 +60,16 @@
         }
       }
     </script>
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Asynchronously load non-critical CSS -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Serif+Pro:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Serif+Pro:wght@600;700&display=swap"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     <style>
         body { background-color: #1a202c; color: #e2e8f0; }
         .section-title { font-family: 'Source Serif Pro', serif; color: #ffffff; }
@@ -103,6 +107,16 @@
             from { opacity: 0; transform: scale(0.95); }
             to { opacity: 1; transform: scale(1); }
         }
+        /* Inlined Critical CSS for Above-the-Fold Content */
+        header { background-color: #1a202c; }
+        .hero-section-critical { min-height: 100vh; display: flex; align-items: center; }
+        .hero-title-critical { font-size: 2.5rem; line-height: 1.2; font-weight: 700; font-family: 'Source Serif Pro', serif; color: #ffffff; margin-bottom: 1rem; }
+        @media (min-width: 768px) {
+            .hero-title-critical { font-size: 3rem; }
+        }
+        .hero-subtitle-critical { font-size: 1.5rem; line-height: 2rem; color: #f6ad55; margin-bottom: 1.5rem; }
+        .hero-text-critical { font-size: 1.125rem; line-height: 1.75rem; color: #a8b2d1; max-width: 48rem; margin-bottom: 2rem; }
+
     </style>
     
 <script type="application/ld+json">
@@ -211,7 +225,7 @@
 
     <main class="container mx-auto px-6 py-12">
 
-        <section id="about" class="min-h-screen flex items-center">
+        <section id="about" class="hero-section-critical">
             <div class="w-full">
                 <h1 class="text-5xl font-bold section-title mb-4">Prathamesh Keshao Deshmukh</h1>
                 <h2 class="text-2xl text-accent-orange mb-6">PhD Scholar | Condensed Matter Physics</h2>
@@ -594,6 +608,6 @@
         }
     </script>
 
-    <script async src="https://cse.google.com/cse.js?cx=4137cb8ceeadf4259"></script>
+    <script async defer src="https://cse.google.com/cse.js?cx=4137cb8ceeadf4259"></script>
 </body>
 </html>
