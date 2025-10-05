@@ -39,6 +39,9 @@
     <a href="https://www.researchgate.net/profile/Prathamesh-Deshmukh-6" target="_blank">
       <img src="https://img.shields.io/badge/ResearchGate-00CCBB?style=for-the-badge&logo=researchgate&logoColor=white" alt="ResearchGate Profile"/>
     </a>
+    <a href="https://csr.academia.edu/PrathameshDeshmukh" target="_blank">
+      <img src="https://img.shields.io/badge/Academia-333333?style=for-the-badge&logo=academia&logoColor=white" alt="Academia.edu Profile"/>
+    </a>
   </p>
     
   <p>
