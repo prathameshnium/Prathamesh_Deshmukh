@@ -83,6 +83,10 @@
         .cta-button:hover { background-color: #f6ad55; color: #1a202c; transform: translateY(-3px); box-shadow: 0 4px 6px rgba(246, 173, 85, 0.2); }
         .social-icon { transition: transform 0.2s ease-in-out, color 0.2s ease-in-out; color: #a8b2d1; }
         .social-icon:hover { transform: translateY(-3px) scale(1.1); color: #f6ad55; }
+        .card-link { display: block; text-decoration: none; color: inherit; }
+        .card-link .publication-link { position: relative; z-index: 10; }
+        .card-link .cta-button { position: relative; z-index: 10; }
+
     </style>
     
 <script type="application/ld+json">
@@ -266,27 +270,33 @@
         <section id="publications" class="py-20">
             <h2 class="text-4xl font-bold section-title mb-8 text-center">Selected Publications</h2>
             <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-6">
-                <div class="card p-6 rounded-lg">
-                    <p class="mb-2 text-light-slate">Deshmukh, P., et al. (2024). "Exploration of near room temperature magnetoelectric coupling in BaFe<sub>10</sub>Sc<sub>2</sub>O<sub>19</sub>:KNbO<sub>3</sub> composite."</p>
-                    <p class="italic text-slate mb-3">Journal of Physics and Chemistry of Solids, 196, 112309.</p>
-                    <a href="https://doi.org/10.1016/j.jpcs.2024.112309" target="_blank" rel="noopener noreferrer" class="publication-link font-medium">
-                        View Article <i class="fas fa-external-link-alt ml-1 text-xs"></i>
-                    </a>
-                </div>
-                <div class="card p-6 rounded-lg">
-                    <p class="mb-2 text-light-slate">Mukherjee, S., et al. (2025). "Negative capacitance and magnetodielectric effect in Cu<sub>2</sub>O-CuO ceramics."</p>
-                    <p class="italic text-slate mb-3">Ceramics International, 51(20), 30716-30722.</p>
-                      <a href="https://doi.org/10.1016/j.ceramint.2025.04.264" target="_blank" rel="noopener noreferrer" class="publication-link font-medium">
-                        View Article <i class="fas fa-external-link-alt ml-1 text-xs"></i>
-                    </a>
-                </div>
-                <div class="card p-6 rounded-lg">
-                    <p class="mb-2 text-light-slate">Deshmukh, P., et al. (2025). "Exploring the role of Cu<sup>1+</sup> in quasi-1D Cu<sub>1-x</sub>Li<sub>x</sub>O (x = 0.025)."</p>
-                    <p class="italic text-slate mb-3">Journal of Alloys and Compounds, 1036, 181833.</p>
-                      <a href="https://doi.org/10.1016/j.jallcom.2025.181833" target="_blank" rel="noopener noreferrer" class="publication-link font-medium">
-                        View Article <i class="fas fa-external-link-alt ml-1 text-xs"></i>
-                    </a>
-                </div>
+                <a href="https://doi.org/10.1016/j.jpcs.2024.112309" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="Read the article on magnetoelectric coupling in BaFe10Sc2O19:KNbO3 composite">
+                    <div class="card p-6 rounded-lg h-full">
+                        <p class="mb-2 text-light-slate">Deshmukh, P., et al. (2024). "Exploration of near room temperature magnetoelectric coupling in BaFe<sub>10</sub>Sc<sub>2</sub>O<sub>19</sub>:KNbO<sub>3</sub> composite."</p>
+                        <p class="italic text-slate mb-3">Journal of Physics and Chemistry of Solids, 196, 112309.</p>
+                        <span class="publication-link font-medium">
+                            View Article <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                        </span>
+                    </div>
+                </a>
+                <a href="https://doi.org/10.1016/j.ceramint.2025.04.264" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="Read the article on negative capacitance in Cu2O-CuO ceramics">
+                    <div class="card p-6 rounded-lg h-full">
+                        <p class="mb-2 text-light-slate">Mukherjee, S., et al. (2025). "Negative capacitance and magnetodielectric effect in Cu<sub>2</sub>O-CuO ceramics."</p>
+                        <p class="italic text-slate mb-3">Ceramics International, 51(20), 30716-30722.</p>
+                        <span class="publication-link font-medium">
+                            View Article <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                        </span>
+                    </div>
+                </a>
+                <a href="https://doi.org/10.1016/j.jallcom.2025.181833" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="Read the article on the role of Cu1+ in quasi-1D Cu1-xLixO">
+                    <div class="card p-6 rounded-lg h-full">
+                        <p class="mb-2 text-light-slate">Deshmukh, P., et al. (2025). "Exploring the role of Cu<sup>1+</sup> in quasi-1D Cu<sub>1-x</sub>Li<sub>x</sub>O (x = 0.025)."</p>
+                        <p class="italic text-slate mb-3">Journal of Alloys and Compounds, 1036, 181833.</p>
+                        <span class="publication-link font-medium">
+                            View Article <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                        </span>
+                    </div>
+                </a>
             </div>
                <div class="text-center mt-10">
                 <a href="pages/research.html" class="cta-button inline-block bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-3 px-6 rounded-lg">
@@ -352,15 +362,21 @@
         <section id="conferences" class="py-20">
             <h2 class="text-4xl font-bold section-title mb-8 text-center">Conferences & Workshops</h2>
             <div class="max-w-4xl mx-auto space-y-4">
-                <div class="card p-4 rounded-lg">
-                    <p class="text-light-slate"><i class="fas fa-chalkboard-teacher text-accent-orange mr-3"></i><strong>Attended:</strong> XIX School on Neutron as Probe of Condensed Matter, UGC-DAE CSR, Mumbai (Sep 2022)</p>
-                </div>
-                <div class="card p-4 rounded-lg">
-                    <p class="text-light-slate"><i class="fas fa-file-alt text-accent-orange mr-3"></i><strong>Poster Presentation:</strong> 66th DAE Solid State Physics Symposium, BIT Mesra, Ranchi (Dec 2022)</p>
-                </div>
-                 <div class="card p-4 rounded-lg">
-                    <p class="text-light-slate"><i class="fas fa-chalkboard-teacher text-accent-orange mr-3"></i><strong>Attended:</strong> 6th National Workshop on Materials Chemistry, Mumbai (Oct 2023)</p>
-                </div>
+                <a href="pages/presentations.html#workshops" class="card-link" aria-label="View details about the XIX School on Neutron as Probe of Condensed Matter">
+                    <div class="card p-4 rounded-lg">
+                        <p class="text-light-slate"><i class="fas fa-chalkboard-teacher text-accent-orange mr-3"></i><strong>Attended:</strong> XIX School on Neutron as Probe of Condensed Matter, UGC-DAE CSR, Mumbai (Sep 2022)</p>
+                    </div>
+                </a>
+                <a href="pages/presentations.html#conferences" class="card-link" aria-label="View details about the 66th DAE Solid State Physics Symposium">
+                    <div class="card p-4 rounded-lg">
+                        <p class="text-light-slate"><i class="fas fa-file-alt text-accent-orange mr-3"></i><strong>Poster Presentation:</strong> 66th DAE Solid State Physics Symposium, BIT Mesra, Ranchi (Dec 2022)</p>
+                    </div>
+                </a>
+                <a href="pages/presentations.html#workshops" class="card-link" aria-label="View details about the 6th National Workshop on Materials Chemistry">
+                    <div class="card p-4 rounded-lg">
+                        <p class="text-light-slate"><i class="fas fa-chalkboard-teacher text-accent-orange mr-3"></i><strong>Attended:</strong> 6th National Workshop on Materials Chemistry, Mumbai (Oct 2023)</p>
+                    </div>
+                </a>
             </div>
                <div class="text-center mt-10">
                 <a href="pages/presentations.html" class="cta-button inline-block bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-3 px-6 rounded-lg">

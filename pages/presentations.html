@@ -83,6 +83,10 @@
             transform: translateY(-3px) scale(1.1);
             color: #f6ad55;
         }
+        .card-link {
+            display: block;
+            height: 100%;
+        }
     </style>
 </head>
 <body class="antialiased font-sans">
@@ -176,35 +180,41 @@
 
         <section id="seminars" class="py-10 max-w-4xl mx-auto">
             <h2 class="text-3xl font-bold section-title mb-8 text-center">Academic & Technical Seminars</h2>
-            <div class="space-y-8">
-                <div class="card p-8 rounded-lg">
+            <div class="space-y-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <a href="../assets/Multiferroics_Year3_PPT_V2_Prathamesh_Deshmukh.pdf" target="_blank" class="card-link" aria-label="View the presentation on Multiferroics">
+                    <div class="card p-8 rounded-lg h-full flex flex-col">
+                        <p class="text-sm text-slate mb-2">Academic Seminar | UGC-DAE CSR, Mumbai</p>
+                        <h3 class="text-2xl font-semibold text-accent-orange mb-4">Multiferroics: A Comprehensive Overview</h3>
+                        <p class="text-light-slate mb-6 flex-grow">An in-depth presentation on multiferroic materials, covering the magnetoelectric effect, single-phase vs. composite systems, and recent examples from my <a href="research.html" class="text-accent-orange hover:underline relative z-10">published research</a>.</p>
+                        <span class="cta-button inline-block bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-5 rounded-lg mt-auto text-center relative z-10">
+                            <i class="fas fa-file-pdf mr-2"></i> View Presentation
+                        </span>
+                    </div>
+                </a>
+                <a href="../assets/Python_Ising_Final.pdf" target="_blank" class="card-link" aria-label="View the presentation on the Ising Model in Python">
+                    <div class="card p-8 rounded-lg h-full flex flex-col">
+                        <p class="text-sm text-slate mb-2">Academic Seminar | UGC-DAE CSR, Mumbai</p>
+                        <h3 class="text-2xl font-semibold text-accent-orange mb-4">Ising Model in Python</h3>
+                        <p class="text-light-slate mb-6 flex-grow">A technical presentation on solving the 2D Ising model using Python, covering the Metropolis algorithm and practical implementation. The code is part of my <a href="computational-works.html#projects" class="text-accent-orange hover:underline relative z-10">computational works</a>.</p>
+                        <span class="cta-button inline-block bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-5 rounded-lg mt-auto text-center relative z-10">
+                            <i class="fas fa-file-pdf mr-2"></i> View Presentation
+                        </span>
+                    </div>
+                </a>
+                <a href="../assets/Dielectric_PPT.pdf" target="_blank" class="card-link" aria-label="View the presentation on the Fundamentals of Dielectrics">
+                    <div class="card p-8 rounded-lg h-full flex flex-col">
+                        <p class="text-sm text-slate mb-2">Academic Seminar | UGC-DAE CSR, Mumbai</p>
+                        <h3 class="text-2xl font-semibold text-accent-orange mb-4">Fundamentals of Dielectrics</h3>
+                        <p class="text-light-slate mb-6 flex-grow">An overview of dielectric materials, covering polarization mechanisms, frequency dependence, and special properties like ferroelectricity and piezoelectricity.</p>
+                        <span class="cta-button inline-block bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-5 rounded-lg mt-auto text-center relative z-10">
+                            <i class="fas fa-file-pdf mr-2"></i> View Presentation
+                        </span>
+                    </div>
+                </a>
+                <div class="card p-8 rounded-lg h-full flex flex-col">
                     <p class="text-sm text-slate mb-2">Academic Seminar | Shri Shivaji Science College, Amravati (28/09/2018)</p>
                     <h3 class="text-2xl font-semibold text-accent-orange mb-4">Quantum Computing</h3>
-                    <p class="text-light-slate mb-6">A foundational overview of quantum computing, covering its history, the principles that make it powerful, potential applications, and the challenges facing the field.</p>
-                </div>
-                <div class="card p-8 rounded-lg">
-                    <p class="text-sm text-slate mb-2">Academic Seminar | UGC-DAE CSR, Mumbai</p>
-                    <h3 class="text-2xl font-semibold text-accent-orange mb-4">Multiferroics: A Comprehensive Overview</h3>
-                    <p class="text-light-slate mb-6">An in-depth presentation on multiferroic materials, covering the magnetoelectric effect, single-phase vs. composite systems, and recent examples from my <a href="research.html" class="text-accent-orange hover:underline">published research</a>, including work on BaFe₁₂O₁₉ and Li-doped CuO.</p>
-                    <a href="../assets/Multiferroics_Year3_PPT_V2_Prathamesh_Deshmukh.pdf" target="_blank" class="cta-button inline-block bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-5 rounded-lg">
-                        <i class="fas fa-file-pdf mr-2"></i> View Presentation
-                    </a>
-                </div>
-                <div class="card p-8 rounded-lg">
-                    <p class="text-sm text-slate mb-2">Academic Seminar | UGC-DAE CSR, Mumbai</p>
-                    <h3 class="text-2xl font-semibold text-accent-orange mb-4">Ising Model in Python</h3>
-                    <p class="text-light-slate mb-6">A technical presentation on solving the 2D Ising model using Python. This talk covers the theoretical background, the Metropolis algorithm, and practical implementation with NumPy for simulating magnetic systems and phase transitions. The code is part of my <a href="computational-works.html#projects" class="text-accent-orange hover:underline">computational works</a>.</p>
-                    <a href="../assets/Python_Ising_Final.pdf" target="_blank" class="cta-button inline-block bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-5 rounded-lg">
-                        <i class="fas fa-file-pdf mr-2"></i> View Presentation
-                    </a>
-                </div>
-                <div class="card p-8 rounded-lg">
-                    <p class="text-sm text-slate mb-2">Academic Seminar | UGC-DAE CSR, Mumbai</p>
-                    <h3 class="text-2xl font-semibold text-accent-orange mb-4">Fundamentals of Dielectrics</h3>
-                    <p class="text-light-slate mb-6">An overview of dielectric materials, covering the effects of electric fields, microscopic polarization mechanisms, frequency dependence, and special properties like ferroelectricity and piezoelectricity.</p>
-                    <a href="../assets/Dielectric_PPT.pdf" target="_blank" class="cta-button inline-block bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-5 rounded-lg">
-                        <i class="fas fa-file-pdf mr-2"></i> View Presentation
-                    </a>
+                    <p class="text-light-slate mb-6 flex-grow">A foundational overview of quantum computing, covering its history, the principles that make it powerful, potential applications, and the challenges facing the field.</p>
                 </div>
             </div>
         </section>
