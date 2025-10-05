@@ -30,7 +30,7 @@
 
     <link rel="manifest" href="site.webmanifest">
     
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C4JV6510PN"></script>
     <script>
@@ -108,14 +108,16 @@
             to { opacity: 1; transform: scale(1); }
         }
         /* Inlined Critical CSS for Above-the-Fold Content */
-        header { background-color: #1a202c; }
+        body { background-color: #1a202c; color: #e2e8f0; font-family: 'Inter', sans-serif; }
+        header { background-color: #1a202c; position: sticky; top: 0; z-index: 50; border-bottom: 1px solid #4a5568; }
+        .header-container-critical { margin-left: auto; margin-right: auto; padding-left: 1.5rem; padding-right: 1.5rem; padding-top: 1rem; padding-bottom: 1rem; display: flex; justify-content: space-between; align-items: center; }
+        .header-title-critical { font-size: 1.5rem; line-height: 2rem; font-weight: 700; color: #ffffff; font-family: 'Source Serif Pro', serif; }
         .hero-section-critical { min-height: 100vh; display: flex; align-items: center; }
-        .hero-title-critical { font-size: 2.5rem; line-height: 1.2; font-weight: 700; font-family: 'Source Serif Pro', serif; color: #ffffff; margin-bottom: 1rem; }
+        .hero-title-critical { font-size: 2.5rem; line-height: 1.2; font-weight: 700; font-family: 'Source Serif Pro', serif; color: #ffffff; margin-bottom: 1rem; } /* Adjusted from text-5xl */
         @media (min-width: 768px) {
-            .hero-title-critical { font-size: 3rem; }
+            .hero-title-critical { font-size: 3rem; } /* Corresponds to text-5xl */
         }
-        .hero-subtitle-critical { font-size: 1.5rem; line-height: 2rem; color: #f6ad55; margin-bottom: 1.5rem; }
-        .hero-text-critical { font-size: 1.125rem; line-height: 1.75rem; color: #a8b2d1; max-width: 48rem; margin-bottom: 2rem; }
+        .hero-subtitle-critical { font-size: 1.5rem; line-height: 2rem; color: #f6ad55; margin-bottom: 1.5rem; } /* text-2xl */
 
     </style>
     
@@ -146,8 +148,8 @@
 <body class="antialiased font-sans">
 
     <header class="bg-dark-bg sticky top-0 z-50 border-b border-gray-700">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-white font-serif">Prathamesh Deshmukh</a>
+        <div class="header-container-critical">
+            <a href="index.html" class="header-title-critical">Prathamesh Deshmukh</a>
             <nav class="hidden md:flex items-center space-x-6">
                 <a href="#about" class="nav-link">About</a>
                 <a href="#research" class="nav-link">Research</a>
@@ -227,8 +229,8 @@
 
         <section id="about" class="hero-section-critical">
             <div class="w-full">
-                <h1 class="text-5xl font-bold section-title mb-4">Prathamesh Keshao Deshmukh</h1>
-                <h2 class="text-2xl text-accent-orange mb-6">PhD Scholar | Condensed Matter Physics</h2>
+                <h1 class="hero-title-critical">Prathamesh Keshao Deshmukh</h1>
+                <h2 class="hero-subtitle-critical">PhD Scholar | Condensed Matter Physics</h2>
                 <p class="text-lg max-w-3xl mb-8 text-light-slate">
                     A PhD researcher at the UGC-DAE Consortium for Scientific Research, specializing in the synthesis and characterization of multiferroic composites. My work bridges experimental physics with computational science, focusing on magnetoelectric coupling and the development of novel materials. By utilizing advanced techniques like neutron diffraction and creating Python-based tools for lab automation, I aim to contribute to the next generation of data storage, sensors, and energy-efficient electronics.
                 </p>
