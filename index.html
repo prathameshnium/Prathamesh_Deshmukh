@@ -87,12 +87,17 @@
         .social-icon:hover { transform: translateY(-3px) scale(1.1); color: #f6ad55; }
         .card-link { display: block; text-decoration: none; color: inherit; height: 100%; }
         /* Search Modal Styles */
-        #search-modal {
-            background-color: rgb(26, 32, 44);
-            backdrop-filter: blur(8px);
-        }
         .modal-content {
             animation: fadeIn 0.3s ease-out;
+        }
+        #search-modal {
+            background-color: rgba(26, 32, 44, 0.8); /* dark-bg with opacity */
+            backdrop-filter: blur(4px);
+        }
+        /* Dropdown Menu Styles */
+        .dropdown-menu {
+            background-color: #2d3748; /* card-bg */
+            color: #a8b2d1; /* light-slate */
         }
         @keyframes fadeIn {
             from { opacity: 0; transform: scale(0.95); }
@@ -138,13 +143,13 @@
                     <button id="portfolio-button" class="nav-link flex items-center">
                         Portfolio <i class="fas fa-chevron-down text-xs ml-2"></i>
                     </button>
-                    <div id="portfolio-menu" class="absolute hidden bg-dark-bg border border-gray-700 rounded-md shadow-lg py-2 w-56 top-full right-0 mt-2 z-50">
+                    <div id="portfolio-menu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-56 top-full right-0 mt-2 z-50">
                         <!-- Submenu Item -->
                         <div id="core-portfolio-item" class="relative">
                             <a href="#" class="w-full text-left px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange flex justify-between items-center">
                                 Core Portfolio <i class="fas fa-chevron-right text-xs"></i>
                             </a>
-                            <div id="core-portfolio-submenu" class="absolute hidden bg-dark-bg border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 -left-full mt-0 z-50">
+                            <div id="core-portfolio-submenu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 -left-full mt-0 z-50">
                                 <a href="pages/research.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Research & Pubs</a>
                                 <a href="pages/computational-works.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Computational Works</a>
                                 <a href="pages/presentations.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Presentations</a>
@@ -237,7 +242,7 @@
                         <button id="more-links-button" class="social-icon text-3xl" aria-label="More social and academic links">
                             <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
                         </button>
-                        <div id="more-links-menu" class="absolute hidden bg-dark-bg border border-gray-700 rounded-md shadow-lg p-2 w-max top-full mt-2 z-50">
+                        <div id="more-links-menu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg p-2 w-max top-full mt-2 z-50">
                             <a href="https://www.researchgate.net/profile/Prathamesh-Deshmukh-6" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><i class="fab fa-researchgate w-6 mr-2"></i> ResearchGate</a>
                             <a href="https://gitlab.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><i class="fab fa-gitlab w-6 mr-2"></i> GitLab</a>
                             <a href="https://orcid.org/0009-0008-3278-0837" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><i class="fab fa-orcid w-6 mr-2"></i> ORCID</a>
@@ -446,7 +451,7 @@
                     <button id="footer-more-links-button" class="social-icon text-2xl" aria-label="More social and academic links">
                         <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
                     </button>
-                    <div id="footer-more-links-menu" class="absolute hidden bg-dark-bg border border-gray-700 rounded-md shadow-lg p-2 w-max bottom-full mb-2 left-1/2 -translate-x-1/2 z-50">
+                    <div id="footer-more-links-menu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg p-2 w-max bottom-full mb-2 left-1/2 -translate-x-1/2 z-50">
                         <a href="https://www.researchgate.net/profile/Prathamesh-Deshmukh-6" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><i class="fab fa-researchgate w-6 mr-2"></i> ResearchGate</a>
                         <a href="https://gitlab.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><i class="fab fa-gitlab w-6 mr-2"></i> GitLab</a>
                         <a href="https://orcid.org/0009-0008-3278-0837" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><i class="fab fa-orcid w-6 mr-2"></i> ORCID</a>
@@ -570,14 +575,13 @@
         if (searchModal) {
             const searchIconBtn = document.getElementById('search-icon-btn');
             const closeSearchModalBtn = document.getElementById('close-search-modal-btn');
- 
-            let cseLoaded = false;
+
             searchIconBtn.addEventListener('click', () => {
-                searchModal.classList.toggle('hidden');
-                searchModal.classList.toggle('flex');
+                searchModal.classList.remove('hidden');
+                searchModal.classList.add('flex');
                 // Use Google's official method to render the search box
                 if (window.google && google.search.cse) {
-                    google.search.cse.element.render({
+                    google.search.cse.element.go({
                         div: "gcse-search-in-modal",
                         tag: 'searchbox-only'
                     });
