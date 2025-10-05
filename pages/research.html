@@ -66,10 +66,42 @@
     <!-- Header & Navigation -->
     <header class="bg-dark-bg/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-700">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-white font-serif">Prathamesh Deshmukh</h1>
-            <nav>
-                <a href="../index.html" class="nav-link">Home</a>
+            <a href="../index.html" class="text-2xl font-bold text-white font-serif">Prathamesh Deshmukh</a>
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="../index.html#about" class="nav-link">About</a>
+                <a href="../index.html#research" class="nav-link">Research</a>
+                <a href="../index.html#skills" class="nav-link">Skills</a>
+                <a href="../index.html#journey" class="nav-link">Journey</a>
+                <div class="relative">
+                    <button id="portfolio-button" class="nav-link flex items-center">
+                        Portfolio <i class="fas fa-chevron-down text-xs ml-2"></i>
+                    </button>
+                    <div id="portfolio-menu" class="absolute hidden bg-card-bg rounded-md shadow-lg py-2 w-56 top-full right-0 mt-2 z-50">
+                        <a href="research.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Research & Pubs</a>
+                        <a href="computational-works.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Computational Works</a>
+                        <a href="presentations.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Presentations</a>
+                        <a href="cv.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">CV</a>
+                        <div class="border-t border-gray-600 my-1"></div>
+                        <a href="blog.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Blog</a>
+                        <a href="gallery.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Gallery</a>
+                        <a href="resources.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Resources</a>
+                    </div>
+                </div>
+                <a href="../index.html#contact" class="nav-link">Contact</a>
             </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+             <a href="../index.html" class="block py-2 nav-link">Home</a>
+             <a href="research.html" class="block py-2 nav-link">Research & Pubs</a>
+             <a href="computational-works.html" class="block py-2 nav-link">Computational Works</a>
+             <a href="presentations.html" class="block py-2 nav-link">Presentations</a>
+             <a href="cv.html" class="block py-2 nav-link">CV</a>
+             <a href="blog.html" class="block py-2 nav-link">Blog</a>
+             <a href="gallery.html" class="block py-2 nav-link">Gallery</a>
+             <a href="resources.html" class="block py-2 nav-link">Resources</a>
         </div>
     </header>
 
@@ -81,7 +113,7 @@
 
                 <!-- Publication 1 -->
                 <div class="card p-8 rounded-lg">
-                    <h3 class="text-2xl font-semibold text-accent-orange mb-2">Exploration of near room temperature magnetoelectric coupling in BaFe₁₀Sc₂O₁₉:KNbO₃ composite</h3>
+                    <h3 class="text-2xl font-semibold text-accent-orange mb-2">Exploration of near room temperature magnetoelectric coupling in BaFe<sub>10</sub>Sc<sub>2</sub>O<sub>19</sub>:KNbO<sub>3</sub> composite</h3>
                     <p class="text-slate mb-4">Prathamesh Deshmukh, Srishti Kashyap, Swastika Mukherjee, Surbhi Gupta, Sudip Mukherjee</p>
                     <p class="italic text-light-slate mb-6">Journal of Physics and Chemistry of Solids (2024)</p>
                     
@@ -105,7 +137,7 @@
 
                 <!-- Publication 2 -->
                 <div class="card p-8 rounded-lg">
-                    <h3 class="text-2xl font-semibold text-accent-orange mb-2">Exploring the role of Cu¹⁺ in quasi-1D Cu₁₋ₓLiₓO (x = 0.025)</h3>
+                    <h3 class="text-2xl font-semibold text-accent-orange mb-2">Exploring the role of Cu<sup>1+</sup> in quasi-1D Cu<sub>1&minus;x</sub>Li<sub>x</sub>O (x = 0.025)</h3>
                     <p class="text-slate mb-4">Prathamesh Deshmukh, Pradip Kumar Jana, Swastika Mukherjee, Srishti Kashyap, Manisha Venkatesh, Sudhindra Rayaprol, Sudip Mukherjee</p>
                     <p class="italic text-light-slate mb-6">Journal of Alloys and Compounds (2025)</p>
                     
@@ -120,7 +152,7 @@
 
                      <h4 class="font-semibold text-white mb-2">Abstract:</h4>
                     <p class="text-slate mb-6">
-                        The influences of hole-doping in cupric oxide leads to a localization of charge carriers, accompanied by changes in crystal structure, magnetic and transport properties. The crystallographic structure and phase purity of the properly sintered sample is characterized by temperature-dependent neutron diffraction (ND) measurements where the composition is found as Cu₀.₉₇₅Li₀.₀₂₅O (CLO). Interestingly, the formation of Cu¹⁺ and Cu³⁺ in addition to the Cu²⁺ was confirmed from the x-ray photoelectron spectroscopy (XPS) study in CLO system. Magnetization measurements show shifting in commensurate and incommensurate transition temperatures T<sub>N1</sub> ~ 82 K and T<sub>N2</sub> ~ 204 K respectively, highlighting the sensitive correlation between structural parameters and antiferromagnetically ordered quasi-1D spin arrangement. Temperature-dependent ordered magnetic moment (ground state) of Cu in CLO is calculated from ND data using a mean-field equation which coincides concomitantly with incommensurate antiferromagnetic transition T<sub>N2</sub>. Above and below the said antiferromagnetic ordering temperature, a changeover was concluded from p-type to n-type conduction mechanism. The Cu¹⁺ specimens in CLO maintain a high dielectric value (~10³) even at low temperature. The Cu¹⁺ and charge order domains significantly influence the intriguing transport behavior (hole-hopping between Cu²⁺ and Cu³⁺) of CLO, with their effects strongly dependent on the antiferromagnetically ordered spin structures.
+                        The influences of hole-doping in cupric oxide leads to a localization of charge carriers, accompanied by changes in crystal structure, magnetic and transport properties. The crystallographic structure and phase purity of the properly sintered sample is characterized by temperature-dependent neutron diffraction (ND) measurements where the composition is found as Cu<sub>0.975</sub>Li<sub>0.025</sub>O (CLO). Interestingly, the formation of Cu<sup>1+</sup> and Cu<sup>3+</sup> in addition to the Cu<sup>2+</sup> was confirmed from the x-ray photoelectron spectroscopy (XPS) study in CLO system. Magnetization measurements show shifting in commensurate and incommensurate transition temperatures T<sub>N1</sub> ~ 82 K and T<sub>N2</sub> ~ 204 K respectively, highlighting the sensitive correlation between structural parameters and antiferromagnetically ordered quasi-1D spin arrangement. Temperature-dependent ordered magnetic moment (ground state) of Cu in CLO is calculated from ND data using a mean-field equation which coincides concomitantly with incommensurate antiferromagnetic transition T<sub>N2</sub>. Above and below the said antiferromagnetic ordering temperature, a changeover was concluded from p-type to n-type conduction mechanism. The Cu<sup>1+</sup> specimens in CLO maintain a high dielectric value (~10<sup>3</sup>) even at low temperature. The Cu<sup>1+</sup> and charge order domains significantly influence the intriguing transport behavior (hole-hopping between Cu<sup>2+</sup> and Cu<sup>3+</sup>) of CLO, with their effects strongly dependent on the antiferromagnetically ordered spin structures.
                     </p>
 
                     <a href="https://doi.org/10.1016/j.jallcom.2025.181833" target="_blank" rel="noopener noreferrer" class="publication-link inline-block bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-5 rounded-lg">
@@ -130,13 +162,13 @@
 
                 <!-- Publication 3 -->
                 <div class="card p-8 rounded-lg">
-                    <h3 class="text-2xl font-semibold text-accent-orange mb-2">Negative capacitance and magnetodielectric effect in Cu₂O-CuO ceramics</h3>
+                    <h3 class="text-2xl font-semibold text-accent-orange mb-2">Negative capacitance and magnetodielectric effect in Cu<sub>2</sub>O-CuO ceramics</h3>
                     <p class="text-slate mb-4">Swastika Mukherjee, Srishti Kashyap, Prathamesh Deshmukh, Riya Roy, Souvik Chatterjee, Sudip Mukherjee</p>
                     <p class="italic text-light-slate mb-6">Ceramics International (2025)</p>
                     
                     <h4 class="font-semibold text-white mb-2">Abstract:</h4>
                     <p class="text-slate mb-6">
-                        The present experimental study reveals that the influence of the strong spin-charge-lattice correlation in Cu₂O-CuO ceramics leads to a localization of charge carriers, accompanied by changes in crystal structure, transport conduction, and magnetic transition. In the low-frequency region, existence of significant negative capacitance behavior, inductive loop and phase angle dependence (sign changes from positive to negative) concomitantly coincides, described by hopping mechanism of charge carriers between two Cu species (Cu²⁺ and Cu¹⁺). Further, in the high-frequency domain, coupling of holes (electrons) and spin are observed by dielectric anomaly near the incommensurate magnetic phase transition temperature (T<sub>N2</sub> ~ 230 K). In addition, a distinct non-dispersive ferroelectric-like anomaly is observed around T<sub>m</sub> ~ 320 K, where asymmetric charge-hopping introduces a large dipole moment via bridging oxygen with Cu<sup>2+−δ</sup> - O - Cu<sup>1+−δ</sup>. Finally, the external dc magnetic field (9 tesla) causes a sizable decrease of ɛ′ value ongoing approximately above 200 K along with disappearance of T<sub>m</sub> ~ 320 K, representing the negative magneto-dielectric (MD) effect. This intriguing characteristic near the vicinity of magnetic transition can be established by the mechanism of charge-hopping-mediated MD effect, where the external applied field favors the double-exchange magnetic interaction by reducing the dipole moment and hence the dielectric permittivity value associated with the disappearance of the dielectric anomaly occurs.
+                        The present experimental study reveals that the influence of the strong spin-charge-lattice correlation in Cu<sub>2</sub>O-CuO ceramics leads to a localization of charge carriers, accompanied by changes in crystal structure, transport conduction, and magnetic transition. In the low-frequency region, existence of significant negative capacitance behavior, inductive loop and phase angle dependence (sign changes from positive to negative) concomitantly coincides, described by hopping mechanism of charge carriers between two Cu species (Cu<sup>2+</sup> and Cu<sup>1+</sup>). Further, in the high-frequency domain, coupling of holes (electrons) and spin are observed by dielectric anomaly near the incommensurate magnetic phase transition temperature (T<sub>N2</sub> ~ 230 K). In addition, a distinct non-dispersive ferroelectric-like anomaly is observed around T<sub>m</sub> ~ 320 K, where asymmetric charge-hopping introduces a large dipole moment via bridging oxygen with Cu<sup>2+&minus;&delta;</sup> - O - Cu<sup>1+&minus;&delta;</sup>. Finally, the external dc magnetic field (9 tesla) causes a sizable decrease of &epsilon;&prime; value ongoing approximately above 200 K along with disappearance of T<sub>m</sub> ~ 320 K, representing the negative magneto-dielectric (MD) effect. This intriguing characteristic near the vicinity of magnetic transition can be established by the mechanism of charge-hopping-mediated MD effect, where the external applied field favors the double-exchange magnetic interaction by reducing the dipole moment and hence the dielectric permittivity value associated with the disappearance of the dielectric anomaly occurs.
                     </p>
 
                     <a href="https://doi.org/10.1016/j.ceramint.2025.04.264" target="_blank" rel="noopener noreferrer" class="publication-link inline-block bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-5 rounded-lg">
@@ -165,5 +197,32 @@
         </div>
     </footer>
 
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Desktop dropdown
+        const portfolioButton = document.getElementById('portfolio-button');
+        const portfolioMenu = document.getElementById('portfolio-menu');
+
+        portfolioButton.addEventListener('click', (event) => {
+            event.stopPropagation();
+            portfolioMenu.classList.toggle('hidden');
+        });
+
+        portfolioMenu.addEventListener('click', (event) => {
+            event.stopPropagation();
+        });
+
+        window.addEventListener('click', () => {
+            if (!portfolioMenu.classList.contains('hidden')) {
+                portfolioMenu.classList.add('hidden');
+            }
+        });
+    </script>
 </body>
 </html>
