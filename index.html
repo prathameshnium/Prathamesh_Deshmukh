@@ -272,7 +272,7 @@
                         <i class="fas fa-flask text-3xl text-accent-orange mr-4" aria-hidden="true"></i>
                         <h3 class="text-2xl font-semibold text-white">Key Activities</h3>
                     </div>
-                    <ul class="space-y-4 text-light-slate">
+                    <ul class="space-y-4 text-slate">
                         <li class="flex items-start"><i class="fas fa-check-circle text-accent-orange/80 mt-1 mr-3" aria-hidden="true"></i><span>Novel material synthesis (e.g., BaFe<sub>10</sub>Sc<sub>2</sub>O<sub>19</sub>:KNbO<sub>3</sub>).</span></li>
                         <li class="flex items-start"><i class="fas fa-check-circle text-accent-orange/80 mt-1 mr-3" aria-hidden="true"></i><span>Design of custom probes for cryogenic measurements.</span></li>
                         <li class="flex items-start"><i class="fas fa-check-circle text-accent-orange/80 mt-1 mr-3" aria-hidden="true"></i><span>Structural analysis using Neutron & X-Ray Diffraction.</span></li>
@@ -572,9 +572,17 @@
             const searchIconBtn = document.getElementById('search-icon-btn');
             const closeSearchModalBtn = document.getElementById('close-search-modal-btn');
  
+            let cseLoaded = false;
             searchIconBtn.addEventListener('click', () => {
                 searchModal.classList.toggle('hidden');
                 searchModal.classList.toggle('flex');
+                if (!cseLoaded) {
+                    const script = document.createElement('script');
+                    script.src = 'https://cse.google.com/cse.js?cx=4137cb8ceeadf4259';
+                    script.async = true;
+                    document.querySelector('.gcse-search').appendChild(script);
+                    cseLoaded = true;
+                }
             });
  
             closeSearchModalBtn.addEventListener('click', () => {
