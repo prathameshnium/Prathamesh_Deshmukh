@@ -12,22 +12,36 @@ This website is built with HTML and Tailwind CSS and is hosted on GitHub Pages. 
 - [Computational Works](https://prathameshdeshmukh.site/pages/computational-works.html): A portfolio of scientific programming projects, showcasing expertise in instrument control, data analysis, and simulation.
 - [Curriculum Vitae (CV)](https://prathameshdeshmukh.site/pages/cv.html): A formal summary of academic qualifications, research experience, publications, skills, and awards.
 
+## Research Experience
+
+- **PhD Research** (2022-Present): Focused on the synthesis and characterization of multiferroic composites, exploring magnetoelectric coupling using techniques like neutron diffraction and dielectric spectroscopy.
+- **M.Sc Project** (2021): "Review on Earth abundant electrocatalytic bifunctional materials for energy conversion and storage applications."
+
 ## Key Projects
 
-- [PICA: Python Instrument Control & Automation](https://prathameshdeshmukh.site/pages/project-pica.html): A modular `PyVISA`-based automation suite for controlling lab instruments (Keithley, Lakeshore) for thermal and electrical characterization. Features a central GUI and isolated processes for stability.
+- PICA: Python Instrument Control & Automation: A modular `PyVISA`-based automation suite for controlling lab instruments (Keithley, Lakeshore) for thermal and electrical characterization. Features a central GUI and isolated processes for stability.
 - Physics Simulation Toolkit: Python scripts for simulating and visualizing phenomena in condensed matter physics, such as magnetic ordering (Ising model) and common dielectric models.
 - Solid-State Physics Calculators: Analysis scripts for calculating key experimental solid-state parameters like activation energy (Arrhenius) and charge transport (Mott-VRH models).
 - Python-for-OriginPro: Automation scripts leveraging the `originpro` library to streamline plotting, data fitting, and report generation directly within OriginLab.
 - Scientific-Python-Snippets: A curated collection of reusable Python scripts for common data handling, file manipulation, and automation tasks, often with simple Tkinter GUIs.
+- Ketron: An open-source knowledge base and archive of code snippets, experimental scripts, and small projects developed during research.
 
 ## Presentations & Academic Activities
 
 - Presentations Page: A full list of academic and technical seminars, conference presentations, and attended workshops.
+- **Poster Presentation**: Emerging Trends in Advanced Materials, CSIR-CGCRI, Kolkata (Feb 2025).
+- **Poster Presentation**: DAE-BRNS Theme Meeting on Nuclear Probes (NPMMI-2024), Mumbai (June 2024).
 - **Poster Presentation**: 67th DAE Solid State Physics Symposium, GITAM, Visakhapatnam (Dec 2023).
 - **Poster Presentation**: 66th DAE Solid State Physics Symposium, BIT Mesra, Ranchi (Dec 2022).
 - **Seminar**: "Multiferroics: A Comprehensive Overview" at UGC-DAE CSR, Mumbai.
 - **Seminar**: "Ising Model in Python" at UGC-DAE CSR, Mumbai.
+- **Seminar**: "Fundamentals of Dielectrics" at UGC-DAE CSR, Mumbai.
+- **Seminar**: "Quantum Computing" at Shri Shivaji Science College, Amravati (Sep 2018).
+- **Workshop Attended**: HERCULES EUROPEAN SCHOOL 2025 (Online, Mar-Apr 2025).
 - **Workshop Attended**: 13th AONSA Neutron School, BARC, Mumbai (Nov 2024).
+- **Workshop Attended**: XXth Neutron School (NPCM-2024), BARC, Mumbai (Feb 2024).
+- **Workshop Attended**: 7-Days Online FDP/Workshop on DFT Modelling of Materials (Dec 2023).
+- **Workshop Attended**: 6th National Workshop on Materials Chemistry, Mumbai (Oct 2023).
 - **Workshop Attended**: XIX School on Neutron as Probe of Condensed Matter, UGC-DAE CSR, Mumbai (Sep 2022).
 
 ## Publications
@@ -43,6 +57,13 @@ This website is built with HTML and Tailwind CSS and is hosted on GitHub Pages. 
 - **Core Libraries**: NumPy, Pandas, SciPy, Matplotlib.
 - **Simulation & Analysis Software**: COMSOL Multiphysics, MATLAB, Origin, FullProf Suite, Git.
 
+## Awards & Recognition
+
+- Associated with the SERB-CRG Project Grant (ANRF, DST, Govt. of India).
+- Ranked 3rd in Class during M.Sc 2nd Year Physics.
+- Awarded 2nd Rank in a seminar competition at Technotsav-2019 for a presentation on Quantum Computing.
+- Qualified the SPPU Ph.D. Entrance Examination.
+
 ## Academic Journey
 
 - **PhD in Physics** (2022 - Present): UGC-DAE Consortium for Scientific Research, Mumbai.
@@ -54,4 +75,3 @@ This website is built with HTML and Tailwind CSS and is hosted on GitHub Pages. 
 - Resources: A curated list of tools, databases, and resources for physics and scientific programming.
 - Materials Physics Lab: An overview of the lab where the research is conducted, including equipment and team members.
 - Sitemap & Link Directory: A complete directory of all internal pages and external academic profiles.
-
