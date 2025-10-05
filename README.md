@@ -1,11 +1,11 @@
 <div id="header" align="center">
-  <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="150"/>
+  <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="150" alt="Animated illustration of a scientist working in a lab"/>
   
   # Hi there, I'm Prathamesh Deshmukh <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"/>
   
   ### Physics PhD Scholar & Scientific Programmer
   
-  <p>
+  <p align="center">
     I am a doctoral researcher at the <b>UGC-DAE Consortium for Scientific Research (Mumbai Centre)</b>, specializing in **Condensed Matter Physics** and **Materials Science**. I am passionate about developing robust Python-based solutions for **lab automation**, **instrument control**, and advanced **data analysis**.
   </p>
   
@@ -62,14 +62,15 @@ My doctoral research is centered on **multiferroic composites** and other novel 
 Here are the primary languages, libraries, and tools I use for research, data analysis, and simulation:
 
 <p align="center">
-  <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a>
-  <a href="https://numpy.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/numpy/numpy-original.svg" alt="numpy" width="40" height="40"/> </a>
-  <a href="https://pandas.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/pandas/pandas-original.svg" alt="pandas" width="40" height="40"/> </a>
-  <a href="https://scipy.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/scipy/scipy-icon.svg" alt="scipy" width="40" height="40"/> </a>
-  <a href="https://matplotlib.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Matplotlib_icon.svg/2048px-Matplotlib_icon.svg.png" alt="matplotlib" width="40" height="40"/> </a>
-  <a href="https://jupyter.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/jupyter/jupyter-original-wordmark.svg" alt="jupyter" width="40" height="40"/> </a>
-  <a href="https://www.comsol.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="comsol" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a>
-  <a href="https://www.latex-project.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/latex/latex-original.svg" alt="latex" width="40" height="40"/> </a>
+  <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" width="40" height="40"/> </a>
+  <a href="https://numpy.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/numpy/numpy-original.svg" alt="NumPy" width="40" height="40"/> </a>
+  <a href="https://pandas.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/pandas/pandas-original.svg" alt="Pandas" width="40" height="40"/> </a>
+  <a href="https://scipy.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/scipy/scipy-icon.svg" alt="SciPy" width="40" height="40"/> </a>
+  <a href="https://matplotlib.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Matplotlib_icon.svg/2048px-Matplotlib_icon.svg.png" alt="Matplotlib" width="40" height="40"/> </a>
+  <a href="https://jupyter.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/jupyter/jupyter-original-wordmark.svg" alt="Jupyter" width="40" height="40"/> </a>
+  <a href="https://www.comsol.com/" target="_blank" rel="noreferrer" style="display: inline-block; text-align: center; margin: 0 5px; color: white; text-decoration: none; font-weight: bold; font-size: 1.2em;">COMSOL</a>
+  <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git" width="40" height="40"/> </a>
+  <a href="https://www.latex-project.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/latex/latex-original.svg" alt="LaTeX" width="40" height="40"/> </a>
 </p>
 
 ---
@@ -108,11 +109,11 @@ This section showcases key repositories for data analysis, instrument control dr
 ---
 
 ### Core Competencies & Keywords
-- **Physics:** Condensed Matter Physics, Materials Science, Multiferroics, Experimental Physics
-- **Programming:** Scientific Computing, Python, PyVISA, Instrument Control, Lab Automation, Data Analysis, Data Visualization
-- **Libraries:** NumPy, Pandas, SciPy, Matplotlib
-- **Software:** COMSOL Multiphysics, MATLAB, Origin, LaTeX
-- **Techniques:** Data Pipelines, Automation Scripts, GUI Development (Tkinter)
+*   **Physics & Materials Science:** Condensed Matter Physics, Multiferroics, Magnetoelectric Coupling, Experimental Physics, Dielectric Spectroscopy, Neutron Diffraction.
+*   **Scientific Programming & Automation:** Python, Lab Automation, Instrument Control (PyVISA, PyMeasure), Data Analysis, Data Visualization, GUI Development (Tkinter).
+*   **Core Libraries:** NumPy, Pandas, SciPy, Matplotlib.
+*   **Simulation & Analysis Software:** COMSOL Multiphysics, MATLAB, Origin, FullProf Suite, Git.
+*   **Methodologies:** Automation Scripts, Data Processing Pipelines, Version Control.
 
 ---
 
