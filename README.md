@@ -52,7 +52,7 @@
 
 My doctoral research is centered on **multiferroic composites** and other novel materials in **Condensed Matter Physics**. I bridge the gap between experimental physics and computational science by creating custom programs for **instrument control** using Python (`PyVISA`, `PyMeasure`) and automating complex **data analysis pipelines** (`Pandas`, `NumPy`, `SciPy`). I am currently expanding my expertise in **COMSOL Multiphysics** to better model and simulate complex physical systems.
 
-- **Primary Repositories:** My main body of work is on **[GitHub](https://github.com/prathameshnium)**, with a mirror on **[GitLab](https://gitlab.com/prathameshnium)**.
+- **Primary Repositories:** My main body of work is on **GitHub**. A manually updated mirror serves as a backup on **GitLab**.
 - **Contact:** I'm open to collaborations. Reach me at **prathameshnium@duck.com**.
 
 ---
