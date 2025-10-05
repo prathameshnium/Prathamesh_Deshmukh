@@ -64,9 +64,14 @@
                     It's understandable; the universe is too large and we are too small. It's okay to feel lost sometimes. Let's get you back on a known trajectory.
                 </p>
                 
-                <div class="relative max-w-sm mx-auto mb-8">
-                    <input type="search" placeholder="Search the site..." class="bg-dark-bg border border-slate rounded-lg w-full py-3 px-4 text-light-slate focus:outline-none focus:border-accent-orange" disabled>
-                    <i class="fas fa-search absolute right-4 top-1/2 -translate-y-1/2 text-slate"></i>
+                <div class="max-w-md mx-auto mb-8">
+                    <div class="relative">
+                        <input type="search" id="search-query" placeholder="Search the site..." class="bg-dark-bg border border-slate rounded-lg w-full py-3 px-4 text-light-slate focus:outline-none focus:border-accent-orange" required>
+                    </div>
+                    <div class="flex justify-center gap-4 mt-4">
+                        <button id="google-search-btn" class="cta-button flex-1 bg-transparent border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-4 rounded-lg text-sm"><i class="fab fa-google mr-2"></i> Google</button>
+                        <button id="ddg-search-btn" class="cta-button flex-1 bg-transparent border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-4 rounded-lg text-sm"><i class="fas fa-search mr-2"></i> DuckDuckGo</button>
+                    </div>
                 </div>
 
                 <a href="/" class="cta-button inline-block bg-accent-orange border-2 border-accent-orange text-dark-bg font-semibold py-3 px-8 rounded-lg mb-8">
@@ -96,6 +101,32 @@
             </div>
         </div>
     </main>
+
+    <script>
+        const queryInput = document.getElementById('search-query');
+        const googleBtn = document.getElementById('google-search-btn');
+        const ddgBtn = document.getElementById('ddg-search-btn');
+
+        function performSearch(engine) {
+            const query = queryInput.value.trim();
+            if (query) {
+                const siteQuery = `site:prathameshdeshmukh.site ${query}`;
+                let url;
+                if (engine === 'google') {
+                    url = `https://www.google.com/search?q=${encodeURIComponent(siteQuery)}`;
+                } else if (engine === 'ddg') {
+                    url = `https://duckduckgo.com/?q=${encodeURIComponent(siteQuery)}`;
+                }
+                window.open(url, '_blank', 'noopener,noreferrer');
+            } else {
+                queryInput.focus();
+            }
+        }
+
+        googleBtn.addEventListener('click', () => performSearch('google'));
+        ddgBtn.addEventListener('click', () => performSearch('ddg'));
+        queryInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') performSearch('google'); });
+    </script>
 
 </body>
 </html>
