@@ -1,0 +1,9 @@
+# For more information, see https://securitytxt.org/
+
+# Please report any security vulnerabilities to the email address below.
+# To prevent spam, the address has been obfuscated.
+Contact: prathameshnium[at]duck[dot]com
+Acknowledgments: https://prathameshdeshmukh.site/pages/sitemap.html#contact
+Expires: 2026-10-01T12:00:00.000Z
+Preferred-Languages: en
+Canonical: https://prathameshdeshmukh.site/.well-known/security.txt
