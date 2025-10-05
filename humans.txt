@@ -1,0 +1,20 @@
+/* TEAM */
+
+    Developer & Designer: Prathamesh Deshmukh
+    Contact: prathameshnium[at]duck[dot]com
+    Website: https://prathameshdeshmukh.site/
+    GitHub: @prathameshnium
+
+
+/* THANKS */
+
+    Font Awesome for icons.
+    The open-source community for their invaluable tools and libraries.
+
+
+/* SITE */
+
+    Last update: 2025
+    Standards: HTML5, CSS3
+    Components: Tailwind CSS
+    Software: Visual Studio Code
