@@ -29,7 +29,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
     <link rel="manifest" href="/site.webmanifest">
-    <link type="text/plain" rel="author" href="/humans.txt">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -84,10 +83,6 @@
         .cta-button:hover { background-color: #f6ad55; color: #1a202c; transform: translateY(-3px); box-shadow: 0 4px 6px rgba(246, 173, 85, 0.2); }
         .social-icon { transition: transform 0.2s ease-in-out, color 0.2s ease-in-out; color: #a8b2d1; }
         .social-icon:hover { transform: translateY(-3px) scale(1.1); color: #f6ad55; }
-        .card-link { display: block; text-decoration: none; color: inherit; }
-        .card-link .publication-link { position: relative; z-index: 10; }
-        .card-link .cta-button { position: relative; z-index: 10; }
-
     </style>
     
 <script type="application/ld+json">
@@ -185,7 +180,7 @@
                 <h1 class="text-5xl font-bold section-title mb-4">Prathamesh Keshao Deshmukh</h1>
                 <h2 class="text-2xl text-accent-orange mb-6">PhD Scholar | Condensed Matter Physics</h2>
                 <p class="text-lg max-w-3xl mb-8 text-light-slate">
-                    A PhD researcher at the UGC-DAE Consortium for Scientific Research, specializing in the synthesis and characterization of <a href="pages/research.html" class="publication-link">multiferroic composites</a>. My work bridges experimental physics with <a href="pages/computational-works.html" class="publication-link">computational science</a>, focusing on magnetoelectric coupling and the development of novel materials. By utilizing advanced techniques like neutron diffraction and creating Python-based tools for <a href="pages/project-pica.html" class="publication-link">lab automation</a>, I aim to contribute to the next generation of data storage, sensors, and energy-efficient electronics.
+                    A PhD researcher at the UGC-DAE Consortium for Scientific Research, specializing in the synthesis and characterization of multiferroic composites. My work bridges experimental physics with computational science, focusing on magnetoelectric coupling and the development of novel materials. By utilizing advanced techniques like neutron diffraction and creating Python-based tools for lab automation, I aim to contribute to the next generation of data storage, sensors, and energy-efficient electronics.
                 </p>
                 <div class="flex flex-wrap gap-8 items-center mb-10">
                     <div class="text-center">
@@ -236,7 +231,7 @@
                     <ul class="space-y-4 text-slate">
                         <li class="flex items-start"><i class="fas fa-check-circle text-accent-orange/80 mt-1 mr-3"></i><span>Novel material synthesis (e.g., BaFe<sub>10</sub>Sc<sub>2</sub>O<sub>19</sub>:KNbO<sub>3</sub>).</span></li>
                         <li class="flex items-start"><i class="fas fa-check-circle text-accent-orange/80 mt-1 mr-3"></i><span>Design of custom probes for cryogenic measurements.</span></li>
-                        <li class="flex items-start"><i class="fas fa-check-circle text-accent-orange/80 mt-1 mr-3"></i><span>Structural analysis using <a href="pages/presentations.html" class="publication-link">Neutron & X-Ray Diffraction</a>.</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-accent-orange/80 mt-1 mr-3"></i><span>Structural analysis using Neutron & X-Ray Diffraction.</span></li>
                         <li class="flex items-start"><i class="fas fa-check-circle text-accent-orange/80 mt-1 mr-3"></i><span>Characterization of magnetic and electric properties.</span></li>
                     </ul>
                 </div>
@@ -245,14 +240,12 @@
         
         <section id="journey" class="py-20">
             <h2 class="text-4xl font-bold section-title mb-12 text-center">Academic & Research Journey</h2>
-            <div class="max-w-3xl mx-auto relative">
-                <a href="pages/cv.html" class="absolute top-0 right-0 cta-button inline-block bg-transparent border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-4 rounded-lg text-sm z-10"><i class="fas fa-file-alt mr-2"></i> View Full CV</a>
-                <div class="timeline mt-12">
+            <div class="max-w-3xl mx-auto timeline">
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <p class="text-sm text-slate mb-1">May 2022 - Present</p>
                     <h3 class="font-bold text-lg text-accent-orange">PhD Scholar in Physics</h3>
-                    <p class="font-semibold text-light-slate"><a href="pages/Sudip_Mukherjee_Materials_Physics_Lab.html" class="hover:text-accent-orange transition-colors">UGC-DAE Consortium for Scientific Research, Mumbai</a></p>
+                    <p class="font-semibold text-light-slate">UGC-DAE Consortium for Scientific Research, Mumbai</p>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
@@ -266,40 +259,33 @@
                     <h3 class="font-bold text-lg text-accent-orange">B.Sc in Physics, Math, & Comp. App.</h3>
                     <p class="font-semibold text-light-slate">Shri Shivaji Science College, SGB Amravati University</p>
                 </div>
-                </div>
             </div>
         </section>
 
         <section id="publications" class="py-20">
             <h2 class="text-4xl font-bold section-title mb-8 text-center">Selected Publications</h2>
             <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-6">
-                <a href="https://doi.org/10.1016/j.jpcs.2024.112309" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="Read the article on magnetoelectric coupling in BaFe10Sc2O19:KNbO3 composite">
-                    <div class="card p-6 rounded-lg h-full">
-                        <p class="mb-2 text-light-slate">Deshmukh, P., et al. (2024). "Exploration of near room temperature magnetoelectric coupling in BaFe<sub>10</sub>Sc<sub>2</sub>O<sub>19</sub>:KNbO<sub>3</sub> composite."</p>
-                        <p class="italic text-slate mb-3">Journal of Physics and Chemistry of Solids, 196, 112309.</p>
-                        <span class="publication-link font-medium">
-                            View Article <i class="fas fa-external-link-alt ml-1 text-xs"></i>
-                        </span>
-                    </div>
-                </a>
-                <a href="https://doi.org/10.1016/j.ceramint.2025.04.264" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="Read the article on negative capacitance in Cu2O-CuO ceramics">
-                    <div class="card p-6 rounded-lg h-full">
-                        <p class="mb-2 text-light-slate">Mukherjee, S., et al. (2025). "Negative capacitance and magnetodielectric effect in Cu<sub>2</sub>O-CuO ceramics."</p>
-                        <p class="italic text-slate mb-3">Ceramics International, 51(20), 30716-30722.</p>
-                        <span class="publication-link font-medium">
-                            View Article <i class="fas fa-external-link-alt ml-1 text-xs"></i>
-                        </span>
-                    </div>
-                </a>
-                <a href="https://doi.org/10.1016/j.jallcom.2025.181833" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="Read the article on the role of Cu1+ in quasi-1D Cu1-xLixO">
-                    <div class="card p-6 rounded-lg h-full">
-                        <p class="mb-2 text-light-slate">Deshmukh, P., et al. (2025). "Exploring the role of Cu<sup>1+</sup> in quasi-1D Cu<sub>1-x</sub>Li<sub>x</sub>O (x = 0.025)."</p>
-                        <p class="italic text-slate mb-3">Journal of Alloys and Compounds, 1036, 181833.</p>
-                        <span class="publication-link font-medium">
-                            View Article <i class="fas fa-external-link-alt ml-1 text-xs"></i>
-                        </span>
-                    </div>
-                </a>
+                <div class="card p-6 rounded-lg">
+                    <p class="mb-2 text-light-slate">Deshmukh, P., et al. (2024). "Exploration of near room temperature magnetoelectric coupling in BaFe<sub>10</sub>Sc<sub>2</sub>O<sub>19</sub>:KNbO<sub>3</sub> composite."</p>
+                    <p class="italic text-slate mb-3">Journal of Physics and Chemistry of Solids, 196, 112309.</p>
+                    <a href="https://doi.org/10.1016/j.jpcs.2024.112309" target="_blank" rel="noopener noreferrer" class="publication-link font-medium">
+                        View Article <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                    </a>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <p class="mb-2 text-light-slate">Mukherjee, S., et al. (2025). "Negative capacitance and magnetodielectric effect in Cu<sub>2</sub>O-CuO ceramics."</p>
+                    <p class="italic text-slate mb-3">Ceramics International, 51(20), 30716-30722.</p>
+                      <a href="https://doi.org/10.1016/j.ceramint.2025.04.264" target="_blank" rel="noopener noreferrer" class="publication-link font-medium">
+                        View Article <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                    </a>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <p class="mb-2 text-light-slate">Deshmukh, P., et al. (2025). "Exploring the role of Cu<sup>1+</sup> in quasi-1D Cu<sub>1-x</sub>Li<sub>x</sub>O (x = 0.025)."</p>
+                    <p class="italic text-slate mb-3">Journal of Alloys and Compounds, 1036, 181833.</p>
+                      <a href="https://doi.org/10.1016/j.jallcom.2025.181833" target="_blank" rel="noopener noreferrer" class="publication-link font-medium">
+                        View Article <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                    </a>
+                </div>
             </div>
                <div class="text-center mt-10">
                 <a href="pages/research.html" class="cta-button inline-block bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-3 px-6 rounded-lg">
@@ -365,21 +351,15 @@
         <section id="conferences" class="py-20">
             <h2 class="text-4xl font-bold section-title mb-8 text-center">Conferences & Workshops</h2>
             <div class="max-w-4xl mx-auto space-y-4">
-                <a href="pages/presentations.html#workshops" class="card-link" aria-label="View details about the XIX School on Neutron as Probe of Condensed Matter">
-                    <div class="card p-4 rounded-lg">
-                        <p class="text-light-slate"><i class="fas fa-chalkboard-teacher text-accent-orange mr-3"></i><strong>Attended:</strong> XIX School on Neutron as Probe of Condensed Matter, UGC-DAE CSR, Mumbai (Sep 2022)</p>
-                    </div>
-                </a>
-                <a href="pages/presentations.html#conferences" class="card-link" aria-label="View details about the 66th DAE Solid State Physics Symposium">
-                    <div class="card p-4 rounded-lg">
-                        <p class="text-light-slate"><i class="fas fa-file-alt text-accent-orange mr-3"></i><strong>Poster Presentation:</strong> 66th DAE Solid State Physics Symposium, BIT Mesra, Ranchi (Dec 2022)</p>
-                    </div>
-                </a>
-                <a href="pages/presentations.html#workshops" class="card-link" aria-label="View details about the 6th National Workshop on Materials Chemistry">
-                    <div class="card p-4 rounded-lg">
-                        <p class="text-light-slate"><i class="fas fa-chalkboard-teacher text-accent-orange mr-3"></i><strong>Attended:</strong> 6th National Workshop on Materials Chemistry, Mumbai (Oct 2023)</p>
-                    </div>
-                </a>
+                <div class="card p-4 rounded-lg">
+                    <p class="text-light-slate"><i class="fas fa-chalkboard-teacher text-accent-orange mr-3"></i><strong>Attended:</strong> XIX School on Neutron as Probe of Condensed Matter, UGC-DAE CSR, Mumbai (Sep 2022)</p>
+                </div>
+                <div class="card p-4 rounded-lg">
+                    <p class="text-light-slate"><i class="fas fa-file-alt text-accent-orange mr-3"></i><strong>Poster Presentation:</strong> 66th DAE Solid State Physics Symposium, BIT Mesra, Ranchi (Dec 2022)</p>
+                </div>
+                 <div class="card p-4 rounded-lg">
+                    <p class="text-light-slate"><i class="fas fa-chalkboard-teacher text-accent-orange mr-3"></i><strong>Attended:</strong> 6th National Workshop on Materials Chemistry, Mumbai (Oct 2023)</p>
+                </div>
             </div>
                <div class="text-center mt-10">
                 <a href="pages/presentations.html" class="cta-button inline-block bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-3 px-6 rounded-lg">
@@ -414,7 +394,7 @@
         <div class="container mx-auto px-6 text-center text-slate">
             <div class="flex justify-center flex-wrap gap-6 mb-6">
                 <a href="#contact" class="social-icon text-2xl" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                <a href="https://scholar.google.com/citations?user=DJgzI30AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                <a href="https://scholar.google.com/citations?us-xt-2xl" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="https://www.researchgate.net/profile/Prathamesh-Deshmukh-6" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="ResearchGate"><i class="fab fa-researchgate"></i></a>
                 <a href="https://github.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 <a href="https://gitlab.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="GitLab"><i class="fab fa-gitlab"></i></a>
@@ -422,9 +402,8 @@
                 <a href="https://www.scopus.com/authid/detail.uri?authorId=59544780300" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="Scopus"><i class="fas fa-file-alt"></i></a>
                 <a href="https://www.webofscience.com/wos/author/record/OFN-9289-2025" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="Web of Science"><i class="fas fa-flask"></i></a>
             </div>
-            <div class="mb-6 space-x-4">
-                <a href="pages/sitemap.html" class="hover:text-accent-orange transition-colors">Sitemap</a>
-                <a href="llms.txt" class="hover:text-accent-orange transition-colors">LLM Info</a>
+            <div class="mb-6">
+                <a href="pages/sitemap.html" class="hover:text-accent-orange transition-colors">Sitemap & Link Directory</a>
             </div>
             <p>&copy; 2025 Prathamesh Keshao Deshmukh. All Rights Reserved.</p>
         </div>
@@ -440,7 +419,7 @@
 
         // Active nav link scrolling
         const sections = document.querySelectorAll('main section');
-        const navLinks = document.querySelectorAll('header nav a:not([href*="pages"]), header nav button'); // Include portfolio button
+        const navLinks = document.querySelectorAll('nav a:not([href*="pages"])'); // Exclude external page links
         
         window.addEventListener('scroll', () => {
             let current = 'about';
@@ -454,11 +433,7 @@
             navLinks.forEach(link => {
                 link.classList.remove('active');
                 const linkHref = link.getAttribute('href');
-                // Special handling for portfolio sections
-                if ((current === 'publications' || current === 'skills') && link.id === 'portfolio-button') {
-                    link.classList.add('active');
-                }
-                else if (linkHref && linkHref.includes(current)) {
+                if (linkHref && linkHref.includes(current)) {
                     link.classList.add('active');
                 }
             });

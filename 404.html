@@ -56,28 +56,43 @@
 
     <main class="container mx-auto px-6">
         <div class="min-h-screen flex flex-col justify-center items-center text-center">
-            <i class="fas fa-satellite-dish text-6xl text-accent-orange mb-6 animate-pulse"></i>
-            <h1 class="text-8xl font-bold section-title text-accent-orange">404</h1>
-            <h2 class="text-3xl font-semibold text-white mt-4 mb-4">A Null Result</h2>
-            <p class="text-lg max-w-lg text-slate mb-8">
-                It's understandable; the universe is too large and we are too small. It's okay to feel lost sometimes. Let's get you back on a known trajectory.
-            </p>
-            <a href="/" class="cta-button inline-block bg-accent-orange border-2 border-accent-orange text-dark-bg font-semibold py-3 px-8 rounded-lg mb-6">
-                <i class="fas fa-home mr-2"></i> Return Home
-            </a>
-            <div class="flex flex-wrap justify-center gap-4">
-                 <a href="/pages/research.html" class="cta-button inline-block bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-5 rounded-lg">
-                    Research
+            <div class="card p-8 md:p-12 rounded-lg max-w-2xl w-full">
+                <i class="fas fa-satellite-dish text-6xl text-accent-orange mb-6 animate-pulse"></i>
+                <h1 class="text-8xl font-bold section-title text-accent-orange">404</h1>
+                <h2 class="text-3xl font-semibold text-white mt-4 mb-4">A Null Result</h2>
+                <p class="text-lg max-w-lg text-slate mb-8 mx-auto">
+                    It's understandable; the universe is too large and we are too small. It's okay to feel lost sometimes. Let's get you back on a known trajectory.
+                </p>
+                
+                <div class="relative max-w-sm mx-auto mb-8">
+                    <input type="search" placeholder="Search the site..." class="bg-dark-bg border border-slate rounded-lg w-full py-3 px-4 text-light-slate focus:outline-none focus:border-accent-orange" disabled>
+                    <i class="fas fa-search absolute right-4 top-1/2 -translate-y-1/2 text-slate"></i>
+                </div>
+
+                <a href="/" class="cta-button inline-block bg-accent-orange border-2 border-accent-orange text-dark-bg font-semibold py-3 px-8 rounded-lg mb-8">
+                    <i class="fas fa-home mr-2"></i> Return Home
                 </a>
-                 <a href="/pages/computational-works.html" class="cta-button inline-block bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-5 rounded-lg">
-                    Computational
-                </a>
-                 <a href="/pages/cv.html" class="cta-button inline-block bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-5 rounded-lg">
-                    CV
-                </a>
-                <a href="/pages/sitemap.html" class="cta-button inline-block bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-5 rounded-lg">
-                    Sitemap
-                </a>
+
+                <div>
+                    <p class="text-slate mb-4">Or, you might be looking for:</p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                         <a href="/pages/research.html" class="cta-button inline-block bg-transparent border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-5 rounded-lg">
+                            Research
+                        </a>
+                         <a href="/pages/computational-works.html" class="cta-button inline-block bg-transparent border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-5 rounded-lg">
+                            Projects
+                        </a>
+                         <a href="/pages/project-pica.html" class="cta-button inline-block bg-transparent border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-5 rounded-lg">
+                            PICA
+                        </a>
+                         <a href="/pages/cv.html" class="cta-button inline-block bg-transparent border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-5 rounded-lg">
+                            CV
+                        </a>
+                        <a href="/pages/sitemap.html" class="cta-button inline-block bg-transparent border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-5 rounded-lg">
+                            Sitemap
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
