@@ -1,0 +1,57 @@
+
+# Prathamesh Deshmukh | Scientific Portfolio
+
+> A detailed portfolio for Prathamesh Deshmukh, a Physics PhD scholar at the UGC-DAE Consortium for Scientific Research (Mumbai Centre). This site showcases his doctoral research in Condensed Matter Physics and Materials Science, focusing on multiferroic composites and magnetoelectric coupling. It also highlights his extensive work in scientific programming, including Python-based lab automation, instrument control (PyVISA), and advanced data analysis pipelines.
+
+This website is built with HTML and Tailwind CSS and is hosted on GitHub Pages. It serves as a central hub for research output, technical skills, publications, and professional journey. The content is structured to be a comprehensive resource for collaborators, recruiters, and the scientific community.
+
+## Core Content
+
+- [Home Page](https://prathameshdeshmukh.site/index.html): The main landing page with an overview of research themes, skills, academic journey, and selected publications.
+- [Research & Publications](https://prathameshdeshmukh.site/pages/research.html): A detailed list of peer-reviewed journal articles with abstracts, highlights, and links to the full text.
+- [Computational Works](https://prathameshdeshmukh.site/pages/computational-works.html): A portfolio of scientific programming projects, showcasing expertise in instrument control, data analysis, and simulation.
+- [Curriculum Vitae (CV)](https://prathameshdeshmukh.site/pages/cv.html): A formal summary of academic qualifications, research experience, publications, skills, and awards.
+
+## Key Projects
+
+- [PICA: Python Instrument Control & Automation](https://prathameshdeshmukh.site/pages/project-pica.html): A modular `PyVISA`-based automation suite for controlling lab instruments (Keithley, Lakeshore) for thermal and electrical characterization. Features a central GUI and isolated processes for stability.
+- Physics Simulation Toolkit: Python scripts for simulating and visualizing phenomena in condensed matter physics, such as magnetic ordering (Ising model) and common dielectric models.
+- Solid-State Physics Calculators: Analysis scripts for calculating key experimental solid-state parameters like activation energy (Arrhenius) and charge transport (Mott-VRH models).
+- Python-for-OriginPro: Automation scripts leveraging the `originpro` library to streamline plotting, data fitting, and report generation directly within OriginLab.
+- Scientific-Python-Snippets: A curated collection of reusable Python scripts for common data handling, file manipulation, and automation tasks, often with simple Tkinter GUIs.
+
+## Presentations & Academic Activities
+
+- Presentations Page: A full list of academic and technical seminars, conference presentations, and attended workshops.
+- **Poster Presentation**: 67th DAE Solid State Physics Symposium, GITAM, Visakhapatnam (Dec 2023).
+- **Poster Presentation**: 66th DAE Solid State Physics Symposium, BIT Mesra, Ranchi (Dec 2022).
+- **Seminar**: "Multiferroics: A Comprehensive Overview" at UGC-DAE CSR, Mumbai.
+- **Seminar**: "Ising Model in Python" at UGC-DAE CSR, Mumbai.
+- **Workshop Attended**: 13th AONSA Neutron School, BARC, Mumbai (Nov 2024).
+- **Workshop Attended**: XIX School on Neutron as Probe of Condensed Matter, UGC-DAE CSR, Mumbai (Sep 2022).
+
+## Publications
+
+- Exploration of near room temperature magnetoelectric coupling in BaFe10Sc2O19:KNbO3 composite: *Journal of Physics and Chemistry of Solids (2024)*. Investigates strain-mediated coupling and a negative magnetodielectric response near room temperature.
+- Exploring the role of Cu1+ in quasi-1D Cu1−xLixO (x = 0.025): *Journal of Alloys and Compounds (2025)*. Studies the influence of hole-doping on structural, magnetic, and transport properties of CuO.
+- Negative capacitance and magnetodielectric effect in Cu2O-CuO ceramics: *Ceramics International (2025)*. Reveals negative capacitance and a charge-hopping-mediated magnetodielectric effect.
+
+## Skills & Expertise
+
+- **Physics & Materials Science**: Condensed Matter Physics, Multiferroics, Magnetoelectric Coupling, Experimental Physics, Dielectric Spectroscopy, Neutron Diffraction, X-Ray Diffraction, Magnetometry (VSM), Sol-Gel Synthesis.
+- **Scientific Programming & Automation**: Python, Lab Automation, Instrument Control (PyVISA, PyMeasure), Data Analysis, Data Visualization, GUI Development (Tkinter).
+- **Core Libraries**: NumPy, Pandas, SciPy, Matplotlib.
+- **Simulation & Analysis Software**: COMSOL Multiphysics, MATLAB, Origin, FullProf Suite, Git.
+
+## Academic Journey
+
+- **PhD in Physics** (2022 - Present): UGC-DAE Consortium for Scientific Research, Mumbai.
+- **M.Sc in Physics** (2019 - 2021): Fergusson College, Savitribai Phule Pune University.
+- **B.Sc in Physics, Math, & Comp. App.** (2016 - 2019): Shri Shivaji Science College, SGB Amravati University.
+
+## Optional
+
+- Resources: A curated list of tools, databases, and resources for physics and scientific programming.
+- Materials Physics Lab: An overview of the lab where the research is conducted, including equipment and team members.
+- Sitemap & Link Directory: A complete directory of all internal pages and external academic profiles.
+
