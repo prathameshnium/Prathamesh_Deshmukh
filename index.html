@@ -83,6 +83,19 @@
         .cta-button:hover { background-color: #f6ad55; color: #1a202c; transform: translateY(-3px); box-shadow: 0 4px 6px rgba(246, 173, 85, 0.2); }
         .social-icon { transition: transform 0.2s ease-in-out, color 0.2s ease-in-out; color: #a8b2d1; }
         .social-icon:hover { transform: translateY(-3px) scale(1.1); color: #f6ad55; }
+        .card-link { display: block; text-decoration: none; color: inherit; height: 100%; }
+        /* Search Modal Styles */
+        #search-modal {
+            background-color: rgba(26, 32, 44, 0.9);
+            backdrop-filter: blur(8px);
+        }
+        .modal-content {
+            animation: fadeIn 0.3s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
     </style>
     
 <script type="application/ld+json">
@@ -142,6 +155,9 @@
                     </div>
                 </div>
                 <a href="#contact" class="nav-link">Contact</a>
+                <button id="search-icon-btn" class="nav-link" aria-label="Open search">
+                    <i class="fas fa-search"></i>
+                </button>
             </nav>
             <button id="mobile-menu-button" class="md:hidden text-white text-2xl">
                 <i class="fas fa-bars"></i>
@@ -172,6 +188,27 @@
             </div>
         </div>
     </header>
+
+    <!-- Search Modal -->
+    <div id="search-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
+        <div class="modal-content w-full max-w-xl card p-8 rounded-lg text-center relative">
+            <button id="close-search-modal-btn" class="absolute top-4 right-4 text-slate hover:text-accent-orange text-2xl" aria-label="Close search">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3 class="text-2xl font-bold section-title mb-4">Search This Site</h3>
+            <p class="text-slate mb-6">Can't find what you're looking for? Use a site-specific search.</p>
+            <div class="max-w-md mx-auto">
+                <div class="relative">
+                    <input type="search" id="search-query" placeholder="e.g., 'PICA' or 'magnetoelectric'" class="bg-dark-bg border border-slate rounded-lg w-full py-3 px-4 text-light-slate focus:outline-none focus:border-accent-orange" required>
+                </div>
+                <div class="flex justify-center gap-3 mt-4">
+                    <button id="google-search-btn" class="cta-button flex-1 bg-transparent border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-3 rounded-lg text-xs"><i class="fab fa-google mr-1"></i> Google</button>
+                    <button id="ddg-search-btn" class="cta-button flex-1 bg-transparent border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-3 rounded-lg text-xs"><i class="fas fa-search mr-1"></i> DuckDuckGo</button>
+                    <button id="brave-search-btn" class="cta-button flex-1 bg-transparent border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-3 rounded-lg text-xs"><i class="fab fa-brave mr-1"></i> Brave</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <main class="container mx-auto px-6 py-12">
 
@@ -212,17 +249,19 @@
         <section id="research" class="py-20">
             <h2 class="text-4xl font-bold section-title mb-10 text-center">Research Profile</h2>
             <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-stretch">
-                <div class="card p-8 rounded-lg flex flex-col">
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-atom text-3xl text-accent-orange mr-4"></i>
-                        <h3 class="text-2xl font-semibold text-white">Core Research Theme</h3>
+                <a href="pages/research.html" class="card-link" aria-label="Explore my core research on multiferroic composites">
+                    <div class="card p-8 rounded-lg flex flex-col h-full">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-atom text-3xl text-accent-orange mr-4"></i>
+                            <h3 class="text-2xl font-semibold text-white">Core Research Theme</h3>
+                        </div>
+                        <p class="text-lg italic text-accent-orange/90 mb-4">Multiferroic Composites</p>
+                        <p class="text-slate mb-6 flex-grow">My research is centered on fabricating and understanding materials where magnetic and electric properties are intrinsically linked. The goal is to contribute to next-generation sensors, memory devices, and energy-efficient electronics.</p>
+                        <span class="cta-button mt-auto text-center bg-accent-orange/10 border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-5 rounded-lg">
+                            Explore My Research <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </span>
                     </div>
-                    <p class="text-lg italic text-accent-orange/90 mb-4">Multiferroic Composites</p>
-                    <p class="text-slate mb-6 flex-grow">My research is centered on fabricating and understanding materials where magnetic and electric properties are intrinsically linked. The goal is to contribute to next-generation sensors, memory devices, and energy-efficient electronics.</p>
-                    <a href="pages/research.html" class="cta-button mt-auto text-center bg-accent-orange/10 border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-5 rounded-lg">
-                        Explore My Research <i class="fas fa-arrow-right ml-2 text-xs"></i>
-                    </a>
-                </div>
+                </a>
                 <div class="card p-8 rounded-lg">
                      <div class="flex items-center mb-4">
                         <i class="fas fa-flask text-3xl text-accent-orange mr-4"></i>
@@ -490,6 +529,51 @@
             mobilePortfolioButton.querySelector('i').classList.toggle('fa-chevron-down');
             mobilePortfolioButton.querySelector('i').classList.toggle('fa-chevron-up');
         });
+
+        // Search Modal Logic
+        const searchModal = document.getElementById('search-modal');
+        const searchIconBtn = document.getElementById('search-icon-btn');
+        const closeSearchModalBtn = document.getElementById('close-search-modal-btn');
+
+        searchIconBtn.addEventListener('click', () => {
+            searchModal.classList.remove('hidden');
+            searchModal.classList.add('flex');
+            document.getElementById('search-query').focus();
+        });
+
+        closeSearchModalBtn.addEventListener('click', () => {
+            searchModal.classList.add('hidden');
+            searchModal.classList.remove('flex');
+        });
+
+        // Site Search Functionality
+        const queryInput = document.getElementById('search-query');
+        const googleBtn = document.getElementById('google-search-btn');
+        const ddgBtn = document.getElementById('ddg-search-btn');
+        const braveBtn = document.getElementById('brave-search-btn');
+
+        function performSearch(engine) {
+            const query = queryInput.value.trim();
+            if (query) {
+                const siteQuery = `${query} (site:prathameshdeshmukh.site OR site:github.com/prathameshnium OR site:linkedin.com/in/prathamesh-k-deshmukh OR site:researchgate.net/profile/Prathamesh-Deshmukh-6 OR site:gitlab.com/prathameshnium OR site:orcid.org/0009-0008-3278-0837)`;
+                let url;
+                if (engine === 'google') {
+                    url = `https://www.google.com/search?q=${encodeURIComponent(siteQuery)}`;
+                } else if (engine === 'ddg') {
+                    url = `https://duckduckgo.com/?q=${encodeURIComponent(siteQuery)}`;
+                } else if (engine === 'brave') {
+                    url = `https://search.brave.com/search?q=${encodeURIComponent(siteQuery)}`;
+                }
+                window.open(url, '_blank', 'noopener,noreferrer');
+            } else {
+                queryInput.focus();
+            }
+        }
+
+        googleBtn.addEventListener('click', () => performSearch('google'));
+        ddgBtn.addEventListener('click', () => performSearch('ddg'));
+        braveBtn.addEventListener('click', () => performSearch('brave'));
+        queryInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') performSearch('google'); });
     </script>
 
 </body>
