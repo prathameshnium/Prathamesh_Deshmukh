@@ -117,7 +117,7 @@
                 <a href="../index.html#contact" class="nav-link">Contact</a>
             </nav>
             <button id="mobile-menu-button" class="mdhidden text-white text-2xl" aria-label="Open menu">
-                <i class="fas fa-bars"></i>
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
         </div>
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
@@ -293,7 +293,8 @@
 
             navLinks.forEach(link => {
                 link.classList.remove('active');
-                if (link.getAttribute('href').includes(current)) {
+                const href = link.getAttribute('href');
+                if (href && href.includes(current)) {
                     link.classList.add('active');
                 }
             });
