@@ -6,7 +6,7 @@
     <title>Sudip Mukherjee | Materials Physics Lab</title> 
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; frame-ancestors 'self';">
     <meta name="description" content="The Sudip Mukherjee Laboratory is a research group focused on materials science and condensed matter physics, operating within the UGC-DAE CSR.">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Serif+Pro:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -85,14 +85,36 @@
 
     <header class="bg-dark-bg/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-700">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-white font-serif">Materials Physics Lab</h1>
-            <nav class="hidden md:flex space-x-8">
-                <a href="../index.html" class="nav-link">Home</a>
+            <a href="../index.html" class="text-2xl font-bold text-white font-serif">Prathamesh Deshmukh</a>
+            <nav class="hidden md:flex items-center space-x-6">
                 <a href="#about" class="nav-link">About</a>
                 <a href="#equipment" class="nav-link">Equipment</a>
                 <a href="#research" class="nav-link">Research</a>
                 <a href="#people" class="nav-link">People</a>
-                <a href="#collaborate" class="nav-link">Collaborate</a>
+                <div class="relative">
+                    <button id="portfolio-button" class="nav-link flex items-center">
+                        Portfolio <i class="fas fa-chevron-down text-xs ml-2"></i>
+                    </button>
+                    <div id="portfolio-menu" class="absolute hidden bg-card-bg rounded-md shadow-lg py-2 w-56 top-full right-0 mt-2 z-50">
+                        <!-- Submenu Item -->
+                        <div id="core-portfolio-item" class="relative">
+                            <a href="#" class="w-full text-left px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange flex justify-between items-center">
+                                Core Portfolio <i class="fas fa-chevron-right text-xs"></i>
+                            </a>
+                            <div id="core-portfolio-submenu" class="absolute hidden bg-card-bg rounded-md shadow-lg py-2 w-48 top-0 -left-full mt-0 z-50">
+                                <a href="research.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Research & Pubs</a>
+                                <a href="computational-works.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Computational Works</a>
+                                <a href="presentations.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Presentations</a>
+                                <a href="cv.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">CV</a>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-600 my-1"></div>
+                        <a href="blog.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Blog</a>
+                        <a href="gallery.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Gallery</a>
+                        <a href="resources.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Resources</a>
+                    </div>
+                </div>
+                <a href="../index.html#contact" class="nav-link">Contact</a>
             </nav>
             <button id="mobile-menu-button" class="mdhidden text-white text-2xl" aria-label="Open menu">
                 <i class="fas fa-bars"></i>
@@ -104,7 +126,21 @@
             <a href="#equipment" class="block py-2 nav-link">Equipment</a>
             <a href="#research" class="block py-2 nav-link">Research</a>
             <a href="#people" class="block py-2 nav-link">People</a>
-            <a href="#collaborate" class="block py-2 nav-link">Collaborate</a>
+            <a href="../index.html#contact" class="block py-2 nav-link">Contact</a>
+            <div class="border-t border-gray-700 my-2"></div>
+            <!-- Accordion for Portfolio -->
+            <div>
+                <button id="mobile-portfolio-button" class="w-full text-left py-2 nav-link flex justify-between items-center">
+                    <span>Portfolio</span>
+                    <i class="fas fa-chevron-down text-xs"></i>
+                </button>
+                <div id="mobile-portfolio-menu" class="hidden pl-4">
+                    <a href="research.html" class="block py-2 nav-link">Research & Pubs</a>
+                    <a href="computational-works.html" class="block py-2 nav-link">Computational Works</a>
+                    <a href="presentations.html" class="block py-2 nav-link">Presentations</a>
+                    <a href="cv.html" class="block py-2 nav-link">CV</a>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -162,7 +198,7 @@
                     <p class="text-sm text-light-slate mb-2">Article &middot; Jul 2025</p>
                     <h4 class="font-semibold text-xl text-accent-orange mb-4 flex-grow">Exploring the role of Cu<sup>1+</sup> in quasi-1D Cu<sub>1&minus;x</sub>Li<sub>x</sub>O (x = 0.025)</h4>
                     <a href="research.html" class="cta-button text-center bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-4 rounded-lg mt-auto">
-                        View Article <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        View Article <i class="fas fa-arrow-right ml-2 text-xs" aria-hidden="true"></i>
                     </a>
                 </div>
 
@@ -170,7 +206,7 @@
                     <p class="text-sm text-light-slate mb-2">Article &middot; May 2025</p>
                     <h4 class="font-semibold text-xl text-accent-orange mb-4 flex-grow">Negative capacitance and magnetodielectric effect in Cu<sub>2</sub>O-CuO ceramics</h4>
                     <a href="research.html" class="cta-button text-center bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-4 rounded-lg mt-auto">
-                        View Article <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        View Article <i class="fas fa-arrow-right ml-2 text-xs" aria-hidden="true"></i>
                     </a>
                 </div>
 
@@ -178,7 +214,7 @@
                     <p class="text-sm text-light-slate mb-2">Article &middot; Sep 2024</p>
                     <h4 class="font-semibold text-xl text-accent-orange mb-4 flex-grow">Exploration of near room temperature magnetoelectric coupling in BaFe<sub>10</sub>Sc<sub>2</sub>O<sub>19</sub> : KNbO<sub>3</sub> composite</h4>
                     <a href="research.html" class="cta-button text-center bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-4 rounded-lg mt-auto">
-                        View Article <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        View Article <i class="fas fa-arrow-right ml-2 text-xs" aria-hidden="true"></i>
                     </a>
                 </div>
 
@@ -191,7 +227,7 @@
                 <h3 class="text-2xl font-semibold text-accent-orange mb-6 text-center">Lab Head</h3>
                 <div class="card p-6 rounded-lg mb-10 max-w-md mx-auto text-center">
                     <h4 class="text-xl font-bold text-white">Sudip Mukherjee</h4>
-                    <a href="https://www.csr.res.in/Faculty/profile/889/893/Dr.SudipMukherjee" target="_blank" rel="noopener noreferrer" class="text-accent-orange/80 hover:text-accent-orange text-sm mt-2 inline-block">
+                    <a href="https://www.csr.res.in/Faculty/profile/889/893/Dr.SudipMukherjee" target="_blank" rel="noopener noreferrer" class="text-accent-orange/80 hover:text-accent-orange text-sm mt-2 inline-block" aria-label="View official profile for Sudip Mukherjee">
                         Official Profile <i class="fas fa-external-link-alt ml-1 text-xs"></i>
                     </a>
                 </div>

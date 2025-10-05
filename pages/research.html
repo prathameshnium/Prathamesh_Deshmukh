@@ -6,7 +6,7 @@
     <title>Prathamesh Deshmukh | Research</title>
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; frame-ancestors 'self';">
     <meta name="description" content="Detailed research and publication portfolio for Prathamesh Keshao Deshmukh.">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Serif+Pro:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -146,7 +146,7 @@
                 <a href="../index.html#contact" class="nav-link">Contact</a>
             </nav>
             <button id="mobile-menu-button" class="md:hidden text-white text-2xl">
-                <i class="fas fa-bars"></i>
+                <i class="fas fa-bars" aria-label="Open menu"></i>
             </button>
         </div>
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
@@ -188,7 +188,7 @@
                         </p>
 
                         <span class="publication-link inline-block bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-5 rounded-lg">
-                            View Article <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                            View Article <i class="fas fa-external-link-alt ml-2 text-xs" aria-hidden="true"></i>
                         </span>
                     </div>
                 </a>
@@ -215,7 +215,7 @@
                         </p>
 
                         <span class="publication-link inline-block bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-5 rounded-lg">
-                            View Article <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                            View Article <i class="fas fa-external-link-alt ml-2 text-xs" aria-hidden="true"></i>
                         </span>
                     </div>
                 </a>
@@ -233,7 +233,7 @@
                         </p>
 
                         <span class="publication-link inline-block bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-5 rounded-lg">
-                            View Article <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                            View Article <i class="fas fa-external-link-alt ml-2 text-xs" aria-hidden="true"></i>
                         </span>
                     </div>
                 </a>
@@ -263,28 +263,32 @@
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
 
         // Desktop dropdown
         const portfolioButton = document.getElementById('portfolio-button');
         const portfolioMenu = document.getElementById('portfolio-menu');
 
-        portfolioButton.addEventListener('click', (event) => {
-            event.stopPropagation();
-            portfolioMenu.classList.toggle('hidden');
-        });
+        if (portfolioButton && portfolioMenu) {
+            portfolioButton.addEventListener('click', (event) => {
+                event.stopPropagation();
+                portfolioMenu.classList.toggle('hidden');
+            });
 
-        portfolioMenu.addEventListener('click', (event) => {
-            event.stopPropagation();
-        });
+            portfolioMenu.addEventListener('click', (event) => {
+                event.stopPropagation();
+            });
 
-        window.addEventListener('click', () => {
-            if (!portfolioMenu.classList.contains('hidden')) {
-                portfolioMenu.classList.add('hidden');
-            }
-        });
+            window.addEventListener('click', () => {
+                if (!portfolioMenu.classList.contains('hidden')) {
+                    portfolioMenu.classList.add('hidden');
+                }
+            });
+        }
     </script>
 </body>
 </html>

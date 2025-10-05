@@ -6,7 +6,7 @@
     <title>Prathamesh Deshmukh | Computational Works</title> 
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://raw.githubusercontent.com https://upload.wikimedia.org https://www.vectorlogo.zone; frame-ancestors 'self';">
     <meta name="description" content="Computational portfolio for Prathamesh Deshmukh, showcasing projects in scientific programming, instrument control, data analysis, and simulation using Python.">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Serif+Pro:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -98,34 +98,51 @@
                 <a href="../index.html#journey" class="nav-link">Journey</a>
                 <div class="relative">
                     <button id="portfolio-button" class="nav-link flex items-center">
-                        Portfolio <i class="fas fa-chevron-down text-xs ml-2"></i>
+                    Portfolio <i class="fas fa-chevron-down text-xs ml-2" aria-hidden="true"></i>
                     </button>
                     <div id="portfolio-menu" class="absolute hidden bg-card-bg rounded-md shadow-lg py-2 w-56 top-full right-0 mt-2 z-50">
                         <a href="research.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Research & Pubs</a>
                         <a href="computational-works.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Computational Works</a>
                         <a href="presentations.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Presentations</a>
                         <a href="cv.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">CV</a>
-                        <div class="border-t border-gray-600 my-1"></div>
+                    <div class="border-t border-gray-600 my-1" role="separator"></div>
                         <a href="blog.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Blog</a>
                         <a href="gallery.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Gallery</a>
                         <a href="resources.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Resources</a>
                     </div>
                 </div>
                 <a href="../index.html#contact" class="nav-link">Contact</a>
+            <button id="search-icon-btn" class="nav-link" aria-label="Open search">
+                <i class="fas fa-search" aria-hidden="true"></i>
+            </button>
             </nav>
             <button id="mobile-menu-button" class="md:hidden text-white text-2xl">
                 <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
         </div>
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-             <a href="../index.html" class="block py-2 nav-link">Home</a>
-             <a href="research.html" class="block py-2 nav-link">Research & Pubs</a>
-             <a href="computational-works.html" class="block py-2 nav-link">Computational Works</a>
-             <a href="presentations.html" class="block py-2 nav-link">Presentations</a>
-             <a href="cv.html" class="block py-2 nav-link">CV</a>
-             <a href="blog.html" class="block py-2 nav-link">Blog</a>
-             <a href="gallery.html" class="block py-2 nav-link">Gallery</a>
-             <a href="resources.html" class="block py-2 nav-link">Resources</a>
+        <a href="../index.html#about" class="block py-2 nav-link">About</a>
+        <a href="../index.html#research" class="block py-2 nav-link">Research</a>
+        <a href="../index.html#skills" class="block py-2 nav-link">Skills</a>
+        <a href="../index.html#journey" class="block py-2 nav-link">Journey</a>
+        <a href="../index.html#contact" class="block py-2 nav-link">Contact</a>
+        <div class="border-t border-gray-700 my-2"></div>
+        <!-- Accordion for Portfolio -->
+        <div>
+            <button id="mobile-portfolio-button" class="w-full text-left py-2 nav-link flex justify-between items-center">
+                <span>Portfolio</span>
+                <i class="fas fa-chevron-down text-xs"></i>
+            </button>
+            <div id="mobile-portfolio-menu" class="hidden pl-4">
+                <a href="research.html" class="block py-2 nav-link">Research & Pubs</a>
+                <a href="computational-works.html" class="block py-2 nav-link">Computational Works</a>
+                <a href="presentations.html" class="block py-2 nav-link">Presentations</a>
+                <a href="cv.html" class="block py-2 nav-link">CV</a>
+                <a href="blog.html" class="block py-2 nav-link">Blog</a>
+                <a href="gallery.html" class="block py-2 nav-link">Gallery</a>
+                <a href="resources.html" class="block py-2 nav-link">Resources</a>
+            </div>
+        </div>
         </div>
     </header>
 
@@ -140,10 +157,10 @@
                     This portfolio showcases a collection of my projects focused on instrument control, data analysis, and simulation. Below, you will find highlights of my key projects, the technical tools I use, and links to my work.
                 </p>
                 <div class="flex justify-center flex-wrap gap-4">
-                    <a href="https://github.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl text-light-slate" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://gitlab.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl text-light-slate" aria-label="GitLab"><i class="fab fa-gitlab"></i></a>
+                    <a href="https://github.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl text-light-slate" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                    <a href="https://gitlab.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl text-light-slate" aria-label="GitLab"><i class="fab fa-gitlab" aria-hidden="true"></i></a>
                     <a href="https://scholar.google.com/citations?user=DJgzI30AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl text-light-slate" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-                    <a href="../index.html#contact" class="social-icon text-3xl text-light-slate" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="../index.html#contact" class="social-icon text-3xl text-light-slate" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
                 </div>
             </div>
         </section>
@@ -193,7 +210,7 @@
                                 <span class="tag px-3 py-1 rounded-full">Python</span><span class="tag px-3 py-1 rounded-full">PyVISA</span><span class="tag px-3 py-1 rounded-full">PyMeasure</span><span class="tag px-3 py-1 rounded-full">GUI</span>
                             </div>
                             <div class="flex flex-col sm:flex-row gap-4">
-                                <a href="project-pica.html" class="cta-button text-center bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-4 rounded-lg flex-1">Learn More <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                                <a href="project-pica.html" class="cta-button text-center bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-4 rounded-lg flex-1">Learn More <i class="fas fa-arrow-right ml-2 text-xs" aria-hidden="true"></i></a>
                                 <a href="https://github.com/prathameshnium/PICA-Python-Instrument-Control-and-Automation" target="_blank" rel="noopener noreferrer" class="cta-button text-center bg-transparent border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-4 rounded-lg flex-1"><i class="fab fa-github mr-2"></i> View on GitHub</a>
                             </div>
                         </div>
@@ -292,29 +309,45 @@
     <script>
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
         
         // Desktop dropdown
         const portfolioButton = document.getElementById('portfolio-button');
-        const portfolioMenu = document.getElementById('portfolio-menu');
-
-        portfolioButton.addEventListener('click', (event) => {
-            event.stopPropagation();
-            portfolioMenu.classList.toggle('hidden');
-        });
-
-        portfolioMenu.addEventListener('click', (event) => {
-            event.stopPropagation();
-        });
-
-        window.addEventListener('click', () => {
-            if (!portfolioMenu.classList.contains('hidden')) {
-                portfolioMenu.classList.add('hidden');
+            const portfolioMenu = document.getElementById('portfolio-menu');
+    
+            if (portfolioButton && portfolioMenu) {
+                portfolioButton.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    portfolioMenu.classList.toggle('hidden');
+                });
+    
+                portfolioMenu.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                });
+    
+                window.addEventListener('click', () => {
+                    if (!portfolioMenu.classList.contains('hidden')) {
+                        portfolioMenu.classList.add('hidden');
+                    }
+                });
             }
-        });
+    
+            // Mobile portfolio accordion
+            const mobilePortfolioButton = document.getElementById('mobile-portfolio-button');
+            const mobilePortfolioMenu = document.getElementById('mobile-portfolio-menu');
+            if(mobilePortfolioButton && mobilePortfolioMenu) {
+                mobilePortfolioButton.addEventListener('click', () => {
+                    mobilePortfolioMenu.classList.toggle('hidden');
+                    const icon = mobilePortfolioButton.querySelector('i');
+                    if(icon) {
+                        icon.classList.toggle('fa-chevron-down');
+                        icon.classList.toggle('fa-chevron-up');
+                    }
+                });
+            }
     </script>
 
 </body>

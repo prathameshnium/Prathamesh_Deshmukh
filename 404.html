@@ -7,7 +7,7 @@
     <title>404 Not Found | Prathamesh Deshmukh</title>
     <meta name="description" content="Page not found on the portfolio of Prathamesh Deshmukh.">
     
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Serif+Pro:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -59,7 +59,7 @@
     <main class="container mx-auto px-6">
         <div class="min-h-screen flex flex-col justify-center items-center text-center">
             <div class="card p-8 md:p-12 rounded-lg max-w-2xl w-full">
-                <i class="fas fa-satellite-dish text-6xl text-accent-orange mb-6 animate-pulse"></i>
+                <i class="fas fa-satellite-dish text-6xl text-accent-orange mb-6 animate-pulse" aria-hidden="true"></i>
                 <h1 class="text-8xl font-bold section-title text-accent-orange">404</h1>
                 <h2 class="text-3xl font-semibold text-white mt-4 mb-4">A Null Result</h2> 
                 <p class="text-lg max-w-lg text-slate mb-8 mx-auto">
@@ -71,14 +71,14 @@
                         <input type="search" id="search-query" placeholder="Search the site..." class="bg-dark-bg border border-slate rounded-lg w-full py-3 px-4 text-light-slate focus:outline-none focus:border-accent-orange" required>
                     </div>
                     <div class="flex justify-center gap-4 mt-4">
-                        <button id="google-search-btn" class="cta-button flex-1 bg-transparent border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-3 rounded-lg text-xs"><i class="fab fa-google mr-1"></i> Google</button>
-                        <button id="ddg-search-btn" class="cta-button flex-1 bg-transparent border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-3 rounded-lg text-xs"><i class="fas fa-search mr-1"></i> DuckDuckGo</button>
-                        <button id="brave-search-btn" class="cta-button flex-1 bg-transparent border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-3 rounded-lg text-xs"><i class="fab fa-brave mr-1"></i> Brave</button>
+                        <button id="google-search-btn" class="cta-button flex-1 bg-transparent border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-3 rounded-lg text-xs" aria-label="Search with Google"><i class="fab fa-google mr-1" aria-hidden="true"></i> Google</button>
+                        <button id="ddg-search-btn" class="cta-button flex-1 bg-transparent border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-3 rounded-lg text-xs" aria-label="Search with DuckDuckGo"><i class="fas fa-search mr-1" aria-hidden="true"></i> DuckDuckGo</button>
+                        <button id="brave-search-btn" class="cta-button flex-1 bg-transparent border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-3 rounded-lg text-xs" aria-label="Search with Brave"><i class="fab fa-brave mr-1" aria-hidden="true"></i> Brave</button>
                     </div>
                 </div>
 
                 <a href="/" class="cta-button inline-block bg-accent-orange border-2 border-accent-orange text-dark-bg font-semibold py-3 px-8 rounded-lg mb-8">
-                    <i class="fas fa-home mr-2"></i> Return Home
+                    <i class="fas fa-home mr-2" aria-hidden="true"></i> Return Home
                 </a>
 
                 <div>

@@ -30,7 +30,7 @@
 
     <link rel="manifest" href="site.webmanifest">
     
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Serif+Pro:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -158,7 +158,7 @@
                 </div>
                 <a href="#contact" class="nav-link">Contact</a>
                 <button id="search-icon-btn" class="nav-link" aria-label="Open search">
-                    <i class="fas fa-search"></i>
+                    <i class="fas fa-search" aria-hidden="true"></i>
                 </button>
             </nav>
             <button id="mobile-menu-button" class="md:hidden text-white text-2xl" aria-label="Open menu">
@@ -195,7 +195,7 @@
     <div id="search-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
         <div class="modal-content w-full max-w-xl card p-8 rounded-lg text-center relative">
             <button id="close-search-modal-btn" class="absolute top-4 right-4 text-slate hover:text-accent-orange text-2xl" aria-label="Close search">
-                <i class="fas fa-times"></i>
+                <i class="fas fa-times" aria-hidden="true"></i>
             </button>
             <h3 class="text-2xl font-bold section-title mb-4">Search This Site</h3>
             <p class="text-slate mb-6">Can't find what you're looking for? Use a site-specific search.</p>
@@ -204,9 +204,9 @@
                     <input type="search" id="search-query" placeholder="e.g., 'PICA' or 'magnetoelectric'" class="bg-dark-bg border border-slate rounded-lg w-full py-3 px-4 text-light-slate focus:outline-none focus:border-accent-orange" required>
                 </div>
                 <div class="flex justify-center gap-3 mt-4">
-                    <button id="google-search-btn" class="cta-button flex-1 bg-transparent border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-3 rounded-lg text-xs"><i class="fab fa-google mr-1"></i> Google</button>
-                    <button id="ddg-search-btn" class="cta-button flex-1 bg-transparent border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-3 rounded-lg text-xs"><i class="fas fa-search mr-1"></i> DuckDuckGo</button>
-                    <button id="brave-search-btn" class="cta-button flex-1 bg-transparent border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-3 rounded-lg text-xs"><i class="fab fa-brave mr-1"></i> Brave</button>
+                    <button id="google-search-btn" class="cta-button flex-1 bg-transparent border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-3 rounded-lg text-xs" aria-label="Search with Google"><i class="fab fa-google mr-1" aria-hidden="true"></i> Google</button>
+                    <button id="ddg-search-btn" class="cta-button flex-1 bg-transparent border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-3 rounded-lg text-xs" aria-label="Search with DuckDuckGo"><i class="fas fa-search mr-1" aria-hidden="true"></i> DuckDuckGo</button>
+                    <button id="brave-search-btn" class="cta-button flex-1 bg-transparent border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-3 rounded-lg text-xs" aria-label="Search with Brave"><i class="fab fa-brave mr-1" aria-hidden="true"></i> Brave</button>
                 </div>
             </div>
         </div>
@@ -240,10 +240,10 @@
                     <a href="https://www.linkedin.com/in/prathamesh-k-deshmukh" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     <a href="https://www.researchgate.net/profile/Prathamesh-Deshmukh-6" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl" aria-label="ResearchGate"><i class="fab fa-researchgate"></i></a>
                     <a href="https://github.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://gitlab.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl" aria-label="GitLab"><i class="fab fa-gitlab"></i></a>
-                    <a href="https://orcid.org/0009-0008-3278-0837" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl" aria-label="ORCID"><i class="fab fa-orcid"></i></a>
-                    <a href="https://www.scopus.com/authid/detail.uri?authorId=59544780300" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl" aria-label="Scopus"><i class="fas fa-file-alt"></i></a>
-                    <a href="https://www.webofscience.com/wos/author/record/OFN-9289-2025" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl" aria-label="Web of Science"><i class="fas fa-flask"></i></a>
+                    <a href="https://gitlab.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl" aria-label="GitLab"><i class="fab fa-gitlab" aria-hidden="true"></i></a>
+                    <a href="https://orcid.org/0009-0008-3278-0837" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl" aria-label="ORCID"><i class="fab fa-orcid" aria-hidden="true"></i></a>
+                    <a href="https://www.scopus.com/authid/detail.uri?authorId=59544780300" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl" aria-label="Scopus"><i class="fas fa-file-alt" aria-hidden="true"></i></a>
+                    <a href="https://www.webofscience.com/wos/author/record/OFN-9289-2025" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl" aria-label="Web of Science"><i class="fas fa-flask" aria-hidden="true"></i></a>
                 </div>
             </div>
         </section>
@@ -259,7 +259,7 @@
                         </div>
                         <p class="text-lg italic text-accent-orange/90 mb-4">Multiferroic Composites</p>
                         <p class="text-slate mb-6 flex-grow">My research is centered on fabricating and understanding materials where magnetic and electric properties are intrinsically linked. The goal is to contribute to next-generation sensors, memory devices, and energy-efficient electronics.</p>
-                        <span class="cta-button mt-auto text-center bg-accent-orange/10 border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-5 rounded-lg">
+                        <span class="cta-button mt-auto text-center bg-accent-orange/10 border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-5 rounded-lg" aria-hidden="true">
                             Explore My Research <i class="fas fa-arrow-right ml-2 text-xs"></i>
                         </span>
                     </div>
@@ -310,21 +310,21 @@
                     <p class="mb-2 text-light-slate">Deshmukh, P., et al. (2024). "Exploration of near room temperature magnetoelectric coupling in BaFe<sub>10</sub>Sc<sub>2</sub>O<sub>19</sub>:KNbO<sub>3</sub> composite."</p>
                     <p class="italic text-light-slate mb-3">Journal of Physics and Chemistry of Solids, 196, 112309.</p>
                     <a href="https://doi.org/10.1016/j.jpcs.2024.112309" target="_blank" rel="noopener noreferrer" class="publication-link font-medium">
-                        View Article <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                        View Article <i class="fas fa-external-link-alt ml-1 text-xs" aria-hidden="true"></i>
                     </a>
                 </div>
                 <div class="card p-6 rounded-lg">
                     <p class="mb-2 text-light-slate">Mukherjee, S., et al. (2025). "Negative capacitance and magnetodielectric effect in Cu<sub>2</sub>O-CuO ceramics."</p>
                     <p class="italic text-light-slate mb-3">Ceramics International, 51(20), 30716-30722.</p>
                       <a href="https://doi.org/10.1016/j.ceramint.2025.04.264" target="_blank" rel="noopener noreferrer" class="publication-link font-medium">
-                        View Article <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                        View Article <i class="fas fa-external-link-alt ml-1 text-xs" aria-hidden="true"></i>
                     </a>
                 </div>
                 <div class="card p-6 rounded-lg">
                     <p class="mb-2 text-light-slate">Deshmukh, P., et al. (2025). "Exploring the role of Cu<sup>1+</sup> in quasi-1D Cu<sub>1-x</sub>Li<sub>x</sub>O (x = 0.025)."</p>
                     <p class="italic text-light-slate mb-3">Journal of Alloys and Compounds, 1036, 181833.</p>
                       <a href="https://doi.org/10.1016/j.jallcom.2025.181833" target="_blank" rel="noopener noreferrer" class="publication-link font-medium">
-                        View Article <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                        View Article <i class="fas fa-external-link-alt ml-1 text-xs" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
@@ -416,13 +416,13 @@
                 <p class="text-lg text-slate mb-6">
                     I'm open to discussing research, collaborations, or opportunities. Feel free to reach out.
                 </p>
-                <div class="flex flex-col md:flex-row justify-center items-center gap-8">
+                <div class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-8">
                     <div class="flex items-center">
-                        <i class="fas fa-envelope text-accent-orange text-2xl mr-4"></i>
+                        <i class="fas fa-envelope text-accent-orange text-2xl mr-4" aria-hidden="true"></i>
                         <span class="text-lg text-white">prathameshnium[at]duck[dot]com</span>
                     </div>
                     <div class="flex items-center">
-                        <i class="fas fa-map-marker-alt text-accent-orange text-2xl mr-4"></i>
+                        <i class="fas fa-map-marker-alt text-accent-orange text-2xl mr-4" aria-hidden="true"></i>
                         <p class="text-lg text-white">Mumbai, Maharashtra, India</p>
                     </div>
                 </div>
@@ -434,15 +434,15 @@
     <footer class="border-t border-gray-800 bg-dark-bg py-8">
         <div class="container mx-auto px-6 text-center text-slate">
             <div class="flex justify-center flex-wrap gap-6 mb-6">
-                <a href="#contact" class="social-icon text-2xl" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="#contact" class="social-icon text-2xl" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
                 <a href="https://scholar.google.com/citations?user=DJgzI30AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
                 <a href="https://www.linkedin.com/in/prathamesh-k-deshmukh" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="https://www.researchgate.net/profile/Prathamesh-Deshmukh-6" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="ResearchGate"><i class="fab fa-researchgate"></i></a>
                 <a href="https://github.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://gitlab.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="GitLab"><i class="fab fa-gitlab"></i></a>
-                <a href="https://orcid.org/0009-0008-3278-0837" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="ORCID"><i class="fab fa-orcid"></i></a>
-                <a href="https://www.scopus.com/authid/detail.uri?authorId=59544780300" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="Scopus"><i class="fas fa-file-alt"></i></a>
-                <a href="https://www.webofscience.com/wos/author/record/OFN-9289-2025" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="Web of Science"><i class="fas fa-flask"></i></a>
+                <a href="https://gitlab.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="GitLab"><i class="fab fa-gitlab" aria-hidden="true"></i></a>
+                <a href="https://orcid.org/0009-0008-3278-0837" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="ORCID"><i class="fab fa-orcid" aria-hidden="true"></i></a>
+                <a href="https://www.scopus.com/authid/detail.uri?authorId=59544780300" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="Scopus"><i class="fas fa-file-alt" aria-hidden="true"></i></a>
+                <a href="https://www.webofscience.com/wos/author/record/OFN-9289-2025" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="Web of Science"><i class="fas fa-flask" aria-hidden="true"></i></a>
             </div>
             <div class="mb-6">
                 <a href="pages/sitemap.html" class="hover:text-accent-orange transition-colors">Sitemap & Link Directory</a>
@@ -535,48 +535,50 @@
 
         // Search Modal Logic
         const searchModal = document.getElementById('search-modal');
-        const searchIconBtn = document.getElementById('search-icon-btn');
-        const closeSearchModalBtn = document.getElementById('close-search-modal-btn');
+        if (searchModal) {
+            const searchIconBtn = document.getElementById('search-icon-btn');
+            const closeSearchModalBtn = document.getElementById('close-search-modal-btn');
 
-        searchIconBtn.addEventListener('click', () => {
-            searchModal.classList.remove('hidden');
-            searchModal.classList.add('flex');
-            document.getElementById('search-query').focus();
-        });
+            searchIconBtn.addEventListener('click', () => {
+                searchModal.classList.remove('hidden');
+                searchModal.classList.add('flex');
+                document.getElementById('search-query').focus();
+            });
 
-        closeSearchModalBtn.addEventListener('click', () => {
-            searchModal.classList.add('hidden');
-            searchModal.classList.remove('flex');
-        });
+            closeSearchModalBtn.addEventListener('click', () => {
+                searchModal.classList.add('hidden');
+                searchModal.classList.remove('flex');
+            });
 
-        // Site Search Functionality
-        const queryInput = document.getElementById('search-query');
-        const googleBtn = document.getElementById('google-search-btn');
-        const ddgBtn = document.getElementById('ddg-search-btn');
-        const braveBtn = document.getElementById('brave-search-btn');
+            // Site Search Functionality
+            const queryInput = document.getElementById('search-query');
+            const googleBtn = document.getElementById('google-search-btn');
+            const ddgBtn = document.getElementById('ddg-search-btn');
+            const braveBtn = document.getElementById('brave-search-btn');
 
-        function performSearch(engine) {
-            const query = queryInput.value.trim();
-            if (query) {
-                const siteQuery = `${query} (site:prathameshdeshmukh.site OR site:github.com/prathameshnium OR site:linkedin.com/in/prathamesh-k-deshmukh OR site:researchgate.net/profile/Prathamesh-Deshmukh-6 OR site:gitlab.com/prathameshnium OR site:orcid.org/0009-0008-3278-0837)`;
-                let url;
-                if (engine === 'google') {
-                    url = `https://www.google.com/search?q=${encodeURIComponent(siteQuery)}`;
-                } else if (engine === 'ddg') {
-                    url = `https://duckduckgo.com/?q=${encodeURIComponent(siteQuery)}`;
-                } else if (engine === 'brave') {
-                    url = `https://search.brave.com/search?q=${encodeURIComponent(siteQuery)}`;
+            function performSearch(engine) {
+                const query = queryInput.value.trim();
+                if (query) {
+                    const siteQuery = `${query} (site:prathameshdeshmukh.site OR site:github.com/prathameshnium OR site:linkedin.com/in/prathamesh-k-deshmukh OR site:researchgate.net/profile/Prathamesh-Deshmukh-6 OR site:gitlab.com/prathameshnium OR site:orcid.org/0009-0008-3278-0837)`;
+                    let url;
+                    if (engine === 'google') {
+                        url = `https://www.google.com/search?q=${encodeURIComponent(siteQuery)}`;
+                    } else if (engine === 'ddg') {
+                        url = `https://duckduckgo.com/?q=${encodeURIComponent(siteQuery)}`;
+                    } else if (engine === 'brave') {
+                        url = `https://search.brave.com/search?q=${encodeURIComponent(siteQuery)}`;
+                    }
+                    window.open(url, '_blank', 'noopener,noreferrer');
+                } else {
+                    queryInput.focus();
                 }
-                window.open(url, '_blank', 'noopener,noreferrer');
-            } else {
-                queryInput.focus();
             }
-        }
 
-        googleBtn.addEventListener('click', () => performSearch('google'));
-        ddgBtn.addEventListener('click', () => performSearch('ddg'));
-        braveBtn.addEventListener('click', () => performSearch('brave'));
-        queryInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') performSearch('google'); });
+            googleBtn.addEventListener('click', () => performSearch('google'));
+            ddgBtn.addEventListener('click', () => performSearch('ddg'));
+            braveBtn.addEventListener('click', () => performSearch('brave'));
+            queryInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') performSearch('google'); });
+        }
     </script>
 
 </body>
