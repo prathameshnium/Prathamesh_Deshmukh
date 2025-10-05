@@ -35,8 +35,11 @@
     <style>
         body { background-color: #1a202c; color: #e2e8f0; }
         .section-title { font-family: 'Source Serif Pro', serif; color: #ffffff; }
-        .nav-link { transition: color 0.3s; }
-        .nav-link:hover { color: #f6ad55; }
+        .nav-link { transition: color 0.3s, border-bottom-color 0.3s; border-bottom: 2px solid transparent; padding-bottom: 4px; }
+        .nav-link:hover, .nav-link.active { color: #f6ad55; border-bottom-color: #f6ad55; }
+        .dropdown-menu {
+            background-color: #2d3748; /* card-bg */
+        }
         .sitemap-link {
             display: block;
             padding: 0.75rem 1.5rem;
@@ -68,10 +71,55 @@
 
     <header class="bg-dark-bg sticky top-0 z-50 border-b border-gray-700">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-white font-serif">Sitemap & Link Directory</h1>
-            <nav>
-                <a href="../index.html" class="nav-link">Home</a>
+            <a href="../index.html" class="text-2xl font-bold text-white font-serif">Prathamesh Deshmukh</a>
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="../index.html#about" class="nav-link">About</a>
+                <a href="../index.html#research" class="nav-link">Research</a>
+                <a href="../index.html#skills" class="nav-link">Skills</a>
+                <a href="../index.html#journey" class="nav-link">Journey</a>
+                <div class="relative">
+                    <button id="portfolio-button" class="nav-link flex items-center">
+                        Portfolio <i class="fas fa-chevron-down text-xs ml-2"></i>
+                    </button>
+                    <div id="portfolio-menu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-56 top-full right-0 mt-2 z-50">
+                        <!-- Submenu Item -->
+                        <div id="core-portfolio-item" class="relative">
+                            <a href="#" class="w-full text-left px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange flex justify-between items-center">
+                                Core Portfolio <i class="fas fa-chevron-right text-xs"></i>
+                            </a>
+                            <div id="core-portfolio-submenu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 -left-full mt-0 z-50">
+                                <a href="research.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Research & Pubs</a>
+                                <a href="computational-works.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Computational Works</a>
+                                <a href="presentations.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Presentations</a>
+                                <a href="cv.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">CV</a>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-600 my-1"></div>
+                        <a href="blog.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Blog</a>
+                        <a href="gallery.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Gallery</a>
+                        <a href="resources.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Resources</a>
+                    </div>
+                </div>
+                <a href="../index.html#contact" class="nav-link">Contact</a>
             </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white text-2xl" aria-label="Open menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="../index.html#about" class="block py-2 nav-link">About</a>
+            <a href="../index.html#research" class="block py-2 nav-link">Research</a>
+            <a href="../index.html#skills" class="block py-2 nav-link">Skills</a>
+            <a href="../index.html#journey" class="block py-2 nav-link">Journey</a>
+            <a href="../index.html#contact" class="block py-2 nav-link">Contact</a>
+            <div class="border-t border-gray-700 my-2"></div>
+            <a href="research.html" class="block py-2 nav-link pl-4">Research & Pubs</a>
+            <a href="computational-works.html" class="block py-2 nav-link pl-4">Computational Works</a>
+            <a href="presentations.html" class="block py-2 nav-link pl-4">Presentations</a>
+            <a href="cv.html" class="block py-2 nav-link pl-4">CV</a>
+            <a href="blog.html" class="block py-2 nav-link pl-4">Blog</a>
+            <a href="gallery.html" class="block py-2 nav-link pl-4">Gallery</a>
+            <a href="resources.html" class="block py-2 nav-link pl-4">Resources</a>
         </div>
     </header>
 
@@ -93,7 +141,7 @@
                     <a href="./computational-works.html" class="sitemap-link rounded-md">Computational Works</a>
                     <a href="./project-pica.html" class="sitemap-link rounded-md">Project PICA (Automation)</a>
                     <a href="./presentations.html" class="sitemap-link rounded-md">Presentations</a>
-                    <a href="./Sudip_Mukherjee_Materials_Physics_Lab.html" class="sitemap-link rounded-md">Materials Physics Lab</a>
+                    <a href="Sudip_Mukherjee_Materials_Physics_Lab.html" class="sitemap-link rounded-md">Materials Physics Lab</a>
                     <a href="./cv.html" class="sitemap-link rounded-md">Curriculum Vitae (CV)</a>
                     
                     <h4 class="text-xl font-semibold text-light-slate mt-6">Other</h4>
@@ -174,9 +222,70 @@
 
     <footer class="border-t border-gray-800 bg-dark-bg py-8 mt-12">
         <div class="container mx-auto px-6 text-center text-slate">
+            <div class="flex justify-center items-center flex-wrap gap-6 mb-6">
+                <a href="../index.html#contact" class="social-icon text-2xl" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+                <a href="https://scholar.google.com/citations?user=DJgzI30AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="Google Scholar"><i class="fas fa-graduation-cap" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/prathamesh-k-deshmukh" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                <a href="https://github.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                <a href="https://x.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="X (formerly Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+            </div>
+            <div class="mb-6">
+                <a href="sitemap.html" class="hover:text-accent-orange transition-colors">Sitemap & Link Directory</a>
+            </div>
              <p>&copy; 2025 Prathamesh Keshao Deshmukh. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Robust script for clickable dropdown
+        const portfolioButton = document.getElementById('portfolio-button');
+        const portfolioMenu = document.getElementById('portfolio-menu');
+
+        portfolioButton.addEventListener('click', (event) => {
+            event.stopPropagation();
+            portfolioMenu.classList.toggle('hidden');
+        });
+
+        portfolioMenu.addEventListener('click', (event) => {
+            event.stopPropagation();
+        });
+
+        window.addEventListener('click', () => {
+            if (!portfolioMenu.classList.contains('hidden')) {
+                portfolioMenu.classList.add('hidden');
+            }
+        });
+
+        // Improved submenu logic
+        const corePortfolioItem = document.getElementById('core-portfolio-item');
+        const corePortfolioSubmenu = document.getElementById('core-portfolio-submenu');
+        let submenuTimeout;
+
+        corePortfolioItem.addEventListener('mouseenter', () => {
+            clearTimeout(submenuTimeout);
+            corePortfolioSubmenu.classList.remove('hidden');
+        });
+
+        corePortfolioItem.addEventListener('mouseleave', () => {
+            submenuTimeout = setTimeout(() => {
+                corePortfolioSubmenu.classList.add('hidden');
+            }, 300); // 300ms delay before hiding
+        });
+
+        corePortfolioSubmenu.addEventListener('mouseenter', () => {
+            clearTimeout(submenuTimeout);
+        });
+
+        corePortfolioSubmenu.addEventListener('mouseleave', () => {
+            corePortfolioSubmenu.classList.add('hidden');
+        });
+    </script>
 </body>
 </html>

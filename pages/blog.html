@@ -38,23 +38,20 @@
             color: #e2e8f0;
         }
         .section-title {
-            font-family: 'Source Serif Pro', serif;
-            color: #ffffff;
+            font-family: 'Source Serif Pro', serif; color: #ffffff;
         }
         .card {
-            background-color: #2d3748;
-            border: 1px solid #4a5568; 
-            transition: all 0.3s ease-in-out;
+            background-color: #2d3748; border: 1px solid #4a5568; transition: all 0.3s ease-in-out;
         }
          .card:hover {
-            border-color: #f6ad55;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-color: #f6ad55; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
         .nav-link {
-            transition: color 0.3s, border-bottom-color 0.3s;
+            transition: color 0.3s, border-bottom-color 0.3s; border-bottom: 2px solid transparent; padding-bottom: 4px;
         }
         .nav-link:hover {
             color: #f6ad55;
+            border-bottom-color: #f6ad55;
         }
         .cta-button {
             transition: all 0.3s ease;
@@ -63,6 +60,10 @@
             background-color: #f6ad55;
             color: #1a202c;
         }
+        .dropdown-menu {
+            background-color: #2d3748; /* card-bg */
+            color: #a8b2d1; /* light-slate */
+        }
     </style>
 </head>
 <body class="antialiased font-sans">
@@ -70,10 +71,64 @@
     <!-- Header & Navigation -->
     <header class="bg-dark-bg sticky top-0 z-50 border-b border-gray-700">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-white font-serif">Blog</h1>
-            <nav>
-                <a href="../index.html" class="nav-link">Home</a>
+            <a href="../index.html" class="text-2xl font-bold text-white font-serif">Prathamesh Deshmukh</a>
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="../index.html#about" class="nav-link">About</a>
+                <a href="../index.html#research" class="nav-link">Research</a>
+                <a href="../index.html#skills" class="nav-link">Skills</a>
+                <a href="../index.html#journey" class="nav-link">Journey</a>
+                <div class="relative">
+                    <button id="portfolio-button" class="nav-link flex items-center">
+                        Portfolio <i class="fas fa-chevron-down text-xs ml-2"></i>
+                    </button>
+                    <div id="portfolio-menu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-56 top-full right-0 mt-2 z-50">
+                        <!-- Submenu Item -->
+                        <div id="core-portfolio-item" class="relative">
+                            <a href="#" class="w-full text-left px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange flex justify-between items-center">
+                                Core Portfolio <i class="fas fa-chevron-right text-xs"></i>
+                            </a>
+                            <div id="core-portfolio-submenu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 -left-full mt-0 z-50">
+                                <a href="research.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Research & Pubs</a>
+                                <a href="computational-works.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Computational Works</a>
+                                <a href="presentations.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Presentations</a>
+                                <a href="cv.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">CV</a>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-600 my-1"></div>
+                        <a href="blog.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Blog</a>
+                        <a href="gallery.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Gallery</a>
+                        <a href="resources.html" class="block px-4 py-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange">Resources</a>
+                    </div>
+                </div>
+                <a href="../index.html#contact" class="nav-link">Contact</a>
             </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white text-2xl" aria-label="Open menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="../index.html#about" class="block py-2 nav-link">About</a>
+            <a href="../index.html#research" class="block py-2 nav-link">Research</a>
+            <a href="../index.html#skills" class="block py-2 nav-link">Skills</a>
+            <a href="../index.html#journey" class="block py-2 nav-link">Journey</a>
+            <a href="../index.html#contact" class="block py-2 nav-link">Contact</a>
+            <div class="border-t border-gray-700 my-2"></div>
+            <!-- Accordion for Portfolio -->
+            <div>
+                <button id="mobile-portfolio-button" class="w-full text-left py-2 nav-link flex justify-between items-center">
+                    <span>Portfolio</span>
+                    <i class="fas fa-chevron-down text-xs"></i>
+                </button>
+                <div id="mobile-portfolio-menu" class="hidden pl-4">
+                    <a href="research.html" class="block py-2 nav-link">Research & Pubs</a>
+                    <a href="computational-works.html" class="block py-2 nav-link">Computational Works</a>
+                    <a href="presentations.html" class="block py-2 nav-link">Presentations</a>
+                    <a href="cv.html" class="block py-2 nav-link">CV</a>
+                    <a href="blog.html" class="block py-2 nav-link">Blog</a>
+                    <a href="gallery.html" class="block py-2 nav-link">Gallery</a>
+                    <a href="resources.html" class="block py-2 nav-link">Resources</a>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -131,9 +186,80 @@
     <!-- Footer -->
     <footer class="border-t border-gray-800 bg-dark-bg py-8 mt-12">
         <div class="container mx-auto px-6 text-center text-slate">
+            <div class="flex justify-center items-center flex-wrap gap-6 mb-6">
+                <a href="../index.html#contact" class="social-icon text-2xl" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+                <a href="https://scholar.google.com/citations?user=DJgzI30AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="Google Scholar"><i class="fas fa-graduation-cap" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/prathamesh-k-deshmukh" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                <a href="https://github.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                <a href="https://x.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="X (formerly Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+            </div>
+            <div class="mb-6">
+                <a href="sitemap.html" class="hover:text-accent-orange transition-colors">Sitemap & Link Directory</a>
+            </div>
              <p>&copy; 2025 Prathamesh Keshao Deshmukh. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Robust script for clickable dropdown
+        const portfolioButton = document.getElementById('portfolio-button');
+        const portfolioMenu = document.getElementById('portfolio-menu');
+
+        portfolioButton.addEventListener('click', (event) => {
+            event.stopPropagation();
+            portfolioMenu.classList.toggle('hidden');
+        });
+
+        portfolioMenu.addEventListener('click', (event) => {
+            event.stopPropagation();
+        });
+
+        window.addEventListener('click', () => {
+            if (!portfolioMenu.classList.contains('hidden')) {
+                portfolioMenu.classList.add('hidden');
+            }
+        });
+
+        // Improved submenu logic
+        const corePortfolioItem = document.getElementById('core-portfolio-item');
+        const corePortfolioSubmenu = document.getElementById('core-portfolio-submenu');
+        let submenuTimeout;
+
+        corePortfolioItem.addEventListener('mouseenter', () => {
+            clearTimeout(submenuTimeout);
+            corePortfolioSubmenu.classList.remove('hidden');
+        });
+
+        corePortfolioItem.addEventListener('mouseleave', () => {
+            submenuTimeout = setTimeout(() => {
+                corePortfolioSubmenu.classList.add('hidden');
+            }, 300); // 300ms delay before hiding
+        });
+
+        corePortfolioSubmenu.addEventListener('mouseenter', () => {
+            clearTimeout(submenuTimeout);
+        });
+
+        corePortfolioSubmenu.addEventListener('mouseleave', () => {
+            corePortfolioSubmenu.classList.add('hidden');
+        });
+
+        // Mobile portfolio accordion
+        const mobilePortfolioButton = document.getElementById('mobile-portfolio-button');
+        const mobilePortfolioMenu = document.getElementById('mobile-portfolio-menu');
+        mobilePortfolioButton.addEventListener('click', () => {
+            mobilePortfolioMenu.classList.toggle('hidden');
+            mobilePortfolioButton.querySelector('i').classList.toggle('fa-chevron-down');
+            mobilePortfolioButton.querySelector('i').classList.toggle('fa-chevron-up');
+        });
+    </script>
 
 </body>
 </html>
