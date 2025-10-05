@@ -280,8 +280,7 @@
 
         // Active nav link scrolling
         const sections = document.querySelectorAll('main section');
-        const navLinks = document.querySelectorAll('nav a.nav-link'); 
-        
+        const navLinks = document.querySelectorAll('nav a.nav-link');
         window.addEventListener('scroll', () => {
             let current = '';
             sections.forEach(section => {
@@ -298,6 +297,36 @@
                     link.classList.add('active');
                 }
             });
+        });
+
+        // Robust script for clickable dropdown
+        const portfolioButton = document.getElementById('portfolio-button');
+        const portfolioMenu = document.getElementById('portfolio-menu');
+
+        if (portfolioButton && portfolioMenu) {
+            portfolioButton.addEventListener('click', (event) => {
+                event.stopPropagation();
+                portfolioMenu.classList.toggle('hidden');
+            });
+
+            portfolioMenu.addEventListener('click', (event) => {
+                event.stopPropagation();
+            });
+
+            window.addEventListener('click', () => {
+                if (!portfolioMenu.classList.contains('hidden')) {
+                    portfolioMenu.classList.add('hidden');
+                }
+            });
+        }
+
+        // Mobile portfolio accordion
+        const mobilePortfolioButton = document.getElementById('mobile-portfolio-button');
+        const mobilePortfolioMenu = document.getElementById('mobile-portfolio-menu');
+        mobilePortfolioButton.addEventListener('click', () => {
+            mobilePortfolioMenu.classList.toggle('hidden');
+            mobilePortfolioButton.querySelector('i').classList.toggle('fa-chevron-down');
+            mobilePortfolioButton.querySelector('i').classList.toggle('fa-chevron-up');
         });
     </script>
 
