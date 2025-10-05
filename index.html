@@ -118,6 +118,9 @@
             .hero-title-critical { font-size: 3rem; } /* Corresponds to text-5xl */
         }
         .hero-subtitle-critical { font-size: 1.5rem; line-height: 2rem; color: #f6ad55; margin-bottom: 1.5rem; } /* text-2xl */
+        .hero-text-critical { font-size: 1.125rem; line-height: 1.75rem; color: #a8b2d1; max-width: 48rem; margin-bottom: 2rem; } /* text-lg, max-w-3xl, mb-8 */
+        .hero-stats-critical { display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; margin-bottom: 2.5rem; }
+        .hero-socials-critical { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; }
 
     </style>
     
@@ -231,10 +234,10 @@
             <div class="w-full">
                 <h1 class="hero-title-critical">Prathamesh Keshao Deshmukh</h1>
                 <h2 class="hero-subtitle-critical">PhD Scholar | Condensed Matter Physics</h2>
-                <p class="text-lg max-w-3xl mb-8 text-light-slate">
+                <p class="hero-text-critical">
                     A PhD researcher at the UGC-DAE Consortium for Scientific Research, specializing in the synthesis and characterization of multiferroic composites. My work bridges experimental physics with computational science, focusing on magnetoelectric coupling and the development of novel materials. By utilizing advanced techniques like neutron diffraction and creating Python-based tools for lab automation, I aim to contribute to the next generation of data storage, sensors, and energy-efficient electronics.
                 </p>
-                <div class="flex flex-wrap gap-8 items-center mb-10">
+                <div class="hero-stats-critical">
                     <div class="text-center">
                         <p class="text-3xl font-bold text-accent-orange">3+</p>
                         <p class="text-slate">Publications</p>
@@ -248,7 +251,7 @@
                         <p class="text-slate">H-Index</p>
                     </div>
                 </div>
-                  <div class="flex flex-wrap items-center gap-6">
+                  <div class="hero-socials-critical">
                     <a href="https://scholar.google.com/citations?user=DJgzI30AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl" aria-label="Google Scholar"><i class="fas fa-graduation-cap" aria-hidden="true"></i></a>
                     <a href="https://www.linkedin.com/in/prathamesh-k-deshmukh" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
                     <a href="https://github.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
