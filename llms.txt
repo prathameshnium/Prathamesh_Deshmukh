@@ -17,7 +17,7 @@ This website is built with HTML and Tailwind CSS and is hosted on GitHub Pages. 
 - **PhD Research** (2022-Present): Focused on the synthesis and characterization of multiferroic composites, exploring magnetoelectric coupling using techniques like neutron diffraction and dielectric spectroscopy.
 - **M.Sc Project** (2021): "Review on Earth abundant electrocatalytic bifunctional materials for energy conversion and storage applications."
 
-## Key Projects
+## Scientific Programming Projects
 
 - PICA: Python Instrument Control & Automation: A modular `PyVISA`-based automation suite for controlling lab instruments (Keithley, Lakeshore) for thermal and electrical characterization. Features a central GUI and isolated processes for stability.
 - Physics Simulation Toolkit: Python scripts for simulating and visualizing phenomena in condensed matter physics, such as magnetic ordering (Ising model) and common dielectric models.
