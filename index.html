@@ -571,12 +571,12 @@
         if (searchModal) {
             const searchIconBtn = document.getElementById('search-icon-btn');
             const closeSearchModalBtn = document.getElementById('close-search-modal-btn');
-
+ 
             searchIconBtn.addEventListener('click', () => {
                 searchModal.classList.toggle('hidden');
                 searchModal.classList.toggle('flex');
             });
-
+ 
             closeSearchModalBtn.addEventListener('click', () => {
                 searchModal.classList.add('hidden');
                 searchModal.classList.remove('flex');
