@@ -200,8 +200,7 @@
             </button>
             <h3 class="text-2xl font-bold section-title mb-4">Search This Site</h3>
             <p class="text-slate mb-6">Can't find what you're looking for? Use a site-specific search.</p>
-            <script async src="https://cse.google.com/cse.js?cx=4137cb8ceeadf4259"></script>
-            <div class="gcse-search"></div>
+            <div class="gcse-search">Loading search...</div>
         </div>
     </div>
 
@@ -367,7 +366,7 @@
 
                 <div class="card p-6 rounded-lg flex flex-col">
                     <h3 class="text-xl font-semibold text-accent-orange mb-4">Programming & Automation</h3>
-                    <p class="text-light-slate mb-4 flex-grow">Developing custom Python scripts (PyVISA) to interface with and automate laboratory instruments for precise data acquisition. My flagship project, PICA, provides a full suite for this purpose.</p>
+                    <p class="text-light-slate mb-4 flex-grow">Developing custom Python scripts (PyVISA) to interface with and automate laboratory instruments for precise data acquisition. My flagship project, <a href="/pages/project-pica.html" class="text-accent-orange hover:underline">PICA</a>, provides a full suite for this purpose.</p>
                     <div class="mt-auto grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                         <a href="pages/computational-works.html" class="cta-button text-sm flex-grow text-center bg-accent-orange/10 border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-4 rounded-lg">
                             View All Projects
@@ -416,7 +415,7 @@
         <section id="contact" class="py-20">
             <h2 class="text-4xl font-bold section-title mb-8 text-center">Get In Touch</h2>
             <div class="max-w-3xl mx-auto card p-8 rounded-lg text-center">
-                <p class="text-lg text-light-slate mb-6">
+                <p class="text-lg text-slate mb-6">
                     I'm open to discussing research, collaborations, or opportunities. Feel free to reach out.
                 </p>
                 <div class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-8">
@@ -576,15 +575,14 @@
             searchIconBtn.addEventListener('click', () => {
                 searchModal.classList.toggle('hidden');
                 searchModal.classList.toggle('flex');
-                if (!cseLoaded) {
-                    const script = document.createElement('script');
-                    script.src = 'https://cse.google.com/cse.js?cx=4137cb8ceeadf4259';
-                    script.async = true;
-                    document.querySelector('.gcse-search').appendChild(script);
-                    cseLoaded = true;
+                // Use Google's official method to render the search box
+                if (window.google && google.search.cse) {
+                    google.search.cse.element.render({
+                        div: "gcse-search-in-modal",
+                        tag: 'searchbox-only'
+                    });
                 }
             });
- 
             closeSearchModalBtn.addEventListener('click', () => {
                 searchModal.classList.add('hidden');
                 searchModal.classList.remove('flex');
@@ -592,5 +590,6 @@
         }
     </script>
 
+    <script async src="https://cse.google.com/cse.js?cx=4137cb8ceeadf4259"></script>
 </body>
 </html>
