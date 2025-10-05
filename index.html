@@ -19,7 +19,7 @@
     <meta property="og:title" content="Prathamesh Deshmukh | Physics PhD & Scientific Programmer">
     <meta property="og:image" content="https://www.prathameshdeshmukh.site/_assets/banner.png">
 
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self' https://www.google-analytics.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self' https://www.google-analytics.com; frame-ancestors 'self';">
     
     <link rel="canonical" href="https://prathameshdeshmukh.site/">
 
@@ -161,7 +161,7 @@
                     <i class="fas fa-search"></i>
                 </button>
             </nav>
-            <button id="mobile-menu-button" class="md:hidden text-white text-2xl">
+            <button id="mobile-menu-button" class="md:hidden text-white text-2xl" aria-label="Open menu">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
@@ -254,7 +254,7 @@
                 <a href="pages/research.html" class="card-link" aria-label="Explore my core research on multiferroic composites">
                     <div class="card p-8 rounded-lg flex flex-col h-full">
                         <div class="flex items-center mb-4">
-                            <i class="fas fa-atom text-3xl text-accent-orange mr-4"></i>
+                            <i class="fas fa-atom text-3xl text-accent-orange mr-4" aria-hidden="true"></i>
                             <h3 class="text-2xl font-semibold text-white">Core Research Theme</h3>
                         </div>
                         <p class="text-lg italic text-accent-orange/90 mb-4">Multiferroic Composites</p>
@@ -266,14 +266,14 @@
                 </a>
                 <div class="card p-8 rounded-lg">
                      <div class="flex items-center mb-4">
-                        <i class="fas fa-flask text-3xl text-accent-orange mr-4"></i>
+                        <i class="fas fa-flask text-3xl text-accent-orange mr-4" aria-hidden="true"></i>
                         <h3 class="text-2xl font-semibold text-white">Key Activities</h3>
                     </div>
                     <ul class="space-y-4 text-slate">
-                        <li class="flex items-start"><i class="fas fa-check-circle text-accent-orange/80 mt-1 mr-3"></i><span>Novel material synthesis (e.g., BaFe<sub>10</sub>Sc<sub>2</sub>O<sub>19</sub>:KNbO<sub>3</sub>).</span></li>
-                        <li class="flex items-start"><i class="fas fa-check-circle text-accent-orange/80 mt-1 mr-3"></i><span>Design of custom probes for cryogenic measurements.</span></li>
-                        <li class="flex items-start"><i class="fas fa-check-circle text-accent-orange/80 mt-1 mr-3"></i><span>Structural analysis using Neutron & X-Ray Diffraction.</span></li>
-                        <li class="flex items-start"><i class="fas fa-check-circle text-accent-orange/80 mt-1 mr-3"></i><span>Characterization of magnetic and electric properties.</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-accent-orange/80 mt-1 mr-3" aria-hidden="true"></i><span>Novel material synthesis (e.g., BaFe<sub>10</sub>Sc<sub>2</sub>O<sub>19</sub>:KNbO<sub>3</sub>).</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-accent-orange/80 mt-1 mr-3" aria-hidden="true"></i><span>Design of custom probes for cryogenic measurements.</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-accent-orange/80 mt-1 mr-3" aria-hidden="true"></i><span>Structural analysis using Neutron & X-Ray Diffraction.</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-accent-orange/80 mt-1 mr-3" aria-hidden="true"></i><span>Characterization of magnetic and electric properties.</span></li>
                     </ul>
                 </div>
             </div>
@@ -308,21 +308,21 @@
             <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-6">
                 <div class="card p-6 rounded-lg">
                     <p class="mb-2 text-light-slate">Deshmukh, P., et al. (2024). "Exploration of near room temperature magnetoelectric coupling in BaFe<sub>10</sub>Sc<sub>2</sub>O<sub>19</sub>:KNbO<sub>3</sub> composite."</p>
-                    <p class="italic text-slate mb-3">Journal of Physics and Chemistry of Solids, 196, 112309.</p>
+                    <p class="italic text-light-slate mb-3">Journal of Physics and Chemistry of Solids, 196, 112309.</p>
                     <a href="https://doi.org/10.1016/j.jpcs.2024.112309" target="_blank" rel="noopener noreferrer" class="publication-link font-medium">
                         View Article <i class="fas fa-external-link-alt ml-1 text-xs"></i>
                     </a>
                 </div>
                 <div class="card p-6 rounded-lg">
                     <p class="mb-2 text-light-slate">Mukherjee, S., et al. (2025). "Negative capacitance and magnetodielectric effect in Cu<sub>2</sub>O-CuO ceramics."</p>
-                    <p class="italic text-slate mb-3">Ceramics International, 51(20), 30716-30722.</p>
+                    <p class="italic text-light-slate mb-3">Ceramics International, 51(20), 30716-30722.</p>
                       <a href="https://doi.org/10.1016/j.ceramint.2025.04.264" target="_blank" rel="noopener noreferrer" class="publication-link font-medium">
                         View Article <i class="fas fa-external-link-alt ml-1 text-xs"></i>
                     </a>
                 </div>
                 <div class="card p-6 rounded-lg">
                     <p class="mb-2 text-light-slate">Deshmukh, P., et al. (2025). "Exploring the role of Cu<sup>1+</sup> in quasi-1D Cu<sub>1-x</sub>Li<sub>x</sub>O (x = 0.025)."</p>
-                    <p class="italic text-slate mb-3">Journal of Alloys and Compounds, 1036, 181833.</p>
+                    <p class="italic text-light-slate mb-3">Journal of Alloys and Compounds, 1036, 181833.</p>
                       <a href="https://doi.org/10.1016/j.jallcom.2025.181833" target="_blank" rel="noopener noreferrer" class="publication-link font-medium">
                         View Article <i class="fas fa-external-link-alt ml-1 text-xs"></i>
                     </a>
@@ -393,13 +393,13 @@
             <h2 class="text-4xl font-bold section-title mb-8 text-center">Conferences & Workshops</h2>
             <div class="max-w-4xl mx-auto space-y-4">
                 <div class="card p-4 rounded-lg">
-                    <p class="text-light-slate"><i class="fas fa-chalkboard-teacher text-accent-orange mr-3"></i><strong>Attended:</strong> XIX School on Neutron as Probe of Condensed Matter, UGC-DAE CSR, Mumbai (Sep 2022)</p>
+                    <p class="text-light-slate"><i class="fas fa-chalkboard-teacher text-accent-orange mr-3" aria-hidden="true"></i><strong>Attended:</strong> XIX School on Neutron as Probe of Condensed Matter, UGC-DAE CSR, Mumbai (Sep 2022)</p>
                 </div>
                 <div class="card p-4 rounded-lg">
-                    <p class="text-light-slate"><i class="fas fa-file-alt text-accent-orange mr-3"></i><strong>Poster Presentation:</strong> 66th DAE Solid State Physics Symposium, BIT Mesra, Ranchi (Dec 2022)</p>
+                    <p class="text-light-slate"><i class="fas fa-file-alt text-accent-orange mr-3" aria-hidden="true"></i><strong>Poster Presentation:</strong> 66th DAE Solid State Physics Symposium, BIT Mesra, Ranchi (Dec 2022)</p>
                 </div>
                  <div class="card p-4 rounded-lg">
-                    <p class="text-light-slate"><i class="fas fa-chalkboard-teacher text-accent-orange mr-3"></i><strong>Attended:</strong> 6th National Workshop on Materials Chemistry, Mumbai (Oct 2023)</p>
+                    <p class="text-light-slate"><i class="fas fa-chalkboard-teacher text-accent-orange mr-3" aria-hidden="true"></i><strong>Attended:</strong> 6th National Workshop on Materials Chemistry, Mumbai (Oct 2023)</p>
                 </div>
             </div>
                <div class="text-center mt-10">
