@@ -200,16 +200,8 @@
             </button>
             <h3 class="text-2xl font-bold section-title mb-4">Search This Site</h3>
             <p class="text-slate mb-6">Can't find what you're looking for? Use a site-specific search.</p>
-            <div class="max-w-md mx-auto">
-                <div class="relative">
-                    <input type="search" id="search-query" placeholder="e.g., 'PICA' or 'magnetoelectric'" class="bg-dark-bg border border-slate rounded-lg w-full py-3 px-4 text-light-slate focus:outline-none focus:border-accent-orange" required>
-                </div>
-                <div class="flex justify-center gap-3 mt-4">
-                    <button id="google-search-btn" class="cta-button flex-1 bg-transparent border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-3 rounded-lg text-xs" aria-label="Search with Google"><i class="fab fa-google mr-1" aria-hidden="true"></i> Google</button>
-                    <button id="ddg-search-btn" class="cta-button flex-1 bg-transparent border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-3 rounded-lg text-xs" aria-label="Search with DuckDuckGo"><i class="fas fa-search mr-1" aria-hidden="true"></i> DuckDuckGo</button>
-                    <button id="brave-search-btn" class="cta-button flex-1 bg-transparent border-2 border-accent-orange/50 text-accent-orange font-semibold py-2 px-3 rounded-lg text-xs" aria-label="Search with Brave"><i class="fab fa-brave mr-1" aria-hidden="true"></i> Brave</button>
-                </div>
-            </div>
+            <script async src="https://cse.google.com/cse.js?cx=4137cb8ceeadf4259"></script>
+            <div class="gcse-search"></div>
         </div>
     </div>
 
@@ -581,44 +573,14 @@
             const closeSearchModalBtn = document.getElementById('close-search-modal-btn');
 
             searchIconBtn.addEventListener('click', () => {
-                searchModal.classList.remove('hidden');
-                searchModal.classList.add('flex');
-                document.getElementById('search-query').focus();
+                searchModal.classList.toggle('hidden');
+                searchModal.classList.toggle('flex');
             });
 
             closeSearchModalBtn.addEventListener('click', () => {
                 searchModal.classList.add('hidden');
                 searchModal.classList.remove('flex');
             });
-
-            // Site Search Functionality
-            const queryInput = document.getElementById('search-query');
-            const googleBtn = document.getElementById('google-search-btn');
-            const ddgBtn = document.getElementById('ddg-search-btn');
-            const braveBtn = document.getElementById('brave-search-btn');
-
-            function performSearch(engine) {
-                const query = queryInput.value.trim();
-                if (query) {
-                    const siteQuery = `${query} (site:prathameshdeshmukh.site OR site:github.com/prathameshnium OR site:linkedin.com/in/prathamesh-k-deshmukh OR site:researchgate.net/profile/Prathamesh-Deshmukh-6 OR site:gitlab.com/prathameshnium OR site:orcid.org/0009-0008-3278-0837)`;
-                    let url;
-                    if (engine === 'google') {
-                        url = `https://www.google.com/search?q=${encodeURIComponent(siteQuery)}`;
-                    } else if (engine === 'ddg') {
-                        url = `https://duckduckgo.com/?q=${encodeURIComponent(siteQuery)}`;
-                    } else if (engine === 'brave') {
-                        url = `https://search.brave.com/search?q=${encodeURIComponent(siteQuery)}`;
-                    }
-                    window.open(url, '_blank', 'noopener,noreferrer');
-                } else {
-                    queryInput.focus();
-                }
-            }
-
-            googleBtn.addEventListener('click', () => performSearch('google'));
-            ddgBtn.addEventListener('click', () => performSearch('ddg'));
-            braveBtn.addEventListener('click', () => performSearch('brave'));
-            queryInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') performSearch('google'); });
         }
     </script>
 
