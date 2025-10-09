@@ -29,13 +29,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         <i class="fas fa-chevron-down text-xs"></i>
                     </button>
                     <div id="mobile-portfolio-menu" class="hidden pl-4">
-                        <a href="/pages/research.html" class="block py-2 nav-link">Research & Pubs</a>
-                        <a href="/pages/computational-works.html" class="block py-2 nav-link">Computational Works</a>
-                        <a href="/pages/presentations.html" class="block py-2 nav-link">Presentations</a>
-                        <a href="/pages/cv.html" class="block py-2 nav-link">CV</a>
-                        <a href="/pages/blog.html" class="block py-2 nav-link">Blog</a>
-                        <a href="/pages/gallery.html" class="block py-2 nav-link">Gallery</a>
-                        <a href="/pages/resources.html" class="block py-2 nav-link">Resources</a>
+                        <a href="../pages/research.html" class="block py-2 nav-link">Research & Pubs</a>
+                        <a href="../pages/computational-works.html" class="block py-2 nav-link">Computational Works</a>
+                        <a href="../pages/presentations.html" class="block py-2 nav-link">Presentations</a>
+                        <a href="../pages/cv.html" class="block py-2 nav-link">CV</a>
+                        <a href="../pages/blog.html" class="block py-2 nav-link">Blog</a>
+                        <a href="../pages/gallery.html" class="block py-2 nav-link">Gallery</a>
+                        <a href="../pages/resources.html" class="block py-2 nav-link">Resources</a>
                     </div>
                 </div>
             `;
@@ -82,8 +82,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // Desktop submenu logic
     const corePortfolioItem = document.getElementById('core-portfolio-item');
     const corePortfolioSubmenu = document.getElementById('core-portfolio-submenu');
+    let submenuTimeout;
+
     if (corePortfolioItem && corePortfolioSubmenu) {
-        corePortfolioItem.addEventListener('mouseenter', () => corePortfolioSubmenu.classList.remove('hidden'));
-        corePortfolioItem.addEventListener('mouseleave', () => corePortfolioSubmenu.classList.add('hidden'));
+        corePortfolioItem.addEventListener('mouseenter', () => {
+            clearTimeout(submenuTimeout);
+            corePortfolioSubmenu.classList.remove('hidden');
+        });
+        corePortfolioItem.addEventListener('mouseleave', () => {
+            submenuTimeout = setTimeout(() => corePortfolioSubmenu.classList.add('hidden'), 300);
+        });
+        corePortfolioSubmenu.addEventListener('mouseenter', () => {
+            clearTimeout(submenuTimeout);
+        });
+        corePortfolioSubmenu.addEventListener('mouseleave', () => {
+            corePortfolioSubmenu.classList.add('hidden');
+        });
     }
 });
