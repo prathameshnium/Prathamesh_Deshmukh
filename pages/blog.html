@@ -6,19 +6,22 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; frame-ancestors 'self';">
     <title>Blog | Prathamesh Deshmukh</title>
     <meta name="description" content="A blog on condensed matter physics, scientific programming, and data analysis by Prathamesh Deshmukh.">
+    <link rel="canonical" href="https://prathameshdeshmukh.site/pages/blog.html">
+    <meta property="og:title" content="Blog | Prathamesh Deshmukh">
+    <meta property="og:description" content="A blog on condensed matter physics, scientific programming, and data analysis by Prathamesh Deshmukh.">
+    <meta property="og:url" content="https://prathameshdeshmukh.site/pages/blog.html">
+    <meta property="og:image" content="https://www.prathameshdeshmukh.site/_assets/banner.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog | Prathamesh Deshmukh">
+    <meta name="twitter:description" content="A blog on condensed matter physics, scientific programming, and data analysis by Prathamesh Deshmukh.">
+    <meta name="twitter:image" content="https://www.prathameshdeshmukh.site/_assets/banner.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Serif+Pro:wght@600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../_assets/style.css">
-    <script>
-        window.addEventListener('load', function() {
-            const preloader = document.getElementById('preloader');
-            if (preloader) {
-                preloader.style.display = 'none';
-            }
-        });
-    </script>
+
 </head>
 <body class="antialiased font-sans">
     <div id="preloader"><div class="loader"></div></div>
@@ -154,66 +157,7 @@
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Robust script for clickable dropdown
-        const portfolioButton = document.getElementById('portfolio-button');
-        const portfolioMenu = document.getElementById('portfolio-menu');
-
-        portfolioButton.addEventListener('click', (event) => {
-            event.stopPropagation();
-            portfolioMenu.classList.toggle('hidden');
-        });
-
-        portfolioMenu.addEventListener('click', (event) => {
-            event.stopPropagation();
-        });
-
-        window.addEventListener('click', () => {
-            if (!portfolioMenu.classList.contains('hidden')) {
-                portfolioMenu.classList.add('hidden');
-            }
-        });
-
-        // Improved submenu logic
-        const corePortfolioItem = document.getElementById('core-portfolio-item');
-        const corePortfolioSubmenu = document.getElementById('core-portfolio-submenu');
-        let submenuTimeout;
-
-        corePortfolioItem.addEventListener('mouseenter', () => {
-            clearTimeout(submenuTimeout);
-            corePortfolioSubmenu.classList.remove('hidden');
-        });
-
-        corePortfolioItem.addEventListener('mouseleave', () => {
-            submenuTimeout = setTimeout(() => {
-                corePortfolioSubmenu.classList.add('hidden');
-            }, 300); // 300ms delay before hiding
-        });
-
-        corePortfolioSubmenu.addEventListener('mouseenter', () => {
-            clearTimeout(submenuTimeout);
-        });
-
-        corePortfolioSubmenu.addEventListener('mouseleave', () => {
-            corePortfolioSubmenu.classList.add('hidden');
-        });
-
-        // Mobile portfolio accordion
-        const mobilePortfolioButton = document.getElementById('mobile-portfolio-button');
-        const mobilePortfolioMenu = document.getElementById('mobile-portfolio-menu');
-        mobilePortfolioButton.addEventListener('click', () => {
-            mobilePortfolioMenu.classList.toggle('hidden');
-            mobilePortfolioButton.querySelector('i').classList.toggle('fa-chevron-down');
-            mobilePortfolioButton.querySelector('i').classList.toggle('fa-chevron-up');
-        });
-    </script>
+    <script src="../_assets/js/main.js" defer></script>
 
 </body>
 </html>
