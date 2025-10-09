@@ -24,7 +24,6 @@
 
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://raw.githubusercontent.com https://placehold.co https://img.shields.io; frame-ancestors 'self';">
     <!-- Styles and Fonts -->
-    <script src="https://cdn.tailwindcss.com" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Serif+Pro:wght@600;700&display=swap">
@@ -32,22 +31,12 @@
     
     <script>
       tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              serif: ['Source Serif Pro', 'serif'],
-            },
-            colors: {
-              'accent-orange': '#f6ad55', 
-              'dark-bg': '#1a202c',       
-              'card-bg': '#2d3748',
-              'light-slate': '#a8b2d1',
-              'slate': '#8892b0'
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                preloader.style.display = 'none';
             }
-          }
-        }
-      }
+        });
     </script>
 
     <!-- SEO: JSON-LD Structured Data -->
@@ -75,78 +64,12 @@
       "codeRepository": "https://github.com/prathameshnium/PICA-Python-Instrument-Control-and-Automation"
     }
     </script>
-
-    <style>
-        body {
-            background-color: #1a202c;
-            color: #e2e8f0;
-        }
-        .section-title {
-            font-family: 'Source Serif Pro', serif;
-            color: #ffffff;
-        }
-        .card {
-            background-color: #2d3748;
-            border: 1px solid #4a5568; 
-            transition: all 0.3s ease-in-out;
-        }
-        .card:hover {
-            border-color: #f6ad55;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        .nav-link {
-            transition: color 0.3s, border-bottom-color 0.3s;
-            border-bottom: 2px solid transparent;
-            padding-bottom: 4px;
-            margin-left: 1rem;
-        }
-        .nav-link:hover, .nav-link.active {
-            color: #f6ad55;
-            border-bottom-color: #f6ad55;
-        }
-        .cta-button {
-            transition: all 0.3s ease;
-        }
-        .cta-button:hover {
-            background-color: #f6ad55;
-            color: #1a202c;
-        }
-        pre, code {
-            font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
-            font-size: 0.9em;
-        }
-        pre {
-            background-color: #111827;
-            border-radius: 0.5rem;
-            padding: 1rem;
-            overflow-x: auto;
-            border: 1px solid #4a5568;
-        }
-        .markdown-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .markdown-table th, .markdown-table td {
-            border: 1px solid #4a5568;
-            padding: 0.75rem 1rem;
-            text-align: left;
-        }
-        .markdown-table th {
-            background-color: #4a5568;
-            color: #ffffff;
-            font-weight: 600;
-        }
-        .markdown-table tbody tr:nth-child(odd) {
-            background-color: #2d3748;
-        }
-         .markdown-table tbody tr:nth-child(even) {
-            background-color: #384256;
-        }
-    </style>
+    <link rel="stylesheet" href="../_assets/style.css">
 </head>
 <body class="antialiased font-sans">
-
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
     <!-- Header & Navigation -->
     <header class="bg-dark-bg sticky top-0 z-50 border-b border-gray-700">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">

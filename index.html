@@ -53,7 +53,9 @@
     <script>
         window.addEventListener('load', function() {
             const preloader = document.getElementById('preloader');
-            preloader.style.display = 'none';
+            if (preloader) {
+                preloader.style.display = 'none';
+            }
         });
     </script>
     
@@ -81,7 +83,7 @@
 </script>
     
 </head>
-<body class="antialiased font-sans">
+<body class="antialiased font-sans bg-dark-bg text-gray-200">
     <div id="preloader" class="fixed top-0 left-0 w-full h-full bg-dark-bg flex justify-center items-center z-[100]">
         <div class="loader"></div>
     </div>
