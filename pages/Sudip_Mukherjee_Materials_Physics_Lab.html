@@ -7,21 +7,13 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data:;">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="description" content="The Sudip Mukherjee Laboratory is a research group focused on materials science and condensed matter physics, operating within the UGC-DAE CSR.">
-    <link rel="stylesheet" href="../_assets/fonts.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../_assets/style.css">
-    <script>
-        window.addEventListener('load', function() {
-            const preloader = document.getElementById('preloader');
-            if (preloader) {
-                preloader.style.display = 'none';
-            }
-        });
-    </script>
     
 </head>
-<body class="antialiased font-sans">
-    <div id="preloader">
+<body class="antialiased font-sans bg-dark-bg text-gray-200">
+    <div id="preloader" class="fixed top-0 left-0 w-full h-full bg-dark-bg flex justify-center items-center z-[100]">
         <div class="loader"></div>
     </div>
     <header class="bg-dark-bg/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-700">
@@ -221,65 +213,7 @@
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Active nav link scrolling
-        const sections = document.querySelectorAll('main section');
-        const navLinks = document.querySelectorAll('nav a.nav-link');
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 100) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                const href = link.getAttribute('href');
-                if (href && href.includes(current)) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Robust script for clickable dropdown
-        const portfolioButton = document.getElementById('portfolio-button');
-        const portfolioMenu = document.getElementById('portfolio-menu');
-
-        if (portfolioButton && portfolioMenu) {
-            portfolioButton.addEventListener('click', (event) => {
-                event.stopPropagation();
-                portfolioMenu.classList.toggle('hidden');
-            });
-
-            portfolioMenu.addEventListener('click', (event) => {
-                event.stopPropagation();
-            });
-
-            window.addEventListener('click', () => {
-                if (!portfolioMenu.classList.contains('hidden')) {
-                    portfolioMenu.classList.add('hidden');
-                }
-            });
-        }
-
-        // Mobile portfolio accordion
-        const mobilePortfolioButton = document.getElementById('mobile-portfolio-button');
-        const mobilePortfolioMenu = document.getElementById('mobile-portfolio-menu');
-        mobilePortfolioButton.addEventListener('click', () => {
-            mobilePortfolioMenu.classList.toggle('hidden');
-            mobilePortfolioButton.querySelector('i').classList.toggle('fa-chevron-down');
-            mobilePortfolioButton.querySelector('i').classList.toggle('fa-chevron-up');
-        });
-    </script>
+    <script src="../_assets/js/main.js" defer></script>
 
 </body>
 </html>

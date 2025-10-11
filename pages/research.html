@@ -7,17 +7,9 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data:;">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="description" content="Detailed research and publication portfolio for Prathamesh Keshao Deshmukh.">
-    <link rel="stylesheet" href="../_assets/fonts.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../_assets/style.css">
-    <script>
-        window.addEventListener('load', function() {
-            const preloader = document.getElementById('preloader');
-            if (preloader) {
-                preloader.style.display = 'none';
-            }
-        });
-    </script>
     <script type="application/ld+json">
     [
       {
@@ -68,8 +60,8 @@
     ]
     </script>
 </head>
-<body class="antialiased font-sans">
-    <div id="preloader">
+<body class="antialiased font-sans bg-dark-bg text-gray-200">
+    <div id="preloader" class="fixed top-0 left-0 w-full h-full bg-dark-bg flex justify-center items-center z-[100]">
         <div class="loader"></div>
     </div>
     <!-- Header & Navigation -->
@@ -230,74 +222,6 @@
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Mobile portfolio accordion
-        const mobilePortfolioButton = document.getElementById('mobile-portfolio-button');
-        const mobilePortfolioMenu = document.getElementById('mobile-portfolio-menu');
-        if(mobilePortfolioButton && mobilePortfolioMenu) {
-            mobilePortfolioButton.addEventListener('click', () => {
-                mobilePortfolioMenu.classList.toggle('hidden');
-                const icon = mobilePortfolioButton.querySelector('i');
-                if(icon) {
-                    icon.classList.toggle('fa-chevron-down');
-                    icon.classList.toggle('fa-chevron-up');
-                }
-            });
-        }
-        
-        // Desktop dropdown
-        const portfolioButton = document.getElementById('portfolio-button');
-        const portfolioMenu = document.getElementById('portfolio-menu');
-
-        if (portfolioButton && portfolioMenu) {
-            portfolioButton.addEventListener('click', (event) => {
-                event.stopPropagation();
-                portfolioMenu.classList.toggle('hidden');
-            });
-
-            portfolioMenu.addEventListener('click', (event) => {
-                event.stopPropagation();
-            });
-
-            window.addEventListener('click', () => {
-                if (!portfolioMenu.classList.contains('hidden')) {
-                    portfolioMenu.classList.add('hidden');
-                }
-            });
-        }
-
-        // Improved submenu logic
-        const corePortfolioItem = document.getElementById('core-portfolio-item');
-        const corePortfolioSubmenu = document.getElementById('core-portfolio-submenu');
-        let submenuTimeout;
-
-        if (corePortfolioItem && corePortfolioSubmenu) {
-            corePortfolioItem.addEventListener('mouseenter', () => {
-                clearTimeout(submenuTimeout);
-                corePortfolioSubmenu.classList.remove('hidden');
-            });
-
-            corePortfolioItem.addEventListener('mouseleave', () => {
-                submenuTimeout = setTimeout(() => {
-                    corePortfolioSubmenu.classList.add('hidden');
-                }, 300); // 300ms delay before hiding
-            });
-
-            corePortfolioSubmenu.addEventListener('mouseenter', () => {
-                clearTimeout(submenuTimeout);
-            });
-
-            corePortfolioSubmenu.addEventListener('mouseleave', () => {
-                corePortfolioSubmenu.classList.add('hidden');
-            });
-        }
-    </script>
+    <script src="../_assets/js/main.js" defer></script>
 </body>
 </html>

@@ -8,21 +8,12 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="description" content="Page not found on the portfolio of Prathamesh Deshmukh.">
     
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/_assets/fonts.css">
     <link rel="stylesheet" href="/_assets/style.css">
-    <script>
-        window.addEventListener('load', function() {
-            const preloader = document.getElementById('preloader');
-            if (preloader) {
-                preloader.style.display = 'none';
-            }
-        });
-    </script>
 </head>
-<body class="antialiased font-sans">
-    <div id="preloader">
+<body class="antialiased font-sans bg-dark-bg text-gray-200">
+    <div id="preloader" class="fixed top-0 left-0 w-full h-full bg-dark-bg flex justify-center items-center z-[100]">
         <div class="loader"></div>
     </div>
     <main class="container mx-auto px-6">
@@ -62,6 +53,7 @@
             </div>
         </div>
     </main>
+    <script src="/_assets/js/main.js" defer></script>
 
 </body>
 </html>
