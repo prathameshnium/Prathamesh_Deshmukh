@@ -1,116 +1,119 @@
-const pagesToSearch = [
-    '../index.html',
-    '../pages/blog.html',
-    '../pages/computational-works.html',
-    '../pages/cv.html',
-    '../pages/gallery.html',
-    '../pages/presentations.html',
-    '../pages/project-pica.html',
-    '../pages/research.html',
-    '../pages/resources.html',
-    '../pages/sitemap.html',
-    '../pages/Sudip_Mukherjee_Materials_Physics_Lab.html'
-];
+document.addEventListener('DOMContentLoaded', () => {
+    const searchIndexUrl = '../_assets/search-index.json'; // A combined index
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+    let searchIndex = [];
+    let debounceTimer;
 
-const socialIndexUrl = '../_assets/social-search-index.json';
+    // Fetch the search index on page load
+    async function loadSearchIndex() {
+        try {
+            const response = await fetch(searchIndexUrl);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            searchIndex = await response.json();
+        } catch (error) {
+            console.error('Error loading search index:', error);
+            if (searchResults) {
+                searchResults.innerHTML = '<p class="text-red-400">Could not load search index. Please try again later.</p>';
+            }
+        }
+    }
 
-const searchInput = document.getElementById('search-input');
-const searchButton = document.getElementById('search-button');
-const searchResults = document.getElementById('search-results');
+    function performSearch() {
+        const query = searchInput.value.trim().toLowerCase();
+        if (!query) {
+            searchResults.innerHTML = '<p>Please enter a search term.</p>';
+            return;
+        }
 
-searchButton.addEventListener('click', performSearch);
-searchInput.addEventListener('keyup', (event) => {
-    if (event.key === 'Enter') {
-        performSearch();
+        if (searchIndex.length === 0) {
+            searchResults.innerHTML = '<p>Search index is not available.</p>';
+            return;
+        }
+
+        const results = searchIndex.filter(item => {
+            const content = (item.title + ' ' + item.content).toLowerCase();
+            return content.includes(query);
+        });
+
+        displayResults(results, query);
+    }
+
+    function displayResults(results, query) {
+        if (results.length === 0) {
+            searchResults.innerHTML = '<p>No results found.</p>';
+            return;
+        }
+
+        const resultsHtml = results.map(result => {
+            const snippet = getSnippet(result.content, query);
+            const isExternal = result.url.startsWith('http');
+            const displayUrl = isExternal ? result.url : window.location.origin + result.url;
+
+            return `
+                <li class="mb-6">
+                    <a href="${result.url}" 
+                       class="text-xl text-accent-orange hover:underline" 
+                       ${isExternal ? 'target="_blank" rel="noopener noreferrer"' : ''}>
+                       ${result.title} ${isExternal ? '<i class="fas fa-external-link-alt text-sm ml-1"></i>' : ''}
+                    </a>
+                    <p class="text-light-slate mt-1">${snippet}</p>
+                    <p class="text-sm text-slate mt-2 truncate">${displayUrl}</p>
+                </li>`;
+        }).join('');
+
+        searchResults.innerHTML = `<ul class="space-y-4">${resultsHtml}</ul>`;
+    }
+
+    function getSnippet(content, query, contextLength = 80) {
+        const lowerContent = content.toLowerCase();
+        const index = lowerContent.indexOf(query);
+        if (index === -1) return '';
+
+        let start = Math.max(0, index - contextLength);
+        let end = Math.min(content.length, index + query.length + contextLength);
+
+        // Adjust start to the beginning of a word
+        if (start > 0) {
+            const spaceIndex = content.lastIndexOf(' ', start);
+            start = spaceIndex > -1 ? spaceIndex + 1 : start;
+        }
+
+        // Adjust end to the end of a word
+        if (end < content.length) {
+            const spaceIndex = content.indexOf(' ', end);
+            end = spaceIndex > -1 ? spaceIndex : end;
+        }
+
+        let snippet = content.substring(start, end);
+
+        // Highlight the query term
+        snippet = snippet.replace(new RegExp(query, 'gi'), (match) => `<strong class="text-accent-orange bg-accent-orange/10 px-1 rounded">${match}</strong>`);
+
+        return `${start > 0 ? '...' : ''}${snippet}${end < content.length ? '...' : ''}`;
+    }
+
+    if (searchInput && searchResults) {
+        // Load the index as soon as the page is ready
+        loadSearchIndex();
+
+        searchInput.addEventListener('keyup', (event) => {
+            clearTimeout(debounceTimer);
+            if (event.key === 'Enter') {
+                performSearch();
+            } else {
+                debounceTimer = setTimeout(() => {
+                    performSearch();
+                }, 300); // Debounce for 300ms
+            }
+        });
+
+        // Also handle search button click
+        const searchButton = document.getElementById('search-button');
+        if (searchButton) {
+            searchButton.addEventListener('click', performSearch);
+        }
     }
 });
-
-async function performSearch() {
-    const query = searchInput.value.trim().toLowerCase();
-    if (!query) {
-        searchResults.innerHTML = '<p>Please enter a search term.</p>';
-        return;
-    }
-
-    searchResults.innerHTML = '<p>Searching...</p>';
-    let results = [];
-
-    // 1. Search social profiles from JSON
-    try {
-        const response = await fetch(socialIndexUrl);
-        if (response.ok) {
-            const socialProfiles = await response.json();
-            socialProfiles.forEach(profile => {
-                const content = (profile.title + ' ' + profile.content).toLowerCase();
-                if (content.includes(query)) {
-                    results.push({
-                        url: profile.url,
-                        title: profile.title,
-                        content: profile.content.toLowerCase()
-                    });
-                }
-            });
-        }
-    } catch (error) {
-        console.error('Error fetching or parsing social index:', error);
-    }
-
-    for (const page of pagesToSearch) {
-        try {
-            const response = await fetch(page);
-            if (!response.ok) continue;
-
-            const html = await response.text();
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
-            const title = doc.querySelector('title')?.innerText || '';
-            const content = doc.body.innerText.toLowerCase();
-
-            if (content.includes(query)) {
-                results.push({
-                    url: page.startsWith('..') ? page.substring(2) : page,
-                    title: title,
-                    content: content
-                });
-            }
-        } catch (error) {
-            console.error('Error fetching or parsing page:', page, error);
-        }
-    }
-
-    displayResults(results, query);
-}
-
-function displayResults(results, query) {
-    if (results.length === 0) {
-        searchResults.innerHTML = '<p>No results found.</p>';
-        return;
-    }
-
-    let html = '<ul>';
-    results.forEach(result => {
-        const snippet = getSnippet(result.content, query);
-        const isExternal = result.url.startsWith('http');
-        html += `<li class="mb-4">
-            <a href="${result.url}" class="text-xl text-accent-orange hover:underline" ${isExternal ? 'target="_blank" rel="noopener noreferrer"' : ''}>${result.title} ${isExternal ? '<i class="fas fa-external-link-alt text-sm ml-1"></i>' : ''}</a>
-            <p class="text-light-slate">${snippet}</p>
-            <p class="text-sm text-slate mt-1">${isExternal ? result.url : window.location.origin + result.url}</p>
-        </li>`;
-    });
-    html += '</ul>';
-    searchResults.innerHTML = html;
-}
-
-function getSnippet(content, query) {
-    const index = content.indexOf(query);
-    if (index === -1) return '';
-
-    const start = Math.max(0, index - 50);
-    const end = Math.min(content.length, index + query.length + 50);
-    let snippet = content.substring(start, end);
-
-    // Highlight the query
-    snippet = snippet.replace(new RegExp(query, 'gi'), (match) => `<strong class="text-accent-orange">${match}</strong>`);
-
-    return `...${snippet}...`;
-}
