@@ -86,7 +86,7 @@ function getSnippet(content, query) {
     let snippet = content.substring(start, end);
 
     // Highlight the query
-    snippet = snippet.replace(new RegExp(query, 'gi'), (match) => `<strong class="text-accent-gold">${match}</strong>`);
+    snippet = snippet.replace(new RegExp(query, 'gi'), (match) => `<strong class="text-accent-orange">${match}</strong>`);
 
     return `...${snippet}...`;
 }

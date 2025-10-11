@@ -23,7 +23,7 @@ header.scrolled {
 
 .loader { 
     border: 8px solid theme('colors.slate');
-    border-top: 8px solid theme('colors.accent-gold');
+    border-top: 8px solid theme('colors.accent-orange');
     border-radius: 50%; 
     width: 60px;
     height: 60px;
@@ -38,21 +38,21 @@ header.scrolled {
 body { background-color: theme('colors.dark-bg'); color: theme('colors.white'); }
 .section-title { font-family: 'Source Serif Pro', serif; color: theme('colors.true-white'); }
 .card { background-color: theme('colors.card-bg'); border: 1px solid theme('colors.slate / 50%'); transition: all 0.3s ease-in-out; }
-.card:hover { border-color: theme('colors.accent-gold'); transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+.card:hover { border-color: theme('colors.accent-orange'); transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(246, 173, 85, 0.1), 0 4px 6px -2px rgba(246, 173, 85, 0.05); }
 .nav-link { transition: color 0.3s, border-bottom-color 0.3s; border-bottom: 2px solid transparent; padding-bottom: 4px; }
-.nav-link:hover, .nav-link.active { color: theme('colors.accent-gold'); }
+.nav-link:hover, .nav-link.active { color: theme('colors.accent-orange'); }
 .tag { background-color: theme('colors.slate / 50%'); color: theme('colors.white'); }
-.publication-link { color: theme('colors.accent-gold'); text-decoration: none; transition: color 0.2s; }
-.publication-link:hover { color: theme('colors.accent-gold / 80%'); }
+.publication-link { color: theme('colors.accent-orange'); text-decoration: none; transition: color 0.2s; }
+.publication-link:hover { color: theme('colors.accent-orange / 80%'); }
 .timeline { position: relative; padding-left: 1.5rem; }
 .timeline::before { content: ''; position: absolute; left: 0; top: 0.25rem; bottom: 0.25rem; width: 2px; background-color: theme('colors.slate / 50%'); }
 .timeline-item { position: relative; margin-bottom: 2.5rem; }
 .timeline-item:last-child { margin-bottom: 0; }
-.timeline-dot { position: absolute; left: -2.0625rem; top: 0.25rem; height: 1rem; width: 1rem; background-color: theme('colors.accent-gold'); border-radius: 50%; border: 2px solid theme('colors.card-bg'); }
+.timeline-dot { position: absolute; left: -2.0625rem; top: 0.25rem; height: 1rem; width: 1rem; background-color: theme('colors.accent-orange'); border-radius: 50%; border: 2px solid theme('colors.card-bg'); }
 .cta-button { transition: all 0.3s ease; }
-.cta-button:hover { background-color: theme('colors.accent-gold'); color: theme('colors.dark-bg'); transform: translateY(-3px); box-shadow: 0 4px 6px theme('colors.accent-gold / 20%'); }
+.cta-button:hover { background-color: theme('colors.accent-orange'); color: theme('colors.dark-bg'); transform: translateY(-3px); box-shadow: 0 4px 6px theme('colors.accent-orange / 20%'); }
 .social-icon { transition: transform 0.2s ease-in-out, color 0.2s ease-in-out; color: theme('colors.light-slate'); }
-.social-icon:hover { transform: translateY(-3px) scale(1.1); color: theme('colors.accent-gold'); }
+.social-icon:hover { transform: translateY(-3px) scale(1.1); color: theme('colors.accent-orange'); }
 .card-link { display: block; text-decoration: none; color: inherit; height: 100%; }
 /* Search Modal Styles */
 /* Dropdown Menu Styles */ 
@@ -99,6 +99,6 @@ pre {
 
 /* Styles from sitemap.html */
 .sitemap-link { display: block; padding: 0.75rem 1.5rem; background-color: #2d3748; border-left: 4px solid transparent; transition: all 0.3s ease; color: #e2e8f0; }
-.sitemap-link:hover { border-left-color: theme('colors.accent-gold'); background-color: theme('colors.slate / 50%'); transform: translateX(5px); }
+.sitemap-link:hover { border-left-color: theme('colors.accent-orange'); background-color: theme('colors.slate / 50%'); transform: translateX(5px); }
 .external-link { display: flex; align-items: center; padding: 0.75rem 1.5rem; background-color: #2d3748; transition: all 0.3s ease; color: #a8b2d1; }
-.external-link:hover { background-color: theme('colors.slate / 50%'); color: theme('colors.accent-gold'); }
+.external-link:hover { background-color: theme('colors.slate / 50%'); color: theme('colors.accent-orange'); }
