@@ -1,72 +1,83 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
 
 <url>
   <loc>https://prathameshdeshmukh.site/</loc>
-  <lastmod>2025-09-25T21:33:26+00:00</lastmod>
+  <lastmod>2025-09-26T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://prathameshdeshmukh.site/index.html</loc>
-  <lastmod>2025-09-25T21:33:26+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2025-09-26T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
 </url>
 <url>
   <loc>https://prathameshdeshmukh.site/pages/research.html</loc>
-  <lastmod>2025-09-25T21:33:26+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2025-09-26T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
 </url>
 <url>
   <loc>https://prathameshdeshmukh.site/pages/computational-works.html</loc>
-  <lastmod>2025-09-25T21:33:26+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2025-09-26T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
 </url>
 <url>
   <loc>https://prathameshdeshmukh.site/pages/presentations.html</loc>
-  <lastmod>2025-09-25T21:33:26+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2025-09-26T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.70</priority>
 </url>
 <url>
   <loc>https://prathameshdeshmukh.site/pages/cv.html</loc>
-  <lastmod>2025-09-25T21:33:26+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2025-09-26T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
 </url>
 <url>
   <loc>https://prathameshdeshmukh.site/pages/blog.html</loc>
-  <lastmod>2025-09-25T21:33:26+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2025-09-26T00:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.70</priority>
 </url>
 <url>
   <loc>https://prathameshdeshmukh.site/pages/gallery.html</loc>
-  <lastmod>2025-09-25T21:33:26+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2025-09-26T00:00:00+00:00</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.50</priority>
 </url>
 <url>
   <loc>https://prathameshdeshmukh.site/pages/resources.html</loc>
-  <lastmod>2025-09-25T21:33:26+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2025-09-26T00:00:00+00:00</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.50</priority>
 </url>
 <url>
   <loc>https://prathameshdeshmukh.site/pages/project-pica.html</loc>
-  <lastmod>2025-09-25T21:33:26+00:00</lastmod>
+  <lastmod>2025-09-26T00:00:00+00:00</lastmod>
+  <changefreq>yearly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://prathameshdeshmukh.site/pages/sitemap.html</loc>
-  <lastmod>2025-09-25T21:33:26+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2025-09-26T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.40</priority>
 </url>
 <url>
   <loc>https://prathameshdeshmukh.site/pages/Sudip_Mukherjee_Materials_Physics_Lab.html</loc>
-  <lastmod>2025-09-25T21:33:26+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2025-09-26T00:00:00+00:00</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.60</priority>
 </url>
+<url>
+  <loc>https://prathameshdeshmukh.site/pages/search.html</loc>
+  <lastmod>2025-09-26T00:00:00+00:00</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.30</priority>
+</url>
+
 
 
 </urlset>
