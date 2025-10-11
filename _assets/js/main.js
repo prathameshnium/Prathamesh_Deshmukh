@@ -330,6 +330,18 @@ function setupKeyboardControls() {
  * Main initialization function. Runs after the DOM is fully loaded.
  */
 function init() {
+    // Asynchronously load and inject the SVG sprite
+    const svgContainer = document.getElementById('svg-sprite-container');
+    if (svgContainer) {
+        fetch('/_assets/icons.svg')
+            .then(response => response.text())
+            .then(data => {
+                svgContainer.innerHTML = data;
+            }).catch(error => {
+                console.error('Error loading SVG sprite:', error);
+            });
+    }
+
     // Hide preloader as soon as the DOM is ready for faster perceived load time
     const preloader = document.getElementById('preloader');
     if (preloader) {
