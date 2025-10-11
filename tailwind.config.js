@@ -1,13 +1,16 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     './*.html',
     './pages/**/*.html',
+    './_assets/js/**/*.js',
   ],
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['Inter', ...defaultTheme.fontFamily.sans],
         serif: ['Junicode', 'serif'],
       },
       colors: {
@@ -15,9 +18,9 @@ module.exports = {
         'card-bg': '#1f2937', // Adjusted for better contrast with the new background
         'accent-orange': '#fbbf24', // A brighter, more vibrant gold
         'light-slate': '#a8b2d1',
-        'slate': '#8892b0',
-        'white': '#e2e8f0',
-        'true-white': '#ffffff',
+        'slate': '#8892b0', // Text and borders
+        'off-white': '#e2e8f0', // Main text color
+        'white': '#ffffff', // For pure white text if needed
       },
       fontSize: {
         'xs': '.75rem',

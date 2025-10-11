@@ -1,9 +1,19 @@
+User-agent: *
+Disallow: /_assets/
 
 # Prathamesh Deshmukh | Scientific Portfolio
 
-> A detailed portfolio for Prathamesh Deshmukh, a Physics PhD scholar at the UGC-DAE Consortium for Scientific Research (Mumbai Centre). This site showcases his doctoral research in Condensed Matter Physics and Materials Science, focusing on multiferroic composites and magnetoelectric coupling. It also highlights his extensive work in scientific programming, including Python-based lab automation, instrument control (PyVISA), and advanced data analysis pipelines.
+> This is the official portfolio of Prathamesh Deshmukh, a Physics PhD scholar at the UGC-DAE Consortium for Scientific Research (Mumbai). The site details his research in Condensed Matter Physics and Materials Science, with a focus on multiferroic composites and magnetoelectric coupling. It also serves as a portfolio for his work in scientific programming, particularly Python-based lab automation, instrument control (PyVISA), and data analysis.
 
 This website is built with HTML and Tailwind CSS and is hosted on GitHub Pages. It serves as a central hub for research output, technical skills, publications, and professional journey. The content is structured to be a comprehensive resource for collaborators, recruiters, and the scientific community.
+
+## Key Information
+
+- **Name**: Prathamesh Keshao Deshmukh
+- **Primary Role**: PhD Scholar in Physics
+- **Institution**: UGC-DAE Consortium for Scientific Research, Mumbai
+- **Core Expertise**: Condensed Matter Physics, Materials Science, Scientific Programming, Lab Automation
+- **Primary Technology**: Python (NumPy, SciPy, Pandas, PyVISA)
 
 ## Core Content
 

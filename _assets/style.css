@@ -19,6 +19,7 @@ header.scrolled {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: opacity 0.5s ease;
 }
 
 .loader { 
