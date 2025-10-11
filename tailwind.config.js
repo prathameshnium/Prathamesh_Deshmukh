@@ -8,7 +8,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
-        serif: ['Source Serif Pro', 'serif'],
+        serif: ['Junicode', 'serif'],
       },
       colors: {
         'dark-bg': '#111827', // A deeper, more neutral charcoal gray

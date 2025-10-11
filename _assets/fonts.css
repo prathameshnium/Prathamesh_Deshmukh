@@ -25,20 +25,20 @@
     src: url('../_assets/fonts/inter-v12-latin-700.woff2') format('woff2');
 }
 
-/* Source Serif Pro Semi-Bold */
+/* Junicode Regular */
 @font-face {
-    font-family: 'Source Serif Pro';
+    font-family: 'Junicode';
     font-style: normal;
-    font-weight: 600;
+    font-weight: 400;
     font-display: swap;
-    src: url('../_assets/fonts/source-serif-pro-v15-latin-600.woff2') format('woff2');
+    src: url('../_assets/fonts/junicode-v2-latin-regular.woff2') format('woff2');
 }
 
-/* Source Serif Pro Bold */
+/* Junicode Bold */
 @font-face {
-    font-family: 'Source Serif Pro';
+    font-family: 'Junicode';
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: url('../_assets/fonts/source-serif-pro-v15-latin-700.woff2') format('woff2');
+    src: url('../_assets/fonts/junicode-v2-latin-700.woff2') format('woff2');
 }
