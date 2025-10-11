@@ -1,75 +1,101 @@
-// Preloader
-window.addEventListener('load', function() {
-    const preloader = document.getElementById('preloader');
-    if (preloader) { 
-        preloader.style.opacity = '0';
-        preloader.addEventListener('transitionend', () => preloader.style.display = 'none');
-    }
-});
+/**
+ * Main JavaScript file for the portfolio website.
+ * Handles preloader, theme toggling, navigation, dropdowns, custom cursor,
+ * and other interactive elements.
+ */
 
-// Theme Toggle
-function applyTheme(theme) {
-    const html = document.documentElement;
-    const moonIcon = '<i class="fas fa-moon"></i>';
-    const sunIcon = '<i class="fas fa-sun"></i>';
-
-    if (theme === 'darker') {
-        html.classList.add('theme-darker');
-        document.querySelectorAll('#theme-toggle, #mobile-theme-toggle').forEach(btn => {
-            btn.innerHTML = sunIcon + '<span class="sr-only">Toggle Theme</span>';
-        });
-    } else {
-        html.classList.remove('theme-darker');
-        document.querySelectorAll('#theme-toggle, #mobile-theme-toggle').forEach(btn => {
-            btn.innerHTML = moonIcon + '<span class="sr-only">Toggle Theme</span>';
-        });
-    }
-    localStorage.setItem('theme', theme);
-}
-
+/**
+ * Sets up the theme toggle functionality, allowing users to switch
+ * between 'dark' and 'darker' themes and persisting the choice in localStorage.
+ * @returns {void}
+ */
 function setupThemeToggle() {
     const themeToggleButtons = document.querySelectorAll('#theme-toggle, #mobile-theme-toggle');
-    
+    const html = document.documentElement;
+
+    const theme = {
+        current: localStorage.getItem('theme') || 'system',
+        icons: {
+            dark: '#icon-moon',
+            darker: '#icon-sun'
+        }
+    };
+
+    const applyTheme = (newTheme) => {
+        // Remove old theme class
+        html.classList.remove('theme-darker');
+
+        // Apply new theme class
+        if (newTheme === 'darker') {
+            html.classList.add('theme-darker');
+        }
+
+        // Update UI and save preference
+        updateIcons(newTheme);
+        localStorage.setItem('theme', newTheme);
+        theme.current = newTheme;
+    };
+
+    const updateIcons = (currentTheme) => {
+        const iconHref = theme.icons[currentTheme] || theme.icons.dark;
+        themeToggleButtons.forEach(button => {
+            const use = button.querySelector('use');
+            if (use) use.setAttribute('href', iconHref);
+        });
+    };
+
     themeToggleButtons.forEach(button => {
         button.addEventListener('click', () => {
-            const currentTheme = localStorage.getItem('theme') || 'dark';
-            const newTheme = currentTheme === 'dark' ? 'darker' : 'dark';
+            const newTheme = theme.current === 'dark' ? 'darker' : 'dark';
             applyTheme(newTheme);
         });
     });
 
-    // Apply saved theme on initial load
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        applyTheme(savedTheme);
-    } else {
-        // Default to dark theme if no preference is saved
-        applyTheme('dark');
-    }
+    // Apply initial theme based on saved preference or system setting
+    const savedTheme = localStorage.getItem('theme') || 'dark'; // Default to 'dark'
+    applyTheme(savedTheme);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+/**
+ * Sets up the mobile menu, including the slide-in/out behavior and overlay.
+ */
+function setupMobileMenu() {
     // --- Mobile Menu Slide-in Logic ---
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
 
-    // Create and inject the overlay
-    const overlay = document.createElement('div');
-    overlay.id = 'menu-overlay';
-    document.body.appendChild(overlay);
+    if (!mobileMenuButton || !mobileMenu) return;
+
+    // Find or create the overlay
+    let overlay = document.getElementById('menu-overlay');
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.id = 'menu-overlay';
+        overlay.className = 'fixed inset-0 bg-black/60 z-40 opacity-0 transition-opacity duration-300 ease-in-out pointer-events-none md:hidden';
+        document.body.appendChild(overlay);
+    }
 
     const toggleMenu = () => {
         const isOpen = mobileMenu.classList.toggle('is-open');
         overlay.classList.toggle('is-open');
         mobileMenuButton.setAttribute('aria-expanded', isOpen);
         document.body.style.overflow = isOpen ? 'hidden' : '';
+
+        if (isOpen) {
+            // Optional: focus the first focusable element in the menu
+            mobileMenu.querySelector('a, button')?.focus();
+        }
     };
 
-    if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener('click', toggleMenu);
-        overlay.addEventListener('click', toggleMenu); // Close menu when clicking overlay
-    }
+    mobileMenuButton.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+}
 
+/**
+ * Sets up the IntersectionObserver to automatically highlight the active
+ * navigation link in the header as the user scrolls through page sections.
+ */
+function setupActiveNavLinks() {
     // --- Active nav link scrolling using IntersectionObserver (more performant) ---
     const sections = document.querySelectorAll('main section[id]');
     const navLinks = document.querySelectorAll('header nav a[href^="#"]');
@@ -104,78 +130,67 @@ document.addEventListener('DOMContentLoaded', () => {
     if (navLinks.length > 0 && sections.length > 0) {
         sections.forEach(section => observer.observe(section));
     }
+}
 
-    // --- Desktop Dropdowns ---
-    // Main portfolio dropdown (desktop)
-    const portfolioButton = document.getElementById('portfolio-button');
-    const portfolioMenu = document.getElementById('portfolio-menu');
-    let portfolioTimeout;
+/**
+ * Sets up generic dropdown functionality for desktop and footer menus,
+ * handling mouse hover and keyboard focus events for accessibility.
+ */
+function setupDropdowns() {
+    document.querySelectorAll('[data-dropdown-parent]').forEach(parent => {
+        const toggle = parent.querySelector('[data-dropdown-toggle]');
+        const menu = parent.querySelector('[data-dropdown]');
+        let timeout;
 
-    if (portfolioButton && portfolioMenu) {
-        const parent = portfolioButton.parentElement;
-        parent.addEventListener('mouseenter', () => {
-            clearTimeout(portfolioTimeout);
-            portfolioButton.setAttribute('aria-expanded', 'true');
-            portfolioMenu.classList.remove('hidden');
+        if (!toggle || !menu) return;
+
+        const showMenu = () => {
+            clearTimeout(timeout);
+            menu.classList.remove('hidden');
+            toggle.setAttribute('aria-expanded', 'true');
+        };
+
+        const hideMenu = () => {
+            timeout = setTimeout(() => {
+                menu.classList.add('hidden');
+                toggle.setAttribute('aria-expanded', 'false');
+            }, 200);
+        };
+
+        parent.addEventListener('mouseenter', showMenu);
+        parent.addEventListener('mouseleave', hideMenu);
+        parent.addEventListener('focusin', showMenu); // For keyboard accessibility
+        parent.addEventListener('focusout', (e) => {
+            // Hide if focus moves outside the parent container
+            if (!parent.contains(e.relatedTarget)) {
+                hideMenu();
+            }
         });
-        parent.addEventListener('mouseleave', () => {
-            portfolioTimeout = setTimeout(() => {
-                portfolioMenu.classList.add('hidden');
-                portfolioButton.setAttribute('aria-expanded', 'false');
-            }, 300);
-        });
-        portfolioMenu.addEventListener('mouseenter', () => clearTimeout(portfolioTimeout));
-        portfolioMenu.addEventListener('mouseleave', () => portfolioMenu.classList.add('hidden'));
-    }
+    });
+}
 
-    // Core portfolio submenu (desktop)
-    const corePortfolioItem = document.getElementById('core-portfolio-item');
-    const corePortfolioSubmenu = document.getElementById('core-portfolio-submenu');
-    let submenuTimeout;
-
-    if (corePortfolioItem && corePortfolioSubmenu) {
-        corePortfolioItem.addEventListener('mouseenter', () => {
-            clearTimeout(submenuTimeout);
-            corePortfolioItem.querySelector('a').setAttribute('aria-expanded', 'true');
-            corePortfolioSubmenu.classList.remove('hidden');
-        });
-
-        corePortfolioItem.addEventListener('mouseleave', () => {
-            submenuTimeout = setTimeout(() => {
-                corePortfolioItem.querySelector('a').setAttribute('aria-expanded', 'false');
-                corePortfolioSubmenu.classList.add('hidden');
-            }, 300);
-        });
-
-        corePortfolioSubmenu.addEventListener('mouseenter', () => {
-            clearTimeout(submenuTimeout);
-        });
-
-        corePortfolioSubmenu.addEventListener('mouseleave', () => {
-            corePortfolioSubmenu.classList.add('hidden');
-        });
-    }
-
-    // --- Mobile portfolio accordion ---
+/**
+ * Sets up the accordion functionality for the portfolio section
+ * within the mobile menu.
+ */
+function setupMobileAccordion() {
     const mobilePortfolioButton = document.getElementById('mobile-portfolio-button');
     const mobilePortfolioMenu = document.getElementById('mobile-portfolio-menu');
 
     if (mobilePortfolioButton && mobilePortfolioMenu) {
         mobilePortfolioButton.addEventListener('click', () => {
-            const isExpanded = mobilePortfolioMenu.classList.toggle('hidden');
-            const icon = mobilePortfolioButton.querySelector('i');
-            if (icon) {
-                icon.classList.toggle('fa-chevron-down');
-                icon.classList.toggle('fa-chevron-up');
-            }
+            const isExpanded = mobilePortfolioButton.getAttribute('aria-expanded') === 'true';
             mobilePortfolioButton.setAttribute('aria-expanded', !isExpanded);
+            mobilePortfolioMenu.classList.toggle('hidden');
         });
     }
+}
 
-    // Initialize theme toggle functionality
-    setupThemeToggle();
-
-    // --- Back to Top Button Logic ---
+/**
+ * Sets up the "Back to Top" button, making it appear on scroll
+ * and smoothly scrolling the page to the top when clicked.
+ */
+function setupBackToTopButton() {
     const backToTopButton = document.getElementById('back-to-top');
 
     if (backToTopButton) {
@@ -195,23 +210,28 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+}
 
-    // --- Custom Cursor Logic ---
+/**
+ * Sets up the custom cursor, including its movement and interaction
+ * states (hover, click) for a more engaging user experience.
+ * This is a progressive enhancement and is disabled on touch devices via CSS.
+ */
+function setupCustomCursor() {
     const cursorDot = document.querySelector('.cursor-dot');
     const cursorOutline = document.querySelector('.cursor-outline');
 
     if (cursorDot && cursorOutline) {
         window.addEventListener('mousemove', (e) => {
-            const posX = e.clientX;
-            const posY = e.clientY;
-
-            cursorDot.style.left = `${posX}px`;
-            cursorDot.style.top = `${posY}px`;
-
-            cursorOutline.animate({
-                left: `${posX}px`,
-                top: `${posY}px`
-            }, { duration: 500, fill: 'forwards' });
+            // Use transform for better performance
+            const transformValue = `translate(${e.clientX}px, ${e.clientY}px)`;
+            cursorDot.style.transform = transformValue;
+            
+            // Use Web Animations API for the outline for smooth trailing effect
+            cursorOutline.animate(
+                { transform: transformValue }, 
+                { duration: 500, fill: 'forwards' }
+            );
         });
 
         const interactiveElements = document.querySelectorAll('a, button, .cta-button, .social-icon, .nav-link');
@@ -242,8 +262,13 @@ document.addEventListener('DOMContentLoaded', () => {
             cursorOutline.style.display = '';
         });
     }
+}
 
-    // --- Smooth Page Transition Logic ---
+/**
+ * Sets up smooth page transitions by adding a fade-out effect
+ * when navigating between internal pages.
+ */
+function setupPageTransitions() {
     const allLinks = document.querySelectorAll('a');
 
     allLinks.forEach(link => {
@@ -267,19 +292,67 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // On page load, remove the 'is-leaving' class in case it was cached by the browser (e.g., on back/forward)
     document.body.classList.remove('is-leaving');
+}
 
-    // --- Global Accessibility: Keyboard controls ---
+/**
+ * Sets up global keyboard controls for accessibility, such as
+ * closing menus with the Escape key.
+ */
+function setupKeyboardControls() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+
     document.addEventListener('keydown', (e) => {
         // Close menus with the Escape key
-        if (e.key === 'Escape') {
+        if (e.key === 'Escape' || e.key === 'Esc') { // 'Esc' for older browsers
             // Close mobile menu
-            if (mobileMenu.classList.contains('is-open')) {
+            if (mobileMenu && mobileMenu.classList.contains('is-open')) {
                 toggleMenu();
+                mobileMenuButton.focus(); // Return focus to the button
             }
             // Close desktop dropdowns
             document.querySelectorAll('.dropdown-menu').forEach(menu => {
                 menu.classList.add('hidden');
+                const toggle = menu.closest('[data-dropdown-parent]')?.querySelector('[data-dropdown-toggle]');
+                if (toggle) {
+                    toggle.setAttribute('aria-expanded', 'false');
+                    // Check if the menu had focus, and if so, return focus to the toggle button
+                    if (menu.contains(document.activeElement)) {
+                        toggle.focus();
+                    }
+                }
             });
         }
     });
+}
+
+/**
+ * Main initialization function. Runs after the DOM is fully loaded.
+ */
+function init() {
+    // Hide preloader as soon as the DOM is ready for faster perceived load time
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        preloader.style.opacity = '0';
+        preloader.addEventListener('transitionend', () => {
+            preloader.style.display = 'none';
+        });
+    }
+
+    // Initialize all features
+    setupThemeToggle();
+    setupMobileMenu();
+    setupActiveNavLinks();
+    setupDropdowns();
+    setupMobileAccordion();
+    setupBackToTopButton();
+    setupCustomCursor();
+    setupPageTransitions();
+    setupKeyboardControls();
+}
+
+/**
+ * Entry point: run the main initialization function when the DOM is ready.
+ */
+document.addEventListener('DOMContentLoaded', init);
 });

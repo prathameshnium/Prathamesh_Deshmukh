@@ -34,8 +34,10 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
     <link rel="manifest" href="site.webmanifest">
-    
 
+    <!-- Font Preloading and Styles -->
+    <link rel="preload" href="/_assets/fonts/inter-v12-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/_assets/fonts.css">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C4JV6510PN"></script>
     <script>
@@ -87,24 +89,24 @@
 
     <header id="site-header" class="bg-dark-bg/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-700">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-white font-serif">Prathamesh Deshmukh</a>
+            <a href="index.html" class="text-2xl font-bold text-white">Prathamesh Deshmukh</a>
             <nav class="hidden md:flex items-center space-x-6">
                 <a href="#about" class="nav-link">About</a>
                 <a href="#research" class="nav-link">Research</a>
                 <a href="#publications" class="nav-link">Publications</a>
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#journey" class="nav-link">Journey</a>
-                <div class="relative" data-hover-parent>
+                <div class="relative" data-dropdown-parent>
                     <button data-dropdown-toggle id="portfolio-button" class="nav-link flex items-center" aria-haspopup="true" aria-expanded="false" aria-controls="portfolio-menu">
                         Portfolio <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/></svg>
                     </button>
                     <div id="portfolio-menu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-56 top-full right-0 mt-2 z-50" data-dropdown>
                         <!-- Submenu Item -->
-                        <div class="relative" data-hover-parent>
-                            <a href="#" class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange flex justify-between items-center">
+                        <div class="relative" data-dropdown-parent>
+                            <a href="#" data-dropdown-toggle class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange flex justify-between items-center" aria-haspopup="true" aria-expanded="false">
                                 Core Portfolio <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/></svg>
                             </a>
-                            <div class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 -left-full mt-0 z-50">
+                            <div class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 -left-full mt-0 z-50" data-dropdown>
                                 <a href="pages/research.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Research & Pubs</a>
                                 <a href="pages/computational-works.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Computational Works</a>
                                 <a href="pages/presentations.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Presentations</a>
@@ -138,12 +140,12 @@
             <a href="/index.html#contact" class="block py-2 nav-link">Contact</a>
             <div class="border-t border-gray-700 my-2"></div>
             <div>
-                <button id="mobile-portfolio-button" class="w-full text-left py-2 nav-link flex justify-between items-center">
+                <button id="mobile-portfolio-button" class="w-full text-left py-2 nav-link flex justify-between items-center" aria-controls="mobile-portfolio-menu" aria-expanded="false">
                     <span>Portfolio</span>
-                    <i class="fas fa-chevron-down text-xs"></i>
+                    <svg class="w-2.5 h-2.5 ml-2.5 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/></svg>
                 </button>
                 <div id="mobile-portfolio-menu" class="hidden pl-4">
-                    <a href="/pages/research.html" class="block py-2 nav-link">Research & Pubs</a>
+                    <a href="/pages/research.html" class="block py-2 nav-link">Research &amp; Pubs</a>
                     <a href="/pages/computational-works.html" class="block py-2 nav-link">Computational Works</a>
                     <a href="/pages/presentations.html" class="block py-2 nav-link">Presentations</a>
                     <a href="/pages/cv.html" class="block py-2 nav-link">CV</a>
@@ -155,7 +157,7 @@
             <div class="border-t border-gray-700 my-2"></div>
             <button id="mobile-theme-toggle" class="w-full text-left py-2 nav-link flex justify-between items-center">
                 <span>Toggle Theme</span>
-                <i class="fas fa-moon"></i>
+                <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-moon"></use></svg>
             </button>
         </div>
     </header>

@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (event) event.preventDefault(); // Prevent form submission
         const query = searchInput.value.trim().toLowerCase();
         if (!query) {
+            // Clear results if the query is empty
             searchResults.innerHTML = '<h2 class="sr-only" id="search-results-status">Search Cleared</h2><p>Please enter a search term.</p>';
             return;
         }
@@ -41,12 +42,20 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        // Provide immediate feedback to the user
+        searchResults.innerHTML = `<h2 class="sr-only" id="search-results-status">Searching...</h2><p>Searching for "${query}"...</p>`;
+        searchResults.setAttribute('aria-busy', 'true');
+
+        // Perform the search
         const results = searchIndex.filter(item => {
             const content = (item.title + ' ' + item.content).toLowerCase();
-            return content.includes(query);
+            // Split query into words and check if all words are present
+            return query.split(/\s+/).every(word => content.includes(word));
         });
 
+        // Display results after a short delay to allow the UI to update
         displayResults(results, query);
+        searchResults.setAttribute('aria-busy', 'false');
     }
 
     function displayResults(results, query) {
@@ -61,14 +70,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const resultsHtml = results.map(result => {
             const snippet = getSnippet(result.content, query);
             const isExternal = result.url.startsWith('http');
-            const displayUrl = isExternal ? result.url : window.location.origin + result.url;
+            const displayUrl = isExternal ? result.url.replace(/^https?:\/\//, '') : window.location.origin + result.url;
+            const externalIconSvg = `<svg class="w-4 h-4 inline-block ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>`;
 
             return `
                 <li class="mb-6">
                     <a href="${result.url}" 
                        class="text-xl text-accent-orange hover:underline" 
                        ${isExternal ? 'target="_blank" rel="noopener noreferrer"' : ''}>
-                       ${result.title} ${isExternal ? '<svg class="w-4 h-4 inline-block ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-external-link-alt"></use></svg>' : ''}
+                       ${result.title} ${isExternal ? externalIconSvg : ''}
                     </a>
                     <p class="text-light-slate mt-1">${snippet}</p>
                     <p class="text-sm text-slate mt-2 truncate">${displayUrl}</p>

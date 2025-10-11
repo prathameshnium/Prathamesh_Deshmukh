@@ -1,12 +1,15 @@
+/* stylelint-disable at-rule-no-unknown */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* === Base & Layout === */
+
 header.scrolled {
-    background-color: theme('colors.dark-bg/90');
-    backdrop-filter: blur(16px);
+    @apply bg-dark-bg/90 backdrop-blur-sm;
 }
 
+/* --- Preloader --- */
 #preloader {
     position: fixed;
     top: 0;
@@ -21,11 +24,9 @@ header.scrolled {
 }
 
 .loader { 
-    border: 8px solid theme('colors.slate');
-    border-top: 8px solid theme('colors.accent-orange');
-    border-radius: 50%; 
-    width: 60px;
-    height: 60px;
+    @apply w-[60px] h-[60px] rounded-full;
+    border: 8px solid theme('colors.slate'); /* theme() is fine for single properties like this */
+    border-top-color: theme('colors.accent-orange');
     animation: spin 2s linear infinite;
 }
 
@@ -34,6 +35,8 @@ header.scrolled {
     100% { transform: rotate(360deg); }
 }
 
+/* --- Body & Transitions --- */
+
 body {
     @apply bg-dark-bg text-white transition-opacity duration-300 ease-in-out;
 }
@@ -41,25 +44,64 @@ body.is-leaving {
     @apply opacity-0;
 }
 
-.section-title { font-family: theme('fontFamily.serif'); color: theme('colors.true-white'); }
-.card { background-color: theme('colors.card-bg'); border: 1px solid theme('colors.slate / 50%'); transition: all 0.3s ease-in-out; }
-.card:hover { border-color: theme('colors.accent-orange'); transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(251, 191, 36, 0.1), 0 4px 6px -2px rgba(251, 191, 36, 0.05); }
-.nav-link { transition: color 0.3s, border-bottom-color 0.3s; border-bottom: 2px solid transparent; padding-bottom: 4px; }
-.nav-link:hover, .nav-link.active { color: theme('colors.accent-orange'); }
-.tag { background-color: theme('colors.slate / 50%'); color: theme('colors.white'); }
-.publication-link { color: theme('colors.accent-orange'); text-decoration: none; transition: color 0.2s; }
-.publication-link:hover { color: theme('colors.accent-orange / 80%'); }
-.timeline { position: relative; padding-left: 1.5rem; }
-.timeline::before { content: ''; position: absolute; left: 0; top: 0.25rem; bottom: 0.25rem; width: 2px; background-color: theme('colors.slate / 50%'); }
-.timeline-item { position: relative; margin-bottom: 2.5rem; }
-.timeline-item:last-child { margin-bottom: 0; }
-.timeline-dot { position: absolute; left: -2.0625rem; top: 0.25rem; height: 1rem; width: 1rem; background-color: theme('colors.accent-orange'); border-radius: 50%; border: 2px solid theme('colors.card-bg'); }
-.cta-button { transition: all 0.3s ease; }
-.cta-button:hover { background-color: theme('colors.accent-orange'); color: theme('colors.dark-bg'); transform: translateY(-3px); box-shadow: 0 4px 6px theme('colors.accent-orange / 20%'); }
-.social-icon { transition: transform 0.2s ease-in-out, color 0.2s ease-in-out; color: theme('colors.light-slate'); }
-.social-icon:hover { transform: translateY(-3px) scale(1.1); color: theme('colors.accent-orange'); }
-.card-link { display: block; text-decoration: none; color: inherit; height: 100%; }
-/* Search Modal Styles */
+/* === Components === */
+
+.section-title { 
+    @apply text-true-white;
+}
+.card { 
+    @apply bg-card-bg border border-slate/50 transition-all duration-300 ease-in-out;
+}
+.card:hover { 
+    @apply border-accent-orange -translate-y-1 shadow-[0_10px_15px_-3px_rgba(251,191,36,0.1),0_4px_6px_-2px_rgba(251,191,36,0.05)];
+}
+.nav-link { 
+    @apply border-b-2 border-transparent pb-1 transition-colors duration-300;
+}
+.nav-link:hover, .nav-link.active { 
+    @apply text-accent-orange;
+}
+.tag { 
+    @apply bg-slate/50 text-white;
+}
+.publication-link { 
+    @apply text-accent-orange no-underline transition-colors duration-200;
+}
+.publication-link:hover { 
+    @apply text-accent-orange/80;
+}
+.timeline { 
+    @apply relative pl-6;
+}
+.timeline::before { 
+    @apply content-[''] absolute left-0 top-1 bottom-1 w-0.5 bg-slate/50;
+}
+.timeline-item { 
+    @apply relative mb-10;
+}
+.timeline-item:last-child { 
+    @apply mb-0;
+}
+.timeline-dot { 
+    @apply absolute w-4 h-4 bg-accent-orange rounded-full border-2 border-card-bg;
+    left: -2.0625rem; 
+    top: 0.25rem;
+}
+.cta-button { 
+    @apply transition-all duration-300 ease-in-out;
+}
+.cta-button:hover { 
+    @apply bg-accent-orange text-dark-bg -translate-y-0.5 shadow-[0_4px_6px_theme('colors.accent-orange/20%')];
+}
+.social-icon { 
+    @apply text-light-slate transition-all duration-200 ease-in-out;
+}
+.social-icon:hover { 
+    @apply -translate-y-0.5 scale-110 text-accent-orange;
+}
+.card-link { 
+    @apply block no-underline text-inherit h-full;
+}
 
 /* Custom Cursor Styles */
 .cursor-dot, .cursor-outline {
@@ -74,7 +116,7 @@ body.is-leaving {
     @apply w-10 h-10 border-2 border-accent-orange/50;
     transition: transform 0.2s ease-out, width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
 }
-.cursor-outline.hover {
+.cursor-outline.hover, .cursor-outline.link-hover {
     @apply w-16 h-16 border-accent-orange;
 }
 .cursor-outline.click {
@@ -89,7 +131,7 @@ body.is-leaving {
 }
 /* Dropdown Menu Styles */ 
 .dropdown-menu {
-    background-color: theme('colors.dark-bg/90'); /* Consistent with scrolled header */
+    @apply bg-dark-bg/90; /* Consistent with scrolled header */
 }
 @keyframes fadeIn {
     from { opacity: 0; transform: scale(0.95); }
@@ -97,43 +139,43 @@ body.is-leaving {
 }
 
 /* Styles from project-pica.html */
-pre, code {
-    font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
-    font-size: 0.9em;
-}
 pre {
-    background-color: theme('colors.dark-bg');
-    border-radius: 0.5rem;
-    padding: 1rem;
-    overflow-x: auto;
-    border: 1px solid theme('colors.slate / 50%');
+    @apply bg-dark-bg rounded-lg p-4 overflow-x-auto border border-slate/50;
+}
+code {
+    @apply font-mono text-sm;
 }
 .markdown-table {
-    width: 100%;
-    border-collapse: collapse;
+    @apply w-full border-collapse;
 }
 .markdown-table th, .markdown-table td {
-    border: 1px solid theme('colors.slate / 50%');
-    padding: 0.75rem 1rem;
-    text-align: left;
+    @apply border border-slate/50 px-4 py-3 text-left;
 }
 .markdown-table th {
-    background-color: theme('colors.slate / 50%');
-    color: theme('colors.true-white');
-    font-weight: 600;
+    @apply bg-slate/50 text-true-white font-semibold;
 }
 .markdown-table tbody tr:nth-child(odd) {
-    background-color: theme('colors.card-bg');
+    @apply bg-card-bg;
 }
  .markdown-table tbody tr:nth-child(even) {
-    background-color: #384256;
+    @apply bg-[#384256];
 }
 
 /* Styles from sitemap.html */
-.sitemap-link { display: block; padding: 0.75rem 1.5rem; background-color: #2d3748; border-left: 4px solid transparent; transition: all 0.3s ease; color: #e2e8f0; }
-.sitemap-link:hover { border-left-color: theme('colors.accent-orange'); background-color: theme('colors.slate / 50%'); transform: translateX(5px); }
-.external-link { display: flex; align-items: center; padding: 0.75rem 1.5rem; background-color: #2d3748; transition: all 0.3s ease; color: #a8b2d1; }
-.external-link:hover { background-color: theme('colors.slate / 50%'); color: theme('colors.accent-orange'); }
+.sitemap-link { 
+    @apply block py-3 px-6 bg-[#2d3748] border-l-4 border-transparent text-[#e2e8f0] transition-all duration-300 ease-in-out;
+}
+.sitemap-link:hover { 
+    @apply border-l-accent-orange bg-slate/50 translate-x-1;
+}
+.external-link { 
+    @apply flex items-center py-3 px-6 bg-[#2d3748] text-[#a8b2d1] transition-all duration-300 ease-in-out;
+}
+.external-link:hover { 
+    @apply bg-slate/50 text-accent-orange;
+}
+
+/* === Utilities === */
 
 /* Mobile Menu Slide-in Styles */
 #mobile-menu {
@@ -154,6 +196,11 @@ pre {
 #menu-overlay.is-open {
     @apply opacity-100;
     pointer-events: auto; /* Captures clicks when visible */
+}
+
+/* Mobile Accordion Icon Rotation */
+#mobile-portfolio-button[aria-expanded="true"] svg {
+    transform: rotate(180deg);
 }
 
 /* Back to Top Button */
