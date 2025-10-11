@@ -235,4 +235,29 @@ document.addEventListener('DOMContentLoaded', () => {
             cursorOutline.style.display = '';
         });
     }
+
+    // --- Smooth Page Transition Logic ---
+    const allLinks = document.querySelectorAll('a');
+
+    allLinks.forEach(link => {
+        link.addEventListener('click', e => {
+            const href = link.getAttribute('href');
+
+            // Check for conditions where we should NOT intercept the click
+            if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || link.target === '_blank' || e.ctrlKey || e.metaKey) {
+                return;
+            }
+
+            // For internal links, trigger the fade-out
+            e.preventDefault();
+            document.body.classList.add('is-leaving');
+
+            setTimeout(() => {
+                window.location = href;
+            }, 300); // This duration should match the CSS transition duration
+        });
+    });
+
+    // On page load, remove the 'is-leaving' class in case it was cached by the browser (e.g., on back/forward)
+    document.body.classList.remove('is-leaving');
 });
