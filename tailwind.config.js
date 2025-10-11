@@ -11,10 +11,9 @@ module.exports = {
         serif: ['Source Serif Pro', 'serif'],
       },
       colors: {
-        'dark-bg': '#1a202c',
-        'card-bg': '#2d3748',
-        'accent-orange': '#f6ad55',
-        'accent-gold': '#ffc600',
+        'dark-bg': '#111827', // A deeper, more neutral charcoal gray
+        'card-bg': '#1f2937', // Adjusted for better contrast with the new background
+        'accent-orange': '#fbb967ff', // Kept for vibrant highlights
         'light-slate': '#a8b2d1',
         'slate': '#8892b0',
         'white': '#e2e8f0',
