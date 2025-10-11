@@ -327,6 +327,32 @@ function setupKeyboardControls() {
 }
 
 /**
+ * Sets up a scroll-triggered fade-in animation for elements
+ * with the '.will-animate' class.
+ */
+function setupScrollAnimations() {
+    const animatedElements = document.querySelectorAll('.will-animate');
+    if (!animatedElements.length) return;
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1 // Trigger when 10% of the element is visible
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target); // Animate only once
+            }
+        });
+    }, observerOptions);
+
+    animatedElements.forEach(el => observer.observe(el));
+}
+
+/**
  * Main initialization function. Runs after the DOM is fully loaded.
  */
 function init() {
@@ -361,6 +387,7 @@ function init() {
     setupCustomCursor();
     setupPageTransitions();
     setupKeyboardControls();
+    setupScrollAnimations();
 }
 
 /**
