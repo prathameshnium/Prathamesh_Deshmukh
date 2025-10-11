@@ -1,3 +1,4 @@
+@import 'tailwindcss/base';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -34,7 +35,7 @@ body { background-color: #1a202c; color: #e2e8f0; }
 .card { background-color: #2d3748; border: 1px solid #4a5568; transition: all 0.3s ease-in-out; }
 .card:hover { border-color: #f6ad55; transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
 .nav-link { transition: color 0.3s, border-bottom-color 0.3s; border-bottom: 2px solid transparent; padding-bottom: 4px; }
-.nav-link:hover, .nav-link.active { color: #f6ad55; border-bottom-color: #f6ad55; }
+.nav-link:hover, .nav-link.active { color: #f6ad55; }
 .tag { background-color: #4a5568; color: #e2e8f0; } 
 .publication-link { color: #f6ad55; text-decoration: none; transition: color 0.2s; }
 .publication-link:hover { color: #fbd38d; }
@@ -49,10 +50,9 @@ body { background-color: #1a202c; color: #e2e8f0; }
 .social-icon:hover { transform: translateY(-3px) scale(1.1); color: #f6ad55; }
 .card-link { display: block; text-decoration: none; color: inherit; height: 100%; }
 /* Search Modal Styles */
-/* Dropdown Menu Styles */
-.dropdown-menu { 
-    background-color: #122738; /* secondary color */
-    color: #FFFFFF; /* white */ 
+/* Dropdown Menu Styles */ 
+.dropdown-menu {
+    @apply bg-secondary text-white;
 }
 @keyframes fadeIn {
     from { opacity: 0; transform: scale(0.95); }
