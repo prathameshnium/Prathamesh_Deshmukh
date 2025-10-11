@@ -118,32 +118,26 @@ if (navLinks.length > 0 && sections.length > 0) {
 
 
 // Main portfolio dropdown (desktop)
-const portfolioButton = document.getElementById('portfolio-button');
-const portfolioMenu = document.getElementById('portfolio-menu');
-let portfolioTimeout;
-
-if (portfolioButton && portfolioMenu) {
-    const portfolioNavItem = portfolioButton.parentElement;
-
-    portfolioNavItem.addEventListener('mouseenter', () => {
-        clearTimeout(portfolioTimeout);
-        portfolioMenu.classList.remove('hidden');
-    });
-
-    portfolioNavItem.addEventListener('mouseleave', () => {
-        portfolioTimeout = setTimeout(() => {
-            portfolioMenu.classList.add('hidden');
-        }, 300); // 300ms delay before hiding
-    });
-
-    portfolioMenu.addEventListener('mouseenter', () => {
-        clearTimeout(portfolioTimeout);
-    });
-
-    portfolioMenu.addEventListener('mouseleave', () => {
-        portfolioMenu.classList.add('hidden');
-    });
-}
+document.addEventListener('DOMContentLoaded', () => {
+    // Desktop dropdown
+    const portfolioButton = document.getElementById('portfolio-button');
+    const portfolioMenu = document.getElementById('portfolio-menu');
+    let portfolioTimeout;
+    if (portfolioButton && portfolioMenu) {
+        const parent = portfolioButton.parentElement;
+        parent.addEventListener('mouseenter', () => {
+            clearTimeout(portfolioTimeout);
+            portfolioMenu.classList.remove('hidden');
+        });
+        parent.addEventListener('mouseleave', () => {
+            portfolioTimeout = setTimeout(() => {
+                portfolioMenu.classList.add('hidden');
+            }, 300);
+        });
+        portfolioMenu.addEventListener('mouseenter', () => clearTimeout(portfolioTimeout));
+        portfolioMenu.addEventListener('mouseleave', () => portfolioMenu.classList.add('hidden'));
+    }
+});
 
 
 // Core portfolio submenu (desktop)
