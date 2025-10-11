@@ -19,4 +19,88 @@
     <!-- The rest of your page content goes here -->
     <script src="../_assets/js/main.js" defer></script>
 </body>
+<body class="antialiased font-sans bg-dark-bg text-gray-200">
+    <div id="preloader" class="fixed top-0 left-0 w-full h-full bg-dark-bg flex justify-center items-center z-[100]">
+        <div class="loader"></div>
+    </div>
+    <!-- SVG Sprite -->
+    <div id="svg-sprite-container" style="display: none;"></div>
+
+    <header class="bg-dark-bg/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-700">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../index.html" class="text-2xl font-bold text-white">Prathamesh Deshmukh</a>
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="../index.html#about" class="nav-link">About</a>
+                <a href="../index.html#research" class="nav-link">Research</a>
+                <a href="../index.html#skills" class="nav-link">Skills</a>
+                <a href="../index.html#journey" class="nav-link">Journey</a>
+                <div class="relative" data-dropdown-parent>
+                    <button data-dropdown-toggle id="portfolio-button" class="nav-link flex items-center" aria-haspopup="true" aria-expanded="false" aria-controls="portfolio-menu">
+                        Portfolio <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/></svg>
+                    </button>
+                    <div id="portfolio-menu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-56 top-full right-0 mt-2 z-50" data-dropdown>
+                        <div class="relative" data-dropdown-parent>
+                            <a href="#" data-dropdown-toggle class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange/20 flex justify-between items-center" aria-haspopup="true" aria-expanded="false">
+                                Core Portfolio <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/></svg>
+                            </a>
+                            <div class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 -left-full mt-0 z-50" data-dropdown>
+                                <a href="research.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange/20">Research & Pubs</a>
+                                <a href="computational-works.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange/20">Computational Works</a>
+                                <a href="presentations.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange/20">Presentations</a>
+                                <a href="cv.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange/20">CV</a>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-600 my-1"></div>
+                        <a href="blog.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange/20">Blog</a>
+                        <a href="gallery.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange/20">Gallery</a>
+                        <a href="resources.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange/20">Resources</a>
+                    </div>
+                </div>
+                <a href="../index.html#contact" class="nav-link">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white text-2xl" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-bars"></use></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4"></div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section class="max-w-4xl mx-auto">
+             <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold section-title mb-2">Resources</h2>
+                <p class="text-lg text-slate">A curated list of tools, databases, and learning materials.</p>
+            </div>
+
+            <div class="mb-16">
+                <h3 class="text-3xl font-semibold text-accent-orange border-b border-gray-700 pb-2 mb-6">Podcasts & Learning</h3>
+                <div class="space-y-4">
+                    <a href="https://materialismpodcast.com/" target="_blank" rel="noopener noreferrer" class="external-link rounded-md">
+                        <svg class="w-6 h-6 mr-3" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"></path></svg>
+                        Materialism Podcast
+                    </a>
+                </div>
+            </div>
+
+            <!-- Add other resource sections here in the future -->
+
+        </section>
+    </main>
+
+    <footer class="border-t border-gray-800 bg-dark-bg py-8 mt-12">
+        <div class="container mx-auto px-6 text-center text-slate">
+            <div class="flex justify-center items-center flex-wrap gap-6 mb-6">
+                <a href="../index.html#contact" class="social-icon text-2xl" aria-label="Email"><svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-envelope"></use></svg></a>
+                <a href="https://scholar.google.com/citations?user=DJgzI30AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="Google Scholar"><svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-graduation-cap"></use></svg></a>
+                <a href="https://www.linkedin.com/in/prathamesh-k-deshmukh" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="LinkedIn"><svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-linkedin"></use></svg></a>
+                <a href="https://github.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="GitHub"><svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-github"></use></svg></a>
+                <a href="https://x.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="X (formerly Twitter)"><svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-x-twitter"></use></svg></a>
+            </div>
+            <div class="mb-6">
+                <a href="sitemap.html" class="hover:text-accent-orange transition-colors">Sitemap & Link Directory</a>
+            </div>
+             <p><a href="https://github.com/prathameshnium/prathameshnium.github.io/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" class="hover:text-accent-orange transition-colors">&copy; 2025 Prathamesh Keshao Deshmukh. All Rights Reserved.</a></p>
+        </div>
+    </footer>
+</body>
 </html>
