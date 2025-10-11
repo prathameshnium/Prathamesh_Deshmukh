@@ -14,13 +14,13 @@ module.exports = {
         serif: ['Junicode', 'serif'],
       },
       colors: {
-        'dark-bg': '#111827', // A deeper, more neutral charcoal gray
-        'card-bg': '#1f2937', // Adjusted for better contrast with the new background
-        'accent-orange': '#fbbf24', // A brighter, more vibrant gold
-        'light-slate': '#a8b2d1',
-        'slate': '#8892b0', // Text and borders
-        'off-white': '#e2e8f0', // Main text color
-        'white': '#ffffff', // For pure white text if needed
+        'dark-bg': 'var(--color-bg-dark)',
+        'card-bg': 'var(--color-bg-card)',
+        'accent-orange': 'var(--color-accent)',
+        'light-slate': 'var(--color-text-light-slate)',
+        'slate': 'var(--color-text-slate)',
+        'off-white': 'var(--color-text-off-white)',
+        'white': 'var(--color-text-white)',
       },
       fontSize: {
         'xs': '.75rem',

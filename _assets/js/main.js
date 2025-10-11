@@ -1,10 +1,52 @@
 // Preloader
 window.addEventListener('load', function() {
     const preloader = document.getElementById('preloader');
-    if (preloader) {
-        preloader.style.display = 'none';
+    if (preloader) { 
+        preloader.style.opacity = '0';
+        preloader.addEventListener('transitionend', () => preloader.style.display = 'none');
     }
 });
+
+// Theme Toggle
+function applyTheme(theme) {
+    const html = document.documentElement;
+    const moonIcon = '<i class="fas fa-moon"></i>';
+    const sunIcon = '<i class="fas fa-sun"></i>';
+
+    if (theme === 'darker') {
+        html.classList.add('theme-darker');
+        document.querySelectorAll('#theme-toggle, #mobile-theme-toggle').forEach(btn => {
+            btn.innerHTML = sunIcon + '<span class="sr-only">Toggle Theme</span>';
+        });
+    } else {
+        html.classList.remove('theme-darker');
+        document.querySelectorAll('#theme-toggle, #mobile-theme-toggle').forEach(btn => {
+            btn.innerHTML = moonIcon + '<span class="sr-only">Toggle Theme</span>';
+        });
+    }
+    localStorage.setItem('theme', theme);
+}
+
+function setupThemeToggle() {
+    const themeToggleButtons = document.querySelectorAll('#theme-toggle, #mobile-theme-toggle');
+    
+    themeToggleButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const currentTheme = localStorage.getItem('theme') || 'dark';
+            const newTheme = currentTheme === 'dark' ? 'darker' : 'dark';
+            applyTheme(newTheme);
+        });
+    });
+
+    // Apply saved theme on initial load
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        applyTheme(savedTheme);
+    } else {
+        // Default to dark theme if no preference is saved
+        applyTheme('dark');
+    }
+}
 
 // Mobile menu toggle
 const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -14,7 +56,7 @@ if (mobileMenuButton && mobileMenu) {
     const isIndex = window.location.pathname.endsWith('/') || window.location.pathname.endsWith('index.html');
     const prefix = isIndex ? '' : '../';
     mobileMenu.innerHTML = `
-        <a href="${prefix}index.html#about" class="block py-2 nav-link">About</a>
+        <a href="${prefix}index.html" class="block py-2 nav-link">Home</a>
         <a href="${prefix}index.html#research" class="block py-2 nav-link">Research</a>
         <a href="${prefix}index.html#skills" class="block py-2 nav-link">Skills</a>
         <a href="${prefix}index.html#journey" class="block py-2 nav-link">Journey</a>
@@ -35,6 +77,11 @@ if (mobileMenuButton && mobileMenu) {
                 <a href="${prefix}pages/resources.html" class="block py-2 nav-link">Resources</a>
             </div>
         </div>
+        <div class="border-t border-gray-700 my-2"></div>
+        <button id="mobile-theme-toggle" class="w-full text-left py-2 nav-link flex justify-between items-center">
+            <span>Toggle Theme</span>
+            <i class="fas fa-moon"></i>
+        </button>
     `;
 
     mobileMenuButton.addEventListener('click', () => {
@@ -141,4 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     )}
+
+    // Initialize theme toggle functionality
+    setupThemeToggle();
 });
