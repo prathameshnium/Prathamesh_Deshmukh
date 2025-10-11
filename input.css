@@ -35,6 +35,10 @@ header.scrolled {
 }
 
 body { background-color: theme('colors.dark-bg'); color: theme('colors.white'); }
+body, a, button {
+    @apply cursor-none;
+}
+
 .section-title { font-family: theme('fontFamily.serif'); color: theme('colors.true-white'); }
 .card { background-color: theme('colors.card-bg'); border: 1px solid theme('colors.slate / 50%'); transition: all 0.3s ease-in-out; }
 .card:hover { border-color: theme('colors.accent-orange'); transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(251, 191, 36, 0.1), 0 4px 6px -2px rgba(251, 191, 36, 0.05); }
@@ -54,6 +58,33 @@ body { background-color: theme('colors.dark-bg'); color: theme('colors.white'); 
 .social-icon:hover { transform: translateY(-3px) scale(1.1); color: theme('colors.accent-orange'); }
 .card-link { display: block; text-decoration: none; color: inherit; height: 100%; }
 /* Search Modal Styles */
+
+/* Custom Cursor Styles */
+.cursor-dot, .cursor-outline {
+    @apply fixed top-0 left-0 pointer-events-none rounded-full z-[10000];
+    will-change: transform;
+    transform: translate(-50%, -50%);
+}
+.cursor-dot {
+    @apply w-2 h-2 bg-accent-orange;
+}
+.cursor-outline {
+    @apply w-10 h-10 border-2 border-accent-orange/50;
+    transition: transform 0.2s ease-out, width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+}
+.cursor-outline.hover {
+    @apply w-16 h-16 border-accent-orange;
+}
+.cursor-outline.click {
+    transform: translate(-50%, -50%) scale(0.9);
+    transition: transform 0.1s ease-in-out, width 0.2s ease, height 0.2s ease;
+}
+
+/* Hide cursor on mobile */
+@media (max-width: 768px) {
+    .cursor-dot, .cursor-outline { @apply hidden; }
+    body, a, button { cursor: auto; }
+}
 /* Dropdown Menu Styles */ 
 .dropdown-menu {
     background-color: theme('colors.dark-bg/90'); /* Consistent with scrolled header */

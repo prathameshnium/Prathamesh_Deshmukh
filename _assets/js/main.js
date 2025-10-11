@@ -189,4 +189,50 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Custom Cursor Logic ---
+    const cursorDot = document.querySelector('.cursor-dot');
+    const cursorOutline = document.querySelector('.cursor-outline');
+
+    if (cursorDot && cursorOutline) {
+        window.addEventListener('mousemove', (e) => {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: 'forwards' });
+        });
+
+        const interactiveElements = document.querySelectorAll('a, button, .cta-button, .social-icon, .nav-link');
+
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursorOutline.classList.add('hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursorOutline.classList.remove('hover');
+            });
+        });
+
+        document.addEventListener('mousedown', () => {
+            cursorOutline.classList.add('click');
+        });
+
+        document.addEventListener('mouseup', () => {
+            cursorOutline.classList.remove('click');
+        });
+
+        document.addEventListener('mouseleave', () => {
+            cursorDot.style.display = 'none';
+            cursorOutline.style.display = 'none';
+        });
+        document.addEventListener('mouseenter', () => {
+            cursorDot.style.display = '';
+            cursorOutline.style.display = '';
+        });
+    }
 });
