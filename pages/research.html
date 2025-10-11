@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prathamesh Deshmukh | Research</title>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data:;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:;">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="description" content="Detailed research and publication portfolio for Prathamesh Keshao Deshmukh.">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../_assets/style.css">
     <script type="application/ld+json">
     [
@@ -73,17 +71,17 @@
                 <a href="../index.html#research" class="nav-link">Research</a>
                 <a href="../index.html#skills" class="nav-link">Skills</a>
                 <a href="../index.html#journey" class="nav-link">Journey</a>
-                <div class="relative">
-                    <button id="portfolio-button" class="nav-link flex items-center">
-                        Portfolio <i class="fas fa-chevron-down text-xs ml-2"></i>
+                <div class="relative" data-hover-parent>
+                    <button data-dropdown-toggle id="portfolio-button" class="nav-link flex items-center" aria-haspopup="true" aria-expanded="false" aria-controls="portfolio-menu">
+                        Portfolio <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/></svg>
                     </button> 
-                    <div id="portfolio-menu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-56 top-full right-0 mt-2 z-50">
+                    <div id="portfolio-menu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-56 top-full right-0 mt-2 z-50" data-dropdown>
                         <!-- Submenu Item -->
-                        <div id="core-portfolio-item" class="relative">
+                        <div class="relative" data-hover-parent>
                             <a href="#" class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange flex justify-between items-center">
-                                Core Portfolio <i class="fas fa-chevron-right text-xs"></i>
+                                Core Portfolio <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/></svg>
                             </a>
-                            <div id="core-portfolio-submenu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 -left-full mt-0 z-50">
+                            <div class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 -left-full mt-0 z-50">
                                 <a href="research.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Research & Pubs</a>
                                 <a href="computational-works.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Computational Works</a>
                                 <a href="presentations.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Presentations</a>
@@ -99,7 +97,7 @@
                 <a href="../index.html#contact" class="nav-link">Contact</a>
             </nav>
             <button id="mobile-menu-button" class="md:hidden text-white text-2xl">
-                <i class="fas fa-bars" aria-label="Open menu"></i>
+                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-bars"></use></svg>
             </button>
         </div>
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
@@ -141,7 +139,7 @@
                         </p>
 
                         <span class="publication-link inline-block bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-5 rounded-lg">
-                            View Article <i class="fas fa-external-link-alt ml-2 text-xs" aria-hidden="true"></i>
+                            View Article <svg class="w-3 h-3 inline-block ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-external-link-alt"></use></svg>
                         </span>
                     </div>
                 </a>
@@ -168,7 +166,7 @@
                         </p>
 
                         <span class="publication-link inline-block bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-5 rounded-lg">
-                            View Article <i class="fas fa-external-link-alt ml-2 text-xs" aria-hidden="true"></i>
+                            View Article <svg class="w-3 h-3 inline-block ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-external-link-alt"></use></svg>
                         </span>
                     </div>
                 </a>
@@ -186,14 +184,14 @@
                         </p>
 
                         <span class="publication-link inline-block bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-5 rounded-lg">
-                            View Article <i class="fas fa-external-link-alt ml-2 text-xs" aria-hidden="true"></i>
+                            View Article <svg class="w-3 h-3 inline-block ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-external-link-alt"></use></svg>
                         </span>
                     </div>
                 </a>
 
                 <!-- Lab Context Card -->
                 <div class="card p-8 rounded-lg text-center border-2 border-accent-orange/50">
-                    <i class="fas fa-vial text-4xl text-accent-orange mb-4" aria-hidden="true"></i>
+                    <svg class="w-10 h-10 mx-auto text-accent-orange mb-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-vial"></use></svg>
                     <h3 class="text-2xl font-semibold text-white mb-4">Research Environment</h3>
                     <p class="text-light-slate mb-6 max-w-xl mx-auto">This research is conducted at the Sudip Mukherjee Materials Physics Lab, part of the UGC-DAE CSR. Explore our facilities and ongoing work.</p>
                     <a href="Sudip_Mukherjee_Materials_Physics_Lab.html" class="cta-button inline-block bg-accent-orange border-2 border-accent-orange text-dark-bg font-semibold py-2 px-5 rounded-lg">
@@ -209,11 +207,11 @@
     <footer class="border-t border-gray-800 bg-dark-bg py-8">
         <div class="container mx-auto px-6 text-center text-slate">
             <div class="flex justify-center items-center flex-wrap gap-6 mb-6">
-                <a href="../index.html#contact" class="social-icon text-2xl" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
-                <a href="https://scholar.google.com/citations?user=DJgzI30AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="Google Scholar"><i class="fas fa-graduation-cap" aria-hidden="true"></i></a>
-                <a href="https://www.linkedin.com/in/prathamesh-k-deshmukh" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-                <a href="https://github.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
-                <a href="https://x.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="X (formerly Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+                <a href="../index.html#contact" class="social-icon text-2xl" aria-label="Email"><svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-envelope"></use></svg></a>
+                <a href="https://scholar.google.com/citations?user=DJgzI30AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="Google Scholar"><svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-graduation-cap"></use></svg></a>
+                <a href="https://www.linkedin.com/in/prathamesh-k-deshmukh" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="LinkedIn"><svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-linkedin"></use></svg></a>
+                <a href="https://github.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="GitHub"><svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-github"></use></svg></a>
+                <a href="https://x.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="X (formerly Twitter)"><svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-x-twitter"></use></svg></a>
             </div>
             <div class="mb-6">
                 <a href="sitemap.html" class="hover:text-accent-orange transition-colors">Sitemap & Link Directory</a>

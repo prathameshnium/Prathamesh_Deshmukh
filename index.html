@@ -19,7 +19,7 @@
     <meta property="og:title" content="Prathamesh Deshmukh | Physics PhD & Scientific Programmer">
     <meta property="og:image" content="https://www.prathameshdeshmukh.site/_assets/banner.png">
 
-    <meta http-equiv="Content-Security-policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data: https://raw.githubusercontent.com https://upload.wikimedia.org https://www.vectorlogo.zone https://placehold.co https://img.shields.io; connect-src 'self' https://www.google-analytics.com;">
+    <meta http-equiv="Content-Security-policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://raw.githubusercontent.com https://upload.wikimedia.org https://www.vectorlogo.zone https://placehold.co https://img.shields.io; connect-src 'self' https://www.google-analytics.com;">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     
     <link rel="canonical" href="https://prathameshdeshmukh.site/">
@@ -41,11 +41,8 @@
 
       gtag('config', 'G-C4JV6510PN', { 'anonymize_ip': true });
     </script>
-    <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
     <!-- Load critical CSS synchronously -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/_assets/style.css">
 
 
@@ -87,17 +84,17 @@
                 <a href="#publications" class="nav-link">Publications</a>
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#journey" class="nav-link">Journey</a>
-                <div class="relative">
-                    <button id="portfolio-button" class="nav-link flex items-center" aria-haspopup="true" aria-expanded="false" aria-controls="portfolio-menu">
-                        Portfolio <i class="fas fa-chevron-down text-xs ml-2"></i>
+                <div class="relative" data-hover-parent>
+                    <button data-dropdown-toggle id="portfolio-button" class="nav-link flex items-center" aria-haspopup="true" aria-expanded="false" aria-controls="portfolio-menu">
+                        Portfolio <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/></svg>
                     </button>
-                    <div id="portfolio-menu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-56 top-full right-0 mt-2 z-50">
+                    <div id="portfolio-menu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-56 top-full right-0 mt-2 z-50" data-dropdown>
                         <!-- Submenu Item -->
-                        <div id="core-portfolio-item" class="relative">
+                        <div class="relative" data-hover-parent>
                             <a href="#" class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange flex justify-between items-center">
-                                Core Portfolio <i class="fas fa-chevron-right text-xs"></i>
+                                Core Portfolio <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/></svg>
                             </a>
-                            <div id="core-portfolio-submenu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 -left-full mt-0 z-50">
+                            <div class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 -left-full mt-0 z-50">
                                 <a href="pages/research.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Research & Pubs</a>
                                 <a href="pages/computational-works.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Computational Works</a>
                                 <a href="pages/presentations.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Presentations</a>
@@ -111,15 +108,15 @@
                     </div>
                 </div>
                 <button id="theme-toggle" class="nav-link" aria-label="Toggle theme">
-                    <i class="fas fa-moon" aria-hidden="true"></i><span class="sr-only">Toggle Theme</span>
+                    <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-moon"></use></svg><span class="sr-only">Toggle Theme</span>
                 </button>
                 <a href="#contact" class="nav-link">Contact</a>
                 <a href="pages/search.html" class="nav-link" aria-label="Open search page">
-                    <i class="fas fa-search" aria-hidden="true"></i><span class="sr-only">Search</span>
+                    <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-search"></use></svg><span class="sr-only">Search</span>
                 </a>
             </nav>
             <button id="mobile-menu-button" class="md:hidden text-white text-2xl" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
-                <i class="fas fa-bars"></i>
+                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-bars"></use></svg>
             </button>
         </div>
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
@@ -131,12 +128,12 @@
             <a href="#contact" class="block py-2 nav-link">Contact</a>
             <div class="border-t border-gray-700 my-2"></div>
             <!-- Accordion for Portfolio -->
-            <div>
-                <button id="mobile-portfolio-button" class="w-full text-left py-2 nav-link flex justify-between items-center" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-portfolio-menu">
+            <div data-dropdown-parent>
+                <button data-dropdown-toggle id="mobile-portfolio-button" class="w-full text-left py-2 nav-link flex justify-between items-center" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-portfolio-menu">
                     <span>Portfolio</span>
-                    <i class="fas fa-chevron-down text-xs"></i>
+                    <svg class="w-2.5 h-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/></svg>
                 </button>
-                <div id="mobile-portfolio-menu" class="hidden pl-4">
+                <div id="mobile-portfolio-menu" class="hidden pl-4" data-dropdown>
                     <a href="pages/research.html" class="block py-2 nav-link">Research & Pubs</a>
                     <a href="pages/computational-works.html" class="block py-2 nav-link">Computational Works</a>
                     <a href="pages/presentations.html" class="block py-2 nav-link">Presentations</a>
@@ -149,7 +146,7 @@
             <div class="border-t border-gray-700 my-2"></div>
             <button id="mobile-theme-toggle" class="w-full text-left py-2 nav-link flex justify-between items-center">
                 <span>Toggle Theme</span>
-                <i class="fas fa-moon"></i>
+                <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-moon"></use></svg>
             </button>
         </div>
     </header>
@@ -184,36 +181,36 @@
                     <div class="flex justify-center items-center gap-4">
                         <span class="text-slate font-semibold">Share:</span>
                         <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fprathameshdeshmukh.site%2F&text=Check%20out%20the%20portfolio%20of%20Prathamesh%20Deshmukh%2C%20a%20Physics%20PhD%20Scholar%20and%20Scientific%20Programmer.&via=prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Share on X">
-                            <i class="fab fa-x-twitter"></i>
+                            <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-x-twitter"></use></svg>
                         </a>
                         <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fprathameshdeshmukh.site%2F&title=Prathamesh%20Deshmukh%20%7C%20Physics%20PhD%20%26%20Scientific%20Programmer&summary=Portfolio%20of%20Prathamesh%20Deshmukh%2C%20a%20Physics%20PhD%20scholar.%20Showcasing%20research%20in%20condensed%20matter%20physics%2C%20scientific%20programming%2C%20and%20lab%20automation." target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Share on LinkedIn">
-                            <i class="fab fa-linkedin"></i>
+                            <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-linkedin"></use></svg>
                         </a>
                         <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fprathameshdeshmukh.site%2F&title=Prathamesh%20Deshmukh%20%7C%20Physics%20PhD%20%26%20Scientific%20Programmer" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Share on Reddit">
-                            <i class="fab fa-reddit-alien"></i>
+                            <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-reddit-alien"></use></svg>
                         </a>
                         <a href="mailto:?subject=Check%20out%20this%20portfolio%3A%20Prathamesh%20Deshmukh&body=I%20thought%20you%20might%20be%20interested%20in%20this%20portfolio%3A%20https%3A%2F%2Fprathameshdeshmukh.site%2F" class="social-icon" aria-label="Share via Email">
-                            <i class="fas fa-envelope"></i>
+                            <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-envelope"></use></svg>
                         </a>
                     </div>
                 </div>
                 <div class="flex flex-wrap justify-center items-center gap-6" aria-label="Social and Academic Profiles">
-                    <a href="https://scholar.google.com/citations?user=DJgzI30AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl" aria-label="Google Scholar"><i class="fas fa-graduation-cap" aria-hidden="true"></i></a>
-                    <a href="https://www.linkedin.com/in/prathamesh-k-deshmukh" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-                    <a href="https://github.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
-                    <a href="https://x.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl" aria-label="X (formerly Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+                    <a href="https://scholar.google.com/citations?user=DJgzI30AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl" aria-label="Google Scholar"><svg class="w-8 h-8" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-graduation-cap"></use></svg></a>
+                    <a href="https://www.linkedin.com/in/prathamesh-k-deshmukh" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl" aria-label="LinkedIn"><svg class="w-8 h-8" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-linkedin"></use></svg></a>
+                    <a href="https://github.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl" aria-label="GitHub"><svg class="w-8 h-8" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-github"></use></svg></a>
+                    <a href="https://x.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl" aria-label="X (formerly Twitter)"><svg class="w-8 h-8" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-x-twitter"></use></svg></a>
                     <!-- More Links Dropdown -->
-                    <div class="relative" id="more-links-container">
-                        <button id="more-links-button" class="social-icon text-3xl" aria-label="More social and academic links" aria-haspopup="true" aria-expanded="false" aria-controls="more-links-menu">
-                            <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
+                    <div class="relative" data-dropdown-parent>
+                        <button data-dropdown-toggle id="more-links-button" class="social-icon text-3xl" aria-label="More social and academic links" aria-haspopup="true" aria-expanded="false" aria-controls="more-links-menu">
+                            <svg class="w-8 h-8" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-ellipsis-h"></use></svg>
                         </button>
-                        <div id="more-links-menu" class="absolute hidden dropdown-menu bg-dark-bg border border-gray-700 rounded-md shadow-lg p-2 w-max top-full mt-2 z-50">
-                            <a href="https://www.researchgate.net/profile/Prathamesh-Deshmukh-6" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><i class="fab fa-researchgate w-6 mr-2"></i> ResearchGate</a>
-                            <a href="https://gitlab.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><i class="fab fa-gitlab w-6 mr-2"></i> GitLab</a>
-                            <a href="https://orcid.org/0009-0008-3278-0837" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><i class="fab fa-orcid w-6 mr-2"></i> ORCID</a>
-                            <a href="https://www.scopus.com/authid/detail.uri?authorId=59544780300" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><i class="fas fa-file-alt w-6 mr-2"></i> Scopus</a>
-                            <a href="https://csr.academia.edu/PrathameshDeshmukh" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><i class="fas fa-book-open w-6 mr-2" aria-hidden="true"></i> Academia</a>
-                            <a href="https://www.webofscience.com/wos/author/record/OFN-9289-2025" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><i class="fas fa-flask w-6 mr-2"></i> Web of Science</a>
+                        <div id="more-links-menu" class="absolute hidden dropdown-menu bg-dark-bg border border-gray-700 rounded-md shadow-lg p-2 w-max top-full mt-2 z-50" data-dropdown>
+                            <a href="https://www.researchgate.net/profile/Prathamesh-Deshmukh-6" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><svg class="w-6 h-6 mr-2" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-researchgate"></use></svg> ResearchGate</a>
+                            <a href="https://gitlab.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><svg class="w-6 h-6 mr-2" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-gitlab"></use></svg> GitLab</a>
+                            <a href="https://orcid.org/0009-0008-3278-0837" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><svg class="w-6 h-6 mr-2" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-orcid"></use></svg> ORCID</a>
+                            <a href="https://www.scopus.com/authid/detail.uri?authorId=59544780300" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><svg class="w-6 h-6 mr-2" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-file-alt"></use></svg> Scopus</a>
+                            <a href="https://csr.academia.edu/PrathameshDeshmukh" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><svg class="w-6 h-6 mr-2" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-book-open"></use></svg> Academia</a>
+                            <a href="https://www.webofscience.com/wos/author/record/OFN-9289-2025" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><svg class="w-6 h-6 mr-2" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-flask"></use></svg> Web of Science</a>
                         </div>
                     </div>
                 </div>
@@ -227,7 +224,7 @@
             </div>
             <div class="max-w-4xl mx-auto card p-8 rounded-lg">
                 <div class="text-center">
-                    <i class="fas fa-atom text-4xl text-accent-orange mb-4" aria-hidden="true"></i>
+                    <svg class="w-10 h-10 mx-auto text-accent-orange mb-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-atom"></use></svg>
                     <h3 class="text-2xl font-semibold text-white">Core Research: Multiferroic Composites</h3>
                     <p class="text-light-slate mt-4 mb-8 max-w-2xl mx-auto">My research is centered on fabricating and understanding materials where magnetic and electric properties are intrinsically linked. The goal is to contribute to next-generation sensors, memory devices, and energy-efficient electronics.</p>
                 </div>
@@ -236,10 +233,10 @@
                     <div>
                         <h4 class="text-xl font-semibold text-accent-orange mb-3">Key Activities</h4>
                         <ul class="space-y-3 text-light-slate">
-                            <li class="flex items-start"><i class="fas fa-check-circle text-accent-orange/80 mt-1 mr-3" aria-hidden="true"></i><span>Novel material synthesis (e.g., BaFe<sub>10</sub>Sc<sub>2</sub>O<sub>19</sub>:KNbO<sub>3</sub>).</span></li>
-                            <li class="flex items-start"><i class="fas fa-check-circle text-accent-orange/80 mt-1 mr-3" aria-hidden="true"></i><span>Design of custom probes for cryogenic measurements.</span></li>
-                            <li class="flex items-start"><i class="fas fa-check-circle text-accent-orange/80 mt-1 mr-3" aria-hidden="true"></i><span>Structural analysis using Neutron & X-Ray Diffraction.</span></li>
-                            <li class="flex items-start"><i class="fas fa-check-circle text-accent-orange/80 mt-1 mr-3" aria-hidden="true"></i><span>Characterization of magnetic and electric properties.</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-accent-orange/80 mt-1 mr-3 flex-shrink-0" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-check-circle"></use></svg><span>Novel material synthesis (e.g., BaFe<sub>10</sub>Sc<sub>2</sub>O<sub>19</sub>:KNbO<sub>3</sub>).</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-accent-orange/80 mt-1 mr-3 flex-shrink-0" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-check-circle"></use></svg><span>Design of custom probes for cryogenic measurements.</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-accent-orange/80 mt-1 mr-3 flex-shrink-0" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-check-circle"></use></svg><span>Structural analysis using Neutron & X-Ray Diffraction.</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-accent-orange/80 mt-1 mr-3 flex-shrink-0" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-check-circle"></use></svg><span>Characterization of magnetic and electric properties.</span></li>
                         </ul>
                     </div>
                     <div class="flex flex-col justify-center items-center md:items-start md:pl-6">
@@ -259,21 +256,21 @@
                     <p class="mb-2 text-light-slate">Deshmukh, P., et al. (2024). "Exploration of near room temperature magnetoelectric coupling in BaFe<sub>10</sub>Sc<sub>2</sub>O<sub>19</sub>:KNbO<sub>3</sub> composite."</p>
                     <p class="italic text-light-slate mb-3">Journal of Physics and Chemistry of Solids, 196, 112309.</p>
                     <a href="https://doi.org/10.1016/j.jpcs.2024.112309" target="_blank" rel="noopener noreferrer" class="publication-link font-medium" aria-label="View article on magnetoelectric coupling on Journal of Physics and Chemistry of Solids">
-                        View Article <i class="fas fa-external-link-alt ml-1 text-xs" aria-hidden="true"></i>
+                        View Article <svg class="w-3 h-3 inline-block ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-external-link-alt"></use></svg>
                     </a>
                 </div>
                 <div class="card p-6 rounded-lg">
                     <p class="mb-2 text-light-slate">Mukherjee, S., et al. (2025). "Negative capacitance and magnetodielectric effect in Cu<sub>2</sub>O-CuO ceramics."</p>
                     <p class="italic text-light-slate mb-3">Ceramics International, 51(20), 30716-30722.</p>
                       <a href="https://doi.org/10.1016/j.ceramint.2025.04.264" target="_blank" rel="noopener noreferrer" class="publication-link font-medium" aria-label="View article on negative capacitance on Ceramics International">
-                        View Article <i class="fas fa-external-link-alt ml-1 text-xs" aria-hidden="true"></i>
+                        View Article <svg class="w-3 h-3 inline-block ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-external-link-alt"></use></svg>
                     </a>
                 </div>
                 <div class="card p-6 rounded-lg">
                     <p class="mb-2 text-light-slate">Deshmukh, P., et al. (2025). "Exploring the role of Cu<sup>1+</sup> in quasi-1D Cu<sub>1-x</sub>Li<sub>x</sub>O (x = 0.025)."</p>
                     <p class="italic text-light-slate mb-3">Journal of Alloys and Compounds, 1036, 181833.</p>
                       <a href="https://doi.org/10.1016/j.jallcom.2025.181833" target="_blank" rel="noopener noreferrer" class="publication-link font-medium" aria-label="View article on the role of Cu1+ on Journal of Alloys and Compounds">
-                        View Article <i class="fas fa-external-link-alt ml-1 text-xs" aria-hidden="true"></i>
+                        View Article <svg class="w-3 h-3 inline-block ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-external-link-alt"></use></svg>
                     </a>
                 </div>
             </div>
@@ -369,13 +366,13 @@
             <h2 class="text-4xl font-bold section-title mb-8 text-center">Conferences & Workshops</h2>
             <div class="max-w-4xl mx-auto space-y-4">
                 <div class="card p-4 rounded-lg">
-                    <p class="text-light-slate"><i class="fas fa-chalkboard-teacher text-accent-orange mr-3" aria-hidden="true"></i><span class="font-semibold text-white">Attended:</span> XIX School on Neutron as Probe of Condensed Matter, UGC-DAE CSR, Mumbai (Sep 2022)</p>
+                    <p class="text-light-slate flex items-center"><svg class="w-5 h-5 text-accent-orange mr-3 flex-shrink-0" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-chalkboard-teacher"></use></svg><span class="font-semibold text-white mr-2">Attended:</span> XIX School on Neutron as Probe of Condensed Matter, UGC-DAE CSR, Mumbai (Sep 2022)</p>
                 </div>
                 <div class="card p-4 rounded-lg">
-                    <p class="text-light-slate"><i class="fas fa-file-alt text-accent-orange mr-3" aria-hidden="true"></i><span class="font-semibold text-white">Poster Presentation:</span> 66th DAE Solid State Physics Symposium, BIT Mesra, Ranchi (Dec 2022)</p>
+                    <p class="text-light-slate flex items-center"><svg class="w-5 h-5 text-accent-orange mr-3 flex-shrink-0" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-file-alt"></use></svg><span class="font-semibold text-white mr-2">Poster Presentation:</span> 66th DAE Solid State Physics Symposium, BIT Mesra, Ranchi (Dec 2022)</p>
                 </div>
                  <div class="card p-4 rounded-lg">
-                    <p class="text-light-slate"><i class="fas fa-chalkboard-teacher text-accent-orange mr-3" aria-hidden="true"></i><span class="font-semibold text-white">Attended:</span> 6th National Workshop on Materials Chemistry, Mumbai (Oct 2023)</p>
+                    <p class="text-light-slate flex items-center"><svg class="w-5 h-5 text-accent-orange mr-3 flex-shrink-0" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-chalkboard-teacher"></use></svg><span class="font-semibold text-white mr-2">Attended:</span> 6th National Workshop on Materials Chemistry, Mumbai (Oct 2023)</p>
                 </div>
             </div>
                <div class="text-center mt-10">
@@ -397,11 +394,11 @@
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-6 md:gap-8">
                     <div class="flex items-center">
-                        <i class="fas fa-envelope text-accent-orange text-xl mr-3" aria-hidden="true"></i>
+                        <svg class="w-5 h-5 text-accent-orange mr-3" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-envelope"></use></svg>
                         <span class="text-lg text-white">prathameshnium[at]duck.com</span>
                     </div>
                     <div class="flex items-center">
-                        <i class="fas fa-map-marker-alt text-accent-orange text-2xl mr-4" aria-hidden="true"></i>
+                        <svg class="w-5 h-5 text-accent-orange mr-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-map-marker-alt"></use></svg>
                         <p class="text-lg text-white">Mumbai, Maharashtra, India</p>
                     </div>
                 </div>
@@ -413,23 +410,23 @@
     <footer class="border-t border-gray-800 bg-dark-bg py-8">
         <div class="container mx-auto px-6 text-center text-slate">
             <div class="flex justify-center items-center flex-wrap gap-6 mb-6">
-                <a href="#contact" class="social-icon text-2xl" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
-                <a href="https://scholar.google.com/citations?user=DJgzI30AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="Google Scholar"><i class="fas fa-graduation-cap" aria-hidden="true"></i></a>
-                <a href="https://www.linkedin.com/in/prathamesh-k-deshmukh" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-                <a href="https://github.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
-                <a href="https://x.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="X (formerly Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+                <a href="#contact" class="social-icon text-2xl" aria-label="Email"><svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-envelope"></use></svg></a>
+                <a href="https://scholar.google.com/citations?user=DJgzI30AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="Google Scholar"><svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-graduation-cap"></use></svg></a>
+                <a href="https://www.linkedin.com/in/prathamesh-k-deshmukh" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="LinkedIn"><svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-linkedin"></use></svg></a>
+                <a href="https://github.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="GitHub"><svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-github"></use></svg></a>
+                <a href="https://x.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="X (formerly Twitter)"><svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-x-twitter"></use></svg></a>
                 <!-- Footer More Links Dropdown -->
-                <div class="relative" id="footer-more-links-container">
-                    <button id="footer-more-links-button" class="social-icon text-2xl" aria-label="More social and academic links" aria-haspopup="true" aria-expanded="false" aria-controls="footer-more-links-menu">
-                        <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
+                <div class="relative" data-dropdown-parent>
+                    <button data-dropdown-toggle id="footer-more-links-button" class="social-icon text-2xl" aria-label="More social and academic links" aria-haspopup="true" aria-expanded="false" aria-controls="footer-more-links-menu">
+                        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-ellipsis-h"></use></svg>
                     </button>
-                        <div id="footer-more-links-menu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg p-2 w-max bottom-full mb-2 left-1/2 -translate-x-1/2 z-50">
-                        <a href="https://www.researchgate.net/profile/Prathamesh-Deshmukh-6" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><i class="fab fa-researchgate w-6 mr-2"></i> ResearchGate</a>
-                        <a href="https://gitlab.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><i class="fab fa-gitlab w-6 mr-2"></i> GitLab</a>
-                        <a href="https://orcid.org/0009-0008-3278-0837" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><i class="fab fa-orcid w-6 mr-2"></i> ORCID</a>
-                        <a href="https://www.scopus.com/authid/detail.uri?authorId=59544780300" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><i class="fas fa-file-alt w-6 mr-2"></i> Scopus</a>
-                        <a href="https://csr.academia.edu/PrathameshDeshmukh" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><i class="fas fa-book-open w-6 mr-2" aria-hidden="true"></i> Academia</a>
-                        <a href="https://www.webofscience.com/wos/author/record/OFN-9289-2025" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><i class="fas fa-flask w-6 mr-2"></i> Web of Science</a>
+                        <div id="footer-more-links-menu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg p-2 w-max bottom-full mb-2 left-1/2 -translate-x-1/2 z-50" data-dropdown>
+                        <a href="https://www.researchgate.net/profile/Prathamesh-Deshmukh-6" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><svg class="w-6 h-6 mr-2" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-researchgate"></use></svg> ResearchGate</a>
+                        <a href="https://gitlab.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><svg class="w-6 h-6 mr-2" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-gitlab"></use></svg> GitLab</a>
+                        <a href="https://orcid.org/0009-0008-3278-0837" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><svg class="w-6 h-6 mr-2" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-orcid"></use></svg> ORCID</a>
+                        <a href="https://www.scopus.com/authid/detail.uri?authorId=59544780300" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><svg class="w-6 h-6 mr-2" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-file-alt"></use></svg> Scopus</a>
+                        <a href="https://csr.academia.edu/PrathameshDeshmukh" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><svg class="w-6 h-6 mr-2" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-book-open"></use></svg> Academia</a>
+                        <a href="https://www.webofscience.com/wos/author/record/OFN-9289-2025" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><svg class="w-6 h-6 mr-2" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-flask"></use></svg> Web of Science</a>
                     </div>
                 </div>
             </div>
