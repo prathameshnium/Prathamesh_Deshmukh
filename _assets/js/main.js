@@ -437,4 +437,3 @@ function init() {
  * Entry point: run the main initialization function when the DOM is ready.
  */
 document.addEventListener('DOMContentLoaded', init);
-});
