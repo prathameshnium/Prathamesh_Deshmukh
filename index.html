@@ -36,9 +36,10 @@
     <link rel="manifest" href="site.webmanifest">
 
     <!-- Font Preloading and Styles -->
+    <link rel="preload" href="/_assets/fonts/junicode-v1.002-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/_assets/fonts.css">
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C4JV6510PN"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C4JV6510PN"></script> <!-- Added async for non-blocking load -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
