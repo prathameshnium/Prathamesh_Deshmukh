@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sudip Mukherjee | Materials Physics Lab</title> 
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data:;">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="description" content="The Sudip Mukherjee Laboratory is a research group focused on materials science and condensed matter physics, operating within the UGC-DAE CSR.">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../_assets/fonts.css">
     <link rel="stylesheet" href="../_assets/style.css">
     
 </head>
@@ -16,9 +14,12 @@
     <div id="preloader" class="fixed top-0 left-0 w-full h-full bg-dark-bg flex justify-center items-center z-[100]">
         <div class="loader"></div>
     </div>
+    <!-- SVG Sprite -->
+    <div id="svg-sprite-container" style="display: none;"></div>
+
     <header class="bg-dark-bg/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-700">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="../index.html" class="text-2xl font-bold text-white font-serif">Prathamesh Deshmukh</a>
+            <a href="../index.html" class="text-2xl font-bold text-white">Prathamesh Deshmukh</a>
             <nav class="hidden md:flex items-center space-x-6">
                 <a href="#about" class="nav-link">About</a>
                 <a href="#equipment" class="nav-link">Equipment</a>
@@ -26,13 +27,13 @@
                 <a href="#people" class="nav-link">People</a>
                 <div class="relative">
                     <button id="portfolio-button" class="nav-link flex items-center">
-                        Portfolio <i class="fas fa-chevron-down text-xs ml-2"></i>
+                        Portfolio <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/></svg>
                     </button>
                     <div id="portfolio-menu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-56 top-full right-0 mt-2 z-50">
                         <!-- Submenu Item -->
                         <div id="core-portfolio-item" class="relative">
                             <a href="#" class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange/20 flex justify-between items-center">
-                                Core Portfolio <i class="fas fa-chevron-right text-xs"></i>
+                                Core Portfolio <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/></svg>
                             </a>
                             <div id="core-portfolio-submenu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 -left-full mt-0 z-50">
                                 <a href="research.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange/20">Research & Pubs</a>
@@ -49,8 +50,8 @@
                 </div>
                 <a href="../index.html#contact" class="nav-link">Contact</a>
             </nav>
-            <button id="mobile-menu-button" class="md:hidden text-white text-2xl" aria-label="Open menu">
-                <i class="fas fa-bars" aria-hidden="true"></i>
+            <button id="mobile-menu-button" class="md:hidden text-white text-2xl" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-bars"></use></svg>
             </button>
         </div>
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
@@ -64,8 +65,7 @@
             <!-- Accordion for Portfolio -->
             <div>
                 <button id="mobile-portfolio-button" class="w-full text-left py-2 nav-link flex justify-between items-center">
-                    <span>Portfolio</span>
-                    <i class="fas fa-chevron-down text-xs"></i>
+                    <span>Portfolio</span><svg class="w-2.5 h-2.5 ml-2.5 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/></svg>
                 </button>
                 <div id="mobile-portfolio-menu" class="hidden pl-4">
                     <a href="research.html" class="block py-2 nav-link">Research & Pubs</a>
@@ -81,7 +81,7 @@
 
         <section id="about" class="py-20 text-center">
             <div class="w-full max-w-4xl mx-auto">
-                <i class="fas fa-atom text-5xl text-accent-orange mb-4" aria-hidden="true"></i>
+                <svg class="w-12 h-12 mx-auto text-accent-orange mb-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-atom"></use></svg>
                 <h2 class="text-5xl font-bold section-title mb-4">Sudip Mukherjee Materials Physics Lab</h2>
                 <p class="text-lg max-w-3xl mx-auto mb-8 text-light-slate">
                     We are a research group focused on materials science and condensed matter physics, operating within the UGC-DAE CSR. Our lab is dedicated to the advanced characterization of electronic and optical properties of novel materials. All our systems are fully automated with custom LabVIEW and Python programs for precise and efficient data acquisition.
@@ -130,24 +130,24 @@
                 <div class="card p-6 rounded-lg flex flex-col">
                     <p class="text-sm text-light-slate mb-2">Article &middot; Jul 2025</p>
                     <h4 class="font-semibold text-xl text-accent-orange mb-4 flex-grow">Exploring the role of Cu<sup>1+</sup> in quasi-1D Cu<sub>1&minus;x</sub>Li<sub>x</sub>O (x = 0.025)</h4>
-                    <a href="research.html" class="cta-button text-center bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-4 rounded-lg mt-auto">
-                        View Article <i class="fas fa-arrow-right ml-2 text-xs" aria-hidden="true"></i>
+                    <a href="research.html" class="cta-button text-center bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-4 rounded-lg mt-auto" aria-label="View article on the role of Cu1+">
+                        View Article <svg class="w-3 h-3 inline-block ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                     </a>
                 </div>
 
                 <div class="card p-6 rounded-lg flex flex-col">
                     <p class="text-sm text-light-slate mb-2">Article &middot; May 2025</p>
                     <h4 class="font-semibold text-xl text-accent-orange mb-4 flex-grow">Negative capacitance and magnetodielectric effect in Cu<sub>2</sub>O-CuO ceramics</h4>
-                    <a href="research.html" class="cta-button text-center bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-4 rounded-lg mt-auto">
-                        View Article <i class="fas fa-arrow-right ml-2 text-xs" aria-hidden="true"></i>
+                    <a href="research.html" class="cta-button text-center bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-4 rounded-lg mt-auto" aria-label="View article on negative capacitance">
+                        View Article <svg class="w-3 h-3 inline-block ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                     </a>
                 </div>
 
                 <div class="card p-6 rounded-lg flex flex-col">
                     <p class="text-sm text-light-slate mb-2">Article &middot; Sep 2024</p>
                     <h4 class="font-semibold text-xl text-accent-orange mb-4 flex-grow">Exploration of near room temperature magnetoelectric coupling in BaFe<sub>10</sub>Sc<sub>2</sub>O<sub>19</sub> : KNbO<sub>3</sub> composite</h4>
-                    <a href="research.html" class="cta-button text-center bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-4 rounded-lg mt-auto">
-                        View Article <i class="fas fa-arrow-right ml-2 text-xs" aria-hidden="true"></i>
+                    <a href="research.html" class="cta-button text-center bg-transparent border-2 border-accent-orange text-accent-orange font-semibold py-2 px-4 rounded-lg mt-auto" aria-label="View article on magnetoelectric coupling">
+                        View Article <svg class="w-3 h-3 inline-block ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                     </a>
                 </div>
 
@@ -160,8 +160,8 @@
                 <h3 class="text-2xl font-semibold text-accent-orange mb-6 text-center">Lab Head</h3>
                 <div class="card p-6 rounded-lg mb-10 max-w-md mx-auto text-center">
                     <h4 class="text-xl font-bold text-white">Sudip Mukherjee</h4>
-                    <a href="https://www.csr.res.in/Faculty/profile/889/893/Dr.SudipMukherjee" target="_blank" rel="noopener noreferrer" class="text-accent-orange/80 hover:text-accent-orange text-sm mt-2 inline-block" aria-label="View official profile for Sudip Mukherjee">
-                        Official Profile <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                    <a href="https://www.csr.res.in/Faculty/profile/889/893/Dr.SudipMukherjee" target="_blank" rel="noopener noreferrer" class="publication-link text-sm mt-2 inline-block" aria-label="View official profile for Sudip Mukherjee">
+                        Official Profile <svg class="w-3 h-3 inline-block ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-external-link-alt"></use></svg>
                     </a>
                 </div>
 
@@ -200,11 +200,11 @@
     <footer class="border-t border-gray-800">
         <div class="container mx-auto px-6 py-8 text-center text-slate">
             <div class="flex justify-center items-center flex-wrap gap-6 mb-6">
-                <a href="../index.html#contact" class="social-icon text-2xl" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
-                <a href="https://scholar.google.com/citations?user=DJgzI30AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="Google Scholar"><i class="fas fa-graduation-cap" aria-hidden="true"></i></a>
-                <a href="https://www.linkedin.com/in/prathamesh-k-deshmukh" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-                <a href="https://github.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
-                <a href="https://x.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="X (formerly Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+                <a href="../index.html#contact" class="social-icon text-2xl" aria-label="Email"><svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-envelope"></use></svg></a>
+                <a href="https://scholar.google.com/citations?user=DJgzI30AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="Google Scholar"><svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-graduation-cap"></use></svg></a>
+                <a href="https://www.linkedin.com/in/prathamesh-k-deshmukh" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="LinkedIn"><svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-linkedin"></use></svg></a>
+                <a href="https://github.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="GitHub"><svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-github"></use></svg></a>
+                <a href="https://x.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="X (formerly Twitter)"><svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-x-twitter"></use></svg></a>
             </div>
             <div class="mb-6">
                 <a href="sitemap.html" class="hover:text-accent-orange transition-colors">Sitemap & Link Directory</a>
