@@ -12,6 +12,8 @@ const pagesToSearch = [
     '../pages/Sudip_Mukherjee_Materials_Physics_Lab.html'
 ];
 
+const socialIndexUrl = '../_assets/social-search-index.json';
+
 const searchInput = document.getElementById('search-input');
 const searchButton = document.getElementById('search-button');
 const searchResults = document.getElementById('search-results');
@@ -33,6 +35,26 @@ async function performSearch() {
     searchResults.innerHTML = '<p>Searching...</p>';
     let results = [];
 
+    // 1. Search social profiles from JSON
+    try {
+        const response = await fetch(socialIndexUrl);
+        if (response.ok) {
+            const socialProfiles = await response.json();
+            socialProfiles.forEach(profile => {
+                const content = (profile.title + ' ' + profile.content).toLowerCase();
+                if (content.includes(query)) {
+                    results.push({
+                        url: profile.url,
+                        title: profile.title,
+                        content: profile.content.toLowerCase()
+                    });
+                }
+            });
+        }
+    } catch (error) {
+        console.error('Error fetching or parsing social index:', error);
+    }
+
     for (const page of pagesToSearch) {
         try {
             const response = await fetch(page);
@@ -46,7 +68,7 @@ async function performSearch() {
 
             if (content.includes(query)) {
                 results.push({
-                    url: page.replace('..', ''),
+                    url: page.startsWith('..') ? page.substring(2) : page,
                     title: title,
                     content: content
                 });
@@ -68,9 +90,11 @@ function displayResults(results, query) {
     let html = '<ul>';
     results.forEach(result => {
         const snippet = getSnippet(result.content, query);
+        const isExternal = result.url.startsWith('http');
         html += `<li class="mb-4">
-            <a href="${result.url}" class="text-xl text-accent-orange hover:underline">${result.title}</a>
+            <a href="${result.url}" class="text-xl text-accent-orange hover:underline" ${isExternal ? 'target="_blank" rel="noopener noreferrer"' : ''}>${result.title} ${isExternal ? '<i class="fas fa-external-link-alt text-sm ml-1"></i>' : ''}</a>
             <p class="text-light-slate">${snippet}</p>
+            <p class="text-sm text-slate mt-1">${isExternal ? result.url : window.location.origin + result.url}</p>
         </li>`;
     });
     html += '</ul>';
