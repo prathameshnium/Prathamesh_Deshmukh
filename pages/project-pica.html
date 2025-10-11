@@ -75,13 +75,13 @@
                 <a href="#getting-started" class="nav-link">Get Started</a>
                 <div class="relative">
                     <button id="portfolio-button" class="nav-link flex items-center">
-                        Portfolio <i class="fas fa-chevron-down text-xs ml-2"></i>
+                        Portfolio <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/></svg>
                     </button>
                     <div id="portfolio-menu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-56 top-full right-0 mt-2 z-50">
                         <!-- Submenu Item -->
                         <div id="core-portfolio-item" class="relative">
                             <a href="#" class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange/20 flex justify-between items-center">
-                                Core Portfolio <i class="fas fa-chevron-right text-xs"></i>
+                                Core Portfolio <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/></svg>
                             </a>
                             <div id="core-portfolio-submenu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 -left-full mt-0 z-50">
                                 <a href="research.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange/20">Research & Pubs</a>
@@ -98,8 +98,8 @@
                 </div>
                 <a href="../index.html#contact" class="nav-link">Contact</a>
             </nav>
-            <button id="mobile-menu-button" class="md:hidden text-white text-2xl" aria-label="Open menu">
-                <i class="fas fa-bars"></i>
+            <button id="mobile-menu-button" class="md:hidden text-white text-2xl" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-bars"></use></svg>
             </button>
         </div>
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
@@ -140,16 +140,16 @@
                         <div class="flex justify-center items-center gap-4">
                             <span class="text-slate font-semibold">Share:</span>
                             <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fprathameshdeshmukh.site%2Fpages%2Fproject-pica.html&text=Check%20out%20PICA%2C%20a%20Python-based%20software%20suite%20for%20lab%20automation.&via=prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Share on X">
-                                <i class="fab fa-x-twitter"></i>
+                                <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-x-twitter"></use></svg>
                             </a>
                             <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fprathameshdeshmukh.site%2Fpages%2Fproject-pica.html&title=PICA%3A%20Python%20Instrument%20Control%20%26%20Automation%20for%20Physics%20Research&summary=Check%20out%20PICA%2C%20a%20Python-based%20software%20suite%20for%20instrument%20control%20and%20automation%20in%20materials%20science%20and%20physics%20research." target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Share on LinkedIn">
-                                <i class="fab fa-linkedin"></i>
+                                <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-linkedin"></use></svg>
                             </a>
                             <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fprathameshdeshmukh.site%2Fpages%2Fproject-pica.html&title=PICA%3A%20Python%20Instrument%20Control%20%26%20Automation%20for%20Physics%20Research" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Share on Reddit">
-                                <i class="fab fa-reddit-alien"></i>
+                                <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-reddit-alien"></use></svg>
                             </a>
                             <a href="mailto:?subject=PICA%3A%20Python%20Instrument%20Control%20%26%20Automation%20for%20Physics%20Research&body=Check%20out%20PICA%2C%20a%20Python-based%20software%20suite%20for%20instrument%20control%20and%20automation%20in%20materials%20science%20and%20physics%20research.%0A%0Ahttps%3A%2F%2Fprathameshdeshmukh.site%2Fpages%2Fproject-pica.html" class="social-icon" aria-label="Share via Email">
-                                <i class="fas fa-envelope"></i>
+                                <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-envelope"></use></svg>
                             </a>
                         </div>
                     </div>
@@ -176,12 +176,12 @@
                 <section class="mb-12" aria-labelledby="core-features-title">
                     <h2 id="core-features-title" class="text-3xl font-semibold section-title mb-8 text-center">Core Features</h2>
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div class="card p-6 rounded-lg text-center"><i class="fas fa-desktop text-accent-orange text-3xl mb-3"></i><h3 class="font-bold text-xl text-accent-orange">Centralized Dashboard</h3><p class="text-light-slate">A comprehensive GUI for launching all modules.</p></div>
-                        <div class="card p-6 rounded-lg text-center"><i class="fas fa-cogs text-accent-orange text-3xl mb-3"></i><h3 class="font-bold text-xl text-accent-orange">Isolated Processes</h3><p class="text-light-slate">Ensures stability and prevents resource conflicts.</p></div>
-                        <div class="card p-6 rounded-lg text-center"><i class="fas fa-search text-accent-orange text-3xl mb-3"></i><h3 class="font-bold text-xl text-accent-orange">VISA Instrument Scanner</h3><p class="text-light-slate">Discover, identify, and troubleshoot connections.</p></div>
-                        <div class="card p-6 rounded-lg text-center"><i class="fas fa-puzzle-piece text-accent-orange text-3xl mb-3"></i><h3 class="font-bold text-xl text-accent-orange">Modular Architecture</h3><p class="text-light-slate">Self-contained modules for each experiment.</p></div>
-                        <div class="card p-6 rounded-lg text-center"><i class="fas fa-book-open text-accent-orange text-3xl mb-3"></i><h3 class="font-bold text-xl text-accent-orange">Embedded Docs</h3><p class="text-light-slate">In-app viewer for README and license files.</p></div>
-                        <div class="card p-6 rounded-lg text-center"><i class="fas fa-terminal text-accent-orange text-3xl mb-3"></i><h3 class="font-bold text-xl text-accent-orange">System Console Log</h3><p class="text-light-slate">Real-time status updates and diagnostics.</p></div>
+                        <div class="card p-6 rounded-lg text-center"><svg class="w-8 h-8 mx-auto text-accent-orange mb-3" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg><h3 class="font-bold text-xl text-accent-orange">Centralized Dashboard</h3><p class="text-light-slate">A comprehensive GUI for launching all modules.</p></div>
+                        <div class="card p-6 rounded-lg text-center"><svg class="w-8 h-8 mx-auto text-accent-orange mb-3" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.532 1.532 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.532 1.532 0 01-.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"></path></svg><h3 class="font-bold text-xl text-accent-orange">Isolated Processes</h3><p class="text-light-slate">Ensures stability and prevents resource conflicts.</p></div>
+                        <div class="card p-6 rounded-lg text-center"><svg class="w-8 h-8 mx-auto text-accent-orange mb-3" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-search"></use></svg><h3 class="font-bold text-xl text-accent-orange">VISA Instrument Scanner</h3><p class="text-light-slate">Discover, identify, and troubleshoot connections.</p></div>
+                        <div class="card p-6 rounded-lg text-center"><svg class="w-8 h-8 mx-auto text-accent-orange mb-3" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg><h3 class="font-bold text-xl text-accent-orange">Modular Architecture</h3><p class="text-light-slate">Self-contained modules for each experiment.</p></div>
+                        <div class="card p-6 rounded-lg text-center"><svg class="w-8 h-8 mx-auto text-accent-orange mb-3" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-book-open"></use></svg><h3 class="font-bold text-xl text-accent-orange">Embedded Docs</h3><p class="text-light-slate">In-app viewer for README and license files.</p></div>
+                        <div class="card p-6 rounded-lg text-center"><svg class="w-8 h-8 mx-auto text-accent-orange mb-3" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3.293 1.293a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L7.586 10 5.293 7.707a1 1 0 010-1.414zM11 12a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg><h3 class="font-bold text-xl text-accent-orange">System Console Log</h3><p class="text-light-slate">Real-time status updates and diagnostics.</p></div>
                     </div>
                 </section>
 
@@ -329,7 +329,7 @@ cd PICA-Python-Instrument-Control-and-Automation</code></pre>
 
                 <div class="text-center mt-16">
                     <a href="https://github.com/prathameshnium/PICA-Python-Instrument-Control-and-Automation" target="_blank" rel="noopener noreferrer" class="cta-button inline-block bg-accent-orange border-2 border-accent-orange text-dark-bg font-semibold py-3 px-8 rounded-lg text-lg">
-                        <i class="fab fa-github mr-2" aria-hidden="true"></i> View Project on GitHub
+                        <svg class="w-5 h-5 inline-block mr-2" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-github"></use></svg> View Project on GitHub
                     </a>
                 </div>
             </div>
@@ -340,11 +340,11 @@ cd PICA-Python-Instrument-Control-and-Automation</code></pre>
     <footer class="border-t border-gray-800 bg-dark-bg py-8">
         <div class="container mx-auto px-6 text-center text-slate">
              <div class="flex justify-center items-center flex-wrap gap-6 mb-6">
-                <a href="../index.html#contact" class="social-icon text-2xl" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
-                <a href="https://scholar.google.com/citations?user=DJgzI30AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="Google Scholar"><i class="fas fa-graduation-cap" aria-hidden="true"></i></a>
-                <a href="https://www.linkedin.com/in/prathamesh-k-deshmukh" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-                <a href="https://github.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
-                <a href="https://x.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="X (formerly Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+                <a href="../index.html#contact" class="social-icon text-2xl" aria-label="Email"><svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-envelope"></use></svg></a>
+                <a href="https://scholar.google.com/citations?user=DJgzI30AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="Google Scholar"><svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-graduation-cap"></use></svg></a>
+                <a href="https://www.linkedin.com/in/prathamesh-k-deshmukh" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="LinkedIn"><svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-linkedin"></use></svg></a>
+                <a href="https://github.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="GitHub"><svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-github"></use></svg></a>
+                <a href="https://x.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="X (formerly Twitter)"><svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-x-twitter"></use></svg></a>
             </div>
             <div class="mb-6">
                 <a href="sitemap.html" class="hover:text-accent-orange transition-colors">Sitemap & Link Directory</a>

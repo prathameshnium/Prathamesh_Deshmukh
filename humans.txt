@@ -6,12 +6,6 @@
     GitHub: @prathameshnium
 
 
-/* THANKS */
-
-    Font Awesome for icons.
-    The open-source community for their invaluable tools and libraries.
-
-
 /* SITE */
 
     Last update: 2025
