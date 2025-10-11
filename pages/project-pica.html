@@ -74,7 +74,7 @@
     <header class="bg-dark-bg/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-700">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="../index.html" class="text-2xl font-bold text-white font-serif">Prathamesh Deshmukh</a>
-            <nav class="hidden md:flex items-center space-x-6">
+            <nav class="hidden md:flex items-center space-x-6" aria-label="Main">
                 <a href="../index.html#about" class="nav-link">About</a>
                 <a href="#modules" class="nav-link">Modules</a>
                 <a href="#getting-started" class="nav-link">Get Started</a>
@@ -140,6 +140,24 @@
                         <img src="https://img.shields.io/badge/Python-3.9+-brightgreen.svg" alt="Python 3.9+ supported">
                         <img src="https://img.shields.io/badge/Status-Active-success.svg" alt="Project Status: Active">
                     </div>
+                    <!-- Social Sharing Links -->
+                    <div class="mt-8" aria-label="Share this project">
+                        <div class="flex justify-center items-center gap-4">
+                            <span class="text-slate font-semibold">Share:</span>
+                            <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fprathameshdeshmukh.site%2Fpages%2Fproject-pica.html&text=Check%20out%20PICA%2C%20a%20Python-based%20software%20suite%20for%20lab%20automation.&via=prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Share on X">
+                                <i class="fab fa-x-twitter"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fprathameshdeshmukh.site%2Fpages%2Fproject-pica.html&title=PICA%3A%20Python%20Instrument%20Control%20%26%20Automation%20for%20Physics%20Research&summary=Check%20out%20PICA%2C%20a%20Python-based%20software%20suite%20for%20instrument%20control%20and%20automation%20in%20materials%20science%20and%20physics%20research." target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Share on LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fprathameshdeshmukh.site%2Fpages%2Fproject-pica.html&title=PICA%3A%20Python%20Instrument%20Control%20%26%20Automation%20for%20Physics%20Research" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Share on Reddit">
+                                <i class="fab fa-reddit-alien"></i>
+                            </a>
+                            <a href="mailto:?subject=PICA%3A%20Python%20Instrument%20Control%20%26%20Automation%20for%20Physics%20Research&body=Check%20out%20PICA%2C%20a%20Python-based%20software%20suite%20for%20instrument%20control%20and%20automation%20in%20materials%20science%20and%20physics%20research.%0A%0Ahttps%3A%2F%2Fprathameshdeshmukh.site%2Fpages%2Fproject-pica.html" class="social-icon" aria-label="Share via Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 
                 <!-- Overview & Launcher Screenshot -->
@@ -179,25 +197,25 @@
                         <table class="markdown-table">
                             <thead>
                                 <tr>
-                                    <th>Instrument Combination</th>
-                                    <th>Measurement Type</th>
-                                    <th>Description</th>
+                                    <th scope="col">Instrument Combination</th>
+                                    <th scope="col">Measurement Type</th>
+                                    <th scope="col">Description</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td><strong>Keithley 6221 / 2182A</strong></td><td>I-V Characterization (AC Delta)</td><td>High-precision I-V sweeps for low-resistance samples.</td></tr>
-                                <tr><td></td><td>Resistance vs. Temperature (R-T)</td><td>Automated R-T data acquisition with active or passive temperature profiles.</td></tr>
-                                <tr><td><strong>Keithley 2400 SourceMeter</strong></td><td>Four-Probe I-V Characterization</td><td>Standard I-V sweeps for materials like semiconductors.</td></tr>
-                                <tr><td></td><td>Four-Probe R-T Characterization</td><td>Temperature-dependent resistance measurements.</td></tr>
-                                <tr><td><strong>Keithley 2400 / 2182A</strong></td><td>High-Precision I-V</td><td>Enhanced voltage resolution using a nanovoltmeter.</td></tr>
-                                <tr><td></td><td>High-Precision R-T</td><td>Temperature-dependent measurements with enhanced voltage precision.</td></tr>
-                                <tr><td><strong>Keithley 6517B Electrometer</strong></td><td>High-Resistance I-V Characterization</td><td>For insulating materials, dielectrics, and high-impedance devices.</td></tr>
-                                <tr><td></td><td>Resistivity vs. Temperature</td><td>High-resistance measurements with active or passive temperature control.</td></tr>
-                                <tr><td></td><td>Pyroelectric Current vs. Temperature</td><td>Quantifies pyroelectric current during a controlled temperature ramp.</td></tr>
+                                <tr><td rowspan="2"><strong>Keithley 6221 / 2182A</strong></td><td>I-V Characterization (AC Delta)</td><td>High-precision I-V sweeps for low-resistance samples.</td></tr>
+                                <tr><td>Resistance vs. Temperature (R-T)</td><td>Automated R-T data acquisition with active or passive temperature profiles.</td></tr>
+                                <tr><td rowspan="2"><strong>Keithley 2400 SourceMeter</strong></td><td>Four-Probe I-V Characterization</td><td>Standard I-V sweeps for materials like semiconductors.</td></tr>
+                                <tr><td>Four-Probe R-T Characterization</td><td>Temperature-dependent resistance measurements.</td></tr>
+                                <tr><td rowspan="2"><strong>Keithley 2400 / 2182A</strong></td><td>High-Precision I-V</td><td>Enhanced voltage resolution using a nanovoltmeter.</td></tr>
+                                <tr><td>High-Precision R-T</td><td>Temperature-dependent measurements with enhanced voltage precision.</td></tr>
+                                <tr><td rowspan="3"><strong>Keithley 6517B Electrometer</strong></td><td>High-Resistance I-V Characterization</td><td>For insulating materials, dielectrics, and high-impedance devices.</td></tr>
+                                <tr><td>Resistivity vs. Temperature</td><td>High-resistance measurements with active or passive temperature control.</td></tr>
+                                <tr><td>Pyroelectric Current vs. Temperature</td><td>Quantifies pyroelectric current during a controlled temperature ramp.</td></tr>
                                 <tr><td><strong>Keysight E4980A LCR Meter</strong></td><td>Capacitance-Voltage (C-V) Sweeps</td><td>Automated C-V measurements for semiconductor and dielectric analysis.</td></tr>
                                 <tr><td><strong>Lock-in Amplifier (Generic)</strong></td><td>AC Resistance Measurement</td><td>For measuring AC transport properties and contact impedance.</td></tr>
-                                <tr><td><strong>Lakeshore 340/350 Controller</strong></td><td>Temperature Control Utility</td><td>A standalone module for defining and executing temperature profiles.</td></tr>
-                                <tr><td></td><td>Temperature Monitoring Utility</td><td>A passive data logger for monitoring environmental temperature.</td></tr>
+                                <tr><td rowspan="2"><strong>Lakeshore 340/350 Controller</strong></td><td>Temperature Control Utility</td><td>A standalone module for defining and executing temperature profiles.</td></tr>
+                                <tr><td>Temperature Monitoring Utility</td><td>A passive data logger for monitoring environmental temperature.</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -210,10 +228,10 @@
                         <table class="markdown-table">
                             <thead>
                                 <tr>
-                                    <th>Instrument System</th>
-                                    <th>Parameter</th>
-                                    <th>Range</th>
-                                    <th>Best Resolution</th>
+                                    <th scope="col">Instrument System</th>
+                                    <th scope="col">Parameter</th>
+                                    <th scope="col">Range</th>
+                                    <th scope="col">Best Resolution</th>
                                 </tr>
                             </thead>
                             <tbody>
