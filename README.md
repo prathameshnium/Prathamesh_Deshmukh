@@ -60,9 +60,9 @@
 
 ---
 
-### About Me
+### About This Repository
 
-My doctoral research is centered on **multiferroic composites** and other novel materials in **Condensed Matter Physics**. I bridge the gap between experimental physics and computational science by creating custom programs for **instrument control** using Python (`PyVISA`, `PyMeasure`) and automating complex **data analysis pipelines** (`Pandas`, `NumPy`, `SciPy`). I am currently expanding my expertise in **COMSOL Multiphysics** to better model and simulate complex physical systems.
+This repository contains the source code for my **Academic Portfolio Website**. It is a static site built with modern web standards to showcase my research in **Condensed Matter Physics**, my skills in **Scientific Programming**, and my professional journey. The site is designed to be a comprehensive resource for collaborators, recruiters, and the scientific community.
 
 - **Primary Repositories:** My main body of work is on **[GitHub](https://github.com/prathameshnium)**, with a mirror on **[GitLab](https://gitlab.com/prathameshnium)**.
 - **Contact:** I'm open to collaborations. Reach me at **prathameshnium[at]duck[dot]com**.
