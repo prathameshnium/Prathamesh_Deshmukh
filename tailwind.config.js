@@ -16,10 +16,10 @@ module.exports = {
       colors: {
         'dark-bg': 'var(--color-bg-dark)',
         'card-bg': 'var(--color-bg-card)',
-        'accent-orange': 'var(--color-accent)',
+        'accent-orange': '#f6ad55', /* Retaining original accent for consistency */
         'light-slate': 'var(--color-text-light-slate)',
         'slate': 'var(--color-text-slate)',
-        'off-white': 'var(--color-text-off-white)',
+        'off-white': 'var(--color-text-light-slate)', /* Aliasing to the new light-slate */
         'white': 'var(--color-text-white)',
       },
       fontSize: {
