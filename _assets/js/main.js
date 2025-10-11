@@ -48,14 +48,25 @@ function setupThemeToggle() {
     }
 }
 
-// Mobile menu toggle
-const mobileMenuButton = document.getElementById('mobile-menu-button');
-const mobileMenu = document.getElementById('mobile-menu');
-if (mobileMenuButton && mobileMenu) {
-    // Populate mobile menu dynamically
-    const isIndex = window.location.pathname.endsWith('/') || window.location.pathname.endsWith('index.html');
-    const prefix = isIndex ? '' : '../';
-    mobileMenu.innerHTML = `
+document.addEventListener('DOMContentLoaded', () => {
+    // --- Mobile Menu Slide-in Logic ---
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    // Create and inject the overlay
+    const overlay = document.createElement('div');
+    overlay.id = 'menu-overlay';
+    document.body.appendChild(overlay);
+
+    const toggleMenu = () => {
+        mobileMenu.classList.toggle('is-open');
+        overlay.classList.toggle('is-open');
+    };
+
+    if (mobileMenu) {
+        const isIndex = window.location.pathname.endsWith('/') || window.location.pathname.endsWith('index.html');
+        const prefix = isIndex ? '' : '../';
+        mobileMenu.innerHTML = `
         <a href="${prefix}index.html" class="block py-2 nav-link">Home</a>
         <a href="${prefix}index.html#research" class="block py-2 nav-link">Research</a>
         <a href="${prefix}index.html#skills" class="block py-2 nav-link">Skills</a>
@@ -82,47 +93,47 @@ if (mobileMenuButton && mobileMenu) {
             <span>Toggle Theme</span>
             <i class="fas fa-moon"></i>
         </button>
-    `;
+    `; // End of innerHTML
+    }
 
-    mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
-}
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu); // Close menu when clicking overlay
+    }
 
-// Active nav link scrolling for one-page navigation
-const sections = document.querySelectorAll('main section[id]');
-const navLinks = document.querySelectorAll('header nav a[href^="#"]');
+    // --- Active nav link scrolling for one-page navigation ---
+    const sections = document.querySelectorAll('main section[id]');
+    const navLinks = document.querySelectorAll('header nav a[href^="#"]');
 
-function updateActiveNavLink() {
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (window.pageYOffset >= sectionTop - 70) {
-            current = section.getAttribute('id');
-        }
-    });
+    function updateActiveNavLink() {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (window.pageYOffset >= sectionTop - 70) {
+                current = section.getAttribute('id');
+            }
+        });
 
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        const linkHref = link.getAttribute('href');
-        if (linkHref && linkHref.includes(current)) {
-            link.classList.add('active');
-        }
-    });
-}
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            const linkHref = link.getAttribute('href');
+            if (linkHref && linkHref.includes(current)) {
+                link.classList.add('active');
+            }
+        });
+    }
 
-// Only add scroll listener if there are nav links for on-page sections
-if (navLinks.length > 0 && sections.length > 0) {
-    window.addEventListener('scroll', updateActiveNavLink);
-}
+    // Only add scroll listener if there are nav links for on-page sections
+    if (navLinks.length > 0 && sections.length > 0) {
+        window.addEventListener('scroll', updateActiveNavLink);
+    }
 
-
-// Main portfolio dropdown (desktop)
-document.addEventListener('DOMContentLoaded', () => {
-    // Desktop dropdown
+    // --- Desktop Dropdowns ---
+    // Main portfolio dropdown (desktop)
     const portfolioButton = document.getElementById('portfolio-button');
     const portfolioMenu = document.getElementById('portfolio-menu');
     let portfolioTimeout;
+
     if (portfolioButton && portfolioMenu) {
         const parent = portfolioButton.parentElement;
         parent.addEventListener('mouseenter', () => {
@@ -137,38 +148,34 @@ document.addEventListener('DOMContentLoaded', () => {
         portfolioMenu.addEventListener('mouseenter', () => clearTimeout(portfolioTimeout));
         portfolioMenu.addEventListener('mouseleave', () => portfolioMenu.classList.add('hidden'));
     }
-});
 
+    // Core portfolio submenu (desktop)
+    const corePortfolioItem = document.getElementById('core-portfolio-item');
+    const corePortfolioSubmenu = document.getElementById('core-portfolio-submenu');
+    let submenuTimeout;
 
-// Core portfolio submenu (desktop)
-const corePortfolioItem = document.getElementById('core-portfolio-item');
-const corePortfolioSubmenu = document.getElementById('core-portfolio-submenu');
-let submenuTimeout;
+    if (corePortfolioItem && corePortfolioSubmenu) {
+        corePortfolioItem.addEventListener('mouseenter', () => {
+            clearTimeout(submenuTimeout);
+            corePortfolioSubmenu.classList.remove('hidden');
+        });
 
-if (corePortfolioItem && corePortfolioSubmenu) {
-    corePortfolioItem.addEventListener('mouseenter', () => {
-        clearTimeout(submenuTimeout);
-        corePortfolioSubmenu.classList.remove('hidden');
-    });
+        corePortfolioItem.addEventListener('mouseleave', () => {
+            submenuTimeout = setTimeout(() => {
+                corePortfolioSubmenu.classList.add('hidden');
+            }, 300);
+        });
 
-    corePortfolioItem.addEventListener('mouseleave', () => {
-        submenuTimeout = setTimeout(() => {
+        corePortfolioSubmenu.addEventListener('mouseenter', () => {
+            clearTimeout(submenuTimeout);
+        });
+
+        corePortfolioSubmenu.addEventListener('mouseleave', () => {
             corePortfolioSubmenu.classList.add('hidden');
-        }, 300);
-    });
+        });
+    }
 
-    corePortfolioSubmenu.addEventListener('mouseenter', () => {
-        clearTimeout(submenuTimeout);
-    });
-
-    corePortfolioSubmenu.addEventListener('mouseleave', () => {
-        corePortfolioSubmenu.classList.add('hidden');
-    });
-}
-
-
-// Mobile portfolio accordion
-document.addEventListener('DOMContentLoaded', () => {
+    // --- Mobile portfolio accordion ---
     const mobilePortfolioButton = document.getElementById('mobile-portfolio-button');
     const mobilePortfolioMenu = document.getElementById('mobile-portfolio-menu');
 
@@ -180,9 +187,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 icon.classList.toggle('fa-chevron-down');
                 icon.classList.toggle('fa-chevron-up');
             }
-        }
-    )}
+        });
+    }
 
     // Initialize theme toggle functionality
     setupThemeToggle();
+
+    // --- Back to Top Button Logic ---
+    const backToTopButton = document.getElementById('back-to-top');
+
+    if (backToTopButton) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
 });

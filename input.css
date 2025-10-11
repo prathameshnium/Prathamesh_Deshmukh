@@ -101,3 +101,38 @@ pre {
 .sitemap-link:hover { border-left-color: theme('colors.accent-orange'); background-color: theme('colors.slate / 50%'); transform: translateX(5px); }
 .external-link { display: flex; align-items: center; padding: 0.75rem 1.5rem; background-color: #2d3748; transition: all 0.3s ease; color: #a8b2d1; }
 .external-link:hover { background-color: theme('colors.slate / 50%'); color: theme('colors.accent-orange'); }
+
+/* Mobile Menu Slide-in Styles */
+#mobile-menu {
+    @apply fixed top-0 right-0 h-full w-4/5 max-w-sm bg-card-bg shadow-lg p-6 transform transition-transform duration-300 ease-in-out md:hidden z-50;
+    transform: translateX(100%);
+}
+
+#mobile-menu.is-open {
+    transform: translateX(0);
+}
+
+/* Overlay for when the menu is open */
+#menu-overlay {
+    @apply fixed inset-0 bg-black/60 z-40 opacity-0 transition-opacity duration-300 ease-in-out;
+    pointer-events: none; /* Allows clicks to pass through when hidden */
+}
+
+#menu-overlay.is-open {
+    @apply opacity-100;
+    pointer-events: auto; /* Captures clicks when visible */
+}
+
+/* Back to Top Button */
+#back-to-top {
+    @apply fixed bottom-8 right-8 bg-accent-orange text-dark-bg w-12 h-12 rounded-full flex justify-center items-center shadow-lg z-50;
+    @apply opacity-0 pointer-events-none transition-all duration-300 ease-in-out;
+}
+
+#back-to-top.show {
+    @apply opacity-100 pointer-events-auto;
+}
+
+#back-to-top:hover {
+    @apply bg-accent-orange/90 scale-110 transform;
+}
