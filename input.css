@@ -3,6 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
+header.scrolled {
+    background-color: theme('colors.dark-bg/90');
+    backdrop-filter: blur(16px);
+}
+
 #preloader {
     position: fixed;
     top: 0;

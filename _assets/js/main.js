@@ -169,3 +169,15 @@ function setupDropdown(containerId, buttonId, menuId) {
 
 setupDropdown('more-links-container', 'more-links-button', 'more-links-menu');
 setupDropdown('footer-more-links-container', 'footer-more-links-button', 'footer-more-links-menu');
+
+// Add scrolled class to header
+const header = document.querySelector('header');
+if (header) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+}
