@@ -4,12 +4,14 @@
   "description": "Academic Portfolio Website of Prathamesh K. Deshmukh",
   "type": "module",
   "scripts": {
-    "build:css": "tailwindcss -i ./input.css -o ./_assets/style.css --minify",
-    "build:js": "esbuild ./_assets/js/main.js --bundle --minify --outfile=./_assets/dist/bundle.js",
+    "build:css": "npx tailwindcss -i ./input.css -o ./_assets/style.css --minify",
+    "build:js": "npx esbuild ./_assets/js/main.js --bundle --minify --outfile=./_assets/dist/bundle.js",
+    "build:js": "npx esbuild ./_assets/js/main.js --bundle --minify --outfile=./_assets/dist/bundle.js",
     "build": "npm run build:css && npm run build:js",
     "watch": "npm run build -- --watch"
   },
   "devDependencies": {
+    "esbuild": "^0.23.0",
     "tailwindcss": "^3.4.0"
   }
 }
