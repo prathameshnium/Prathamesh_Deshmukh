@@ -414,15 +414,6 @@ function main() {
     setupCopyCodeButtons();
     setupSyntaxHighlighting();
 
-    // Hide preloader after a short delay to ensure paint
-    const preloader = document.querySelector('[data-preloader]');
-    if (preloader) {
-        preloader.style.opacity = '0';
-        preloader.addEventListener('transitionend', () => {
-            preloader.style.display = 'none';
-        });
-    }
-
     // Conditionally load search logic if on the search page
     if (document.querySelector('[data-search-form]')) {
         import('./search.js').then(module => module.default());
