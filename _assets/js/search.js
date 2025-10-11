@@ -1,11 +1,11 @@
-document.addEventListener('DOMContentLoaded', () => {
+export default function initializeSearch() {
     const searchIndexUrls = [
         '../_assets/search-index.json', 
         '../_assets/social-search-index.json'
     ];
-    const searchInput = document.getElementById('search-input');
-    const searchResults = document.getElementById('search-results');
-    const searchForm = document.getElementById('search-form');
+    const searchInput = document.querySelector('[data-search-input]');
+    const searchResults = document.querySelector('[data-search-results]');
+    const searchForm = document.querySelector('[data-search-form]');
     let searchIndex = [];
     let debounceTimer;
 
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const responses = await Promise.all(searchIndexUrls.map(url => 
                 fetch(url).catch(e => {
-                    console.warn(`Could not fetch ${url}:`, e);
+                    console.warn(`Could not fetch search index: ${url}`, e);
                     return { ok: false, json: () => Promise.resolve([]) }; // Return a mock response on network error
                 })
             ));
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             searchIndex = [].concat(...data); // Flatten the array of arrays
         } catch (error) {
             console.error('Error loading search index:', error);
-            if (searchResults) {
+            if (searchResults) { // Check if searchResults exists before using it
                 searchResults.innerHTML = '<p class="text-red-400">Could not load search index. Please try again later.</p>';
             }
         }
@@ -32,13 +32,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (event) event.preventDefault(); // Prevent form submission
         const query = searchInput.value.trim().toLowerCase();
         if (!query) {
-            // Clear results if the query is empty
-            searchResults.innerHTML = '<h2 class="sr-only" id="search-results-status">Search Cleared</h2><p>Please enter a search term.</p>';
+            searchResults.innerHTML = '<p>Please enter a search term to begin.</p>';
+            document.querySelector('[data-search-status]')?.textContent = 'Search Cleared';
             return;
         }
 
         if (searchIndex.length === 0) {
-            searchResults.innerHTML = '<h2 class="sr-only" id="search-results-status">Error</h2><p>Search index is not available.</p>';
+            searchResults.innerHTML = '<p>Search index is not available. Please try again later.</p>';
             return;
         }
 
@@ -53,17 +53,18 @@ document.addEventListener('DOMContentLoaded', () => {
             return query.split(/\s+/).every(word => content.includes(word));
         });
 
-        // Display results after a short delay to allow the UI to update
+        // Display results
         displayResults(results, query);
         searchResults.setAttribute('aria-busy', 'false');
     }
 
     function displayResults(results, query) {
         const resultsCount = results.length;
-        const statusMessage = `${resultsCount} ${resultsCount === 1 ? 'result' : 'results'} found for '${query}'`;
+        const statusMessage = `${resultsCount} ${resultsCount === 1 ? 'result' : 'results'} found`;
+        document.querySelector('[data-search-status]')?.textContent = statusMessage;
 
         if (results.length === 0) {
-            searchResults.innerHTML = `<h2 class="sr-only" id="search-results-status">${statusMessage}</h2><p>No results found.</p>`;
+            searchResults.innerHTML = `<p>No results found for "${query}".</p>`;
             return;
         }
 
@@ -86,7 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }).join('');
 
         searchResults.innerHTML = `
-            <h2 class="sr-only" id="search-results-status">${statusMessage}</h2>
             <ul class="space-y-4">${resultsHtml}</ul>
         `;
     }
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
         snippet = snippet.replace(new RegExp(query, 'gi'), (match) => `<mark class="bg-accent-orange/20 text-accent-orange rounded px-1">${match}</mark>`);
 
         return `${start > 0 ? '...' : ''}${snippet}${end < content.length ? '...' : ''}`;
-    }
+    } 
 
     if (searchForm && searchInput && searchResults) {
         // Load the index as soon as the page is ready
@@ -137,4 +137,4 @@ document.addEventListener('DOMContentLoaded', () => {
             performSearch(event);
         });
     }
-});
+}

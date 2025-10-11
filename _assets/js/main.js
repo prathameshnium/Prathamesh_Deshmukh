@@ -1,5 +1,5 @@
 /**
- * Main JavaScript file for the portfolio website.
+ * Main JavaScript file for the portfolio website (Refactored for Performance and Modularity).
  * Handles preloader, theme toggling, navigation, dropdowns, custom cursor,
  * and other interactive elements.
  */
@@ -10,16 +10,11 @@
  * @returns {void}
  */
 function setupThemeToggle() {
-    const themeToggleButtons = document.querySelectorAll('#theme-toggle, #mobile-theme-toggle');
+    const themeToggleButtons = document.querySelectorAll('[data-theme-toggle]');
     const html = document.documentElement;
 
-    const theme = {
-        current: localStorage.getItem('theme') || 'system',
-        icons: {
-            dark: '#icon-moon',
-            darker: '#icon-sun'
-        }
-    };
+    // Simplified theme state
+    let currentTheme = localStorage.getItem('theme') || 'dark'; // Default to dark
 
     const applyTheme = (newTheme) => {
         // Remove old theme class
@@ -31,25 +26,22 @@ function setupThemeToggle() {
         }
 
         // Update UI and save preference
-        updateIcons(newTheme);
+        updateIcons(newTheme === 'darker' ? '#icon-sun' : '#icon-moon');
         localStorage.setItem('theme', newTheme);
-        theme.current = newTheme;
+        currentTheme = newTheme;
     };
 
-    const updateIcons = (currentTheme) => {
-        const iconHref = theme.icons[currentTheme] || theme.icons.dark;
+    const updateIcons = (iconHref) => {
         themeToggleButtons.forEach(button => {
             const use = button.querySelector('use');
             if (use) use.setAttribute('href', iconHref);
         });
     };
 
-    themeToggleButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const newTheme = theme.current === 'dark' ? 'darker' : 'dark';
-            applyTheme(newTheme);
-        });
-    });
+    const toggleTheme = () => {
+        const newTheme = currentTheme === 'dark' ? 'darker' : 'dark';
+        applyTheme(newTheme);
+    };
 
     // Apply initial theme based on saved preference or system setting
     const savedTheme = localStorage.getItem('theme') || 'dark'; // Default to 'dark'
@@ -61,28 +53,29 @@ function setupThemeToggle() {
  */
 function setupMobileMenu() {
     // --- Mobile Menu Slide-in Logic ---
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuButton = document.querySelector('[data-mobile-menu-button]');
+    const mobileMenu = document.querySelector('[data-mobile-menu]');
 
     if (!mobileMenuButton || !mobileMenu) return;
 
     // Find or create the overlay
-    let overlay = document.getElementById('menu-overlay');
+    let overlay = document.querySelector('[data-menu-overlay]');
     if (!overlay) {
         overlay = document.createElement('div');
-        overlay.id = 'menu-overlay';
-        overlay.className = 'fixed inset-0 bg-black/60 z-40 opacity-0 transition-opacity duration-300 ease-in-out pointer-events-none md:hidden';
+        overlay.setAttribute('data-menu-overlay', '');
+        overlay.className = 'fixed inset-0 bg-black/60 z-30 opacity-0 transition-opacity duration-300 ease-in-out pointer-events-none md:hidden';
         document.body.appendChild(overlay);
     }
 
     const toggleMenu = () => {
-        const isOpen = mobileMenu.classList.toggle('is-open');
-        overlay.classList.toggle('is-open');
+        const isOpen = mobileMenu.classList.toggle('translate-x-0');
+        overlay.classList.toggle('opacity-100');
+        overlay.classList.toggle('pointer-events-auto');
         mobileMenuButton.setAttribute('aria-expanded', isOpen);
         document.body.style.overflow = isOpen ? 'hidden' : '';
 
         if (isOpen) {
-            // Optional: focus the first focusable element in the menu
+            // Focus the first focusable element in the menu
             mobileMenu.querySelector('a, button')?.focus();
         }
     };
@@ -98,7 +91,7 @@ function setupMobileMenu() {
 function setupActiveNavLinks() {
     // --- Active nav link scrolling using IntersectionObserver (more performant) ---
     const sections = document.querySelectorAll('main section[id]');
-    const navLinks = document.querySelectorAll('header nav a[href^="#"]');
+    const navLinks = document.querySelectorAll('header nav a[href*="#"]');
     const navLinksMap = new Map();
     navLinks.forEach(link => {
         const hash = link.getAttribute('href');
@@ -107,7 +100,7 @@ function setupActiveNavLinks() {
 
     const observerOptions = {
         root: null, // relative to the viewport
-        rootMargin: '-70px 0px -50% 0px', // Adjust top margin for sticky header, and bottom margin
+        rootMargin: '-80px 0px -50% 0px', // Adjust top margin for sticky header, and bottom margin
         threshold: 0
     };
 
@@ -116,7 +109,7 @@ function setupActiveNavLinks() {
             const id = `#${entry.target.getAttribute('id')}`;
             const link = navLinksMap.get(id);
 
-            if (entry.isIntersecting && entry.intersectionRatio > 0) {
+            if (entry.isIntersecting) {
                 // Remove active from all
                 navLinks.forEach(l => l.classList.remove('active'));
                 // Add active to the current one
@@ -138,10 +131,10 @@ function setupActiveNavLinks() {
  */
 function setupDropdowns() {
     document.querySelectorAll('[data-dropdown-parent]').forEach(parent => {
-        const toggle = parent.querySelector('[data-dropdown-toggle]');
-        const menu = parent.querySelector('[data-dropdown]');
+        const toggle = parent.querySelector('[aria-haspopup="true"]');
+        const menu = parent.querySelector('.dropdown-menu');
         let timeout;
-
+ 
         if (!toggle || !menu) return;
 
         const showMenu = () => {
@@ -154,7 +147,7 @@ function setupDropdowns() {
             timeout = setTimeout(() => {
                 menu.classList.add('hidden');
                 toggle.setAttribute('aria-expanded', 'false');
-            }, 200);
+            }, 150);
         };
 
         parent.addEventListener('mouseenter', showMenu);
@@ -174,14 +167,16 @@ function setupDropdowns() {
  * within the mobile menu.
  */
 function setupMobileAccordion() {
-    const mobilePortfolioButton = document.getElementById('mobile-portfolio-button');
-    const mobilePortfolioMenu = document.getElementById('mobile-portfolio-menu');
+    const mobilePortfolioButton = document.querySelector('[data-mobile-accordion-button]');
+    const mobilePortfolioMenu = document.querySelector('[data-mobile-accordion-menu]');
+    const icon = mobilePortfolioButton?.querySelector('svg');
 
     if (mobilePortfolioButton && mobilePortfolioMenu) {
         mobilePortfolioButton.addEventListener('click', () => {
             const isExpanded = mobilePortfolioButton.getAttribute('aria-expanded') === 'true';
             mobilePortfolioButton.setAttribute('aria-expanded', !isExpanded);
             mobilePortfolioMenu.classList.toggle('hidden');
+            icon?.classList.toggle('rotate-180');
         });
     }
 }
@@ -191,7 +186,7 @@ function setupMobileAccordion() {
  * and smoothly scrolling the page to the top when clicked.
  */
 function setupBackToTopButton() {
-    const backToTopButton = document.getElementById('back-to-top');
+    const backToTopButton = document.querySelector('[data-back-to-top]');
 
     if (backToTopButton) {
         window.addEventListener('scroll', () => {
@@ -218,8 +213,8 @@ function setupBackToTopButton() {
  * This is a progressive enhancement and is disabled on touch devices via CSS.
  */
 function setupCustomCursor() {
-    const cursorDot = document.querySelector('.cursor-dot');
-    const cursorOutline = document.querySelector('.cursor-outline');
+    const cursorDot = document.querySelector('[data-cursor-dot]');
+    const cursorOutline = document.querySelector('[data-cursor-outline]');
 
     if (cursorDot && cursorOutline) {
         window.addEventListener('mousemove', (e) => {
@@ -234,7 +229,7 @@ function setupCustomCursor() {
             );
         });
 
-        const interactiveElements = document.querySelectorAll('a, button, .cta-button, .social-icon, .nav-link');
+        const interactiveElements = document.querySelectorAll('a, button, [role="button"], input[type="submit"], .tag');
 
         interactiveElements.forEach(el => {
             el.addEventListener('mouseenter', () => {
@@ -269,7 +264,7 @@ function setupCustomCursor() {
  * when navigating between internal pages.
  */
 function setupPageTransitions() {
-    const allLinks = document.querySelectorAll('a');
+    const allLinks = document.querySelectorAll('a[href]');
 
     allLinks.forEach(link => {
         link.addEventListener('click', e => {
@@ -299,14 +294,14 @@ function setupPageTransitions() {
  * closing menus with the Escape key.
  */
 function setupKeyboardControls() {
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.querySelector('[data-mobile-menu]');
+    const mobileMenuButton = document.querySelector('[data-mobile-menu-button]');
 
     document.addEventListener('keydown', (e) => {
         // Close menus with the Escape key
         if (e.key === 'Escape' || e.key === 'Esc') { // 'Esc' for older browsers
             // Close mobile menu
-            if (mobileMenu && mobileMenu.classList.contains('is-open')) {
+            if (mobileMenu && mobileMenu.classList.contains('translate-x-0')) {
                 toggleMenu();
                 mobileMenuButton.focus(); // Return focus to the button
             }
@@ -331,11 +326,11 @@ function setupKeyboardControls() {
  * that have a copy button.
  */
 function setupCopyCodeButtons() {
-    const copyButtons = document.querySelectorAll('.copy-button');
+    const copyButtons = document.querySelectorAll('[data-copy-button]');
 
     copyButtons.forEach(button => {
         button.addEventListener('click', () => {
-            const pre = button.parentElement.querySelector('pre.code-block');
+            const pre = button.closest('.relative')?.querySelector('pre');
             if (!pre) return;
 
             const code = pre.querySelector('code');
@@ -343,11 +338,11 @@ function setupCopyCodeButtons() {
 
             navigator.clipboard.writeText(textToCopy).then(() => {
                 button.textContent = 'Copied!';
-                button.classList.add('copied');
+                button.classList.add('!bg-green-500');
 
                 setTimeout(() => {
                     button.textContent = 'Copy';
-                    button.classList.remove('copied');
+                    button.classList.remove('!bg-green-500');
                 }, 2000);
             }).catch(err => {
                 console.error('Failed to copy text: ', err);
@@ -362,7 +357,7 @@ function setupCopyCodeButtons() {
  * with the '.will-animate' class.
  */
 function setupScrollAnimations() {
-    const animatedElements = document.querySelectorAll('.will-animate');
+    const animatedElements = document.querySelectorAll('[data-animate]');
     if (!animatedElements.length) return;
 
     const observerOptions = {
@@ -387,38 +382,19 @@ function setupScrollAnimations() {
  * Initializes syntax highlighting for code blocks using highlight.js.
  */
 function setupSyntaxHighlighting() {
-    // Check if hljs is available and then highlight all pre > code blocks
-    if (typeof hljs !== 'undefined') {
-        hljs.highlightAll();
+    // Check if hljs is available and there are blocks to highlight
+    if (typeof hljs !== 'undefined' && document.querySelector('pre code')) {
+        document.querySelectorAll('pre code').forEach((block) => {
+            hljs.highlightElement(block);
+        });
     }
 }
 
 /**
  * Main initialization function. Runs after the DOM is fully loaded.
  */
-function init() {
-    // Asynchronously load and inject the SVG sprite
-    const svgContainer = document.getElementById('svg-sprite-container');
-    if (svgContainer) {
-        fetch('/_assets/icons.svg')
-            .then(response => response.text())
-            .then(data => {
-                svgContainer.innerHTML = data;
-            }).catch(error => {
-                console.error('Error loading SVG sprite:', error);
-            });
-    }
-
-    // Hide preloader as soon as the DOM is ready for faster perceived load time
-    const preloader = document.getElementById('preloader');
-    if (preloader) {
-        preloader.style.opacity = '0';
-        preloader.addEventListener('transitionend', () => {
-            preloader.style.display = 'none';
-        });
-    }
-
-    // Initialize all features
+function main() {
+    // Feature initializations
     setupThemeToggle();
     setupMobileMenu();
     setupActiveNavLinks();
@@ -431,9 +407,27 @@ function init() {
     setupScrollAnimations();
     setupCopyCodeButtons();
     setupSyntaxHighlighting();
+
+    // Hide preloader after a short delay to ensure paint
+    const preloader = document.querySelector('[data-preloader]');
+    if (preloader) {
+        preloader.style.opacity = '0';
+        preloader.addEventListener('transitionend', () => {
+            preloader.style.display = 'none';
+        });
+    }
+
+    // Conditionally load search logic if on the search page
+    if (document.querySelector('[data-search-form]')) {
+        import('./search.js').then(module => module.default());
+    }
 }
 
 /**
  * Entry point: run the main initialization function when the DOM is ready.
  */
-document.addEventListener('DOMContentLoaded', init);
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', main);
+} else {
+    main();
+}
