@@ -52,7 +52,7 @@ body { background-color: #1a202c; color: #e2e8f0; }
 /* Search Modal Styles */
 /* Dropdown Menu Styles */ 
 .dropdown-menu {
-    @apply bg-secondary text-white;
+    background-color: #2d3748; /* Same as .card background */
 }
 @keyframes fadeIn {
     from { opacity: 0; transform: scale(0.95); }
