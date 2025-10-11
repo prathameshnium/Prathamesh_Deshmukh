@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
     const searchInput = document.getElementById('search-input');
     const searchResults = document.getElementById('search-results');
+    const searchForm = document.getElementById('search-form');
     let searchIndex = [];
     let debounceTimer;
 
@@ -27,15 +28,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function performSearch() {
+    function performSearch(event) {
+        if (event) event.preventDefault(); // Prevent form submission
         const query = searchInput.value.trim().toLowerCase();
         if (!query) {
-            searchResults.innerHTML = '<p>Please enter a search term.</p>';
+            searchResults.innerHTML = '<h2 class="sr-only" id="search-results-status">Search Cleared</h2><p>Please enter a search term.</p>';
             return;
         }
 
         if (searchIndex.length === 0) {
-            searchResults.innerHTML = '<p>Search index is not available.</p>';
+            searchResults.innerHTML = '<h2 class="sr-only" id="search-results-status">Error</h2><p>Search index is not available.</p>';
             return;
         }
 
@@ -48,8 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function displayResults(results, query) {
+        const resultsCount = results.length;
+        const statusMessage = `${resultsCount} ${resultsCount === 1 ? 'result' : 'results'} found for '${query}'`;
+
         if (results.length === 0) {
-            searchResults.innerHTML = '<p>No results found.</p>';
+            searchResults.innerHTML = `<h2 class="sr-only" id="search-results-status">${statusMessage}</h2><p>No results found.</p>`;
             return;
         }
 
@@ -70,7 +75,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 </li>`;
         }).join('');
 
-        searchResults.innerHTML = `<ul class="space-y-4">${resultsHtml}</ul>`;
+        searchResults.innerHTML = `
+            <h2 class="sr-only" id="search-results-status">${statusMessage}</h2>
+            <ul class="space-y-4">${resultsHtml}</ul>
+        `;
     }
 
     function getSnippet(content, query, contextLength = 80) {
@@ -96,30 +104,27 @@ document.addEventListener('DOMContentLoaded', () => {
         let snippet = content.substring(start, end);
 
         // Highlight the query term
-        snippet = snippet.replace(new RegExp(query, 'gi'), (match) => `<strong class="text-accent-orange bg-accent-orange/10 px-1 rounded">${match}</strong>`);
+        snippet = snippet.replace(new RegExp(query, 'gi'), (match) => `<mark class="bg-accent-orange/20 text-accent-orange rounded px-1">${match}</mark>`);
 
         return `${start > 0 ? '...' : ''}${snippet}${end < content.length ? '...' : ''}`;
     }
 
-    if (searchInput && searchResults) {
+    if (searchForm && searchInput && searchResults) {
         // Load the index as soon as the page is ready
         loadSearchIndex();
 
         searchInput.addEventListener('keyup', (event) => {
             clearTimeout(debounceTimer);
-            if (event.key === 'Enter') {
+            // Use a debounce to avoid searching on every keystroke
+            debounceTimer = setTimeout(() => {
                 performSearch();
-            } else {
-                debounceTimer = setTimeout(() => {
-                    performSearch();
-                }, 300); // Debounce for 300ms
-            }
+            }, 300);
         });
 
-        // Also handle search button click
-        const searchButton = document.getElementById('search-button');
-        if (searchButton) {
-            searchButton.addEventListener('click', performSearch);
-        }
+        // Handle form submission (Enter key or button click)
+        searchForm.addEventListener('submit', (event) => {
+            clearTimeout(debounceTimer); // Cancel any pending debounced search
+            performSearch(event);
+        });
     }
 });

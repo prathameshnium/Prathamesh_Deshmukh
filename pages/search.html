@@ -55,14 +55,18 @@
     <main class="container mx-auto px-6 py-12">
         <section id="search" class="py-20">
             <h1 class="text-4xl font-bold section-title mb-8 text-center">Search</h1>
-            <div class="max-w-3xl mx-auto">
-                <div class="flex items-center border-b-2 border-accent-orange py-2">
-                    <input id="search-input" class="appearance-none bg-transparent border-none w-full text-white mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Search this site...">
-                    <button id="search-button" class="flex-shrink-0 bg-accent-orange hover:bg-accent-orange-dark border-accent-orange hover:border-accent-orange-dark text-sm border-4 text-white py-1 px-2 rounded">
+            <div class="max-w-3xl mx-auto" role="main">
+                <form role="search" id="search-form" class="flex items-center border-b-2 border-accent-orange py-2">
+                    <label for="search-input" class="sr-only">Search this site</label>
+                    <input id="search-input" class="appearance-none bg-transparent border-none w-full text-white mr-3 py-1 px-2 leading-tight focus:outline-none" type="search" placeholder="Search this site and my profiles..." aria-controls="search-results">
+                    <button id="search-button" type="submit" class="flex-shrink-0 bg-accent-orange hover:bg-accent-orange-dark border-accent-orange hover:border-accent-orange-dark text-sm border-4 text-dark-bg font-bold py-1 px-2 rounded">
                         Search
                     </button>
+                </form>
+                <div id="search-results" class="mt-8" aria-live="polite" aria-atomic="true">
+                    <!-- Search results will be dynamically inserted here -->
+                    <p>Enter a term above to search the site.</p>
                 </div>
-                <div id="search-results" class="mt-8"></div>
             </div>
         </section>
     </main>
