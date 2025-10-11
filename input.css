@@ -34,15 +34,11 @@ header.scrolled {
     100% { transform: rotate(360deg); }
 }
 
-body { background-color: theme('colors.dark-bg'); color: theme('colors.white'); }
 body {
-    @apply transition-opacity duration-300 ease-in-out;
+    @apply bg-dark-bg text-white transition-opacity duration-300 ease-in-out;
 }
 body.is-leaving {
     @apply opacity-0;
-}
-body, a, button {
-    @apply cursor-none;
 }
 
 .section-title { font-family: theme('fontFamily.serif'); color: theme('colors.true-white'); }
