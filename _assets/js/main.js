@@ -327,6 +327,37 @@ function setupKeyboardControls() {
 }
 
 /**
+ * Sets up "copy to clipboard" functionality for all code blocks
+ * that have a copy button.
+ */
+function setupCopyCodeButtons() {
+    const copyButtons = document.querySelectorAll('.copy-button');
+
+    copyButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const pre = button.parentElement.querySelector('pre.code-block');
+            if (!pre) return;
+
+            const code = pre.querySelector('code');
+            const textToCopy = code ? code.innerText : pre.innerText;
+
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                button.textContent = 'Copied!';
+                button.classList.add('copied');
+
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                    button.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+                button.textContent = 'Error';
+            });
+        });
+    });
+}
+
+/**
  * Sets up a scroll-triggered fade-in animation for elements
  * with the '.will-animate' class.
  */
@@ -350,6 +381,16 @@ function setupScrollAnimations() {
     }, observerOptions);
 
     animatedElements.forEach(el => observer.observe(el));
+}
+
+/**
+ * Initializes syntax highlighting for code blocks using highlight.js.
+ */
+function setupSyntaxHighlighting() {
+    // Check if hljs is available and then highlight all pre > code blocks
+    if (typeof hljs !== 'undefined') {
+        hljs.highlightAll();
+    }
 }
 
 /**
@@ -388,6 +429,8 @@ function init() {
     setupPageTransitions();
     setupKeyboardControls();
     setupScrollAnimations();
+    setupCopyCodeButtons();
+    setupSyntaxHighlighting();
 }
 
 /**
