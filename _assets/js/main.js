@@ -59,8 +59,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(overlay);
 
     const toggleMenu = () => {
-        mobileMenu.classList.toggle('is-open');
+        const isOpen = mobileMenu.classList.toggle('is-open');
         overlay.classList.toggle('is-open');
+        mobileMenuButton.setAttribute('aria-expanded', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
     };
 
     if (mobileMenuButton && mobileMenu) {
@@ -113,11 +115,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const parent = portfolioButton.parentElement;
         parent.addEventListener('mouseenter', () => {
             clearTimeout(portfolioTimeout);
+            portfolioButton.setAttribute('aria-expanded', 'true');
             portfolioMenu.classList.remove('hidden');
         });
         parent.addEventListener('mouseleave', () => {
             portfolioTimeout = setTimeout(() => {
                 portfolioMenu.classList.add('hidden');
+                portfolioButton.setAttribute('aria-expanded', 'false');
             }, 300);
         });
         portfolioMenu.addEventListener('mouseenter', () => clearTimeout(portfolioTimeout));
@@ -132,11 +136,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (corePortfolioItem && corePortfolioSubmenu) {
         corePortfolioItem.addEventListener('mouseenter', () => {
             clearTimeout(submenuTimeout);
+            corePortfolioItem.querySelector('a').setAttribute('aria-expanded', 'true');
             corePortfolioSubmenu.classList.remove('hidden');
         });
 
         corePortfolioItem.addEventListener('mouseleave', () => {
             submenuTimeout = setTimeout(() => {
+                corePortfolioItem.querySelector('a').setAttribute('aria-expanded', 'false');
                 corePortfolioSubmenu.classList.add('hidden');
             }, 300);
         });
@@ -156,12 +162,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (mobilePortfolioButton && mobilePortfolioMenu) {
         mobilePortfolioButton.addEventListener('click', () => {
-            mobilePortfolioMenu.classList.toggle('hidden');
+            const isExpanded = mobilePortfolioMenu.classList.toggle('hidden');
             const icon = mobilePortfolioButton.querySelector('i');
             if (icon) {
                 icon.classList.toggle('fa-chevron-down');
                 icon.classList.toggle('fa-chevron-up');
             }
+            mobilePortfolioButton.setAttribute('aria-expanded', !isExpanded);
         });
     }
 
@@ -260,4 +267,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // On page load, remove the 'is-leaving' class in case it was cached by the browser (e.g., on back/forward)
     document.body.classList.remove('is-leaving');
+
+    // --- Global Accessibility: Keyboard controls ---
+    document.addEventListener('keydown', (e) => {
+        // Close menus with the Escape key
+        if (e.key === 'Escape') {
+            // Close mobile menu
+            if (mobileMenu.classList.contains('is-open')) {
+                toggleMenu();
+            }
+            // Close desktop dropdowns
+            document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                menu.classList.add('hidden');
+            });
+        }
+    });
 });

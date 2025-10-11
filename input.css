@@ -169,3 +169,11 @@ pre {
 #back-to-top:hover {
     @apply bg-accent-orange/90 scale-110 transform;
 }
+
+/* Accessibility: Skip to Main Content Link */
+.skip-link {
+    @apply absolute -left-full top-0 bg-accent-orange text-dark-bg font-bold p-3 z-[99999] transition-all duration-300;
+}
+.skip-link:focus {
+    @apply left-2;
+}
