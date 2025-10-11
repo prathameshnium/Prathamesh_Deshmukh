@@ -52,4 +52,4 @@ The assets are organized into the following subdirectories:
 
 These assets are specifically tailored for the portfolio website. If you wish to use or adapt any part of this project, please refer to the main repository's **`LICENSE`** file.
 
-For any questions or contributions, please open an issue on the main repository.
+For any questions or contributions, please **open an issue** on the main repository.

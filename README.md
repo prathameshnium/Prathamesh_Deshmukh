@@ -41,6 +41,17 @@
       <img src="https://img.shields.io/badge/Academia-333333?style=for-the-badge&logo=academia&logoColor=white" alt="Academia.edu Profile"/>
     </a>
   </p>
+
+  <p align="center">
+    <!-- Website Uptime -->
+    <a href="https://prathameshdeshmukh.site/" target="_blank">
+      <img src="https://img.shields.io/website?label=prathameshdeshmukh.site&style=for-the-badge&up_message=online&down_message=offline&url=https%3A%2F%2Fprathameshdeshmukh.site%2F" alt="Website Status"/>
+    </a>
+    <!-- GitHub Actions Build Status -->
+    <a href="https://github.com/prathameshnium/Prathamesh_Deshmukh/actions/workflows/deploy.yml" target="_blank">
+      <img src="https://img.shields.io/github/actions/workflow/status/prathameshnium/Prathamesh_Deshmukh/deploy.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white" alt="Build and Deploy Status"/>
+    </a>
+  </p>
     
   <p>
     <img src="https://komarev.com/ghpvc/?username=prathameshnium&label=PROFILE+VIEWS&style=for-the-badge&color=brightgreen" alt="Profile views counter" />
