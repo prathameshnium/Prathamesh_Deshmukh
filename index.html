@@ -104,13 +104,13 @@
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#journey" class="nav-link">Journey</a>
                 <div class="relative" data-dropdown-parent>
-                    <button data-dropdown-toggle id="portfolio-button" class="nav-link flex items-center" aria-haspopup="true" aria-expanded="false" aria-controls="portfolio-menu">
+                    <button id="portfolio-button" class="nav-link flex items-center" aria-haspopup="true" aria-expanded="false" aria-controls="portfolio-menu">
                         Portfolio <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/></svg>
                     </button>
                     <div id="portfolio-menu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-56 top-full right-0 mt-2 z-50" data-dropdown>
                         <!-- Submenu Item -->
                         <div class="relative" data-dropdown-parent>
-                            <a href="#" data-dropdown-toggle class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange/20 flex justify-between items-center" aria-haspopup="true" aria-expanded="false">
+                            <a href="#" class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange/20 flex justify-between items-center" aria-haspopup="true" aria-expanded="false">
                                 Core Portfolio <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/></svg>
                             </a>
                             <div class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 -left-full mt-0 z-50" data-dropdown>
@@ -126,7 +126,7 @@
                         <a href="pages/resources.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange/20">Resources</a>
                     </div>
                 </div>
-                <button id="theme-toggle" class="nav-link" aria-label="Toggle theme">
+                <button data-theme-toggle id="theme-toggle" class="nav-link" aria-label="Toggle theme">
                     <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-moon"></use></svg><span class="sr-only">Toggle Theme</span>
                 </button>
                 <a href="#contact" class="nav-link">Contact</a>
@@ -134,37 +134,37 @@
                     <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-search"></use></svg><span class="sr-only">Search</span>
                 </a>
             </nav>
-            <button id="mobile-menu-button" class="md:hidden text-white text-2xl" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+            <button data-mobile-menu-button id="mobile-menu-button" class="md:hidden text-white text-2xl" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
                 <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-bars"></use></svg>
             </button>
         </div>
     </header>
 
     <!-- Mobile Menu (moved outside the header for better performance and structure) -->
-    <div id="mobile-menu" class="md:hidden">
-        <a href="/index.html" class="block py-2 nav-link">Home</a>
-        <a href="/index.html#research" class="block py-2 nav-link">Research</a>
-        <a href="/index.html#skills" class="block py-2 nav-link">Skills</a>
-        <a href="/index.html#journey" class="block py-2 nav-link">Journey</a>
-        <a href="/index.html#contact" class="block py-2 nav-link">Contact</a>
+    <div data-mobile-menu id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-card-bg shadow-lg p-6 transform translate-x-full transition-transform duration-300 ease-in-out z-40 md:hidden">
+        <a href="/index.html" class="block py-2 nav-link text-white">Home</a>
+        <a href="/index.html#research" class="block py-2 nav-link text-white">Research</a>
+        <a href="/index.html#skills" class="block py-2 nav-link text-white">Skills</a>
+        <a href="/index.html#journey" class="block py-2 nav-link text-white">Journey</a>
+        <a href="/index.html#contact" class="block py-2 nav-link text-white">Contact</a>
         <div class="border-t border-gray-700 my-2"></div>
         <div>
-            <button id="mobile-portfolio-button" class="w-full text-left py-2 nav-link flex justify-between items-center" aria-controls="mobile-portfolio-menu" aria-expanded="false">
+            <button data-mobile-accordion-button id="mobile-portfolio-button" class="w-full text-left py-2 nav-link text-white flex justify-between items-center" aria-controls="mobile-portfolio-menu" aria-expanded="false">
                 <span>Portfolio</span>
-                <svg class="w-2.5 h-2.5 ml-2.5 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/></svg>
+                <svg class="w-4 h-4 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </button>
-            <div id="mobile-portfolio-menu" class="hidden pl-4">
-                <a href="/pages/research.html" class="block py-2 nav-link">Research &amp; Pubs</a>
-                <a href="/pages/computational-works.html" class="block py-2 nav-link">Computational Works</a>
-                <a href="/pages/presentations.html" class="block py-2 nav-link">Presentations</a>
-                <a href="/pages/cv.html" class="block py-2 nav-link">CV</a>
-                <a href="/pages/blog.html" class="block py-2 nav-link">Blog</a>
-                <a href="/pages/gallery.html" class="block py-2 nav-link">Gallery</a>
-                <a href="/pages/resources.html" class="block py-2 nav-link">Resources</a>
+            <div data-mobile-accordion-menu id="mobile-portfolio-menu" class="hidden pl-4">
+                <a href="/pages/research.html" class="block py-2 nav-link text-white">Research &amp; Pubs</a>
+                <a href="/pages/computational-works.html" class="block py-2 nav-link text-white">Computational Works</a>
+                <a href="/pages/presentations.html" class="block py-2 nav-link text-white">Presentations</a>
+                <a href="/pages/cv.html" class="block py-2 nav-link text-white">CV</a>
+                <a href="/pages/blog.html" class="block py-2 nav-link text-white">Blog</a>
+                <a href="/pages/gallery.html" class="block py-2 nav-link text-white">Gallery</a>
+                <a href="/pages/resources.html" class="block py-2 nav-link text-white">Resources</a>
             </div>
         </div>
         <div class="border-t border-gray-700 my-2"></div>
-        <button id="mobile-theme-toggle" class="w-full text-left py-2 nav-link flex justify-between items-center">
+        <button data-theme-toggle id="mobile-theme-toggle" class="w-full text-left py-2 nav-link text-white flex justify-between items-center">
             <span>Toggle Theme</span>
             <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-moon"></use></svg>
         </button>

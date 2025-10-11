@@ -43,6 +43,10 @@ function setupThemeToggle() {
         applyTheme(newTheme);
     };
 
+    themeToggleButtons.forEach(button => {
+        button.addEventListener('click', toggleTheme);
+    });
+
     // Apply initial theme based on saved preference or system setting
     const savedTheme = localStorage.getItem('theme') || 'dark'; // Default to 'dark'
     applyTheme(savedTheme);
@@ -82,6 +86,8 @@ function setupMobileMenu() {
 
     mobileMenuButton.addEventListener('click', toggleMenu);
     overlay.addEventListener('click', toggleMenu);
+
+    return toggleMenu; // Return the function so it can be used by keyboard controls
 }
 
 /**
@@ -130,7 +136,7 @@ function setupActiveNavLinks() {
  * handling mouse hover and keyboard focus events for accessibility.
  */
 function setupDropdowns() {
-    document.querySelectorAll('[data-dropdown-parent]').forEach(parent => {
+    document.querySelectorAll('[data-dropdown-parent], [data-hover-parent]').forEach(parent => {
         const toggle = parent.querySelector('[aria-haspopup="true"]');
         const menu = parent.querySelector('.dropdown-menu');
         let timeout;
@@ -293,16 +299,16 @@ function setupPageTransitions() {
  * Sets up global keyboard controls for accessibility, such as
  * closing menus with the Escape key.
  */
-function setupKeyboardControls() {
+function setupKeyboardControls(toggleMobileMenu) {
     const mobileMenu = document.querySelector('[data-mobile-menu]');
     const mobileMenuButton = document.querySelector('[data-mobile-menu-button]');
 
     document.addEventListener('keydown', (e) => {
         // Close menus with the Escape key
         if (e.key === 'Escape' || e.key === 'Esc') { // 'Esc' for older browsers
-            // Close mobile menu
+            // Close mobile menu if it's open
             if (mobileMenu && mobileMenu.classList.contains('translate-x-0')) {
-                toggleMenu();
+                if (toggleMobileMenu) toggleMobileMenu();
                 mobileMenuButton.focus(); // Return focus to the button
             }
             // Close desktop dropdowns
@@ -395,15 +401,15 @@ function setupSyntaxHighlighting() {
  */
 function main() {
     // Feature initializations
+    const toggleMobileMenu = setupMobileMenu();
     setupThemeToggle();
-    setupMobileMenu();
     setupActiveNavLinks();
     setupDropdowns();
     setupMobileAccordion();
     setupBackToTopButton();
     setupCustomCursor();
     setupPageTransitions();
-    setupKeyboardControls();
+    setupKeyboardControls(toggleMobileMenu);
     setupScrollAnimations();
     setupCopyCodeButtons();
     setupSyntaxHighlighting();
