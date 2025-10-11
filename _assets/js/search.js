@@ -1,18 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const searchIndexUrl = '../_assets/search-index.json'; // A combined index
+    const searchIndexUrls = [
+        '../_assets/search-index.json', 
+        '../_assets/social-search-index.json'
+    ];
     const searchInput = document.getElementById('search-input');
     const searchResults = document.getElementById('search-results');
     let searchIndex = [];
     let debounceTimer;
 
-    // Fetch the search index on page load
+    // Fetch and combine search indexes on page load
     async function loadSearchIndex() {
         try {
-            const response = await fetch(searchIndexUrl);
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            searchIndex = await response.json();
+            const responses = await Promise.all(searchIndexUrls.map(url => 
+                fetch(url).catch(e => {
+                    console.warn(`Could not fetch ${url}:`, e);
+                    return { ok: false, json: () => Promise.resolve([]) }; // Return a mock response on network error
+                })
+            ));
+            const data = await Promise.all(responses.map(res => res.ok ? res.json() : []));
+            searchIndex = [].concat(...data); // Flatten the array of arrays
         } catch (error) {
             console.error('Error loading search index:', error);
             if (searchResults) {
@@ -57,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <a href="${result.url}" 
                        class="text-xl text-accent-orange hover:underline" 
                        ${isExternal ? 'target="_blank" rel="noopener noreferrer"' : ''}>
-                       ${result.title} ${isExternal ? '<i class="fas fa-external-link-alt text-sm ml-1"></i>' : ''}
+                       ${result.title} ${isExternal ? '<svg class="w-4 h-4 inline-block ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><use href="#icon-external-link-alt"></use></svg>' : ''}
                     </a>
                     <p class="text-light-slate mt-1">${snippet}</p>
                     <p class="text-sm text-slate mt-2 truncate">${displayUrl}</p>
