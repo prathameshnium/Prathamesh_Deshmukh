@@ -4,7 +4,7 @@
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('fonts/inter-v12-latin-regular.woff2') format('woff2');
+    src: url('../_assets/fonts/inter-v12-latin-regular.woff2') format('woff2');
 }
 
 /* Inter Medium */
@@ -13,7 +13,7 @@
     font-style: normal;
     font-weight: 500;
     font-display: swap;
-    src: url('fonts/inter-v12-latin-500.woff2') format('woff2');
+    src: url('../_assets/fonts/inter-v12-latin-500.woff2') format('woff2');
 }
 
 /* Inter Bold */
@@ -22,7 +22,7 @@
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: url('fonts/inter-v12-latin-700.woff2') format('woff2');
+    src: url('../_assets/fonts/inter-v12-latin-700.woff2') format('woff2');
 }
 
 /* Source Serif Pro Semi-Bold */
@@ -31,7 +31,7 @@
     font-style: normal;
     font-weight: 600;
     font-display: swap;
-    src: url('fonts/source-serif-pro-v15-latin-600.woff2') format('woff2');
+    src: url('../_assets/fonts/source-serif-pro-v15-latin-600.woff2') format('woff2');
 }
 
 /* Source Serif Pro Bold */
@@ -40,5 +40,5 @@
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: url('fonts/source-serif-pro-v15-latin-700.woff2') format('woff2');
+    src: url('../_assets/fonts/source-serif-pro-v15-latin-700.woff2') format('woff2');
 }
