@@ -63,34 +63,11 @@
                     <i class="fas fa-search" aria-hidden="true"></i>
                 </a>
             </nav>
-            <button id="mobile-menu-button" class="md:hidden text-white text-2xl">
+            <button id="mobile-menu-button" class="md:hidden text-white text-2xl" aria-label="Open menu">
                 <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-        <a href="../index.html#about" class="block py-2 nav-link">About</a>
-        <a href="../index.html#research" class="block py-2 nav-link">Research</a>
-        <a href="../index.html#skills" class="block py-2 nav-link">Skills</a>
-        <a href="../index.html#journey" class="block py-2 nav-link">Journey</a>
-        <a href="../index.html#contact" class="block py-2 nav-link">Contact</a>
-        <div class="border-t border-gray-700 my-2"></div>
-        <!-- Accordion for Portfolio -->
-        <div>
-            <button id="mobile-portfolio-button" class="w-full text-left py-2 nav-link flex justify-between items-center">
-                <span>Portfolio</span>
-                <i class="fas fa-chevron-down text-xs"></i>
-            </button>
-            <div id="mobile-portfolio-menu" class="hidden pl-4">
-                <a href="research.html" class="block py-2 nav-link">Research & Pubs</a>
-                <a href="computational-works.html" class="block py-2 nav-link">Computational Works</a>
-                <a href="presentations.html" class="block py-2 nav-link">Presentations</a>
-                <a href="cv.html" class="block py-2 nav-link">CV</a>
-                <a href="blog.html" class="block py-2 nav-link">Blog</a>
-                <a href="gallery.html" class="block py-2 nav-link">Gallery</a>
-                <a href="resources.html" class="block py-2 nav-link">Resources</a>
-            </div>
-        </div>
-        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4"></div>
     </header>
 
     <main class="container mx-auto px-6 py-12">
@@ -256,6 +233,20 @@
                 <a href="https://www.linkedin.com/in/prathamesh-k-deshmukh" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
                 <a href="https://github.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
                 <a href="https://x.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="X (formerly Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+                <!-- Footer More Links Dropdown -->
+                <div class="relative" id="footer-more-links-container">
+                    <button id="footer-more-links-button" class="social-icon text-2xl" aria-label="More social and academic links">
+                        <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
+                    </button>
+                        <div id="footer-more-links-menu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg p-2 w-max bottom-full mb-2 left-1/2 -translate-x-1/2 z-50">
+                        <a href="https://www.researchgate.net/profile/Prathamesh-Deshmukh-6" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><i class="fab fa-researchgate w-6 mr-2"></i> ResearchGate</a>
+                        <a href="https://gitlab.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><i class="fab fa-gitlab w-6 mr-2"></i> GitLab</a>
+                        <a href="https://orcid.org/0009-0008-3278-0837" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><i class="fab fa-orcid w-6 mr-2"></i> ORCID</a>
+                        <a href="https://www.scopus.com/authid/detail.uri?authorId=59544780300" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><i class="fas fa-file-alt w-6 mr-2"></i> Scopus</a>
+                        <a href="https://csr.academia.edu/PrathameshDeshmukh" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><i class="fab fa-academia w-6 mr-2"></i> Academia.edu</a>
+                        <a href="https://www.webofscience.com/wos/author/record/OFN-9289-2025" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 text-sm text-light-slate hover:bg-slate/20 hover:text-accent-orange rounded-md"><i class="fas fa-flask w-6 mr-2"></i> Web of Science</a>
+                    </div>
+                </div>
             </div>
             <div class="mb-6">
                 <a href="sitemap.html" class="hover:text-accent-orange transition-colors">Sitemap & Link Directory</a>

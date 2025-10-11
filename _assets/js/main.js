@@ -10,11 +10,37 @@ window.addEventListener('load', function() {
 const mobileMenuButton = document.getElementById('mobile-menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
 if (mobileMenuButton && mobileMenu) {
+    // Populate mobile menu dynamically
+    const isIndex = window.location.pathname.endsWith('/') || window.location.pathname.endsWith('index.html');
+    const prefix = isIndex ? '' : '../';
+    mobileMenu.innerHTML = `
+        <a href="${prefix}index.html#about" class="block py-2 nav-link">About</a>
+        <a href="${prefix}index.html#research" class="block py-2 nav-link">Research</a>
+        <a href="${prefix}index.html#skills" class="block py-2 nav-link">Skills</a>
+        <a href="${prefix}index.html#journey" class="block py-2 nav-link">Journey</a>
+        <a href="${prefix}index.html#contact" class="block py-2 nav-link">Contact</a>
+        <div class="border-t border-gray-700 my-2"></div>
+        <div>
+            <button id="mobile-portfolio-button" class="w-full text-left py-2 nav-link flex justify-between items-center">
+                <span>Portfolio</span>
+                <i class="fas fa-chevron-down text-xs"></i>
+            </button>
+            <div id="mobile-portfolio-menu" class="hidden pl-4">
+                <a href="${prefix}pages/research.html" class="block py-2 nav-link">Research & Pubs</a>
+                <a href="${prefix}pages/computational-works.html" class="block py-2 nav-link">Computational Works</a>
+                <a href="${prefix}pages/presentations.html" class="block py-2 nav-link">Presentations</a>
+                <a href="${prefix}pages/cv.html" class="block py-2 nav-link">CV</a>
+                <a href="${prefix}pages/blog.html" class="block py-2 nav-link">Blog</a>
+                <a href="${prefix}pages/gallery.html" class="block py-2 nav-link">Gallery</a>
+                <a href="${prefix}pages/resources.html" class="block py-2 nav-link">Resources</a>
+            </div>
+        </div>
+    `;
+
     mobileMenuButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
     });
 }
-
 
 // Active nav link scrolling for one-page navigation
 const sections = document.querySelectorAll('main section[id]');
@@ -95,19 +121,21 @@ if (corePortfolioItem && corePortfolioSubmenu) {
 
 
 // Mobile portfolio accordion
-const mobilePortfolioButton = document.getElementById('mobile-portfolio-button');
-const mobilePortfolioMenu = document.getElementById('mobile-portfolio-menu');
+document.addEventListener('DOMContentLoaded', () => {
+    const mobilePortfolioButton = document.getElementById('mobile-portfolio-button');
+    const mobilePortfolioMenu = document.getElementById('mobile-portfolio-menu');
 
-if (mobilePortfolioButton && mobilePortfolioMenu) {
-    mobilePortfolioButton.addEventListener('click', () => {
-        mobilePortfolioMenu.classList.toggle('hidden');
-        const icon = mobilePortfolioButton.querySelector('i');
-        if (icon) {
-            icon.classList.toggle('fa-chevron-down');
-            icon.classList.toggle('fa-chevron-up');
+    if (mobilePortfolioButton && mobilePortfolioMenu) {
+        mobilePortfolioButton.addEventListener('click', () => {
+            mobilePortfolioMenu.classList.toggle('hidden');
+            const icon = mobilePortfolioButton.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            }
         }
-    });
-}
+    )}
+});
 
 
 // Generic dropdown handler for "More Links"
