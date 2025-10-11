@@ -38,7 +38,7 @@ header.scrolled {
 body { background-color: theme('colors.dark-bg'); color: theme('colors.white'); }
 .section-title { font-family: 'Source Serif Pro', serif; color: theme('colors.true-white'); }
 .card { background-color: theme('colors.card-bg'); border: 1px solid theme('colors.slate / 50%'); transition: all 0.3s ease-in-out; }
-.card:hover { border-color: theme('colors.accent-orange'); transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(246, 173, 85, 0.1), 0 4px 6px -2px rgba(246, 173, 85, 0.05); }
+.card:hover { border-color: theme('colors.accent-orange'); transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(251, 191, 36, 0.1), 0 4px 6px -2px rgba(251, 191, 36, 0.05); }
 .nav-link { transition: color 0.3s, border-bottom-color 0.3s; border-bottom: 2px solid transparent; padding-bottom: 4px; }
 .nav-link:hover, .nav-link.active { color: theme('colors.accent-orange'); }
 .tag { background-color: theme('colors.slate / 50%'); color: theme('colors.white'); }
