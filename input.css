@@ -51,8 +51,8 @@ body { background-color: #1a202c; color: #e2e8f0; }
 /* Search Modal Styles */
 /* Dropdown Menu Styles */
 .dropdown-menu { 
-    background-color: #2d3748; /* card-bg */
-    color: #a8b2d1; /* light-slate */ 
+    background-color: #122738; /* secondary color */
+    color: #FFFFFF; /* white */ 
 }
 @keyframes fadeIn {
     from { opacity: 0; transform: scale(0.95); }
