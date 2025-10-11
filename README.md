@@ -1,6 +1,4 @@
 <div id="header" align="center">
-  <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="150" alt="Animated illustration of a scientist working in a lab"/>
-  
   # Hi there, I'm Prathamesh Deshmukh <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"/>
   
   ### Physics PhD Scholar & Scientific Programmer
