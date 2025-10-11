@@ -63,69 +63,44 @@ document.addEventListener('DOMContentLoaded', () => {
         overlay.classList.toggle('is-open');
     };
 
-    if (mobileMenu) {
-        const isIndex = window.location.pathname.endsWith('/') || window.location.pathname.endsWith('index.html');
-        const prefix = isIndex ? '' : '../';
-        mobileMenu.innerHTML = `
-        <a href="${prefix}index.html" class="block py-2 nav-link">Home</a>
-        <a href="${prefix}index.html#research" class="block py-2 nav-link">Research</a>
-        <a href="${prefix}index.html#skills" class="block py-2 nav-link">Skills</a>
-        <a href="${prefix}index.html#journey" class="block py-2 nav-link">Journey</a>
-        <a href="${prefix}index.html#contact" class="block py-2 nav-link">Contact</a>
-        <div class="border-t border-gray-700 my-2"></div>
-        <div>
-            <button id="mobile-portfolio-button" class="w-full text-left py-2 nav-link flex justify-between items-center">
-                <span>Portfolio</span>
-                <i class="fas fa-chevron-down text-xs"></i>
-            </button>
-            <div id="mobile-portfolio-menu" class="hidden pl-4">
-                <a href="${prefix}pages/research.html" class="block py-2 nav-link">Research & Pubs</a>
-                <a href="${prefix}pages/computational-works.html" class="block py-2 nav-link">Computational Works</a>
-                <a href="${prefix}pages/presentations.html" class="block py-2 nav-link">Presentations</a>
-                <a href="${prefix}pages/cv.html" class="block py-2 nav-link">CV</a>
-                <a href="${prefix}pages/blog.html" class="block py-2 nav-link">Blog</a>
-                <a href="${prefix}pages/gallery.html" class="block py-2 nav-link">Gallery</a>
-                <a href="${prefix}pages/resources.html" class="block py-2 nav-link">Resources</a>
-            </div>
-        </div>
-        <div class="border-t border-gray-700 my-2"></div>
-        <button id="mobile-theme-toggle" class="w-full text-left py-2 nav-link flex justify-between items-center">
-            <span>Toggle Theme</span>
-            <i class="fas fa-moon"></i>
-        </button>
-    `; // End of innerHTML
-    }
-
     if (mobileMenuButton && mobileMenu) {
         mobileMenuButton.addEventListener('click', toggleMenu);
         overlay.addEventListener('click', toggleMenu); // Close menu when clicking overlay
     }
 
-    // --- Active nav link scrolling for one-page navigation ---
+    // --- Active nav link scrolling using IntersectionObserver (more performant) ---
     const sections = document.querySelectorAll('main section[id]');
     const navLinks = document.querySelectorAll('header nav a[href^="#"]');
+    const navLinksMap = new Map();
+    navLinks.forEach(link => {
+        const hash = link.getAttribute('href');
+        navLinksMap.set(hash, link);
+    });
 
-    function updateActiveNavLink() {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (window.pageYOffset >= sectionTop - 70) {
-                current = section.getAttribute('id');
+    const observerOptions = {
+        root: null, // relative to the viewport
+        rootMargin: '-70px 0px -50% 0px', // Adjust top margin for sticky header, and bottom margin
+        threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const id = `#${entry.target.getAttribute('id')}`;
+            const link = navLinksMap.get(id);
+
+            if (entry.isIntersecting && entry.intersectionRatio > 0) {
+                // Remove active from all
+                navLinks.forEach(l => l.classList.remove('active'));
+                // Add active to the current one
+                if (link) {
+                    link.classList.add('active');
+                }
             }
         });
+    }, observerOptions);
 
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            const linkHref = link.getAttribute('href');
-            if (linkHref && linkHref.includes(current)) {
-                link.classList.add('active');
-            }
-        });
-    }
-
-    // Only add scroll listener if there are nav links for on-page sections
     if (navLinks.length > 0 && sections.length > 0) {
-        window.addEventListener('scroll', updateActiveNavLink);
+        sections.forEach(section => observer.observe(section));
     }
 
     // --- Desktop Dropdowns ---
