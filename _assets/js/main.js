@@ -74,21 +74,38 @@ if (navLinks.length > 0 && sections.length > 0) {
 const portfolioButton = document.getElementById('portfolio-button');
 const portfolioMenu = document.getElementById('portfolio-menu');
 
+function toggleDropdown(menu, isVisible) {
+    if (isVisible) {
+        menu.classList.remove('hidden');
+        // Focus the first item in the menu
+        menu.querySelector('a, button')?.focus();
+    } else {
+        menu.classList.add('hidden');
+    }
+}
+
 if (portfolioButton && portfolioMenu) {
     portfolioButton.addEventListener('click', (event) => {
         event.stopPropagation();
-        portfolioMenu.classList.toggle('hidden');
+        const isHidden = portfolioMenu.classList.contains('hidden');
+        toggleDropdown(portfolioMenu, isHidden);
     });
 
     portfolioMenu.addEventListener('click', (event) => {
         event.stopPropagation();
+    });
+
+    portfolioButton.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            toggleDropdown(portfolioMenu, false);
+        }
     });
 }
 
 // Close dropdown when clicking outside
 window.addEventListener('click', () => {
     if (portfolioMenu && !portfolioMenu.classList.contains('hidden')) {
-        portfolioMenu.classList.add('hidden');
+        toggleDropdown(portfolioMenu, false);
     }
 });
 
@@ -163,7 +180,21 @@ function setupDropdown(containerId, buttonId, menuId) {
     // Allow clicking on the button to toggle, for touch devices
     button.addEventListener('click', (event) => {
         event.stopPropagation();
-        menu.classList.toggle('hidden');
+        const isHidden = menu.classList.contains('hidden');
+        if (isHidden) {
+            showMenu();
+        } else {
+            // Use a short timeout to allow the mouseleave to be cancelled if re-hovering
+            setTimeout(() => menu.classList.add('hidden'), 100);
+        }
+    });
+
+    // Close with Escape key
+    container.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            menu.classList.add('hidden');
+            button.focus();
+        }
     });
 }
 

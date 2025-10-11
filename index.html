@@ -89,7 +89,7 @@
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#journey" class="nav-link">Journey</a>
                 <div class="relative">
-                    <button id="portfolio-button" class="nav-link flex items-center">
+                    <button id="portfolio-button" class="nav-link flex items-center" aria-haspopup="true" aria-expanded="false" aria-controls="portfolio-menu">
                         Portfolio <i class="fas fa-chevron-down text-xs ml-2"></i>
                     </button>
                     <div id="portfolio-menu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-56 top-full right-0 mt-2 z-50">
@@ -116,7 +116,7 @@
                     <i class="fas fa-search" aria-hidden="true"></i>
                 </a>
             </nav>
-            <button id="mobile-menu-button" class="md:hidden text-white text-2xl" aria-label="Open menu">
+            <button id="mobile-menu-button" class="md:hidden text-white text-2xl" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
@@ -130,7 +130,7 @@
             <div class="border-t border-gray-700 my-2"></div>
             <!-- Accordion for Portfolio -->
             <div>
-                <button id="mobile-portfolio-button" class="w-full text-left py-2 nav-link flex justify-between items-center">
+                <button id="mobile-portfolio-button" class="w-full text-left py-2 nav-link flex justify-between items-center" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-portfolio-menu">
                     <span>Portfolio</span>
                     <i class="fas fa-chevron-down text-xs"></i>
                 </button>
@@ -179,7 +179,7 @@
                     <a href="https://x.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-3xl" aria-label="X (formerly Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
                     <!-- More Links Dropdown -->
                     <div class="relative" id="more-links-container">
-                        <button id="more-links-button" class="social-icon text-3xl" aria-label="More social and academic links">
+                        <button id="more-links-button" class="social-icon text-3xl" aria-label="More social and academic links" aria-haspopup="true" aria-expanded="false" aria-controls="more-links-menu">
                             <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
                         </button>
                         <div id="more-links-menu" class="absolute hidden dropdown-menu bg-dark-bg border border-gray-700 rounded-md shadow-lg p-2 w-max top-full mt-2 z-50">
@@ -395,7 +395,7 @@
                 <a href="https://x.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="X (formerly Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
                 <!-- Footer More Links Dropdown -->
                 <div class="relative" id="footer-more-links-container">
-                    <button id="footer-more-links-button" class="social-icon text-2xl" aria-label="More social and academic links">
+                    <button id="footer-more-links-button" class="social-icon text-2xl" aria-label="More social and academic links" aria-haspopup="true" aria-expanded="false" aria-controls="footer-more-links-menu">
                         <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
                     </button>
                         <div id="footer-more-links-menu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg p-2 w-max bottom-full mb-2 left-1/2 -translate-x-1/2 z-50">
@@ -411,7 +411,7 @@
             <div class="mb-6">
                 <a href="pages/sitemap.html" class="hover:text-accent-orange transition-colors">Sitemap & Link Directory</a>
             </div>
-            <p>&copy; 2025 Prathamesh Keshao Deshmukh. All Rights Reserved.</p>
+            <p><a href="https://github.com/prathameshnium/prathameshnium.github.io/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" class="hover:text-accent-orange transition-colors">&copy; 2024 Prathamesh Keshao Deshmukh. All Rights Reserved.</a></p>
         </div>
     </footer>
 
