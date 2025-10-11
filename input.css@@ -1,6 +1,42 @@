@@ -2,51 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Inter Regular */
-@font-face {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url('../_assets/fonts/inter-v12-latin-regular.woff2') format('woff2');
-}
-
-/* Inter Medium */
-@font-face {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-display: swap;
-    src: url('../_assets/fonts/inter-v12-latin-500.woff2') format('woff2');
-}
-
-/* Inter Bold */
-@font-face {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url('../_assets/fonts/inter-v12-latin-700.woff2') format('woff2');
-}
-
-/* Junicode Regular */
-@font-face {
-    font-family: 'Junicode';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url('../_assets/fonts/junicode-v2-latin-regular.woff2') format('woff2');
-}
-
-/* Junicode Bold */
-@font-face {
-    font-family: 'Junicode';
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url('../_assets/fonts/junicode-v2-latin-700.woff2') format('woff2');
-}
-
 header.scrolled {
     background-color: theme('colors.dark-bg/90');
     backdrop-filter: blur(16px);
