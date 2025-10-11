@@ -73,41 +73,30 @@ if (navLinks.length > 0 && sections.length > 0) {
 // Main portfolio dropdown (desktop)
 const portfolioButton = document.getElementById('portfolio-button');
 const portfolioMenu = document.getElementById('portfolio-menu');
-
-function toggleDropdown(menu, isVisible) {
-    if (isVisible) {
-        menu.classList.remove('hidden');
-        // Focus the first item in the menu
-        menu.querySelector('a, button')?.focus();
-    } else {
-        menu.classList.add('hidden');
-    }
-}
+let portfolioTimeout;
 
 if (portfolioButton && portfolioMenu) {
-    portfolioButton.addEventListener('click', (event) => {
-        event.stopPropagation();
-        const isHidden = portfolioMenu.classList.contains('hidden');
-        toggleDropdown(portfolioMenu, isHidden);
+    const portfolioNavItem = portfolioButton.parentElement;
+
+    portfolioNavItem.addEventListener('mouseenter', () => {
+        clearTimeout(portfolioTimeout);
+        portfolioMenu.classList.remove('hidden');
     });
 
-    portfolioMenu.addEventListener('click', (event) => {
-        event.stopPropagation();
+    portfolioNavItem.addEventListener('mouseleave', () => {
+        portfolioTimeout = setTimeout(() => {
+            portfolioMenu.classList.add('hidden');
+        }, 300); // 300ms delay before hiding
     });
 
-    portfolioButton.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
-            toggleDropdown(portfolioMenu, false);
-        }
+    portfolioMenu.addEventListener('mouseenter', () => {
+        clearTimeout(portfolioTimeout);
+    });
+
+    portfolioMenu.addEventListener('mouseleave', () => {
+        portfolioMenu.classList.add('hidden');
     });
 }
-
-// Close dropdown when clicking outside
-window.addEventListener('click', () => {
-    if (portfolioMenu && !portfolioMenu.classList.contains('hidden')) {
-        toggleDropdown(portfolioMenu, false);
-    }
-});
 
 
 // Core portfolio submenu (desktop)
