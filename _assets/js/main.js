@@ -212,3 +212,37 @@ if (header) {
         }
     });
 }
+
+// Add copy-to-clipboard button for code blocks
+document.addEventListener('DOMContentLoaded', () => {
+    const codeBlocks = document.querySelectorAll('pre');
+
+    codeBlocks.forEach(block => {
+        // Create a wrapper and button
+        const wrapper = document.createElement('div');
+        wrapper.className = 'relative group';
+
+        const copyButton = document.createElement('button');
+        copyButton.className = 'copy-button';
+        copyButton.innerHTML = '<i class="fas fa-copy mr-2"></i> Copy';
+        copyButton.setAttribute('aria-label', 'Copy code to clipboard');
+
+        // Structure: wrapper -> button, pre
+        block.parentNode.insertBefore(wrapper, block);
+        wrapper.appendChild(block);
+        wrapper.appendChild(copyButton);
+
+        copyButton.addEventListener('click', () => {
+            const code = block.querySelector('code')?.innerText || block.innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                copyButton.innerHTML = '<i class="fas fa-check mr-2"></i> Copied!';
+                copyButton.classList.add('copied');
+                
+                setTimeout(() => {
+                    copyButton.innerHTML = '<i class="fas fa-copy mr-2"></i> Copy';
+                    copyButton.classList.remove('copied');
+                }, 2000);
+            });
+        });
+    });
+});
