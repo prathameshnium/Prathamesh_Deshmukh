@@ -45,51 +45,56 @@ async function performSearch() {
     }
 
     searchResults.innerHTML = '<p>Searching...</p>';
-    let results = [];
+    const promises = [];
 
     // 1. Search social profiles from JSON
-    try {
-        const response = await fetch(socialIndexUrl);
-        if (response.ok) {
-            const socialProfiles = await response.json();
-            socialProfiles.forEach(profile => {
+    promises.push(
+        fetch(socialIndexUrl)
+            .then(response => response.ok ? response.json() : [])
+            .then(socialProfiles => socialProfiles.filter(profile => {
                 const content = (profile.title + ' ' + profile.content).toLowerCase();
-                if (content.includes(query)) {
-                    results.push({
-                        url: profile.url,
-                        title: profile.title,
-                        content: profile.content.toLowerCase()
-                    });
-                }
-            });
-        }
-    } catch (error) {
-        console.error('Error fetching or parsing social index:', error);
-    }
+                return content.includes(query);
+            }).map(profile => ({
+                url: profile.url,
+                title: profile.title,
+                content: profile.content.toLowerCase()
+            })))
+            .catch(error => {
+                console.error('Error fetching or parsing social index:', error);
+                return []; // Return empty array on error
+            })
+    );
 
-    for (const page of pagesToSearch) {
-        try {
-            const response = await fetch(page);
-            if (!response.ok) continue;
+    // 2. Search HTML pages
+    pagesToSearch.forEach(page => {
+        promises.push(
+            fetch(page)
+                .then(response => response.ok ? response.text() : null)
+                .then(html => {
+                    if (!html) return null;
 
-            const html = await response.text();
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
-            const title = doc.querySelector('title')?.innerText || '';
-            const content = doc.body.innerText.toLowerCase();
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const title = doc.querySelector('title')?.innerText || '';
+                    const content = doc.body.innerText.toLowerCase();
 
-            if (content.includes(query)) {
-                results.push({
-                    url: page.startsWith('..') ? page.substring(2) : page,
-                    title: title,
-                    content: content
-                });
-            }
-        } catch (error) {
-            console.error('Error fetching or parsing page:', page, error);
-        }
-    }
+                    if (content.includes(query)) {
+                        return {
+                            url: page.startsWith('..') ? page.substring(2) : page,
+                            title: title,
+                            content: content
+                        };
+                    }
+                    return null;
+                })
+                .catch(error => {
+                    console.error('Error fetching or parsing page:', page, error);
+                    return null; // Return null on error
+                })
+        );
+    });
 
+    const results = (await Promise.all(promises)).flat().filter(Boolean);
     displayResults(results, query);
 }
 
