@@ -13,7 +13,7 @@ module.exports = {
       colors: {
         'dark-bg': '#111827', // A deeper, more neutral charcoal gray
         'card-bg': '#1f2937', // Adjusted for better contrast with the new background
-        'accent-orange': '#fbbf24', // A brighter, more vibrant gold
+        'accent-orange': '#f59e0b', // A rich gold/orange, less yellow
         'light-slate': '#a8b2d1',
         'slate': '#8892b0',
         'white': '#e2e8f0',
