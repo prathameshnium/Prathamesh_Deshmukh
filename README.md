@@ -40,6 +40,9 @@
     <a href="https://csr.academia.edu/PrathameshDeshmukh" target="_blank">
       <img src="https://img.shields.io/badge/Academia-333333?style=for-the-badge&logo=academia&logoColor=white" alt="Academia.edu Profile"/>
     </a>
+    <a href="https://sciprofiles.com/profile/prathamesh-Deshmukh" target="_blank">
+      <img src="https://img.shields.io/badge/SciProfiles-00A599?style=for-the-badge&logo=mdpi&logoColor=white" alt="SciProfiles Profile"/>
+    </a>
   </p>
 
   <p align="center">
