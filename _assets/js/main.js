@@ -28,7 +28,16 @@ if (mobileMenuButton && mobileMenu) {
                 </button>
                 <div id="mobile-portfolio-menu" class="hidden pl-4">
                     <a href="${prefix}pages/research.html" class="block py-2 nav-link">Research & Pubs</a>
-                    <a href="${prefix}pages/computational-works.html" class="block py-2 nav-link">Computational Works</a>
+                    <div>
+                        <button id="mobile-comp-works-button" class="w-full text-left py-2 nav-link flex justify-between items-center" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-comp-works-menu">
+                            <span>Computational Works</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div id="mobile-comp-works-menu" class="hidden pl-4">
+                            <a href="${prefix}pages/computational-works.html" class="block py-2 nav-link">Overview</a>
+                            <a href="${prefix}pages/project-pica.html" class="block py-2 nav-link">Project PICA</a>
+                        </div>
+                    </div>
                     <a href="${prefix}pages/presentations.html" class="block py-2 nav-link">Presentations</a>
                     <a href="${prefix}pages/cv.html" class="block py-2 nav-link">CV</a>
                     <a href="${prefix}pages/blog.html" class="block py-2 nav-link">Blog</a>
@@ -156,6 +165,21 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     )}
+
+    const mobileCompWorksButton = document.getElementById('mobile-comp-works-button');
+    const mobileCompWorksMenu = document.getElementById('mobile-comp-works-menu');
+
+    if (mobileCompWorksButton && mobileCompWorksMenu) {
+        mobileCompWorksButton.addEventListener('click', () => {
+            const isExpanded = mobileCompWorksMenu.classList.toggle('hidden');
+            mobileCompWorksButton.setAttribute('aria-expanded', !isExpanded);
+            const icon = mobileCompWorksButton.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            }
+        });
+    }
 });
 
 
