@@ -1,7 +1,7 @@
 # Allow all web crawlers to access all content
 User-agent: *
 Allow: /
-Disallow: /_assets/
+Disallow: 
 
 # Provide the location of the sitemap
 Sitemap: https://prathameshdeshmukh.site/sitemap.xml
