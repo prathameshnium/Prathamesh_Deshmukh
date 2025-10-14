@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search | Prathamesh Deshmukh</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data:;">
+    <link rel="stylesheet" href="../_assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../_assets/fonts.css">
+</head>
+<body class="antialiased font-sans bg-dark-bg text-gray-200">
+    <header class="bg-dark-bg/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-700">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../index.html" class="text-2xl font-bold text-white font-serif">Prathamesh Deshmukh</a>
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="../index.html#about" class="nav-link">About</a>
+                <a href="../index.html#research" class="nav-link">Research</a>
+                <a href="../index.html#skills" class="nav-link">Skills</a>
+                <a href="../index.html#journey" class="nav-link">Journey</a>
+                <div class="relative">
+                    <button id="portfolio-button" class="nav-link flex items-center">
+                        Portfolio <i class="fas fa-chevron-down text-xs ml-2"></i>
+                    </button>
+                    <div id="portfolio-menu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-56 top-full right-0 mt-2 z-50">
+                        <!-- Submenu Item -->
+                        <div id="core-portfolio-item" class="relative">
+                            <a href="#" class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange flex justify-between items-center">
+                                Core Portfolio <i class="fas fa-chevron-right text-xs"></i>
+                            </a>
+                            <div id="core-portfolio-submenu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 -left-full mt-0 z-50">
+                                <a href="research.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Research & Pubs</a>
+                                <a href="computational-works.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Computational Works</a>
+                                <a href="presentations.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Presentations</a>
+                                <a href="cv.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">CV</a>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-600 my-1"></div>
+                        <a href="blog.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Blog</a>
+                        <a href="gallery.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Gallery</a>
+                        <a href="resources.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Resources</a>
+                    </div>
+                </div>
+                <a href="../index.html#contact" class="nav-link">Contact</a>
+                <a href="search.html" class="nav-link">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                </a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white text-2xl" aria-label="Open menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section id="search" class="py-20">
+            <h1 class="text-4xl font-bold section-title mb-8 text-center">Search</h1>
+            <div class="max-w-3xl mx-auto">
+                <div class="flex items-center border-b-2 border-accent-orange py-2">
+                    <input id="search-input" class="appearance-none bg-transparent border-none w-full text-white mr-3 py-1 px-2 leading-tight focus:outline-none" type="search" placeholder="Search for 'multiferroics', 'PICA', etc.">
+                    <button id="search-button" class="flex-shrink-0 bg-accent-orange hover:bg-accent-orange-dark border-accent-orange hover:border-accent-orange-dark text-sm border-4 text-white py-1 px-2 rounded">
+                        Search
+                    </button>
+                </div>
+                <div id="search-results" class="mt-8"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-gray-800 bg-dark-bg py-8">
+        <div class="container mx-auto px-6 text-center text-slate">
+            <p><a href="https://github.com/prathameshnium/prathameshnium.github.io/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" class="hover:text-accent-orange transition-colors">&copy; 2024 Prathamesh Keshao Deshmukh. All Rights Reserved.</a></p>
+        </div>
+    </footer>
+
+    <script src="../_assets/js/main.js" defer></script>
+    <script src="../_assets/js/search.js" defer></script>
+</body>
+</html>

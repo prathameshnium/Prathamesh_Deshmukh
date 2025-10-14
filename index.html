@@ -112,9 +112,13 @@
                     </div>
                 </div>
                 <a href="#contact" class="nav-link">Contact</a>
-                <a href="pages/search.html" class="nav-link" aria-label="Open search page">
-                    <i class="fas fa-search" aria-hidden="true"></i>
-                </a>
+                <!-- Search Form -->
+                <form action="pages/search.html" method="GET" class="relative ml-4">
+                    <input type="search" name="q" placeholder="Search..." class="bg-card-bg border border-slate rounded-lg w-48 py-1 px-3 text-sm text-light-slate focus:outline-none focus:border-accent-orange focus:w-56 transition-all duration-300">
+                    <button type="submit" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate hover:text-accent-orange" aria-label="Submit search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
             </nav>
             <button id="mobile-menu-button" class="md:hidden text-white text-2xl" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
                 <i class="fas fa-bars"></i>

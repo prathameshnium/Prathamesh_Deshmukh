@@ -18,12 +18,24 @@ const searchInput = document.getElementById('search-input');
 const searchButton = document.getElementById('search-button');
 const searchResults = document.getElementById('search-results');
 
-searchButton.addEventListener('click', performSearch);
-searchInput.addEventListener('keyup', (event) => {
-    if (event.key === 'Enter') {
-        performSearch();
-    }
-});
+if (searchButton && searchInput && searchResults) {
+    searchButton.addEventListener('click', performSearch);
+    searchInput.addEventListener('keyup', (event) => {
+        if (event.key === 'Enter') {
+            performSearch();
+        }
+    });
+
+    // Perform search on page load if a query parameter is present
+    window.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const query = urlParams.get('q');
+        if (query) {
+            searchInput.value = query;
+            performSearch();
+        }
+    });
+}
 
 async function performSearch() {
     const query = searchInput.value.trim().toLowerCase();
