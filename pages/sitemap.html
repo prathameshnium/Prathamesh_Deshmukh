@@ -5,19 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Sitemap & Links | Prathamesh Deshmukh</title> 
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data:;">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="description" content="A complete sitemap of internal pages and a directory of external links, including academic profiles and publications, for Prathamesh Keshao Deshmukh.">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="canonical" href="https://prathameshdeshmukh.site/pages/sitemap.html">
+    <meta property="og:title" content="Sitemap & Links | Prathamesh Deshmukh">
+    <meta property="og:description" content="A complete sitemap of internal pages and a directory of external links for the portfolio of Prathamesh Keshao Deshmukh.">
+    <meta property="og:url" content="https://prathameshdeshmukh.site/pages/sitemap.html">
+    <meta property="og:image" content="https://www.prathameshdeshmukh.site/_assets/banner.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
     <link rel="stylesheet" href="../_assets/fonts.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../_assets/style.css">
-    <script>
-        window.addEventListener('load', function() {
-            const preloader = document.getElementById('preloader');
-            if (preloader) {
-                preloader.style.display = 'none';
-            }
-        });
-    </script>
 </head>
 <body class="antialiased font-sans">
     <div id="preloader">
@@ -32,14 +34,14 @@
                 <a href="../index.html#skills" class="nav-link">Skills</a>
                 <a href="../index.html#journey" class="nav-link">Journey</a>
                 <div class="relative">
-                    <button id="portfolio-button" class="nav-link flex items-center">
+                    <button id="portfolio-button" class="nav-link flex items-center" aria-haspopup="true" aria-expanded="false" aria-controls="portfolio-menu">
                         Portfolio <i class="fas fa-chevron-down text-xs ml-2"></i>
                     </button>
                     <div id="portfolio-menu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-56 top-full right-0 mt-2 z-50">
                         <!-- Submenu Item -->
                         <div id="core-portfolio-item" class="relative">
                             <a href="#" class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange flex justify-between items-center">
-                                Core Portfolio <i class="fas fa-chevron-right text-xs"></i>
+                                Core Portfolio <i class="fas fa-chevron-right text-xs" aria-hidden="true"></i>
                             </a>
                             <div id="core-portfolio-submenu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 -left-full mt-0 z-50">
                                 <a href="research.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Research & Pubs</a>
@@ -56,8 +58,8 @@
                 </div>
                 <a href="../index.html#contact" class="nav-link">Contact</a>
             </nav>
-            <button id="mobile-menu-button" class="md:hidden text-white text-2xl" aria-label="Open menu">
-                <i class="fas fa-bars"></i>
+            <button id="mobile-menu-button" class="md:hidden text-white text-2xl" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
         </div>
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
@@ -145,7 +147,6 @@
                             <a href="https://scholar.google.com/citations?user=DJgzI30AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" class="external-link rounded-md"><i class="fas fa-graduation-cap w-6 mr-3" aria-hidden="true"></i> Google Scholar</a>
                             <a href="https://www.linkedin.com/in/prathamesh-k-deshmukh" target="_blank" rel="noopener noreferrer" class="external-link rounded-md"><i class="fab fa-linkedin w-6 mr-3" aria-hidden="true"></i> LinkedIn</a>
                             <a href="https://x.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="external-link rounded-md"><i class="fab fa-x-twitter w-6 mr-3" aria-hidden="true"></i> X (Twitter)</a>
-                            <a href="https://x.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="external-link rounded-md"><i class="fab fa-x-twitter w-6 mr-3" aria-hidden="true"></i> X (Twitter)</a>
                             <a href="https://www.researchgate.net/profile/Prathamesh-Deshmukh-6" target="_blank" rel="noopener noreferrer" class="external-link rounded-md"><i class="fab fa-researchgate w-6 mr-3" aria-hidden="true"></i> ResearchGate</a>
                             <a href="https://csr.academia.edu/PrathameshDeshmukh" target="_blank" rel="noopener noreferrer" class="external-link rounded-md"><i class="fas fa-book-open w-6 mr-3" aria-hidden="true"></i> Academia</a>
                             <a href="https://github.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="external-link rounded-md"><i class="fab fa-github w-6 mr-3" aria-hidden="true"></i> GitHub</a>
@@ -201,56 +202,6 @@
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Robust script for clickable dropdown
-        const portfolioButton = document.getElementById('portfolio-button');
-        const portfolioMenu = document.getElementById('portfolio-menu');
-
-        portfolioButton.addEventListener('click', (event) => {
-            event.stopPropagation();
-            portfolioMenu.classList.toggle('hidden');
-        });
-
-        portfolioMenu.addEventListener('click', (event) => {
-            event.stopPropagation();
-        });
-
-        window.addEventListener('click', () => {
-            if (!portfolioMenu.classList.contains('hidden')) {
-                portfolioMenu.classList.add('hidden');
-            }
-        });
-
-        // Improved submenu logic
-        const corePortfolioItem = document.getElementById('core-portfolio-item');
-        const corePortfolioSubmenu = document.getElementById('core-portfolio-submenu');
-        let submenuTimeout;
-
-        corePortfolioItem.addEventListener('mouseenter', () => {
-            clearTimeout(submenuTimeout);
-            corePortfolioSubmenu.classList.remove('hidden');
-        });
-
-        corePortfolioItem.addEventListener('mouseleave', () => {
-            submenuTimeout = setTimeout(() => {
-                corePortfolioSubmenu.classList.add('hidden');
-            }, 300); // 300ms delay before hiding
-        });
-
-        corePortfolioSubmenu.addEventListener('mouseenter', () => {
-            clearTimeout(submenuTimeout);
-        });
-
-        corePortfolioSubmenu.addEventListener('mouseleave', () => {
-            corePortfolioSubmenu.classList.add('hidden');
-        });
-    </script>
+    <script src="../_assets/js/main.js" defer></script>
 </body>
 </html>

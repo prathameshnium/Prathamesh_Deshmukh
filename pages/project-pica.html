@@ -14,30 +14,29 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="PICA: Python Instrument Control & Automation">
     <meta property="og:description" content="A modular software suite for automating laboratory measurements in physics research.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/prathameshnium/PICA-Python-Instrument-Control-and-Automation/main/_assets/Images/PICA_Laucher_V4.png">
+    <meta property="og:image" content="https://www.prathameshdeshmukh.site/_assets/img/pica-launcher.png">
+    <meta property="og:url" content="https://prathameshdeshmukh.site/pages/project-pica.html">
 
     <!-- SEO: Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:title" content="PICA: Python Instrument Control & Automation">
     <meta property="twitter:description" content="A modular software suite for automating laboratory measurements in physics research.">
-    <meta property="twitter:image" content="https://raw.githubusercontent.com/prathameshnium/PICA-Python-Instrument-Control-and-Automation/main/_assets/Images/PICA_Laucher_V4.png">
+    <meta property="twitter:image" content="https://www.prathameshdeshmukh.site/_assets/img/pica-launcher.png">
 
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data: https://raw.githubusercontent.com https://placehold.co https://img.shields.io;">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <!-- Styles and Fonts -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
     <link rel="stylesheet" href="../_assets/fonts.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script>
       // This script block is for tailwind config if needed in the future.
       // tailwind.config = {}
-    </script>
-
-    <script>
-        window.addEventListener('load', function() {
-            const preloader = document.getElementById('preloader');
-            if (preloader) { preloader.style.display = 'none'; }
-        });
     </script>
     <!-- SEO: JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -79,14 +78,14 @@
                 <a href="#modules" class="nav-link">Modules</a>
                 <a href="#getting-started" class="nav-link">Get Started</a>
                 <div class="relative">
-                    <button id="portfolio-button" class="nav-link flex items-center">
+                    <button id="portfolio-button" class="nav-link flex items-center" aria-haspopup="true" aria-expanded="false" aria-controls="portfolio-menu">
                         Portfolio <i class="fas fa-chevron-down text-xs ml-2"></i>
                     </button>
                     <div id="portfolio-menu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-56 top-full right-0 mt-2 z-50">
                         <!-- Submenu Item -->
                         <div id="core-portfolio-item" class="relative">
                             <a href="#" class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange flex justify-between items-center">
-                                Core Portfolio <i class="fas fa-chevron-right text-xs"></i>
+                                Core Portfolio <i class="fas fa-chevron-right text-xs" aria-hidden="true"></i>
                             </a>
                             <div id="core-portfolio-submenu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 -left-full mt-0 z-50">
                                 <a href="research.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Research & Pubs</a>
@@ -103,8 +102,8 @@
                 </div>
                 <a href="../index.html#contact" class="nav-link">Contact</a>
             </nav>
-            <button id="mobile-menu-button" class="md:hidden text-white text-2xl" aria-label="Open menu">
-                <i class="fas fa-bars"></i>
+            <button id="mobile-menu-button" class="md-hidden text-white text-2xl" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
         </div>
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
@@ -129,8 +128,8 @@
 
                 <!-- Hero Section -->
                 <div class="text-center mb-16">
-                    <img src="https://raw.githubusercontent.com/prathameshnium/PICA-Python-Instrument-Control-and-Automation/main/_assets/LOGO/PICA_LOGO_NBG.png" 
-                         onerror="this.onerror=null;this.src='https://placehold.co/150x150/2d3748/f6ad55?text=PICA'" 
+                    <img src="../_assets/img/logo/PICA_LOGO_NBG.png" 
+                         onerror="this.onerror=null;this.src='https://placehold.co/128x128/1f2937/f59e0b?text=PICA'" 
                          alt="PICA Logo for Python Instrument Control and Automation Project" width="128" height="128"
                          class="w-32 h-32 mx-auto mb-6">
                     <h1 class="text-4xl md:text-5xl font-bold section-title mb-4">PICA: Python-based Instrument Control and Automation</h1>
@@ -152,9 +151,9 @@
                             <p>A key architectural feature is the use of isolated process execution for each measurement module via Python's `multiprocessing` library, ensuring high stability and preventing inter-script conflicts.</p>
                         </div>
                         <div class="md:col-span-3">
-                           <img src="https://raw.githubusercontent.com/prathameshnium/PICA-Python-Instrument-Control-and-Automation/main/_assets/Images/PICA_Laucher_V4.png" 
-                                onerror="this.onerror=null;this.src='https://placehold.co/800x500/1a202c/e2e8f0?text=PICA+Launcher+UI'"
-                                alt="Screenshot of the PICA Launcher GUI showing measurement modules for laboratory automation." width="852" height="534" class="rounded-lg shadow-2xl border-2 border-slate/30">
+                           <img src="../_assets/img/pica-launcher.png" 
+                                onerror="this.onerror=null;this.src='https://placehold.co/852x534/1f2937/e2e8f0?text=PICA+Launcher+UI'"
+                                alt="Screenshot of the PICA Launcher GUI, a dashboard for managing and executing various characterization experiments for materials science research." width="852" height="534" class="rounded-lg shadow-2xl border-2 border-slate/30">
                         </div>
                     </div>
                 </div>
@@ -292,7 +291,7 @@ cd PICA-Python-Instrument-Control-and-Automation</code></pre>
                     <div class="card p-8 rounded-lg">
                         <h3 class="text-2xl font-semibold text-white mb-4">Authors & Acknowledgments</h3>
                          <img src="../_assets/img/logo/UGC_DAE_CSR.jpeg" 
-                              onerror="this.onerror=null;this.src='https://placehold.co/150x50/2d3748/f6ad55?text=UGC+DAE+CSR'"
+                              onerror="this.onerror=null;this.src='https://placehold.co/96x96/1f2937/f59e0b?text=UGC-DAE+CSR'"
                               alt="UGC DAE CSR Logo" class="w-24 mb-4 rounded">
                         <p class="text-light-slate mb-1"><strong>Lead Developer:</strong> <a href="../index.html" class="text-accent-orange hover:underline">Prathamesh Deshmukh</a></p>
                         <p class="text-light-slate mb-2"><strong>Principal Investigator:</strong> <a href="Sudip_Mukherjee_Materials_Physics_Lab.html" class="text-accent-orange hover:underline">Dr. Sudip Mukherjee</a></p>
@@ -323,7 +322,6 @@ cd PICA-Python-Instrument-Control-and-Automation</code></pre>
                 <a href="https://www.linkedin.com/in/prathamesh-k-deshmukh" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
                 <a href="https://github.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
                 <a href="https://x.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="X (formerly Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
-                <a href="https://x.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="X (formerly Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
             </div>
             <div class="mb-6">
                 <a href="sitemap.html" class="hover:text-accent-orange transition-colors">Sitemap & Link Directory</a>
@@ -332,6 +330,6 @@ cd PICA-Python-Instrument-Control-and-Automation</code></pre>
         </div>
     </footer>
 
-    <script src="../_assets/js/main.js" defer></script>
+    <script src="../_assets/js/main.js" defer></script> 
 </body>
 </html>

@@ -6,7 +6,17 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data: https://placehold.co;">
     <title>Gallery | Prathamesh Deshmukh</title>
-    <meta name="description" content="A gallery of scientific visualizations, experimental setups, and data plots from Prathamesh Deshmukh's research.">
+    <meta name="description" content="A visual gallery of scientific visualizations, experimental setups, and data plots from the research of Prathamesh Deshmukh.">
+    <link rel="canonical" href="https://prathameshdeshmukh.site/pages/gallery.html">
+    <meta property="og:title" content="Gallery | Prathamesh Deshmukh">
+    <meta property="og:description" content="A visual gallery of scientific visualizations, experimental setups, and data plots from the research of Prathamesh Deshmukh.">
+    <meta property="og:url" content="https://prathameshdeshmukh.site/pages/gallery.html">
+    <meta property="og:image" content="https://www.prathameshdeshmukh.site/_assets/banner.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
     <link rel="stylesheet" href="../_assets/fonts.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../_assets/style.css">
@@ -25,14 +35,14 @@
                 <a href="../index.html#skills" class="nav-link">Skills</a>
                 <a href="../index.html#journey" class="nav-link">Journey</a>
                 <div class="relative">
-                    <button id="portfolio-button" class="nav-link flex items-center">
+                    <button id="portfolio-button" class="nav-link flex items-center" aria-haspopup="true" aria-expanded="false" aria-controls="portfolio-menu">
                         Portfolio <i class="fas fa-chevron-down text-xs ml-2"></i>
                     </button>
                     <div id="portfolio-menu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-56 top-full right-0 mt-2 z-50">
                         <!-- Submenu Item -->
                         <div id="core-portfolio-item" class="relative">
                             <a href="#" class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange flex justify-between items-center">
-                                Core Portfolio <i class="fas fa-chevron-right text-xs"></i>
+                                Core Portfolio <i class="fas fa-chevron-right text-xs" aria-hidden="true"></i>
                             </a>
                             <div id="core-portfolio-submenu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 -left-full mt-0 z-50">
                                 <a href="research.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Research & Pubs</a>
@@ -49,8 +59,8 @@
                 </div>
                 <a href="../index.html#contact" class="nav-link">Contact</a>
             </nav>
-            <button id="mobile-menu-button" class="md:hidden text-white text-2xl" aria-label="Open menu">
-                <i class="fas fa-bars"></i>
+            <button id="mobile-menu-button" class="md:hidden text-white text-2xl" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
         </div>
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4"></div>
@@ -107,7 +117,6 @@
                 <a href="https://scholar.google.com/citations?user=DJgzI30AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="Google Scholar"><i class="fas fa-graduation-cap" aria-hidden="true"></i></a>
                 <a href="https://www.linkedin.com/in/prathamesh-k-deshmukh" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
                 <a href="https://github.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
-                <a href="https://x.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="X (formerly Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
                 <a href="https://x.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl" aria-label="X (formerly Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
                 <!-- Footer More Links Dropdown -->
                 <div class="relative" id="footer-more-links-container">
