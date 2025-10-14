@@ -180,6 +180,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Setup desktop submenus
+    setupSubmenu('core-portfolio-item', 'core-portfolio-submenu');
+    setupSubmenu('comp-works-item', 'comp-works-submenu');
 });
 
 
