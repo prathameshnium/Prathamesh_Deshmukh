@@ -41,6 +41,15 @@ if (mobileMenuButton && mobileMenu) {
                     <a href="${prefix}pages/presentations.html" class="block py-2 nav-link">Presentations</a>
                     <a href="${prefix}pages/cv.html" class="block py-2 nav-link">CV</a>
                     <a href="${prefix}pages/blog.html" class="block py-2 nav-link">Blog</a>
+                </div>
+            </div>
+            <div>
+                <button id="mobile-additional-button" class="w-full text-left py-2 nav-link flex justify-between items-center" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-additional-menu">
+                    <span>Additional Content</span>
+                    <i class="fas fa-chevron-down text-xs"></i>
+                </button>
+                <div id="mobile-additional-menu" class="hidden pl-4">
+                    <a href="${prefix}pages/blog.html" class="block py-2 nav-link">Blog</a>
                     <a href="${prefix}pages/gallery.html" class="block py-2 nav-link">Gallery</a>
                     <a href="${prefix}pages/resources.html" class="block py-2 nav-link">Resources</a>
                 </div>
@@ -181,9 +190,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const mobileAdditionalButton = document.getElementById('mobile-additional-button');
+    const mobileAdditionalMenu = document.getElementById('mobile-additional-menu');
+
+    if (mobileAdditionalButton && mobileAdditionalMenu) {
+        mobileAdditionalButton.addEventListener('click', () => {
+            const isExpanded = mobileAdditionalMenu.classList.toggle('hidden');
+            mobileAdditionalButton.setAttribute('aria-expanded', !isExpanded);
+            const icon = mobileAdditionalButton.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            }
+        });
+    }
+
     // Setup desktop submenus
     setupSubmenu('core-portfolio-item', 'core-portfolio-submenu');
     setupSubmenu('comp-works-item', 'comp-works-submenu');
+    setupSubmenu('additional-content-item', 'additional-content-submenu');
 });
 
 
