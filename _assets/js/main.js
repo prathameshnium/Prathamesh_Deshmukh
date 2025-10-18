@@ -6,6 +6,20 @@ window.addEventListener('load', function() {
     }
 });
 
+// Mobile menu toggle
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener('click', () => {
+        const isExpanded = mobileMenu.classList.toggle('hidden');
+        mobileMenuButton.setAttribute('aria-expanded', String(!isExpanded));
+        // Toggle icon
+        const icon = mobileMenuButton.querySelector('i');
+        icon.classList.toggle('fa-bars', isExpanded);
+        icon.classList.toggle('fa-times', !isExpanded);
+    });
+}
+
 // Active nav link scrolling for one-page navigation
 const sections = document.querySelectorAll('main section[id]');
 const navLinks = document.querySelectorAll('header nav a[href^="#"]');
@@ -33,81 +47,32 @@ if (navLinks.length > 0 && sections.length > 0) {
     window.addEventListener('scroll', updateActiveNavLink);
 }
 
-
-// Main portfolio dropdown (desktop)
-const portfolioButton = document.getElementById('portfolio-button');
-const portfolioMenu = document.getElementById('portfolio-menu');
-
-function toggleDropdown(menu, isVisible) {
-    if (isVisible) {
-        menu.classList.remove('hidden');
-        // Focus the first item in the menu
-        menu.querySelector('a, button')?.focus();
-    } else {
-        menu.classList.add('hidden');
-    }
-}
-
-if (portfolioButton && portfolioMenu) {
-    portfolioButton.addEventListener('click', (event) => {
-        event.stopPropagation();
-        // Dynamically populate the menu if it's empty
-        if (portfolioMenu.innerHTML.trim() === '') {
-            const isIndex = window.location.pathname.endsWith('/') || window.location.pathname.endsWith('index.html');
-            const pagePrefix = isIndex ? 'pages/' : '';
-            portfolioMenu.innerHTML = `
-                <div id="core-portfolio-item" class="relative">
-                    <a href="#" class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange flex justify-between items-center">
-                        Core Portfolio <i class="fas fa-chevron-right text-xs" aria-hidden="true"></i>
-                    </a>
-                    <div id="core-portfolio-submenu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 left-full -mt-2 z-50">
-                        <a href="${pagePrefix}research.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Research & Pubs</a>
-                        <div id="comp-works-item" class="relative">
-                            <a href="${pagePrefix}computational-works.html" class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange flex justify-between items-center">
-                                Computational Works <i class="fas fa-chevron-right text-xs" aria-hidden="true"></i>
-                            </a>
-                            <div id="comp-works-submenu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 left-full -mt-9 z-50">
-                                <a href="${pagePrefix}computational-works.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Overview</a>
-                                <a href="${pagePrefix}project-pica.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Project PICA</a>
-                            </div>
-                        </div>
-                        <a href="${pagePrefix}presentations.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Presentations</a>
-                        <a href="${pagePrefix}cv.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">CV</a>
-                    </div>
-                </div>
-                <div class="border-t border-gray-600 my-1"></div>
-                <a href="${pagePrefix}blog.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Blog</a>
-                <a href="${pagePrefix}gallery.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Gallery</a>
-                <a href="${pagePrefix}resources.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Resources</a>
-            `;
-            // Re-run the submenu setup for the newly added elements
-            setupDesktopSubmenus();
-        }
-        const isHidden = portfolioMenu.classList.contains('hidden');
-        toggleDropdown(portfolioMenu, isHidden);
-    });
-
-    portfolioMenu.addEventListener('click', (event) => {
-        event.stopPropagation();
-    });
-
-    portfolioButton.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
-            toggleDropdown(portfolioMenu, false);
-        }
-    });
-}
-
-// Close dropdown when clicking outside
-window.addEventListener('click', () => {
-    if (portfolioMenu && !portfolioMenu.classList.contains('hidden')) {
-        toggleDropdown(portfolioMenu, false);
-    }
-});
-
-
 // Mobile portfolio accordion
 document.addEventListener('DOMContentLoaded', () => {
+    // Desktop dropdown click handler
+    const portfolioButton = document.getElementById('portfolio-button');
+    const portfolioMenu = document.getElementById('portfolio-menu');
+
+    if (portfolioButton && portfolioMenu) {
+        portfolioButton.addEventListener('click', (event) => {
+            event.stopPropagation();
+            const isHidden = portfolioMenu.classList.toggle('hidden');
+            portfolioButton.setAttribute('aria-expanded', String(!isHidden));
+        });
+    }
+
+    // Close dropdowns when clicking outside
+    window.addEventListener('click', (e) => {
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+            // Check if the click is outside the menu and its corresponding button
+            const button = menu.previousElementSibling;
+            if (!menu.classList.contains('hidden') && !menu.contains(e.target) && !button.contains(e.target)) {
+                menu.classList.add('hidden');
+                button.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+
     // Use event delegation for mobile accordions
     document.body.addEventListener('click', (event) => {
         const button = event.target.closest('#mobile-portfolio-button, #mobile-comp-works-button, #mobile-additional-button, #portfolio-button-mobile');
@@ -115,45 +80,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const menu = document.getElementById(button.getAttribute('aria-controls'));
             const icon = button.querySelector('i');
             const isExpanded = menu.classList.toggle('hidden');
-            button.setAttribute('aria-expanded', !isExpanded);
+            button.setAttribute('aria-expanded', String(!isExpanded));
             if (icon) {
-                icon.classList.toggle('fa-chevron-down');
-                icon.classList.toggle('fa-chevron-up');
+                icon.classList.toggle('fa-chevron-down', isExpanded);
+                icon.classList.toggle('fa-chevron-up', !isExpanded);
             }
         }
     });
-
-    // Generic Desktop Submenu Handler
-    function setupDesktopSubmenus() {
-        const menuItems = document.querySelectorAll('header nav .relative');
-
-        menuItems.forEach(item => {
-            const menu = item.querySelector('.dropdown-menu');
-            if (!menu) return;
-
-            let timeout;
-
-            item.addEventListener('mouseenter', () => {
-                clearTimeout(timeout);
-                // Hide any other open submenus at the same level
-                const parent = item.parentElement;
-                parent.querySelectorAll(':scope > .relative > .dropdown-menu').forEach(m => {
-                    if (m !== menu) m.classList.add('hidden');
-                });
-                menu.classList.remove('hidden');
-            });
-
-            item.addEventListener('mouseleave', () => {
-                timeout = setTimeout(() => {
-                    menu.classList.add('hidden');
-                }, 200); // A small delay to allow moving mouse to submenu
-            });
-        });
-    }
-
-    setupDesktopSubmenus();
 });
-
 
 // Generic dropdown handler for "More Links"
 function setupDropdown(containerId, buttonId, menuId) {

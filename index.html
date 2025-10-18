@@ -42,15 +42,20 @@
       gtag('config', 'G-C4JV6510PN', { 'anonymize_ip': true });
     </script>
     <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
+    <link rel="preconnect" href="https://img.shields.io" crossorigin>
 
     <!-- Load critical CSS synchronously -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/_assets/fonts.css">
     <link rel="stylesheet" href="/_assets/style.css">
+    <!-- Load non-critical CSS asynchronously -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/_assets/fonts.css" media="print" onload="this.media='all'">
 
-
-    
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="/_assets/fonts.css">
+    </noscript>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -89,7 +94,32 @@
                     <button id="portfolio-button" class="nav-link flex items-center" aria-haspopup="true" aria-expanded="false" aria-controls="portfolio-menu">
                         Portfolio <i class="fas fa-chevron-down text-xs ml-2"></i>
                     </button>
-                    <div id="portfolio-menu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-56 top-full right-0 mt-2 z-50"></div>
+                    <div id="portfolio-menu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-56 top-full right-0 mt-2 z-50 group">
+                        <!-- Submenu Item -->
+                        <div class="relative group/core">
+                            <a href="#" class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange flex justify-between items-center" aria-haspopup="true">
+                                Core Portfolio <i class="fas fa-chevron-right text-xs" aria-hidden="true"></i>
+                            </a>
+                            <div class="absolute hidden group-hover/core:block dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 left-full -mt-2 z-50">
+                                <a href="pages/research.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Research & Pubs</a>
+                                <div class="relative group/comp">
+                                    <a href="pages/computational-works.html" class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange flex justify-between items-center" aria-haspopup="true">
+                                        Computational Works <i class="fas fa-chevron-right text-xs" aria-hidden="true"></i>
+                                    </a>
+                                    <div class="absolute hidden group-hover/comp:block dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 left-full -mt-9 z-50">
+                                        <a href="pages/computational-works.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Overview</a>
+                                        <a href="pages/project-pica.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Project PICA</a>
+                                    </div>
+                                </div>
+                                <a href="pages/presentations.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Presentations</a>
+                                <a href="pages/cv.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">CV</a>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-600 my-1"></div>
+                        <a href="pages/blog.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Blog</a>
+                        <a href="pages/gallery.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Gallery</a>
+                        <a href="pages/resources.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Resources</a>
+                    </div>
                 </div>
                 <a href="#publications" class="nav-link">Publications</a>
                 <a href="#skills" class="nav-link">Skills</a>
@@ -107,9 +137,8 @@
                 <i class="fas fa-bars"></i>
             </button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
             <a href="#about" class="block py-2 nav-link">About</a>
-            <!-- Mobile Portfolio Button (highlighted) -->
             <div class="my-2">
                 <button id="portfolio-button-mobile" class="w-full text-left py-2 px-4 rounded-lg bg-accent-orange/10 border border-accent-orange text-accent-orange font-semibold flex justify-between items-center" aria-haspopup="true" aria-expanded="false" aria-controls="portfolio-menu-mobile">
                     <span>Portfolio</span>
@@ -134,14 +163,11 @@
                     <a href="pages/resources.html" class="block py-2 nav-link">Resources</a>
                 </div>
             </div>
-            <!-- End Mobile Portfolio Button -->
             <a href="#research" class="block py-2 nav-link">Research</a>
             <a href="#publications" class="block py-2 nav-link">Publications</a>
             <a href="#skills" class="block py-2 nav-link">Skills</a>
             <a href="#journey" class="block py-2 nav-link">Journey</a>
             <a href="#contact" class="block py-2 nav-link">Contact</a>
-            <div class="border-t border-gray-700 my-2"></div>
-            <!-- Accordion for Portfolio -->
         </div>
     </header>
 
