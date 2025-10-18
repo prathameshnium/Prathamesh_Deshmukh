@@ -51,64 +51,59 @@ if (navLinks.length > 0 && sections.length > 0) {
     window.addEventListener('scroll', updateActiveNavLink);
 }
 
-// Generic dropdown handler for "More Links"
+// Generic dropdown handler
 function setupDropdown(containerId, buttonId, menuId) {
     const container = document.getElementById(containerId);
     const button = document.getElementById(buttonId);
     const menu = document.getElementById(menuId);
-    if (!container || !button || !menu) {
-        return;
-    }
+    if (!container || !button || !menu) return;
 
-    let menuTimeout; // For handling hover behavior
+    const allSubmenus = container.querySelectorAll('.dropdown-menu');
 
-    // Function to show the menu
-    const showMenu = () => {
-        clearTimeout(menuTimeout); // Cancel any pending hide actions
-        menu.classList.remove('hidden');
-        button.setAttribute('aria-expanded', 'true');
+    const handleSubmenu = (parentItem) => {
+        const submenu = parentItem.querySelector('.dropdown-menu');
+        if (!submenu) return;
+
+        let timeout;
+        parentItem.addEventListener('mouseenter', () => {
+            clearTimeout(timeout);
+            submenu.classList.remove('hidden');
+        });
+        parentItem.addEventListener('mouseleave', () => {
+            timeout = setTimeout(() => submenu.classList.add('hidden'), 200);
+        });
     };
 
-    // Function to hide the menu
-    const hideMenu = (immediate = false) => {
-        if (immediate) {
+    container.querySelectorAll('.relative.group\\/core, .relative.group\\/comp').forEach(handleSubmenu);
+
+    const toggleMenu = (show) => {
+        const isHidden = menu.classList.contains('hidden');
+        if (show === true || (show === undefined && isHidden)) {
+            menu.classList.remove('hidden');
+            button.setAttribute('aria-expanded', 'true');
+        } else if (show === false || (show === undefined && !isHidden)) {
             menu.classList.add('hidden');
             button.setAttribute('aria-expanded', 'false');
-        } else {
-            menuTimeout = setTimeout(() => {
-                menu.classList.add('hidden');
-                button.setAttribute('aria-expanded', 'false');
-            }, 200); // Delay to allow moving mouse into the menu
+            // Ensure all submenus are hidden when the main menu closes
+            allSubmenus.forEach(submenu => submenu.classList.add('hidden'));
         }
     };
 
-    // Event listeners for hover
-    container.addEventListener('mouseenter', showMenu);
-    container.addEventListener('mouseleave', () => hideMenu());
+    let mainTimeout;
+    container.addEventListener('mouseenter', () => { clearTimeout(mainTimeout); toggleMenu(true); });
+    container.addEventListener('mouseleave', () => { mainTimeout = setTimeout(() => toggleMenu(false), 200); });
+    button.addEventListener('click', (e) => { e.stopPropagation(); toggleMenu(); });
 
-    // Event listener for click (for touch devices and accessibility)
-    button.addEventListener('click', (event) => {
-        event.stopPropagation(); // Prevent window click listener from closing it immediately
-        const isHidden = menu.classList.contains('hidden');
-        if (isHidden) {
-            showMenu();
-        } else {
-            hideMenu(true); // Hide immediately on click
+    document.addEventListener('click', (e) => {
+        if (!container.contains(e.target)) {
+            toggleMenu(false);
         }
     });
 
-    // Close menu when clicking outside of it
-    document.addEventListener('click', (event) => {
-        if (!container.contains(event.target)) {
-            hideMenu(true);
-        }
-    });
-
-    // Accessibility: Close with Escape key
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && !menu.classList.contains('hidden')) {
-            hideMenu(true);
-            button.focus(); // Return focus to the button
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !menu.classList.contains('hidden')) {
+            toggleMenu(false);
+            button.focus();
         }
     });
 }
@@ -129,6 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Initializations ---
     setupDropdown('more-links-container', 'more-links-button', 'more-links-menu');
     setupDropdown('footer-more-links-container', 'footer-more-links-button', 'footer-more-links-menu');
+    setupDropdown('portfolio-dropdown-container', 'portfolio-button', 'portfolio-menu');
 
     // --- Search Modal ---
     const searchModal = document.getElementById('search-modal');
