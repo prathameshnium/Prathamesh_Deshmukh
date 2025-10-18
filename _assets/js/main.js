@@ -1,8 +1,12 @@
-// Preloader
+// Preloader Fade Out
 window.addEventListener('load', function() {
     const preloader = document.getElementById('preloader');
     if (preloader) {
-        preloader.style.display = 'none';
+        // Add a fade-out effect for a smoother transition
+        preloader.style.opacity = '0';
+        preloader.addEventListener('transitionend', () => {
+            preloader.style.display = 'none';
+        });
     }
 });
 
