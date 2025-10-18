@@ -20,6 +20,7 @@ if (mobileMenuButton && mobileMenu) {
             <a href="${prefix}index.html#skills" class="block py-2 nav-link">Skills</a>
             <a href="${prefix}index.html#journey" class="block py-2 nav-link">Journey</a>
             <a href="${prefix}index.html#contact" class="block py-2 nav-link">Contact</a>
+            <a href="https://x.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="block py-2 nav-link"><i class="fab fa-x-twitter mr-2"></i>X / Twitter</a>
             <div class="border-t border-gray-700 my-2"></div>
             <div>
                 <button id="mobile-portfolio-button" class="w-full text-left py-2 nav-link flex justify-between items-center" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-portfolio-menu">

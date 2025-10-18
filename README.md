@@ -43,6 +43,9 @@
     <a href="https://x.com/prathameshnium" target="_blank">
       <img src="https://img.shields.io/badge/X_(Twitter)-000000?style=for-the-badge&logo=x&logoColor=white" alt="X (Twitter) Profile"/>
     </a>
+    <a href="https://x.com/prathameshnium" target="_blank">
+      <img src="https://img.shields.io/badge/X_(Twitter)-000000?style=for-the-badge&logo=x&logoColor=white" alt="X (Twitter) Profile"/>
+    </a>
     <a href="https://sciprofiles.com/profile/prathamesh-Deshmukh" target="_blank">
       <img src="https://img.shields.io/badge/SciProfiles-00A599?style=for-the-badge&logo=mdpi&logoColor=white" alt="SciProfiles Profile"/>
     </a>
