@@ -126,6 +126,11 @@ if (header) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // --- Initializations ---
+    setupDropdown('portfolio-container', 'portfolio-button', 'portfolio-menu');
+    setupDropdown('more-links-container', 'more-links-button', 'more-links-menu');
+    setupDropdown('footer-more-links-container', 'footer-more-links-button', 'footer-more-links-menu');
+
     // --- Search Modal ---
     const searchModal = document.getElementById('search-modal');
     const searchInput = document.getElementById('search-input-modal');
@@ -231,20 +236,6 @@ document.addEventListener('DOMContentLoaded', () => {
         searchInput.addEventListener('input', performSearch);
     }
 
-    // --- Other DOM-dependent initializations ---
-
-    // Close dropdowns when clicking outside
-    window.addEventListener('click', (e) => {
-        document.querySelectorAll('.dropdown-menu').forEach(menu => {
-            const parent = menu.closest('.relative.group');
-            if (parent && !parent.contains(e.target)) {
-                menu.classList.add('hidden');
-                const button = parent.querySelector('button');
-                if (button) button.setAttribute('aria-expanded', 'false');
-            }
-        });
-    });
-
     // Mobile accordions
     document.body.addEventListener('click', (event) => {
         const button = event.target.closest('#mobile-portfolio-button, #mobile-comp-works-button, #mobile-additional-button, #portfolio-button-mobile');
@@ -289,50 +280,91 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Sitemap/Pages List Loader ---
-    async function loadPagesList() {
-        const pagesListContainer = document.getElementById('pages-list');
-        if (!pagesListContainer) return;
+});
 
-        try {
-            const response = await fetch('/sitemap.xml');
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            const sitemapText = await response.text();
-            const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(sitemapText, 'application/xml');
-            const urls = xmlDoc.getElementsByTagName('url');
+// --- Sitemap/Pages List Loader ---
+async function loadPagesList() {
+    const pagesListContainer = document.getElementById('pages-list');
+    if (!pagesListContainer) return;
 
-            let html = '';
-            Array.from(urls).forEach(urlNode => {
-                const loc = urlNode.getElementsByTagName('loc')[0].textContent;
-                // Extract a user-friendly name from the URL
-                let name = loc.split('/').pop().replace('.html', '').replace(/_/g, ' ');
-                if (name === '' || name === 'index') {
-                    name = 'Home Page';
-                } else {
-                    // Capitalize first letter of each word
-                    name = name.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-                }
-
-                html += `
-                    <a href="${loc}" class="sitemap-link rounded-md flex justify-between items-center">
-                        <span>${name}</span>
-                        <i class="fas fa-arrow-right text-xs text-slate"></i>
-                    </a>
-                `;
-            });
-
-            pagesListContainer.innerHTML = html;
-        } catch (error) {
-            console.error('Failed to load and parse sitemap.xml:', error);
-            pagesListContainer.innerHTML = '<p class="text-light-slate text-center text-red-400">Could not load page list.</p>';
+    try {
+        const response = await fetch('/sitemap.xml');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
         }
-    }
-    loadPagesList();
+        const sitemapText = await response.text();
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(sitemapText, 'application/xml');
+        const urls = xmlDoc.getElementsByTagName('url');
 
-    // Setup for "More Links" dropdowns
-    setupDropdown('more-links-container', 'more-links-button', 'more-links-menu');
-    setupDropdown('footer-more-links-container', 'footer-more-links-button', 'footer-more-links-menu');
+        let html = '';
+        Array.from(urls).forEach(urlNode => {
+            const loc = urlNode.getElementsByTagName('loc')[0].textContent;
+            // Extract a user-friendly name from the URL
+            let name = loc.split('/').pop().replace('.html', '').replace(/_/g, ' ');
+            if (name === '' || name === 'index') {
+                name = 'Home Page';
+            } else {
+                // Capitalize first letter of each word
+                name = name.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+            }
+
+            html += `
+                <a href="${loc}" class="sitemap-link rounded-md flex justify-between items-center">
+                    <span>${name}</span>
+                    <i class="fas fa-arrow-right text-xs text-slate"></i>
+                </a>
+            `;
+        });
+
+        pagesListContainer.innerHTML = html;
+    } catch (error) {
+        console.error('Failed to load and parse sitemap.xml:', error);
+        pagesListContainer.innerHTML = '<p class="text-light-slate text-center text-red-400">Could not load page list.</p>';
+    }
+}
+
+// --- Publications Loader ---
+async function loadPublications() {
+    const container = document.getElementById('publications-list');
+    if (!container) return;
+
+    try {
+        const response = await fetch('/_assets/data/publications.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const publications = await response.json();
+        
+        const featuredPubs = publications.filter(pub => pub.homepage);
+
+        if (featuredPubs.length === 0) {
+            container.innerHTML = '<p class="text-light-slate text-center col-span-full">No featured publications available at the moment.</p>';
+            return;
+        }
+
+        const html = featuredPubs.map(pub => `
+            <div class="card p-6 rounded-lg flex flex-col">
+                <p class="mb-2 text-light-slate flex-grow">${pub.authors} (${pub.year}). "${pub.title}."</p>
+                <p class="italic text-slate mb-3">${pub.journal}${pub.details ? `, ${pub.details}` : ''}.</p>
+                ${pub.doi ? `
+                <a href="${pub.doi}" target="_blank" rel="noopener noreferrer" class="publication-link font-medium mt-auto">
+                    View Article <i class="fas fa-external-link-alt ml-1 text-xs" aria-hidden="true"></i>
+                </a>` : `
+                <span class="text-slate font-medium mt-auto">Details upon request</span>
+                `}
+            </div>
+        `).join('');
+
+        container.innerHTML = html;
+    } catch (error) {
+        console.error("Could not load publications:", error);
+        container.innerHTML = '<p class="text-red-400 text-center col-span-full">Failed to load publications.</p>';
+    }
+}
+
+// Run loaders on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+    loadPagesList();
+    loadPublications();
 });
