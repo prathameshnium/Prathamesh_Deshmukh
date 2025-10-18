@@ -6,57 +6,6 @@ window.addEventListener('load', function() {
     }
 });
 
-// Mobile menu toggle
-const mobileMenuButton = document.getElementById('mobile-menu-button');
-const mobileMenu = document.getElementById('mobile-menu');
-if (mobileMenuButton && mobileMenu) {
-    // Populate mobile menu dynamically
-    const isIndex = window.location.pathname.endsWith('/') || window.location.pathname.endsWith('index.html');
-    const prefix = isIndex ? '' : '../';
-    mobileMenu.innerHTML = `
-        <nav aria-label="Mobile navigation">
-            <a href="${prefix}index.html#about" class="block py-2 nav-link">About</a>
-            <a href="${prefix}index.html#research" class="block py-2 nav-link">Research</a>
-            <a href="${prefix}index.html#skills" class="block py-2 nav-link">Skills</a>
-            <a href="${prefix}index.html#journey" class="block py-2 nav-link">Journey</a>
-            <a href="${prefix}index.html#contact" class="block py-2 nav-link">Contact</a>
-            <a href="https://x.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="block py-2 nav-link"><i class="fab fa-x-twitter mr-2"></i>X / Twitter</a>
-            <div class="border-t border-gray-700 my-2"></div>
-            <div class="my-2">
-                <button id="mobile-portfolio-button" class="w-full text-left py-2 px-4 rounded-lg bg-accent-orange/10 border border-accent-orange text-accent-orange font-semibold flex justify-between items-center" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-portfolio-menu">
-                    <span>Portfolio</span>
-                    <i class="fas fa-chevron-down text-xs"></i>
-                </button>
-                <div id="mobile-portfolio-menu" class="hidden pl-4">
-                    <a href="${prefix}pages/research.html" class="block py-2 nav-link">Research & Pubs</a>
-                    <a href="${prefix}pages/computational-works.html" class="block py-2 nav-link">Computational Works</a>
-                    <a href="${prefix}pages/presentations.html" class="block py-2 nav-link">Presentations</a>
-                    <a href="${prefix}pages/cv.html" class="block py-2 nav-link">CV</a>
-                    <a href="${prefix}pages/blog.html" class="block py-2 nav-link">Blog</a>
-                    <a href="${prefix}pages/gallery.html" class="block py-2 nav-link">Gallery</a>
-                    <a href="${prefix}pages/resources.html" class="block py-2 nav-link">Resources</a>
-                </div>
-            </div>
-            <div>
-                <button id="mobile-additional-button" class="w-full text-left py-2 nav-link flex justify-between items-center" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-additional-menu">
-                    <span>Additional Content</span>
-                    <i class="fas fa-chevron-down text-xs"></i>
-                </button>
-                <div id="mobile-additional-menu" class="hidden pl-4">
-                    <a href="${prefix}pages/blog.html" class="block py-2 nav-link">Blog</a>
-                    <a href="${prefix}pages/gallery.html" class="block py-2 nav-link">Gallery</a>
-                    <a href="${prefix}pages/resources.html" class="block py-2 nav-link">Resources</a>
-                </div>
-            </div>
-        </nav>
-    `;
-
-    mobileMenuButton.addEventListener('click', () => {
-        const isExpanded = mobileMenu.classList.toggle('hidden');
-        mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
-    });
-}
-
 // Active nav link scrolling for one-page navigation
 const sections = document.querySelectorAll('main section[id]');
 const navLinks = document.querySelectorAll('header nav a[href^="#"]');
@@ -211,47 +160,59 @@ function setupDropdown(containerId, buttonId, menuId) {
     const container = document.getElementById(containerId);
     const button = document.getElementById(buttonId);
     const menu = document.getElementById(menuId);
-    if (!container || !button || !menu) return;
+    if (!container || !button || !menu) {
+        return;
+    }
 
-    let menuTimeout;
+    let menuTimeout; // For handling hover behavior
 
+    // Function to show the menu
     const showMenu = () => {
-        clearTimeout(menuTimeout);
+        clearTimeout(menuTimeout); // Cancel any pending hide actions
         menu.classList.remove('hidden');
+        button.setAttribute('aria-expanded', 'true');
     };
 
-    const hideMenu = () => {
-        menuTimeout = setTimeout(() => menu.classList.add('hidden'), 300);
+    // Function to hide the menu
+    const hideMenu = (immediate = false) => {
+        if (immediate) {
+            menu.classList.add('hidden');
+            button.setAttribute('aria-expanded', 'false');
+        } else {
+            menuTimeout = setTimeout(() => {
+                menu.classList.add('hidden');
+                button.setAttribute('aria-expanded', 'false');
+            }, 200); // Delay to allow moving mouse into the menu
+        }
     };
 
-    // Show on hover for desktop-like experiences
+    // Event listeners for hover
     container.addEventListener('mouseenter', showMenu);
-    container.addEventListener('mouseleave', hideMenu);
+    container.addEventListener('mouseleave', () => hideMenu());
 
-    // Allow clicking on the button to toggle, for touch devices
+    // Event listener for click (for touch devices and accessibility)
     button.addEventListener('click', (event) => {
-        event.stopPropagation();
+        event.stopPropagation(); // Prevent window click listener from closing it immediately
         const isHidden = menu.classList.contains('hidden');
         if (isHidden) {
             showMenu();
         } else {
-            // Use a short timeout to allow the mouseleave to be cancelled if re-hovering
-            setTimeout(() => menu.classList.add('hidden'), 100);
+            hideMenu(true); // Hide immediately on click
         }
     });
 
-    // Close dropdown when clicking outside
-    window.addEventListener('click', (e) => {
-        if (!container.contains(e.target)) {
-            menu.classList.add('hidden');
+    // Close menu when clicking outside of it
+    document.addEventListener('click', (event) => {
+        if (!container.contains(event.target)) {
+            hideMenu(true);
         }
     });
 
-    // Close with Escape key
-    container.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
-            menu.classList.add('hidden');
-            button.focus();
+    // Accessibility: Close with Escape key
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !menu.classList.contains('hidden')) {
+            hideMenu(true);
+            button.focus(); // Return focus to the button
         }
     });
 }
