@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer base {
     body { 
         background-color: theme('colors.dark-bg'); 
@@ -66,6 +67,10 @@
     .timeline-item:last-child { margin-bottom: 0; }
     .timeline-dot { position: absolute; left: -2.0625rem; top: 0.25rem; height: 1rem; width: 1rem; background-color: theme('colors.accent-orange'); border-radius: 50%; border: 2px solid theme('colors.card-bg'); }
     .cta-button { transition: all 0.3s ease; }
+    .cta-nav-button {
+        @apply font-semibold text-sm py-2 px-4 rounded-lg bg-accent-orange/10 border-2 border-accent-orange/[.70] text-accent-orange;
+        transition: all 0.3s ease;
+    }
     .cta-button:hover { background-color: theme('colors.accent-orange'); color: theme('colors.dark-bg'); transform: translateY(-3px); box-shadow: 0 4px 6px theme('colors.accent-orange / 20%'); }
     .social-icon { transition: transform 0.2s ease-in-out, color 0.2s ease-in-out; color: theme('colors.light-slate'); }
     .social-icon:hover { transform: translateY(-3px) scale(1.1); color: theme('colors.accent-orange'); }
@@ -78,6 +83,23 @@
         to { opacity: 1; transform: scale(1); }
     }
     
+    .copy-button {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        padding: 0.25rem 0.75rem;
+        background-color: theme('colors.slate / 50%');
+        color: theme('colors.light-slate');
+        border: 1px solid theme('colors.slate');
+        border-radius: 0.375rem;
+        font-size: 0.8rem;
+        opacity: 0;
+        transition: opacity 0.3s, background-color 0.3s;
+    }
+    .group:hover .copy-button { opacity: 1; }
+    .copy-button:hover { background-color: theme('colors.slate'); }
+    .copy-button.copied { background-color: theme('colors.accent-orange'); color: theme('colors.dark-bg'); }
+
     .markdown-table {
         width: 100%;
         border-collapse: collapse;

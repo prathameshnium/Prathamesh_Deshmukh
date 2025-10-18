@@ -22,26 +22,19 @@ if (mobileMenuButton && mobileMenu) {
             <a href="${prefix}index.html#contact" class="block py-2 nav-link">Contact</a>
             <a href="https://x.com/prathameshnium" target="_blank" rel="noopener noreferrer" class="block py-2 nav-link"><i class="fab fa-x-twitter mr-2"></i>X / Twitter</a>
             <div class="border-t border-gray-700 my-2"></div>
-            <div>
-                <button id="mobile-portfolio-button" class="w-full text-left py-2 nav-link flex justify-between items-center" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-portfolio-menu">
+            <div class="my-2">
+                <button id="mobile-portfolio-button" class="w-full text-left py-2 px-4 rounded-lg bg-accent-orange/10 border border-accent-orange text-accent-orange font-semibold flex justify-between items-center" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-portfolio-menu">
                     <span>Portfolio</span>
                     <i class="fas fa-chevron-down text-xs"></i>
                 </button>
                 <div id="mobile-portfolio-menu" class="hidden pl-4">
                     <a href="${prefix}pages/research.html" class="block py-2 nav-link">Research & Pubs</a>
-                    <div>
-                        <button id="mobile-comp-works-button" class="w-full text-left py-2 nav-link flex justify-between items-center" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-comp-works-menu">
-                            <span>Computational Works</span>
-                            <i class="fas fa-chevron-down text-xs"></i>
-                        </button>
-                        <div id="mobile-comp-works-menu" class="hidden pl-4">
-                            <a href="${prefix}pages/computational-works.html" class="block py-2 nav-link">Overview</a>
-                            <a href="${prefix}pages/project-pica.html" class="block py-2 nav-link">Project PICA</a>
-                        </div>
-                    </div>
+                    <a href="${prefix}pages/computational-works.html" class="block py-2 nav-link">Computational Works</a>
                     <a href="${prefix}pages/presentations.html" class="block py-2 nav-link">Presentations</a>
                     <a href="${prefix}pages/cv.html" class="block py-2 nav-link">CV</a>
                     <a href="${prefix}pages/blog.html" class="block py-2 nav-link">Blog</a>
+                    <a href="${prefix}pages/gallery.html" class="block py-2 nav-link">Gallery</a>
+                    <a href="${prefix}pages/resources.html" class="block py-2 nav-link">Resources</a>
                 </div>
             </div>
             <div>
@@ -109,6 +102,38 @@ function toggleDropdown(menu, isVisible) {
 if (portfolioButton && portfolioMenu) {
     portfolioButton.addEventListener('click', (event) => {
         event.stopPropagation();
+        // Dynamically populate the menu if it's empty
+        if (portfolioMenu.innerHTML.trim() === '') {
+            const isIndex = window.location.pathname.endsWith('/') || window.location.pathname.endsWith('index.html');
+            const pagePrefix = isIndex ? 'pages/' : '';
+            portfolioMenu.innerHTML = `
+                <div id="core-portfolio-item" class="relative">
+                    <a href="#" class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange flex justify-between items-center">
+                        Core Portfolio <i class="fas fa-chevron-right text-xs" aria-hidden="true"></i>
+                    </a>
+                    <div id="core-portfolio-submenu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 left-full -mt-2 z-50">
+                        <a href="${pagePrefix}research.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Research & Pubs</a>
+                        <div id="comp-works-item" class="relative">
+                            <a href="${pagePrefix}computational-works.html" class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange flex justify-between items-center">
+                                Computational Works <i class="fas fa-chevron-right text-xs" aria-hidden="true"></i>
+                            </a>
+                            <div id="comp-works-submenu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 left-full -mt-9 z-50">
+                                <a href="${pagePrefix}computational-works.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Overview</a>
+                                <a href="${pagePrefix}project-pica.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Project PICA</a>
+                            </div>
+                        </div>
+                        <a href="${pagePrefix}presentations.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Presentations</a>
+                        <a href="${pagePrefix}cv.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">CV</a>
+                    </div>
+                </div>
+                <div class="border-t border-gray-600 my-1"></div>
+                <a href="${pagePrefix}blog.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Blog</a>
+                <a href="${pagePrefix}gallery.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Gallery</a>
+                <a href="${pagePrefix}resources.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Resources</a>
+            `;
+            // Re-run the submenu setup for the newly added elements
+            setupDesktopSubmenus();
+        }
         const isHidden = portfolioMenu.classList.contains('hidden');
         toggleDropdown(portfolioMenu, isHidden);
     });
@@ -132,79 +157,22 @@ window.addEventListener('click', () => {
 });
 
 
-// Core portfolio submenu (desktop)
-const corePortfolioItem = document.getElementById('core-portfolio-item');
-const corePortfolioSubmenu = document.getElementById('core-portfolio-submenu');
-let submenuTimeout;
-
-if (corePortfolioItem && corePortfolioSubmenu) {
-    corePortfolioItem.addEventListener('mouseenter', () => {
-        clearTimeout(submenuTimeout);
-        corePortfolioSubmenu.classList.remove('hidden');
-    });
-
-    corePortfolioItem.addEventListener('mouseleave', () => {
-        submenuTimeout = setTimeout(() => {
-            corePortfolioSubmenu.classList.add('hidden');
-        }, 300);
-    });
-
-    corePortfolioSubmenu.addEventListener('mouseenter', () => {
-        clearTimeout(submenuTimeout);
-    });
-
-    corePortfolioSubmenu.addEventListener('mouseleave', () => {
-        corePortfolioSubmenu.classList.add('hidden');
-    });
-}
-
-
 // Mobile portfolio accordion
 document.addEventListener('DOMContentLoaded', () => {
-    const mobilePortfolioButton = document.getElementById('mobile-portfolio-button');
-    const mobilePortfolioMenu = document.getElementById('mobile-portfolio-menu');
-
-    if (mobilePortfolioButton && mobilePortfolioMenu) {
-        mobilePortfolioButton.addEventListener('click', () => {
-            const isExpanded = mobilePortfolioMenu.classList.toggle('hidden');
-            mobilePortfolioButton.setAttribute('aria-expanded', !isExpanded);
-            const icon = mobilePortfolioButton.querySelector('i');
+    // Use event delegation for mobile accordions
+    document.body.addEventListener('click', (event) => {
+        const button = event.target.closest('#mobile-portfolio-button, #mobile-comp-works-button, #mobile-additional-button, #portfolio-button-mobile');
+        if (button) {
+            const menu = document.getElementById(button.getAttribute('aria-controls'));
+            const icon = button.querySelector('i');
+            const isExpanded = menu.classList.toggle('hidden');
+            button.setAttribute('aria-expanded', !isExpanded);
             if (icon) {
                 icon.classList.toggle('fa-chevron-down');
                 icon.classList.toggle('fa-chevron-up');
             }
         }
-    )}
-
-    const mobileCompWorksButton = document.getElementById('mobile-comp-works-button');
-    const mobileCompWorksMenu = document.getElementById('mobile-comp-works-menu');
-
-    if (mobileCompWorksButton && mobileCompWorksMenu) {
-        mobileCompWorksButton.addEventListener('click', () => {
-            const isExpanded = mobileCompWorksMenu.classList.toggle('hidden');
-            mobileCompWorksButton.setAttribute('aria-expanded', !isExpanded);
-            const icon = mobileCompWorksButton.querySelector('i');
-            if (icon) {
-                icon.classList.toggle('fa-chevron-down');
-                icon.classList.toggle('fa-chevron-up');
-            }
-        });
-    }
-
-    const mobileAdditionalButton = document.getElementById('mobile-additional-button');
-    const mobileAdditionalMenu = document.getElementById('mobile-additional-menu');
-
-    if (mobileAdditionalButton && mobileAdditionalMenu) {
-        mobileAdditionalButton.addEventListener('click', () => {
-            const isExpanded = mobileAdditionalMenu.classList.toggle('hidden');
-            mobileAdditionalButton.setAttribute('aria-expanded', !isExpanded);
-            const icon = mobileAdditionalButton.querySelector('i');
-            if (icon) {
-                icon.classList.toggle('fa-chevron-down');
-                icon.classList.toggle('fa-chevron-up');
-            }
-        });
-    }
+    });
 
     // Generic Desktop Submenu Handler
     function setupDesktopSubmenus() {

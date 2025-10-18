@@ -81,51 +81,24 @@
 
     <header class="bg-dark-bg/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-700">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-white font-serif">Prathamesh Deshmukh</a>
+            <div class="flex items-center gap-x-6">
+                <a href="index.html" class="text-2xl font-bold text-white font-serif">Prathamesh Deshmukh</a>
+                <!-- Portfolio Button -->
+                <div class="relative hidden md:block">
+                    <button id="portfolio-button" class="cta-nav-button flex items-center" aria-haspopup="true" aria-expanded="false" aria-controls="portfolio-menu">
+                        Portfolio <i class="fas fa-chevron-down text-xs ml-2"></i>
+                    </button>
+                    <div id="portfolio-menu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-56 top-full left-0 mt-2 z-50">
+                        <!-- Submenu items will be here -->
+                    </div>
+                </div>
+            </div>
             <nav class="hidden md:flex items-center space-x-6">
                 <a href="#about" class="nav-link">About</a>
                 <a href="#research" class="nav-link">Research</a>
                 <a href="#publications" class="nav-link">Publications</a>
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#journey" class="nav-link">Journey</a>
-                <div class="relative">
-                    <button id="portfolio-button" class="nav-link flex items-center" aria-haspopup="true" aria-expanded="false" aria-controls="portfolio-menu">
-                        Portfolio <i class="fas fa-chevron-down text-xs ml-2"></i>
-                    </button>
-                    <div id="portfolio-menu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-56 top-full right-0 mt-2 z-50">
-                        <!-- Submenu Item -->
-                        <div id="core-portfolio-item" class="relative">
-                            <a href="#" class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange flex justify-between items-center">
-                                Core Portfolio <i class="fas fa-chevron-right text-xs"></i>
-                            </a>
-                            <div id="core-portfolio-submenu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 left-full -mt-2 z-50">
-                                <a href="pages/research.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Research & Pubs</a>
-                                <div id="comp-works-item" class="relative">
-                                    <a href="pages/computational-works.html" class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange flex justify-between items-center">
-                                        Computational Works <i class="fas fa-chevron-right text-xs" aria-hidden="true"></i>
-                                    </a>
-                                    <div id="comp-works-submenu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 left-full -mt-9 z-50">
-                                        <a href="pages/computational-works.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Overview</a>
-                                        <a href="pages/project-pica.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Project PICA</a>
-                                    </div>
-                                </div>
-                                <a href="pages/presentations.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Presentations</a>
-                                <a href="pages/cv.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">CV</a>
-                            </div>
-                        </div>
-                        <div class="border-t border-gray-600 my-1"></div>
-                        <div id="additional-content-item" class="relative">
-                            <a href="#" class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange flex justify-between items-center">
-                                Additional Content <i class="fas fa-chevron-right text-xs" aria-hidden="true"></i>
-                            </a>
-                            <div id="additional-content-submenu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 left-full -mt-2 z-50">
-                                <a href="pages/blog.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Blog</a>
-                                <a href="pages/gallery.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Gallery</a>
-                                <a href="pages/resources.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Resources</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <a href="#contact" class="nav-link">Contact</a>
                 <!-- Search Form -->
                 <form action="pages/search.html" method="GET" class="relative ml-4">
@@ -141,21 +114,24 @@
         </div>
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
             <a href="#about" class="block py-2 nav-link">About</a>
-            <a href="#research" class="block py-2 nav-link">Research</a>
-            <a href="#publications" class="block py-2 nav-link">Publications</a>
-            <a href="#skills" class="block py-2 nav-link">Skills</a>
-            <a href="#journey" class="block py-2 nav-link">Journey</a>
-            <a href="#contact" class="block py-2 nav-link">Contact</a>
-            <div class="border-t border-gray-700 my-2"></div>
-            <!-- Accordion for Portfolio -->
-            <div>
-                <button id="mobile-portfolio-button" class="w-full text-left py-2 nav-link flex justify-between items-center" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-portfolio-menu">
+            <!-- Mobile Portfolio Button (highlighted) -->
+            <div class="my-2">
+                <button id="portfolio-button-mobile" class="w-full text-left py-2 px-4 rounded-lg bg-accent-orange/10 border border-accent-orange text-accent-orange font-semibold flex justify-between items-center" aria-haspopup="true" aria-expanded="false" aria-controls="portfolio-menu-mobile">
                     <span>Portfolio</span>
                     <i class="fas fa-chevron-down text-xs"></i>
                 </button>
-                <div id="mobile-portfolio-menu" class="hidden pl-4">
+                <div id="portfolio-menu-mobile" class="hidden pl-4 mt-2">
                     <a href="pages/research.html" class="block py-2 nav-link">Research & Pubs</a>
-                    <a href="pages/computational-works.html" class="block py-2 nav-link">Computational Works</a>
+                    <div>
+                        <button id="mobile-comp-works-button" class="w-full text-left py-2 nav-link flex justify-between items-center" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-comp-works-menu">
+                            <span>Computational Works</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div id="mobile-comp-works-menu" class="hidden pl-4">
+                            <a href="pages/computational-works.html" class="block py-2 nav-link">Overview</a>
+                            <a href="pages/project-pica.html" class="block py-2 nav-link">Project PICA</a>
+                        </div>
+                    </div>
                     <a href="pages/presentations.html" class="block py-2 nav-link">Presentations</a>
                     <a href="pages/cv.html" class="block py-2 nav-link">CV</a>
                     <a href="pages/blog.html" class="block py-2 nav-link">Blog</a>
@@ -163,6 +139,14 @@
                     <a href="pages/resources.html" class="block py-2 nav-link">Resources</a>
                 </div>
             </div>
+            <!-- End Mobile Portfolio Button -->
+            <a href="#research" class="block py-2 nav-link">Research</a>
+            <a href="#publications" class="block py-2 nav-link">Publications</a>
+            <a href="#skills" class="block py-2 nav-link">Skills</a>
+            <a href="#journey" class="block py-2 nav-link">Journey</a>
+            <a href="#contact" class="block py-2 nav-link">Contact</a>
+            <div class="border-t border-gray-700 my-2"></div>
+            <!-- Accordion for Portfolio -->
         </div>
     </header>
 
