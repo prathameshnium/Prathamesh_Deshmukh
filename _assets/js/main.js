@@ -49,26 +49,15 @@ if (navLinks.length > 0 && sections.length > 0) {
 
 // Mobile portfolio accordion
 document.addEventListener('DOMContentLoaded', () => {
-    // Desktop dropdown click handler
-    const portfolioButton = document.getElementById('portfolio-button');
-    const portfolioMenu = document.getElementById('portfolio-menu');
-
-    if (portfolioButton && portfolioMenu) {
-        portfolioButton.addEventListener('click', (event) => {
-            event.stopPropagation();
-            const isHidden = portfolioMenu.classList.toggle('hidden');
-            portfolioButton.setAttribute('aria-expanded', String(!isHidden));
-        });
-    }
-
     // Close dropdowns when clicking outside
     window.addEventListener('click', (e) => {
         document.querySelectorAll('.dropdown-menu').forEach(menu => {
             // Check if the click is outside the menu and its corresponding button
-            const button = menu.previousElementSibling;
-            if (!menu.classList.contains('hidden') && !menu.contains(e.target) && !button.contains(e.target)) {
+            const parent = menu.closest('.relative.group');
+            if (parent && !parent.contains(e.target)) {
                 menu.classList.add('hidden');
-                button.setAttribute('aria-expanded', 'false');
+                const button = parent.querySelector('button');
+                if (button) button.setAttribute('aria-expanded', 'false');
             }
         });
     });
