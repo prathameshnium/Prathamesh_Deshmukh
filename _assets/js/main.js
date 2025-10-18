@@ -51,37 +51,6 @@ if (navLinks.length > 0 && sections.length > 0) {
     window.addEventListener('scroll', updateActiveNavLink);
 }
 
-// Mobile portfolio accordion
-document.addEventListener('DOMContentLoaded', () => {
-    // Close dropdowns when clicking outside
-    window.addEventListener('click', (e) => {
-        document.querySelectorAll('.dropdown-menu').forEach(menu => {
-            // Check if the click is outside the menu and its corresponding button
-            const parent = menu.closest('.relative.group');
-            if (parent && !parent.contains(e.target)) {
-                menu.classList.add('hidden');
-                const button = parent.querySelector('button');
-                if (button) button.setAttribute('aria-expanded', 'false');
-            }
-        });
-    });
-
-    // Use event delegation for mobile accordions
-    document.body.addEventListener('click', (event) => {
-        const button = event.target.closest('#mobile-portfolio-button, #mobile-comp-works-button, #mobile-additional-button, #portfolio-button-mobile');
-        if (button) {
-            const menu = document.getElementById(button.getAttribute('aria-controls'));
-            const icon = button.querySelector('i');
-            const isExpanded = menu.classList.toggle('hidden');
-            button.setAttribute('aria-expanded', String(!isExpanded));
-            if (icon) {
-                icon.classList.toggle('fa-chevron-down', isExpanded);
-                icon.classList.toggle('fa-chevron-up', !isExpanded);
-            }
-        }
-    });
-});
-
 // Generic dropdown handler for "More Links"
 function setupDropdown(containerId, buttonId, menuId) {
     const container = document.getElementById(containerId);
@@ -144,9 +113,6 @@ function setupDropdown(containerId, buttonId, menuId) {
     });
 }
 
-setupDropdown('more-links-container', 'more-links-button', 'more-links-menu');
-setupDropdown('footer-more-links-container', 'footer-more-links-button', 'footer-more-links-menu');
-
 // Add scrolled class to header
 const header = document.querySelector('header');
 if (header) {
@@ -159,12 +125,145 @@ if (header) {
     });
 }
 
-// Add copy-to-clipboard button for code blocks
 document.addEventListener('DOMContentLoaded', () => {
-    const codeBlocks = document.querySelectorAll('pre');
+    // --- Search Modal ---
+    const searchModal = document.getElementById('search-modal');
+    const searchInput = document.getElementById('search-input-modal');
+    const searchResultsContainer = document.getElementById('search-results-modal');
+    const openSearchButtons = document.querySelectorAll('.open-search-modal');
+    const closeSearchButton = document.getElementById('close-search-modal');
+    let searchIndex = [];
+    let lastActiveElement;
 
-    codeBlocks.forEach(block => {
-        // Create a wrapper and button
+    if (searchModal && openSearchButtons.length && closeSearchButton) {
+        // Fetch the search index
+        fetch('/_assets/js/search-index.json')
+            .then(response => response.json())
+            .then(data => {
+                searchIndex = data;
+            })
+            .catch(error => console.error('Error loading search index:', error));
+
+        function openModal() {
+            lastActiveElement = document.activeElement;
+            searchModal.classList.remove('hidden');
+            searchModal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('overflow-hidden');
+            searchInput.focus();
+        }
+
+        function closeModal() {
+            searchModal.classList.add('hidden');
+            searchModal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('overflow-hidden');
+            searchInput.value = '';
+            searchResultsContainer.innerHTML = '<p class="text-slate">Start typing to search the site.</p>';
+            if (lastActiveElement) {
+                lastActiveElement.focus();
+            }
+        }
+
+        openSearchButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal();
+            });
+        });
+
+        closeSearchButton.addEventListener('click', closeModal);
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !searchModal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+
+        searchModal.addEventListener('click', (e) => {
+            if (e.target === searchModal) {
+                closeModal();
+            }
+        });
+
+        function performSearch() {
+            const query = searchInput.value.toLowerCase().trim();
+
+            if (query.length < 2) {
+                searchResultsContainer.innerHTML = '<p class="text-slate">Please enter at least 2 characters.</p>';
+                return;
+            }
+
+            const results = searchIndex.filter(item =>
+                item.title.toLowerCase().includes(query) || item.content.toLowerCase().includes(query)
+            );
+
+            displayResults(results, query);
+        }
+
+        function displayResults(results, query) {
+            if (results.length === 0) {
+                searchResultsContainer.innerHTML = '<p class="text-slate">No results found.</p>';
+                return;
+            }
+
+            const highlight = (text, term) => {
+                const regex = new RegExp(`(${term})`, 'gi');
+                return text.replace(regex, '<mark class="bg-accent-orange/50 text-white not-italic rounded-sm px-1">$1</mark>');
+            };
+
+            searchResultsContainer.innerHTML = results.map(result => {
+                const contentLower = result.content.toLowerCase();
+                const index = contentLower.indexOf(query);
+                const start = Math.max(0, index - 50);
+                const end = Math.min(contentLower.length, index + query.length + 150);
+                let snippet = result.content.substring(start, end);
+                if (start > 0) snippet = '...' + snippet;
+                if (end < contentLower.length) snippet += '...';
+
+                return `
+                    <a href="${result.url}" class="block p-4 rounded-lg hover:bg-slate/20 transition-colors">
+                        <h3 class="text-lg font-semibold text-accent-orange mb-1">${highlight(result.title, query)}</h3>
+                        <p class="text-sm text-light-slate">${highlight(snippet, query)}</p>
+                    </a>
+                `;
+            }).join('');
+        }
+
+        searchInput.addEventListener('input', performSearch);
+    }
+
+    // --- Other DOM-dependent initializations ---
+
+    // Close dropdowns when clicking outside
+    window.addEventListener('click', (e) => {
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+            const parent = menu.closest('.relative.group');
+            if (parent && !parent.contains(e.target)) {
+                menu.classList.add('hidden');
+                const button = parent.querySelector('button');
+                if (button) button.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+
+    // Mobile accordions
+    document.body.addEventListener('click', (event) => {
+        const button = event.target.closest('#mobile-portfolio-button, #mobile-comp-works-button, #mobile-additional-button, #portfolio-button-mobile');
+        if (button) {
+            const menu = document.getElementById(button.getAttribute('aria-controls'));
+            const icon = button.querySelector('i');
+            if (menu) {
+                const isExpanded = menu.classList.toggle('hidden');
+                button.setAttribute('aria-expanded', String(!isExpanded));
+                if (icon) {
+                    icon.classList.toggle('fa-chevron-down', isExpanded);
+                    icon.classList.toggle('fa-chevron-up', !isExpanded);
+                }
+            }
+        }
+    });
+
+    // Copy-to-clipboard for code blocks
+    document.querySelectorAll('pre').forEach(block => {
         const wrapper = document.createElement('div');
         wrapper.className = 'relative group';
 
@@ -173,7 +272,6 @@ document.addEventListener('DOMContentLoaded', () => {
         copyButton.innerHTML = '<i class="fas fa-copy mr-2"></i> Copy';
         copyButton.setAttribute('aria-label', 'Copy code to clipboard');
 
-        // Structure: wrapper -> button, pre
         block.parentNode.insertBefore(wrapper, block);
         wrapper.appendChild(block);
         wrapper.appendChild(copyButton);
@@ -183,7 +281,6 @@ document.addEventListener('DOMContentLoaded', () => {
             navigator.clipboard.writeText(code).then(() => {
                 copyButton.innerHTML = '<i class="fas fa-check mr-2"></i> Copied!';
                 copyButton.classList.add('copied');
-                
                 setTimeout(() => {
                     copyButton.innerHTML = '<i class="fas fa-copy mr-2"></i> Copy';
                     copyButton.classList.remove('copied');
@@ -191,109 +288,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
-});
 
-// --- Modern Search Modal ---
-document.addEventListener('DOMContentLoaded', () => {
-    const searchModal = document.getElementById('search-modal');
-    const searchInput = document.getElementById('search-input-modal');
-    const searchResultsContainer = document.getElementById('search-results-modal');
-    const openSearchButtons = document.querySelectorAll('.open-search-modal');
-    const closeSearchButton = document.getElementById('close-search-modal');
-
-    if (!searchModal || !openSearchButtons.length || !closeSearchButton) return;
-
-    let searchIndex = [];
-
-    // Fetch the search index
-    fetch('/_assets/js/search-index.json')
-        .then(response => response.json())
-        .then(data => {
-            searchIndex = data;
-        })
-        .catch(error => console.error('Error loading search index:', error));
-
-    function openModal() {
-        searchModal.classList.remove('hidden');
-        document.body.classList.add('overflow-hidden'); // Prevent background scrolling
-        searchInput.focus();
-    }
-
-    function closeModal() {
-        searchModal.classList.add('hidden');
-        document.body.classList.remove('overflow-hidden');
-        searchInput.value = '';
-        searchResultsContainer.innerHTML = '<p class="text-slate">Start typing to search the site.</p>';
-    }
-
-    openSearchButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            e.preventDefault();
-            openModal();
-        });
-    });
-
-    closeSearchButton.addEventListener('click', closeModal);
-
-    // Close with Escape key
-    window.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !searchModal.classList.contains('hidden')) {
-            closeModal();
-        }
-    });
-
-    // Close on overlay click
-    searchModal.addEventListener('click', (e) => {
-        if (e.target === searchModal) {
-            closeModal();
-        }
-    });
-
-    function performSearch() {
-        const query = searchInput.value.toLowerCase().trim();
-
-        if (query.length < 2) {
-            searchResultsContainer.innerHTML = '<p class="text-slate">Please enter at least 2 characters.</p>';
-            return;
-        }
-
-        const results = searchIndex.filter(item => {
-            return item.title.toLowerCase().includes(query) || item.content.toLowerCase().includes(query);
-        });
-
-        displayResults(results, query);
-    }
-
-    function displayResults(results, query) {
-        if (results.length === 0) {
-            searchResultsContainer.innerHTML = '<p class="text-slate">No results found.</p>';
-            return;
-        }
-
-        // Function to highlight search term
-        const highlight = (text, term) => {
-            const regex = new RegExp(`(${term})`, 'gi');
-            return text.replace(regex, '<mark class="bg-accent-orange/50 text-white not-italic rounded-sm px-1">$1</mark>');
-        };
-
-        searchResultsContainer.innerHTML = results.map(result => {
-            // Create a snippet
-            const contentLower = result.content.toLowerCase();
-            const index = contentLower.indexOf(query);
-            const start = Math.max(0, index - 50);
-            const end = Math.min(contentLower.length, index + query.length + 150);
-            let snippet = result.content.substring(start, end);
-            if (start > 0) snippet = '...' + snippet;
-            if (end < contentLower.length) snippet += '...';
-
-            return `
-                <a href="${result.url}" class="block p-4 rounded-lg hover:bg-slate/20 transition-colors">
-                    <h3 class="text-lg font-semibold text-accent-orange mb-1">${highlight(result.title, query)}</h3>
-                    <p class="text-sm text-light-slate">${highlight(snippet, query)}</p>
-                </a>
-            `;
-        }).join('');
-    }
-
-    searchInput.addEventListener('input', performSearch);
+    // Setup for "More Links" dropdowns
+    setupDropdown('more-links-container', 'more-links-button', 'more-links-menu');
+    setupDropdown('footer-more-links-container', 'footer-more-links-button', 'footer-more-links-menu');
 });
