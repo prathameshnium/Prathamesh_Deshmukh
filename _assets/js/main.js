@@ -205,10 +205,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Setup desktop submenus
-    setupSubmenu('core-portfolio-item', 'core-portfolio-submenu');
-    setupSubmenu('comp-works-item', 'comp-works-submenu');
-    setupSubmenu('additional-content-item', 'additional-content-submenu');
+    // Generic Desktop Submenu Handler
+    function setupDesktopSubmenus() {
+        const menuItems = document.querySelectorAll('header nav .relative');
+
+        menuItems.forEach(item => {
+            const menu = item.querySelector('.dropdown-menu');
+            if (!menu) return;
+
+            let timeout;
+
+            item.addEventListener('mouseenter', () => {
+                clearTimeout(timeout);
+                // Hide any other open submenus at the same level
+                const parent = item.parentElement;
+                parent.querySelectorAll(':scope > .relative > .dropdown-menu').forEach(m => {
+                    if (m !== menu) m.classList.add('hidden');
+                });
+                menu.classList.remove('hidden');
+            });
+
+            item.addEventListener('mouseleave', () => {
+                timeout = setTimeout(() => {
+                    menu.classList.add('hidden');
+                }, 200); // A small delay to allow moving mouse to submenu
+            });
+        });
+    }
+
+    setupDesktopSubmenus();
 });
 
 
@@ -243,6 +268,13 @@ function setupDropdown(containerId, buttonId, menuId) {
         } else {
             // Use a short timeout to allow the mouseleave to be cancelled if re-hovering
             setTimeout(() => menu.classList.add('hidden'), 100);
+        }
+    });
+
+    // Close dropdown when clicking outside
+    window.addEventListener('click', (e) => {
+        if (!container.contains(e.target)) {
+            menu.classList.add('hidden');
         }
     });
 
