@@ -34,23 +34,23 @@
                 <a href="../index.html#research" class="nav-link">Research</a>
                 <a href="../index.html#skills" class="nav-link">Skills</a>
                 <a href="../index.html#journey" class="nav-link">Journey</a>
-                <div class="relative">
-                    <button id="portfolio-button" class="nav-link flex items-center" aria-haspopup="true" aria-expanded="false" aria-controls="portfolio-menu">
+                <div class="relative group">
+                    <button id="portfolio-button" class="nav-link flex items-center bg-accent-orange/10 border-accent-orange text-accent-orange font-semibold px-3 py-1 rounded-md" aria-haspopup="true" aria-expanded="false" aria-controls="portfolio-menu">
                         Portfolio <i class="fas fa-chevron-down text-xs ml-2"></i>
                     </button>
-                    <div id="portfolio-menu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-56 top-full right-0 mt-2 z-50">
+                    <div id="portfolio-menu" class="absolute hidden group-hover:block dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-56 top-full right-0 mt-2 z-50">
                         <!-- Submenu Item -->
-                        <div id="core-portfolio-item" class="relative">
-                            <a href="#" class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange flex justify-between items-center">
+                        <div class="relative group/core">
+                            <a href="#" class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange flex justify-between items-center" aria-haspopup="true">
                                 Core Portfolio <i class="fas fa-chevron-right text-xs" aria-hidden="true"></i>
                             </a>
-                            <div id="core-portfolio-submenu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 left-full -mt-2 z-50">
+                            <div class="absolute hidden group-hover/core:block dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 left-full -mt-2 z-50">
                                 <a href="research.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Research & Pubs</a>
-                                <div id="comp-works-item" class="relative">
-                                    <a href="computational-works.html" class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange flex justify-between items-center">
+                                <div class="relative group/comp">
+                                    <a href="computational-works.html" class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange flex justify-between items-center" aria-haspopup="true">
                                         Computational Works <i class="fas fa-chevron-right text-xs" aria-hidden="true"></i>
                                     </a>
-                                    <div id="comp-works-submenu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 left-full -mt-9 z-50">
+                                    <div class="absolute hidden group-hover/comp:block dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 left-full -mt-9 z-50">
                                         <a href="computational-works.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Overview</a>
                                         <a href="project-pica.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Project PICA</a>
                                     </div>
@@ -60,16 +60,9 @@
                             </div>
                         </div>
                         <div class="border-t border-gray-600 my-1"></div>
-                        <div id="additional-content-item" class="relative">
-                            <a href="#" class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange flex justify-between items-center">
-                                Additional Content <i class="fas fa-chevron-right text-xs" aria-hidden="true"></i>
-                            </a>
-                            <div id="additional-content-submenu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 left-full -mt-2 z-50">
-                                <a href="blog.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Blog</a>
-                                <a href="gallery.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Gallery</a>
-                                <a href="resources.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Resources</a>
-                            </div>
-                        </div>
+                        <a href="blog.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Blog</a>
+                        <a href="gallery.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Gallery</a>
+                        <a href="resources.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Resources</a>
                     </div>
                 </div>
                 <a href="../index.html#contact" class="nav-link">Contact</a>
