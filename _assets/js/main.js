@@ -289,6 +289,49 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- Sitemap/Pages List Loader ---
+    async function loadPagesList() {
+        const pagesListContainer = document.getElementById('pages-list');
+        if (!pagesListContainer) return;
+
+        try {
+            const response = await fetch('/sitemap.xml');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const sitemapText = await response.text();
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(sitemapText, 'application/xml');
+            const urls = xmlDoc.getElementsByTagName('url');
+
+            let html = '';
+            Array.from(urls).forEach(urlNode => {
+                const loc = urlNode.getElementsByTagName('loc')[0].textContent;
+                // Extract a user-friendly name from the URL
+                let name = loc.split('/').pop().replace('.html', '').replace(/_/g, ' ');
+                if (name === '' || name === 'index') {
+                    name = 'Home Page';
+                } else {
+                    // Capitalize first letter of each word
+                    name = name.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+                }
+
+                html += `
+                    <a href="${loc}" class="sitemap-link rounded-md flex justify-between items-center">
+                        <span>${name}</span>
+                        <i class="fas fa-arrow-right text-xs text-slate"></i>
+                    </a>
+                `;
+            });
+
+            pagesListContainer.innerHTML = html;
+        } catch (error) {
+            console.error('Failed to load and parse sitemap.xml:', error);
+            pagesListContainer.innerHTML = '<p class="text-light-slate text-center text-red-400">Could not load page list.</p>';
+        }
+    }
+    loadPagesList();
+
     // Setup for "More Links" dropdowns
     setupDropdown('more-links-container', 'more-links-button', 'more-links-menu');
     setupDropdown('footer-more-links-container', 'footer-more-links-button', 'footer-more-links-menu');
