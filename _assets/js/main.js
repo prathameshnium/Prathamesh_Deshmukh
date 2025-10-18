@@ -127,7 +127,6 @@ if (header) {
 
 document.addEventListener('DOMContentLoaded', () => {
     // --- Initializations ---
-    setupDropdown('portfolio-container', 'portfolio-button', 'portfolio-menu');
     setupDropdown('more-links-container', 'more-links-button', 'more-links-menu');
     setupDropdown('footer-more-links-container', 'footer-more-links-button', 'footer-more-links-menu');
 
