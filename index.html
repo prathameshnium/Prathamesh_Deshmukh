@@ -125,13 +125,9 @@
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#journey" class="nav-link">Journey</a>
                 <a href="#contact" class="nav-link">Contact</a>
-                <!-- Search Form -->
-                <form action="pages/search.html" method="GET" class="relative ml-4">
-                    <input type="search" name="q" placeholder="Search..." class="bg-card-bg border border-slate rounded-lg w-32 py-1 px-3 text-sm text-light-slate focus:outline-none focus:border-accent-orange focus:w-64 transition-all duration-300">
-                    <button type="submit" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate hover:text-accent-orange" aria-label="Submit search">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </form>
+                <a href="#" class="nav-link open-search-modal" aria-label="Open search">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                </a>
             </nav>
             <button id="mobile-menu-button" class="md:hidden text-white text-2xl" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
                 <i class="fas fa-bars"></i>
@@ -168,6 +164,8 @@
             <a href="#skills" class="block py-2 nav-link">Skills</a>
             <a href="#journey" class="block py-2 nav-link">Journey</a>
             <a href="#contact" class="block py-2 nav-link">Contact</a>
+            <div class="border-t border-gray-700 my-2"></div>
+            <a href="#" class="block py-2 nav-link open-search-modal"><i class="fas fa-search mr-2"></i>Search</a>
         </div>
     </header>
 
@@ -393,7 +391,7 @@
             </div>
             <div class="max-w-3xl mx-auto card p-8 rounded-lg text-center">
                 <p class="text-lg text-slate mb-8">
-                    Feel free to reach out via email or connect with me on LinkedIn. For a quick query, you can also <a href="/pages/search.html" class="text-accent-orange hover:underline">search the site</a>.
+                    Feel free to reach out via email or connect with me on LinkedIn. For a quick query, you can also <a href="#" class="text-accent-orange hover:underline open-search-modal">search the site</a>.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-6 md:gap-8">
                     <a href="mailto:prathameshnium[at]duck[dot]com" class="flex items-center social-icon">
@@ -440,6 +438,25 @@
             <p><a href="https://github.com/prathameshnium/prathameshnium.github.io/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" class="hover:text-accent-orange transition-colors">&copy; 2024 Prathamesh Keshao Deshmukh. All Rights Reserved.</a></p>
         </div>
     </footer>
+
+    <!-- Search Modal -->
+    <div id="search-modal" class="fixed inset-0 bg-dark-bg/80 backdrop-blur-sm z-[100] hidden flex items-start justify-center pt-20 px-4">
+        <div class="bg-card-bg border border-slate/50 rounded-lg shadow-2xl w-full max-w-2xl relative max-h-[80vh] flex flex-col">
+            <div class="p-4 border-b border-gray-700 flex items-center">
+                <i class="fas fa-search text-slate mr-3"></i>
+                <input type="text" id="search-input-modal" placeholder="Search for 'multiferroics', 'PICA', 'GitHub'..." class="w-full bg-transparent text-white placeholder-slate focus:outline-none">
+                <button id="close-search-modal" class="text-slate hover:text-white text-2xl ml-4" aria-label="Close search">
+                    &times;
+                </button>
+            </div>
+            <div id="search-results-modal" class="p-4 overflow-y-auto">
+                <p class="text-slate">Start typing to search the site.</p>
+            </div>
+            <div class="p-2 border-t border-gray-700 text-right">
+                <span class="text-xs text-slate">Powered by custom JS search</span>
+            </div>
+        </div>
+    </div>
 
     <script src="/_assets/js/main.js" defer></script>
     
