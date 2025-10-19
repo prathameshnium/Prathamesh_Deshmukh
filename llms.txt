@@ -4,7 +4,7 @@
 > A detailed portfolio for Prathamesh Deshmukh, a Physics PhD scholar at the UGC-DAE Consortium for Scientific Research (Mumbai Centre). This site showcases his doctoral research in Condensed Matter Physics and Materials Science, focusing on multiferroic composites and magnetoelectric coupling. It also highlights his extensive work in scientific programming, including Python-based lab automation, instrument control (PyVISA), and advanced data analysis pipelines.
 
 This website is built with HTML and Tailwind CSS and is hosted on GitHub Pages. It serves as a central hub for research output, technical skills, publications, and professional journey. The content is structured to be a comprehensive resource for collaborators, recruiters, and the scientific community.
-
+ 
 ## Core Content
 
 - [Home Page](https://prathameshdeshmukh.site/index.html): The main landing page with an overview of research themes, skills, academic journey, and selected publications.
@@ -23,7 +23,7 @@ This website is built with HTML and Tailwind CSS and is hosted on GitHub Pages. 
 
 ## Scientific Programming Projects
 
-- PICA: Python Instrument Control & Automation: A modular `PyVISA`-based automation suite for controlling lab instruments (Keithley, Lakeshore) for thermal and electrical characterization. Features a central GUI and isolated processes for stability.
+- PICA: Python Instrument Control & Automation: A modular `PyVISA`-based automation suite for controlling lab instruments (Keithley, Lakeshore) for thermal and electrical characterization. Features a central GUI and isolated processes for stability. (Note: The repository is private; access can be requested).
 - Physics Simulation Toolkit: Python scripts for simulating and visualizing phenomena in condensed matter physics, such as magnetic ordering (Ising model) and common dielectric models.
 - Solid-State Physics Calculators: Analysis scripts for calculating key experimental solid-state parameters like activation energy (Arrhenius) and charge transport (Mott-VRH models).
 - Python-for-OriginPro: Automation scripts leveraging the `originpro` library to streamline plotting, data fitting, and report generation directly within OriginLab.
@@ -61,6 +61,12 @@ This website is built with HTML and Tailwind CSS and is hosted on GitHub Pages. 
 - **Core Libraries**: NumPy, Pandas, SciPy, Matplotlib.
 - **Simulation & Analysis Software**: COMSOL Multiphysics, MATLAB, Origin, FullProf Suite, Git.
 
+## Keywords
+
+- **Physics & Materials Science**: Condensed Matter Physics, Multiferroics, Magnetoelectric Coupling, Experimental Physics, Dielectric Spectroscopy, Neutron Diffraction, X-Ray Diffraction, Magnetometry (VSM), Sol-Gel Synthesis, Materials Characterization.
+- **Scientific Programming & Automation**: Python, Lab Automation, Instrument Control, PyVISA, PyMeasure, Data Analysis, Data Visualization, GUI Development (Tkinter), Data Processing Pipelines.
+- **Core Libraries & Tools**: NumPy, Pandas, SciPy, Matplotlib, COMSOL Multiphysics, MATLAB, Origin, FullProf Suite, Git, Version Control.
+
 ## Awards & Recognition
 
 - Associated with the SERB-CRG Project Grant (ANRF, DST, Govt. of India).
@@ -73,3 +79,8 @@ This website is built with HTML and Tailwind CSS and is hosted on GitHub Pages. 
 - **PhD in Physics** (2022 - Present): UGC-DAE Consortium for Scientific Research, Mumbai.
 - **M.Sc in Physics** (2019 - 2021): Fergusson College, Savitribai Phule Pune University.
 - **B.Sc in Physics, Math, & Comp. App.** (2016 - 2019): Shri Shivaji Science College, SGB Amravati University.
+
+## Contact & Collaboration
+
+- **Email**: prathameshnium[at]duck[dot]com
+- **Availability**: Open to discussing research, collaborations, or other opportunities.

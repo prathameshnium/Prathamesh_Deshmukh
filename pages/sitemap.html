@@ -34,22 +34,20 @@
                 <a href="../index.html#skills" class="nav-link">Skills</a>
                 <a href="../index.html#journey" class="nav-link">Journey</a>
                 <div class="relative">
-                    <button id="portfolio-button" class="nav-link flex items-center" aria-haspopup="true" aria-expanded="false" aria-controls="portfolio-menu">
-                        Portfolio <i class="fas fa-chevron-down text-xs ml-2"></i>
-                    </button>
-                    <div id="portfolio-menu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-56 top-full right-0 mt-2 z-50 group">
+                    <button id="portfolio-button" class="nav-link flex items-center" aria-haspopup="true" aria-expanded="false" aria-controls="portfolio-menu"> Portfolio <i class="fas fa-chevron-down text-xs ml-2"></i> </button>
+                    <div id="portfolio-menu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-56 top-full right-0 mt-2 z-50">
                         <!-- Submenu Item -->
-                        <div class="relative group/core">
-                            <a href="#" class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange flex justify-between items-center" aria-haspopup="true">
+                        <div id="core-portfolio-item" class="relative">
+                            <a href="#" class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange flex justify-between items-center">
                                 Core Portfolio <i class="fas fa-chevron-right text-xs" aria-hidden="true"></i>
                             </a>
-                            <div class="absolute hidden group-hover/core:block dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 left-full -mt-2 z-50">
+                            <div id="core-portfolio-submenu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 left-full -mt-2 z-50">
                                 <a href="research.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Research & Pubs</a>
-                                <div class="relative group/comp">
-                                    <a href="computational-works.html" class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange flex justify-between items-center" aria-haspopup="true">
+                                <div id="comp-works-item" class="relative">
+                                    <a href="computational-works.html" class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange flex justify-between items-center">
                                         Computational Works <i class="fas fa-chevron-right text-xs" aria-hidden="true"></i>
                                     </a>
-                                    <div class="absolute hidden group-hover/comp:block dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 left-full -mt-9 z-50">
+                                    <div id="comp-works-submenu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 left-full -mt-9 z-50">
                                         <a href="computational-works.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Overview</a>
                                         <a href="project-pica.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Project PICA</a>
                                     </div>
@@ -59,11 +57,11 @@
                             </div>
                         </div>
                         <div class="border-t border-gray-600 my-1"></div>
-                        <div class="relative group/additional">
-                            <a href="#" class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange flex justify-between items-center" aria-haspopup="true">
+                        <div id="additional-content-item" class="relative">
+                            <a href="#" class="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent-orange flex justify-between items-center">
                                 Additional Content <i class="fas fa-chevron-right text-xs" aria-hidden="true"></i>
                             </a>
-                            <div class="absolute hidden group-hover/additional:block dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 left-full -mt-2 z-50">
+                            <div id="additional-content-submenu" class="absolute hidden dropdown-menu border border-gray-700 rounded-md shadow-lg py-2 w-48 top-0 left-full -mt-2 z-50">
                                 <a href="blog.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Blog</a>
                                 <a href="gallery.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Gallery</a>
                                 <a href="resources.html" class="block px-4 py-2 text-sm text-white hover:bg-accent-orange">Resources</a>
@@ -84,14 +82,14 @@
             <a href="../index.html#journey" class="block py-2 nav-link">Journey</a>
             <a href="../index.html#contact" class="block py-2 nav-link">Contact</a>
             <div class="border-t border-gray-700 my-2"></div>
-            <button id="portfolio-button-mobile" class="w-full text-left py-2 px-4 rounded-lg bg-accent-orange/10 border border-accent-orange text-accent-orange font-semibold flex justify-between items-center" aria-haspopup="true" aria-expanded="false" aria-controls="portfolio-menu-mobile">
+            <button id="portfolio-button-mobile" class="w-full text-left py-2 nav-link flex justify-between items-center" aria-haspopup="true" aria-expanded="false" aria-controls="portfolio-menu-mobile">
                 <span>Portfolio</span>
                 <i class="fas fa-chevron-down text-xs"></i>
             </button>
             <div id="portfolio-menu-mobile" class="hidden pl-4 space-y-2">
                 <a href="research.html" class="block py-2 nav-link">Research & Pubs</a>
                 <a href="computational-works.html" class="block py-2 nav-link">Computational Works</a>
-                <a href="project-pica.html" class="block py-2 nav-link pl-4">- Project PICA</a>
+                <a href="project-pica.html" class="block py-2 nav-link pl-4">&ndash; Project PICA</a>
                 <a href="presentations.html" class="block py-2 nav-link">Presentations</a>
                 <a href="cv.html" class="block py-2 nav-link">CV</a>
                 <a href="blog.html" class="block py-2 nav-link">Blog</a>
@@ -109,7 +107,7 @@
             </div>
 
             <div class="mb-16">
-                <h3 class="text-3xl font-semibold text-accent-orange border-b border-gray-700 pb-2 mb-6">Website Pages</h3>
+                <h3 class="text-3xl font-semibold text-accent-orange border-b border-gray-700 pb-2 mb-6">Internal Pages (Sitemap)</h3>
                 <div class="space-y-4">
                     <h4 class="text-xl font-semibold text-light-slate mt-4">Main</h4>
                     <a href="../index.html" class="sitemap-link rounded-md">Home Page</a>
@@ -127,24 +125,6 @@
                     <a href="./gallery.html" class="sitemap-link rounded-md">Gallery</a>
                     <a href="./resources.html" class="sitemap-link rounded-md">Resources</a>
                     <a href="./search.html" class="sitemap-link rounded-md">Search</a>
-                </div>
-            </div>
-
-            <div class="mb-16">
-                <h3 class="text-3xl font-semibold text-accent-orange border-b border-gray-700 pb-2 mb-6">Site Map</h3>
-                <div class="space-y-2">
-                    <a href="https://prathameshdeshmukh.site/" class="sitemap-link rounded-md" target="_blank" rel="noopener noreferrer">Home Page (Root)</a>
-                    <a href="https://prathameshdeshmukh.site/index.html" class="sitemap-link rounded-md" target="_blank" rel="noopener noreferrer">Home Page (index.html)</a>
-                    <a href="https://prathameshdeshmukh.site/pages/research.html" class="sitemap-link rounded-md" target="_blank" rel="noopener noreferrer">Research & Publications</a>
-                    <a href="https://prathameshdeshmukh.site/pages/computational-works.html" class="sitemap-link rounded-md" target="_blank" rel="noopener noreferrer">Computational Works</a>
-                    <a href="https://prathameshdeshmukh.site/pages/presentations.html" class="sitemap-link rounded-md" target="_blank" rel="noopener noreferrer">Presentations</a>
-                    <a href="https://prathameshdeshmukh.site/pages/cv.html" class="sitemap-link rounded-md" target="_blank" rel="noopener noreferrer">Curriculum Vitae (CV)</a>
-                    <a href="https://prathameshdeshmukh.site/pages/blog.html" class="sitemap-link rounded-md" target="_blank" rel="noopener noreferrer">Blog</a>
-                    <a href="https://prathameshdeshmukh.site/pages/gallery.html" class="sitemap-link rounded-md" target="_blank" rel="noopener noreferrer">Gallery</a>
-                    <a href="https://prathameshdeshmukh.site/pages/resources.html" class="sitemap-link rounded-md" target="_blank" rel="noopener noreferrer">Resources</a>
-                    <a href="https://prathameshdeshmukh.site/pages/project-pica.html" class="sitemap-link rounded-md" target="_blank" rel="noopener noreferrer">Project PICA</a>
-                    <a href="https://prathameshdeshmukh.site/pages/sitemap.html" class="sitemap-link rounded-md" target="_blank" rel="noopener noreferrer">Sitemap & Link Directory</a>
-                    <a href="https://prathameshdeshmukh.site/pages/search.html" class="sitemap-link rounded-md" target="_blank" rel="noopener noreferrer">Search Page</a>
                 </div>
             </div>
 
@@ -183,24 +163,24 @@
                     <div>
                         <h4 class="text-xl font-semibold text-light-slate mb-4">Journal Publications (DOI)</h4>
                         <div class="grid md:grid-cols-1 gap-4">
-                            <a href="https://doi.org/10.1016/j.jpcs.2024.112309" target="_blank" rel="noopener noreferrer" class="external-link rounded-md"><i class="fas fa-book-open w-6 mr-3" aria-hidden="true"></i> J. Phys. Chem. Solids (BaFe₁₀Sc₂O₁₉:KNbO₃) <i class="fas fa-external-link-alt ml-auto text-xs" aria-hidden="true"></i></a>
-                            <a href="https://doi.org/10.1016/j.ceramint.2025.04.264" target="_blank" rel="noopener noreferrer" class="external-link rounded-md"><i class="fas fa-book-open w-6 mr-3" aria-hidden="true"></i> Ceramics Int. (Cu₂O-CuO ceramics) <i class="fas fa-external-link-alt ml-auto text-xs" aria-hidden="true"></i></a>
-                            <a href="https://doi.org/10.1016/j.jallcom.2025.181833" target="_blank" rel="noopener noreferrer" class="external-link rounded-md"><i class="fas fa-book-open w-6 mr-3" aria-hidden="true"></i> J. Alloys Compd. (Cu₁₋ₓLiₓO) <i class="fas fa-external-link-alt ml-auto text-xs" aria-hidden="true"></i></a>
+                            <a href="https://doi.org/10.1016/j.jpcs.2024.112309" target="_blank" rel="noopener noreferrer" class="external-link rounded-md"><i class="fas fa-book-open w-6 mr-3" aria-hidden="true"></i> J. Phys. Chem. Solids (BaFe₁₀Sc₂O₁₉:KNbO₃) <i class="fas fa-external-link-alt ml-auto text-xs" aria-hidden="true" aria-label="(opens in a new tab)"></i></a>
+                            <a href="https://doi.org/10.1016/j.ceramint.2025.04.264" target="_blank" rel="noopener noreferrer" class="external-link rounded-md"><i class="fas fa-book-open w-6 mr-3" aria-hidden="true"></i> Ceramics Int. (Cu₂O-CuO ceramics) <i class="fas fa-external-link-alt ml-auto text-xs" aria-hidden="true" aria-label="(opens in a new tab)"></i></a>
+                            <a href="https://doi.org/10.1016/j.jallcom.2025.181833" target="_blank" rel="noopener noreferrer" class="external-link rounded-md"><i class="fas fa-book-open w-6 mr-3" aria-hidden="true"></i> J. Alloys Compd. (Cu₁₋ₓLiₓO) <i class="fas fa-external-link-alt ml-auto text-xs" aria-hidden="true" aria-label="(opens in a new tab)"></i></a>
                         </div>
                     </div>
     
                     <div>
                         <h4 class="text-xl font-semibold text-light-slate mb-4">Affiliations & Facilities</h4>
                         <div class="grid md:grid-cols-1 gap-4">
-                            <a href="https://www.researchgate.net/lab/Sudip-Mukherjee-Materials-Physics-Lab-Sudip-Mukherjee" target="_blank" rel="noopener noreferrer" class="external-link rounded-md"><i class="fas fa-vial w-6 mr-3" aria-hidden="true"></i> Materials Physics Lab (ResearchGate) <i class="fas fa-external-link-alt ml-auto text-xs" aria-hidden="true"></i></a>
-                            <a href="https://www.csruserportal.com/Intro/csrMumbaiFacilities" target="_blank" rel="noopener noreferrer" class="external-link rounded-md"><i class="fas fa-tools w-6 mr-3" aria-hidden="true"></i> UGC-DAE CSR Mumbai Facilities <i class="fas fa-external-link-alt ml-auto text-xs" aria-hidden="true"></i></a>
+                            <a href="https://www.researchgate.net/lab/Sudip-Mukherjee-Materials-Physics-Lab-Sudip-Mukherjee" target="_blank" rel="noopener noreferrer" class="external-link rounded-md"><i class="fas fa-vial w-6 mr-3" aria-hidden="true"></i> Materials Physics Lab (ResearchGate) <i class="fas fa-external-link-alt ml-auto text-xs" aria-hidden="true" aria-label="(opens in a new tab)"></i></a>
+                            <a href="https://www.csruserportal.com/Intro/csrMumbaiFacilities" target="_blank" rel="noopener noreferrer" class="external-link rounded-md"><i class="fas fa-tools w-6 mr-3" aria-hidden="true"></i> UGC-DAE CSR Mumbai Facilities <i class="fas fa-external-link-alt ml-auto text-xs" aria-hidden="true" aria-label="(opens in a new tab)"></i></a>
                         </div>
                     </div>
 
                     <div>
                         <h4 class="text-xl font-semibold text-light-slate mb-4">Site Utilities</h4>
                         <div class="grid md:grid-cols-1 gap-4">
-                            <a href="https://cse.google.com/cse?cx=4137cb8ceeadf4259#gsc.tab=0&gsc.sort=" target="_blank" rel="noopener noreferrer" class="external-link rounded-md"><i class="fab fa-google w-6 mr-3" aria-hidden="true"></i> Google Search <i class="fas fa-external-link-alt ml-auto text-xs" aria-hidden="true"></i></a>
+                            <a href="https://cse.google.com/cse?cx=4137cb8ceeadf4259#gsc.tab=0&gsc.sort=" target="_blank" rel="noopener noreferrer" class="external-link rounded-md"><i class="fab fa-google w-6 mr-3" aria-hidden="true"></i> Google Search <i class="fas fa-external-link-alt ml-auto text-xs" aria-hidden="true" aria-label="(opens in a new tab)"></i></a>
                         </div>
                     </div>
                 </div>
